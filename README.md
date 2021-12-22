@@ -1,6 +1,7 @@
 <p align="center">
 	<img src="https://avatars3.githubusercontent.com/u/6113075?s=460&v=4" height="130">
 </p>
+-- TODO START: Create these resources for Mercury Red also
 <p align="center">	
 	<a href="https://www.codacy.com/gh/LoboEvolution/LoboEvolution/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LoboEvolution/LoboEvolution&amp;utm_campaign=Badge_Grade" alt="Codacy">
 		<img src="https://app.codacy.com/project/badge/Grade/899f68bba4a5463d8a7699821d840c5c" />
@@ -32,18 +33,23 @@
 	</a>
 </p>
 
-Lobo Evolution began as a fork of the now-defunct project called the LoboBrowser [credits](https://sourceforge.net/projects/xamj/).
-Lobo Evolution is an extensible all-Java web browser and RIA platform. It supports HTML 4, HTML 5, Javascript, CSS2/CSS3 and Java (Swing/AWT) rendering.
+-- TODO END
 
-### ATTENTION
-LoboEvolution has been rewritten from scratch and is not compatible with [old version](https://github.com/oswetto/LoboEvolutionPreHistory)
+Mercury Red is as a fork of Lobo Evolution [credits](https://github.com/LoboEvolution/LoboEvolution).
+Mercury Red is an extensible all-Java web browser and RIA platform. It supports HTML 4, HTML 5, Javascript, CSS2/CSS3 and Java (Swing/AWT) rendering.
+
+### Features in progress to be released in Vermilion Release:
+ - Multiple Canvas Support (Java Swing, Image in Mwemory, Andoid Canvas, ...)
+ - Use as a Component in Java and Android Projects
+ - Native Interaction Interface for Automation (without need of Driver, like used in Selenium)
+
 
 ### Building
 Create a local clone of the repository and you are ready to start.
 
 ### Local Building
 Run 
-[PlatformInit.java](https://github.com/oswetto/LoboEvolution/blob/master/LoboEvo/src/main/java/org/loboevolution/init/PlatformInit.java)
+[PlatformInit.java](https://github.com/MercuryRed/MercuryRed/blob/master/LoboEvo/src/main/java/org/loboevolution/init/PlatformInit.java)
 
 ### Maven Users
 ```
@@ -55,16 +61,16 @@ mvn install -Dmaven.test.skip=true
 mvn surefire-report:report
 ```
 
-Show report in [doc folder](https://github.com/LoboEvolution/LoboEvolution/tree/master/docs) or [current result](https://loboevolution.github.io/LoboEvolution/)
+Show report in [doc folder](https://github.com/MercuryRed/MercuryRed/tree/master/docs) or [TODO - current result](https://mercuryred.github.io/MercuryRed/)
 
 
 ### How To Do
-[TODO](https://github.com/oswetto/LoboEvolution/wiki/How-TODO)
+[TODO](https://github.com/MercuryRed/MercuryRed/wiki/How-TODO)
 
-### Status build
-[Build](https://github.com/oswetto/LoboEvolution/actions)
+### Status build - TODO
+[Build](https://github.com/MercuryRed/MercuryRed/actions)
 
-### Maven Dependency(add in your pom)
+### Maven Dependency(add in your pom) - TODO (use following from LoboEvolution until MercuryRed ones are ready)
 ```
 <dependency>
   <groupId>com.github.oswetto</groupId>
@@ -72,6 +78,3 @@ Show report in [doc folder](https://github.com/LoboEvolution/LoboEvolution/tree/
   <version>2.0</version>
 </dependency>
 ```
-
-### Pre-History
-The history of all commits that transform LoboBrowser in LoboEvoluiton is available in [a separate repository](https://github.com/oswetto/LoboEvolutionPreHistory).
