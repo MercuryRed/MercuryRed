@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://avatars3.githubusercontent.com/u/6113075?s=460&v=4" height="130">
+	<img src="https://avatars.githubusercontent.com/u/96488353?s=200&v=4" height="130" style="width:130px; border-radius: 50%">
 </p>
 -- TODO START: Create these resources for Mercury Red also
 <p align="center">	
