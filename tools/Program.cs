@@ -16,7 +16,7 @@ namespace MoveImports
 
             foreach (string filename in filenames)
             {
-                Console.WriteLine(filename);
+                //Console.WriteLine(filename);
                 ProcessJavaFile(filename);
             }
         }
@@ -93,18 +93,25 @@ namespace MoveImports
 
                 if (importFullName.StartsWith(package + "."))
                 {
+                    string subImport = importFullName.Substring(package.Length + 1);
+                    int index = subImport.LastIndexOf(".");
+                    string subPackage = index > 0 ? subImport.Substring(0, index) : "";
+
+                    /// todo .. subpackage structure maintain ... 
+                    // remove package 
                     string[] parts = importFullName.Split('.');
                     string className = parts[parts.Length - 1];
 
                     string from = FROM + importFullName.Replace(".", "\\") + ".java";
-                    string to = TO + dest.Replace(".", "\\") + "\\" + className + ".java";
+                    string to = TO + dest.Replace(".", "\\") + "\\" + subImport.Replace(".", "\\") + ".java";
 
-                    string dir = TO + dest.Replace(".", "\\");
+                    string dir = TO + dest.Replace(".", "\\") + "\\" + subPackage.Replace(".", "\\");
 
                     System.IO.Directory.CreateDirectory(dir);
 
                     if (!File.Exists(from))
                     {
+                        Console.WriteLine("MISSING " + importFullName);
                         // ERROR
                         return line;
                     }
