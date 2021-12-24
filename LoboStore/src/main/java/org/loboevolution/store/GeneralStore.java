@@ -22,7 +22,8 @@ package org.loboevolution.store;
 
 import org.loboevolution.info.GeneralInfo;
 
-import java.awt.*;
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;

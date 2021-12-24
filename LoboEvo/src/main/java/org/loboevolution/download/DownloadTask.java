@@ -20,12 +20,15 @@
 
 package org.loboevolution.download;
 
+import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.URLConnection;
 
-import javax.swing.*;
+
 
 /**
  * Execute file download in a background thread and update the progress.

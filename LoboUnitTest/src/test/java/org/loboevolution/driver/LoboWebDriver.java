@@ -25,16 +25,16 @@ import org.loboevolution.component.BrowserPanel;
 import org.loboevolution.component.IBrowserPanel;
 import org.loboevolution.html.dom.domimpl.HTMLDocumentImpl;
 import org.loboevolution.html.gui.HtmlPanel;
+import org.loboevolution.html.node.Document;
 import org.loboevolution.html.parser.DocumentBuilderImpl;
 import org.loboevolution.html.parser.InputSourceImpl;
 import org.loboevolution.http.HtmlRendererContext;
 import org.loboevolution.http.UserAgentContext;
 import org.loboevolution.net.HttpNetwork;
-import org.loboevolution.html.node.Document;
 import org.loboevolution.net.UserAgent;
 import org.xml.sax.InputSource;
 
-import java.awt.*;
+import java.awt.Dimension;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;

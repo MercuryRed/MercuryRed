@@ -22,14 +22,35 @@ package org.loboevolution.html.renderer;
 
 import org.loboevolution.html.HTMLTag;
 import org.loboevolution.html.HtmlObject;
-import org.loboevolution.html.control.*;
-import org.loboevolution.html.dom.domimpl.*;
+import org.loboevolution.html.control.ButtonControl;
+import org.loboevolution.html.control.CanvasControl;
+import org.loboevolution.html.control.FrameControl;
+import org.loboevolution.html.control.ImgControl;
+import org.loboevolution.html.control.ImgSvgControl;
+import org.loboevolution.html.control.InputControl;
+import org.loboevolution.html.control.RImgControl;
+import org.loboevolution.html.control.RSSControl;
+import org.loboevolution.html.control.RUIControl;
+import org.loboevolution.html.control.SVGControl;
+import org.loboevolution.html.control.SelectControl;
+import org.loboevolution.html.control.TextAreaControl;
+import org.loboevolution.html.control.UIControl;
+import org.loboevolution.html.control.UIControlWrapper;
+import org.loboevolution.html.dom.domimpl.HTMLButtonElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLCanvasElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLIFrameElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLImageElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLInputElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLSelectElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLTextAreaElementImpl;
+import org.loboevolution.html.dom.domimpl.UINode;
 import org.loboevolution.html.dom.rss.RSSElementImpl;
 import org.loboevolution.html.dom.svgimpl.SVGSVGElementImpl;
 import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.http.UserAgentContext;
 
-import java.awt.*;
+import java.awt.Image;
 import java.util.HashMap;
 import java.util.Map;
 

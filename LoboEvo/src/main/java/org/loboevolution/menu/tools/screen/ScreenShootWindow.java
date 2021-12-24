@@ -20,15 +20,14 @@
 
 package org.loboevolution.menu.tools.screen;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.WindowConstants;
-
 import org.loboevolution.component.BrowserFrame;
-import org.loboevolution.img.ImageViewer;
+
+import java.awt.Color;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
 
 /**
  * <p>ScreenShootWindow class.</p>

@@ -23,7 +23,9 @@ package org.loboevolution.laf;
 import java.util.Locale;
 import java.util.Set;
 
-import lombok.*;
+
+import lombok.Builder;
+import lombok.Data;
 import org.loboevolution.common.Objects;
 
 /**

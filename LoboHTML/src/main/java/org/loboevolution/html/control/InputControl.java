@@ -19,12 +19,13 @@
  */
 package org.loboevolution.html.control;
 
-import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.loboevolution.common.WrapperLayout;
 import org.loboevolution.html.dom.domimpl.HTMLInputElementImpl;
+
+import java.awt.ComponentOrientation;
+import java.awt.Image;
+import java.util.Map;
 
 /**
  * <p>InputControl class.</p>

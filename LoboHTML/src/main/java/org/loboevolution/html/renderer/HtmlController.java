@@ -20,7 +20,12 @@
 
 package org.loboevolution.html.renderer;
 
-import org.loboevolution.html.dom.domimpl.*;
+
+import org.loboevolution.html.dom.domimpl.HTMLButtonElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLInputElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLLinkElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLSelectElementImpl;
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 import org.loboevolution.html.dom.nodeimpl.NodeImpl;
 import org.loboevolution.html.js.Executor;
@@ -30,7 +35,7 @@ import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.http.HtmlRendererContext;
 import org.mozilla.javascript.Function;
 
-import java.awt.*;
+import java.awt.Cursor;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.util.Optional;

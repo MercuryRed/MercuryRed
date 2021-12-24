@@ -25,10 +25,15 @@ import org.loboevolution.html.dom.domimpl.HTMLDocumentImpl;
 import org.loboevolution.html.gui.HtmlPanel;
 import org.loboevolution.store.TabStore;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
-import java.awt.dnd.*;
+import java.awt.dnd.DnDConstants;
+import java.awt.dnd.DropTargetDragEvent;
+import java.awt.dnd.DropTargetDropEvent;
+import java.awt.dnd.DropTargetEvent;
+import java.awt.dnd.DropTargetListener;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -91,7 +96,7 @@ public class DragDropListener implements DropTargetListener {
 		IWelcomePanel welcome = panel.getWelcome();
 		browserFrame.getToolbar().getAddressBar().setText(fullURL);
 		TabStore.insertTab(index+1, fullURL, title);
-		welcome.setBackground(new Color(37, 51, 61));		
+		welcome.setBackground(new Color(37, 51, 61));
 		bpanel.getScroll().getViewport().add((Component)tabbedPane);
 	}
 

@@ -20,7 +20,9 @@
 
 package org.loboevolution.download;
 
-import javax.swing.*;
+
+import javax.swing.AbstractAction;
+
 import java.awt.event.ActionEvent;
 
 /**

@@ -20,15 +20,11 @@
 
 package org.loboevolution.menu;
 
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
-
 import javax.swing.Action;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
-
 import org.loboevolution.component.BrowserFrame;
 import org.loboevolution.menu.bookmarks.AddBookmarkAction;
 import org.loboevolution.menu.bookmarks.ShowBookmarksAction;
@@ -40,7 +36,15 @@ import org.loboevolution.menu.file.SaveFileAction;
 import org.loboevolution.menu.tools.clear.ClearHistoryAction;
 import org.loboevolution.menu.tools.pref.PreferencesAction;
 import org.loboevolution.menu.tools.screen.ScreenShotAction;
-import org.loboevolution.menu.view.*;
+import org.loboevolution.menu.view.CookiePageAction;
+import org.loboevolution.menu.view.FullScreenAction;
+import org.loboevolution.menu.view.InfoPageAction;
+import org.loboevolution.menu.view.SourceAction;
+import org.loboevolution.menu.view.StyleAction;
+
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+
 
 /**
  * <p>MenuBar class.</p>

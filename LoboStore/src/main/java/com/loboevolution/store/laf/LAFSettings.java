@@ -25,9 +25,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.loboevolution.store.DatabseSQLite;
-import org.loboevolution.store.SQLiteCommon;
 
-import java.awt.*;
+import java.awt.Color;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;

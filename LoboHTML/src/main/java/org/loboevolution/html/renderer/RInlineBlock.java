@@ -26,7 +26,9 @@ import org.loboevolution.html.renderer.info.RBlockInfo;
 import org.loboevolution.html.renderer.table.RTable;
 import org.loboevolution.html.renderstate.RenderState;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 

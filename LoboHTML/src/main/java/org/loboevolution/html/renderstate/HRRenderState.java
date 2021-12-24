@@ -26,7 +26,8 @@ import org.loboevolution.html.style.HtmlInsets;
 import org.loboevolution.html.style.HtmlValues;
 import org.loboevolution.info.BorderInfo;
 
-import java.awt.*;
+import java.awt.Color;
+
 
 public class HRRenderState extends BlockRenderState {
 

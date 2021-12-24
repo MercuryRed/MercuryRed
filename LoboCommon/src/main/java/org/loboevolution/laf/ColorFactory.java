@@ -22,7 +22,8 @@ package org.loboevolution.laf;
 
 import org.loboevolution.common.Strings;
 
-import java.awt.*;
+
+import java.awt.Color;
 import java.util.Arrays;
 import java.util.Map;
 

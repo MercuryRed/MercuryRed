@@ -20,16 +20,24 @@
 
 package org.loboevolution.tab;
 
+import javax.swing.Icon;
+import javax.swing.JTabbedPane;
+import javax.swing.event.ChangeListener;
 import org.loboevolution.common.Strings;
 import org.loboevolution.component.IBrowserFrame;
 import org.loboevolution.component.IBrowserPanel;
 import org.loboevolution.component.ITabbedPane;
 import org.loboevolution.store.TabStore;
 
-import javax.swing.*;
-import javax.swing.event.ChangeListener;
-import java.awt.*;
-import java.awt.dnd.*;
+import java.awt.Component;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.dnd.DnDConstants;
+import java.awt.dnd.DragGestureListener;
+import java.awt.dnd.DragSource;
+import java.awt.dnd.DropTarget;
+import java.awt.dnd.DropTargetListener;
+
 
 /**
  * <p>DnDTabbedPane class.</p>

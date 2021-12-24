@@ -20,10 +20,14 @@
 
 package org.loboevolution.menu.tools.clear;
 
+import org.loboevolution.http.CookieManager;
+import org.loboevolution.store.BookmarksStore;
+import org.loboevolution.store.DatabseSQLite;
+import org.loboevolution.store.NavigationStore;
+import org.loboevolution.store.ToolsStore;
+
 import java.io.File;
 
-import org.loboevolution.http.CookieManager;
-import org.loboevolution.store.*;
 
 /**
  * <p>ClearHistory class.</p>

@@ -26,7 +26,8 @@ import org.loboevolution.html.style.HtmlValues;
 import org.loboevolution.info.BackgroundInfo;
 import org.loboevolution.laf.ColorFactory;
 
-import java.awt.*;
+import java.awt.Color;
+
 
 /**
  * <p>BodyRenderState class.</p>

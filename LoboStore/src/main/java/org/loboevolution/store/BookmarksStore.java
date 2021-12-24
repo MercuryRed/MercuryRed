@@ -24,7 +24,11 @@ import org.loboevolution.common.Strings;
 import org.loboevolution.info.BookmarkInfo;
 
 import java.io.Serializable;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -54,7 +58,7 @@ public class BookmarksStore implements Serializable {
 	 */
 	public void deleteBookmarks() {
 		try (Connection conn = DriverManager.getConnection(DB_PATH);
-				PreparedStatement pstmt = conn.prepareStatement(this.DELETE_BOOKMARKS)) {
+			 PreparedStatement pstmt = conn.prepareStatement(this.DELETE_BOOKMARKS)) {
 			pstmt.executeUpdate();
 		} catch (final Exception e) {
 			logger.log(Level.SEVERE, e.getMessage(), e);
@@ -68,7 +72,7 @@ public class BookmarksStore implements Serializable {
 	 */
 	public void deleteBookmark(String url) {
 		try (Connection conn = DriverManager.getConnection(DB_PATH);
-				PreparedStatement pstmt = conn.prepareStatement(this.DELETE_BOOKMARKS_BY_URL)) {
+			 PreparedStatement pstmt = conn.prepareStatement(this.DELETE_BOOKMARKS_BY_URL)) {
 			pstmt.setString(1, url.trim());
 			pstmt.executeUpdate();
 		} catch (final Exception e) {

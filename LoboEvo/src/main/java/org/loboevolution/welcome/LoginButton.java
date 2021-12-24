@@ -20,12 +20,9 @@
 
 package org.loboevolution.welcome;
 
-import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.HashMap;
-import javax.swing.JLabel;
 
+import com.jtattoo.plaf.lobo.LoboLookAndFeel;
+import javax.swing.JLabel;
 import org.loboevolution.common.Strings;
 import org.loboevolution.component.IBrowserPanel;
 import org.loboevolution.component.ITabbedPane;
@@ -34,7 +31,18 @@ import org.loboevolution.html.gui.HtmlPanel;
 import org.loboevolution.http.NavigationManager;
 import org.loboevolution.store.TabStore;
 
-import com.jtattoo.plaf.lobo.LoboLookAndFeel;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Insets;
+import java.awt.RenderingHints;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.HashMap;
 
 /**
  * <p>LoginButton class.</p>

@@ -27,12 +27,24 @@ import org.loboevolution.html.control.InputControl;
 import org.loboevolution.html.dom.HTMLElement;
 import org.loboevolution.html.dom.HTMLFormElement;
 import org.loboevolution.html.dom.HTMLInputElement;
-import org.loboevolution.html.dom.input.*;
+import org.loboevolution.html.dom.input.FormInput;
+import org.loboevolution.html.dom.input.InputButton;
+import org.loboevolution.html.dom.input.InputCheckbox;
+import org.loboevolution.html.dom.input.InputColorPicker;
+import org.loboevolution.html.dom.input.InputDataTime;
+import org.loboevolution.html.dom.input.InputFile;
+import org.loboevolution.html.dom.input.InputHidden;
+import org.loboevolution.html.dom.input.InputImage;
+import org.loboevolution.html.dom.input.InputNumber;
+import org.loboevolution.html.dom.input.InputPassword;
+import org.loboevolution.html.dom.input.InputRadio;
+import org.loboevolution.html.dom.input.InputRange;
+import org.loboevolution.html.dom.input.InputText;
 import org.loboevolution.html.node.Node;
 import org.loboevolution.html.renderstate.DisplayRenderState;
 import org.loboevolution.html.renderstate.RenderState;
 
-import java.awt.*;
+import java.awt.Image;
 import java.util.Map;
 
 /**

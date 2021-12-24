@@ -22,13 +22,20 @@
  */
 package org.loboevolution.laf;
 
+import javax.swing.text.StyleContext;
 import org.loboevolution.common.Strings;
 import org.loboevolution.html.CSSValues;
 
-import javax.swing.text.StyleContext;
-import java.awt.*;
+import java.awt.Font;
+import java.awt.GraphicsEnvironment;
 import java.awt.font.TextAttribute;
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
+import java.util.StringTokenizer;
+
 
 /**
  * A factory for creating Font objects.

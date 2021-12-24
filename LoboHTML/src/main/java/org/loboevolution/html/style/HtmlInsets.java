@@ -24,7 +24,8 @@ import org.loboevolution.html.dom.domimpl.HTMLDocumentImpl;
 import org.loboevolution.html.dom.domimpl.HTMLElementImpl;
 import org.loboevolution.html.renderstate.RenderState;
 
-import java.awt.*;
+import java.awt.Insets;
+
 
 /**
  * <p>HtmlInsets class.</p>

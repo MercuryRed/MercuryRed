@@ -29,7 +29,8 @@ import org.loboevolution.html.gui.HtmlPanel;
 import org.loboevolution.http.NavigationManager;
 import org.loboevolution.store.TabStore;
 
-import java.awt.*;
+import java.awt.Component;
+
 
 /**
  * <p>TabbedHtml class.</p>

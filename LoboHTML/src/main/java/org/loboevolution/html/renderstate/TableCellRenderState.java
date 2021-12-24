@@ -39,7 +39,8 @@ import org.loboevolution.laf.ColorFactory;
 import org.loboevolution.laf.FontFactory;
 import org.loboevolution.laf.FontKey;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.util.Base64;
 
 /**

@@ -31,7 +31,9 @@ import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.http.HtmlRendererContext;
 import org.loboevolution.laf.ColorFactory;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+
 
 /**
  * <p>ComputedCSSStyleDeclaration class.</p>

@@ -20,7 +20,10 @@
 
 package org.loboevolution.download;
 
-import javax.swing.*;
+
+import javax.swing.AbstractAction;
+import javax.swing.JFileChooser;
+
 import java.awt.event.ActionEvent;
 import java.io.File;
 

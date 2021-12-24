@@ -20,7 +20,15 @@
 
 package org.loboevolution.html.style;
 
-import com.gargoylesoftware.css.dom.*;
+
+import com.gargoylesoftware.css.dom.AbstractCSSRuleImpl;
+import com.gargoylesoftware.css.dom.CSSMediaRuleImpl;
+import com.gargoylesoftware.css.dom.CSSRuleListImpl;
+import com.gargoylesoftware.css.dom.CSSStyleRuleImpl;
+import com.gargoylesoftware.css.dom.CSSStyleSheetImpl;
+import com.gargoylesoftware.css.dom.CSSValueImpl;
+import com.gargoylesoftware.css.dom.MediaListImpl;
+import com.gargoylesoftware.css.dom.Property;
 import com.gargoylesoftware.css.parser.CSSErrorHandler;
 import com.gargoylesoftware.css.parser.CSSException;
 import com.gargoylesoftware.css.parser.CSSOMParser;
@@ -29,10 +37,22 @@ import com.gargoylesoftware.css.parser.condition.Condition;
 import com.gargoylesoftware.css.parser.condition.Condition.ConditionType;
 import com.gargoylesoftware.css.parser.javacc.CSS3Parser;
 import com.gargoylesoftware.css.parser.media.MediaQuery;
-import com.gargoylesoftware.css.parser.selector.*;
+import com.gargoylesoftware.css.parser.selector.ChildSelector;
+import com.gargoylesoftware.css.parser.selector.DescendantSelector;
+import com.gargoylesoftware.css.parser.selector.DirectAdjacentSelector;
+import com.gargoylesoftware.css.parser.selector.ElementSelector;
+import com.gargoylesoftware.css.parser.selector.GeneralAdjacentSelector;
+import com.gargoylesoftware.css.parser.selector.PseudoElementSelector;
+import com.gargoylesoftware.css.parser.selector.Selector;
 import com.gargoylesoftware.css.parser.selector.Selector.SelectorType;
+import com.gargoylesoftware.css.parser.selector.SelectorList;
+import com.gargoylesoftware.css.parser.selector.SimpleSelector;
 import org.loboevolution.common.Strings;
-import org.loboevolution.html.dom.*;
+import org.loboevolution.html.dom.HTMLElement;
+import org.loboevolution.html.dom.HTMLInputElement;
+import org.loboevolution.html.dom.HTMLLinkElement;
+import org.loboevolution.html.dom.HTMLSelectElement;
+import org.loboevolution.html.dom.HTMLTextAreaElement;
 import org.loboevolution.html.dom.domimpl.HTMLDocumentImpl;
 import org.loboevolution.html.dom.domimpl.HTMLElementImpl;
 import org.loboevolution.html.dom.domimpl.HTMLInputElementImpl;
