@@ -20,13 +20,25 @@
 
 package org.loboevolution.menu.crono;
 
-import com.jtattoo.plaf.lobo.*;
+
+import com.jtattoo.plaf.lobo.LoboButton;
+import com.jtattoo.plaf.lobo.LoboLabel;
+import com.jtattoo.plaf.lobo.LoboLookAndFeel;
+import com.jtattoo.plaf.lobo.LoboPanel;
+import com.jtattoo.plaf.lobo.LoboSeparator;
+import com.jtattoo.plaf.lobo.LoboTextField;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 import org.loboevolution.component.BrowserFrame;
 import org.loboevolution.download.DownloadWindow;
 import org.loboevolution.store.DownloadStore;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Image;
 import java.util.List;
 
 /**

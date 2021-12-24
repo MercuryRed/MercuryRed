@@ -22,6 +22,8 @@
  */
 package org.loboevolution.html.renderstate;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import org.loboevolution.common.Strings;
 import org.loboevolution.html.CSSValues;
 import org.loboevolution.html.dom.HTMLElement;
@@ -31,7 +33,13 @@ import org.loboevolution.html.dom.domimpl.HTMLLinkElementImpl;
 import org.loboevolution.html.node.css.CSS3Properties;
 import org.loboevolution.html.renderer.LineBreak;
 import org.loboevolution.html.renderer.RFlex;
-import org.loboevolution.html.style.*;
+import org.loboevolution.html.style.AbstractCSSProperties;
+import org.loboevolution.html.style.BorderInsets;
+import org.loboevolution.html.style.FontValues;
+import org.loboevolution.html.style.GradientStyle;
+import org.loboevolution.html.style.HtmlInsets;
+import org.loboevolution.html.style.HtmlValues;
+import org.loboevolution.html.style.MarginInsets;
 import org.loboevolution.info.BackgroundInfo;
 import org.loboevolution.info.BorderInfo;
 import org.loboevolution.info.WordInfo;
@@ -39,13 +47,21 @@ import org.loboevolution.laf.ColorFactory;
 import org.loboevolution.laf.FontFactory;
 import org.loboevolution.laf.FontKey;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

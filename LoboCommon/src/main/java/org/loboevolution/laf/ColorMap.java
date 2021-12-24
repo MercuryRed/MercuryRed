@@ -20,7 +20,8 @@
 
 package org.loboevolution.laf;
 
-import java.awt.*;
+
+import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
 

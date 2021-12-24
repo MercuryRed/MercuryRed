@@ -36,7 +36,11 @@ import org.loboevolution.html.node.Node;
 import org.loboevolution.html.renderer.HtmlController;
 import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.html.renderstate.StyleSheetRenderState;
-import org.loboevolution.html.style.*;
+import org.loboevolution.html.style.AbstractCSSProperties;
+import org.loboevolution.html.style.CSSPropertiesContext;
+import org.loboevolution.html.style.ComputedCSSStyleDeclaration;
+import org.loboevolution.html.style.HtmlValues;
+import org.loboevolution.html.style.StyleSheetAggregator;
 
 import java.util.ArrayList;
 import java.util.HashMap;

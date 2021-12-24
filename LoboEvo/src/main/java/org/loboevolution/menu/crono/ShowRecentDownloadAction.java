@@ -20,9 +20,9 @@
 
 package org.loboevolution.menu.crono;
 
+import javax.swing.AbstractAction;
 import org.loboevolution.component.BrowserFrame;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 /**

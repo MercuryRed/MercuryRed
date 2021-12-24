@@ -19,12 +19,13 @@
 
 package org.loboevolution.pdfview.decode;
 
+import javax.swing.ImageIcon;
 import org.loboevolution.pdfview.PDFObject;
 import org.loboevolution.pdfview.PDFParseException;
 import org.monte.media.jpeg.JPEGImageIO;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.ByteArrayInputStream;

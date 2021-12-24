@@ -22,11 +22,6 @@
  */
 package org.loboevolution.html.control;
 
-import java.awt.*;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Objects;
 
 import org.loboevolution.html.dom.domimpl.UINode;
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
@@ -39,6 +34,17 @@ import org.loboevolution.html.renderer.RenderableContainer;
 import org.loboevolution.html.renderer.RenderableSpot;
 import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.http.UserAgentContext;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Insets;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * <p>RUIControl class.</p>

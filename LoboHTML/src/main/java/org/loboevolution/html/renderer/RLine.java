@@ -26,7 +26,11 @@ import org.loboevolution.html.AlignValues;
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 import org.loboevolution.html.renderstate.RenderState;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collections;

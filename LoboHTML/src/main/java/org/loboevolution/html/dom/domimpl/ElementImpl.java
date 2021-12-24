@@ -23,23 +23,36 @@
 package org.loboevolution.html.dom.domimpl;
 
 import com.gargoylesoftware.css.dom.DOMException;
+import javax.swing.JScrollBar;
 import org.loboevolution.common.Strings;
 import org.loboevolution.html.dom.nodeimpl.NamedNodeMapImpl;
 import org.loboevolution.html.dom.nodeimpl.NodeListImpl;
 import org.loboevolution.html.gui.HtmlPanel;
-import org.loboevolution.html.node.*;
+import org.loboevolution.html.node.Attr;
+import org.loboevolution.html.node.Comment;
+import org.loboevolution.html.node.DOMTokenList;
+import org.loboevolution.html.node.Document;
+import org.loboevolution.html.node.Element;
+import org.loboevolution.html.node.NamedNodeMap;
+import org.loboevolution.html.node.Node;
+import org.loboevolution.html.node.NodeType;
+import org.loboevolution.html.node.Text;
 import org.loboevolution.html.parser.HtmlParser;
 import org.loboevolution.html.renderer.RBlock;
 import org.loboevolution.html.style.AbstractCSSProperties;
 import org.loboevolution.html.style.HtmlValues;
 import org.loboevolution.http.HtmlRendererContext;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
 import java.io.Reader;
 import java.io.StringReader;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
-import java.util.*;
+import java.util.Map;
+import java.util.Objects;
+
 
 /**
  * <p>ElementImpl class.</p>

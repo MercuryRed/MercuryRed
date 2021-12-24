@@ -30,7 +30,8 @@ import org.loboevolution.html.node.js.Window;
 import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.laf.FontKey;
 
-import java.awt.*;
+import java.awt.GraphicsEnvironment;
+import java.awt.Toolkit;
 import java.awt.font.TextAttribute;
 
 /**

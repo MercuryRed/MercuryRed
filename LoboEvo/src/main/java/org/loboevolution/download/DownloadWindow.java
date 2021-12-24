@@ -22,13 +22,21 @@ package org.loboevolution.download;
 
 import com.jtattoo.plaf.lobo.LoboButton;
 import com.jtattoo.plaf.lobo.LoboLookAndFeel;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JProgressBar;
 import org.loboevolution.component.IDownload;
 import org.loboevolution.gui.FieldType;
 import org.loboevolution.gui.FormField;
 import org.loboevolution.gui.FormPanel;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Image;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

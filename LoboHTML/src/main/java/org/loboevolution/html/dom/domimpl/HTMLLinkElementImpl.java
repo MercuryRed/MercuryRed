@@ -21,21 +21,18 @@ package org.loboevolution.html.dom.domimpl;
 
 import org.loboevolution.common.Strings;
 import org.loboevolution.common.Urls;
-import org.loboevolution.html.dom.HTMLBodyElement;
-import org.loboevolution.html.dom.HTMLDocument;
 import org.loboevolution.html.dom.HTMLLinkElement;
 import org.loboevolution.html.js.css.CSSStyleSheetImpl;
 import org.loboevolution.html.node.DOMTokenList;
 import org.loboevolution.html.parser.HtmlParser;
-import org.loboevolution.html.renderstate.*;
+import org.loboevolution.html.renderstate.LinkRenderState;
+import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.html.style.CSSUtilities;
 import org.loboevolution.http.HtmlRendererContext;
 import org.loboevolution.http.UserAgentContext;
-import org.loboevolution.laf.ColorFactory;
 import org.loboevolution.store.StyleStore;
 import org.w3c.dom.UserDataHandler;
 
-import java.awt.*;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URI;

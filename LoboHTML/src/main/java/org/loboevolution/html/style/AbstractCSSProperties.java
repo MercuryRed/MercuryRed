@@ -30,7 +30,15 @@ import org.loboevolution.common.Objects;
 import org.loboevolution.common.Strings;
 import org.loboevolution.html.CSSValues;
 import org.loboevolution.html.node.css.CSS3Properties;
-import org.loboevolution.html.style.setter.*;
+import org.loboevolution.html.style.setter.BackgroundImageSetter;
+import org.loboevolution.html.style.setter.BackgroundSetter;
+import org.loboevolution.html.style.setter.BorderSetter1;
+import org.loboevolution.html.style.setter.BorderSetter2;
+import org.loboevolution.html.style.setter.BorderStyleSetter;
+import org.loboevolution.html.style.setter.FontSetter;
+import org.loboevolution.html.style.setter.FourCornersSetter;
+import org.loboevolution.html.style.setter.PropertyCSS;
+import org.loboevolution.html.style.setter.SubPropertySetter;
 import org.loboevolution.js.AbstractScriptableDelegate;
 import org.w3c.dom.DOMException;
 

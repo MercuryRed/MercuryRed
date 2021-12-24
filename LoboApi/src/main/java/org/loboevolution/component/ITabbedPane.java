@@ -20,8 +20,10 @@
 
 package org.loboevolution.component;
 
-import javax.swing.*;
-import java.awt.*;
+
+import javax.swing.Icon;
+
+import java.awt.Component;
 
 public interface ITabbedPane {
     /**

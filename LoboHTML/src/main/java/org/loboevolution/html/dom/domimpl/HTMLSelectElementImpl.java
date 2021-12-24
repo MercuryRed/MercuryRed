@@ -22,7 +22,11 @@ package org.loboevolution.html.dom.domimpl;
 
 import org.loboevolution.common.Strings;
 import org.loboevolution.html.control.SelectControl;
-import org.loboevolution.html.dom.*;
+import org.loboevolution.html.dom.HTMLCollection;
+import org.loboevolution.html.dom.HTMLFormElement;
+import org.loboevolution.html.dom.HTMLOptionElement;
+import org.loboevolution.html.dom.HTMLOptionsCollection;
+import org.loboevolution.html.dom.HTMLSelectElement;
 import org.loboevolution.html.dom.filter.OptionFilter;
 import org.loboevolution.html.dom.input.SelectOption;
 import org.loboevolution.html.node.Element;
@@ -30,7 +34,6 @@ import org.loboevolution.html.node.Node;
 import org.loboevolution.html.renderstate.DisplayRenderState;
 import org.loboevolution.html.renderstate.RenderState;
 import org.mozilla.javascript.Undefined;
-
 
 import java.util.Arrays;
 import java.util.LinkedList;

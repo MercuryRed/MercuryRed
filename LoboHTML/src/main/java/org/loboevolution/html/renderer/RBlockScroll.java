@@ -20,13 +20,15 @@
 
 package org.loboevolution.html.renderer;
 
+import javax.swing.BoundedRangeModel;
+import javax.swing.JScrollBar;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import org.loboevolution.html.renderstate.BlockRenderState;
 import org.loboevolution.html.renderstate.RenderState;
 
-import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Insets;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 

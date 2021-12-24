@@ -31,7 +31,8 @@ import org.loboevolution.html.style.AbstractCSSProperties;
 import org.loboevolution.html.style.HtmlValues;
 import org.loboevolution.info.SizeInfo;
 
-import java.awt.*;
+import java.awt.Dimension;
+
 
 /**
  * <p>RTableCell class.</p>

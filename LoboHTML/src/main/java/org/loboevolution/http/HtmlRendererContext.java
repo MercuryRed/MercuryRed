@@ -22,6 +22,11 @@
  */
 package org.loboevolution.http;
 
+import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JTextField;
 import org.loboevolution.common.BufferExceededException;
 import org.loboevolution.common.RecordedInputStream;
 import org.loboevolution.common.Strings;
@@ -52,13 +57,24 @@ import org.loboevolution.store.NavigationStore;
 import org.loboevolution.store.TabStore;
 import org.xml.sax.InputSource;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.Rectangle;
+import java.awt.Window;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-import java.io.*;
-import java.net.*;
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.Proxy;
+import java.net.SocketTimeoutException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Optional;

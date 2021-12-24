@@ -22,18 +22,23 @@
  */
 package org.loboevolution.html.dom.domimpl;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicInteger;
-
 import com.gargoylesoftware.css.dom.DOMException;
-import org.loboevolution.html.dom.*;
+import org.loboevolution.html.dom.HTMLCollection;
+import org.loboevolution.html.dom.HTMLElement;
+import org.loboevolution.html.dom.HTMLTableCaptionElement;
+import org.loboevolution.html.dom.HTMLTableElement;
+import org.loboevolution.html.dom.HTMLTableRowElement;
+import org.loboevolution.html.dom.HTMLTableSectionElement;
 import org.loboevolution.html.dom.filter.ElementFilter;
 import org.loboevolution.html.dom.nodeimpl.NodeListImpl;
 import org.loboevolution.html.node.Document;
 import org.loboevolution.html.node.Node;
 import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.html.renderstate.TableRenderState;
+
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**

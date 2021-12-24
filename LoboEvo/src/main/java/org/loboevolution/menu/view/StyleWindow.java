@@ -22,6 +22,12 @@ package org.loboevolution.menu.view;
 
 import com.jtattoo.plaf.lobo.LoboCheckBox;
 import com.jtattoo.plaf.lobo.LoboPanel;
+import javax.swing.AbstractButton;
+import javax.swing.BoxLayout;
+import javax.swing.ButtonModel;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.event.ChangeListener;
 import org.loboevolution.common.Strings;
 import org.loboevolution.component.BrowserFrame;
 import org.loboevolution.component.IBrowserPanel;
@@ -31,9 +37,7 @@ import org.loboevolution.html.gui.HtmlPanel;
 import org.loboevolution.http.NavigationManager;
 import org.loboevolution.store.StyleStore;
 
-import javax.swing.*;
-import javax.swing.event.ChangeListener;
-import java.awt.*;
+import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
 

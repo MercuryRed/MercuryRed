@@ -20,10 +20,10 @@
 
 package org.loboevolution.menu.view;
 
+import javax.swing.AbstractAction;
 import org.loboevolution.component.BrowserFrame;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 
 /**

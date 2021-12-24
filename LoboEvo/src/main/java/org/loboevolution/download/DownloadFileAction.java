@@ -20,9 +20,9 @@
 
 package org.loboevolution.download;
 
+import javax.swing.AbstractAction;
 import org.loboevolution.store.DownloadStore;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;

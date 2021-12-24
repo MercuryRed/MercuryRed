@@ -20,17 +20,11 @@
 
 package org.loboevolution.component;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
 import org.loboevolution.common.Strings;
 import org.loboevolution.component.input.Autocomplete;
 import org.loboevolution.html.dom.domimpl.HTMLDocumentImpl;
@@ -39,6 +33,12 @@ import org.loboevolution.http.NavigationManager;
 import org.loboevolution.img.ImageViewer;
 import org.loboevolution.pdf.PDFViewer;
 import org.loboevolution.store.TabStore;
+
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 
 /**
  * <p>GoAction class.</p>

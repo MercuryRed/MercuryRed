@@ -19,6 +19,7 @@
  */
 package org.loboevolution.html.renderer;
 
+import javax.swing.JScrollBar;
 import org.loboevolution.html.dom.HTMLHtmlElement;
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 import org.loboevolution.html.dom.nodeimpl.NodeImpl;
@@ -31,8 +32,11 @@ import org.loboevolution.html.renderstate.RenderThreadState;
 import org.loboevolution.http.HtmlRendererContext;
 import org.loboevolution.info.FloatingInfo;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Insets;
+import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 import java.util.NoSuchElementException;

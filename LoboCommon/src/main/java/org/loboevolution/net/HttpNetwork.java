@@ -20,14 +20,20 @@
 
 package org.loboevolution.net;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import org.loboevolution.common.Strings;
 import org.loboevolution.common.Urls;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.SocketTimeoutException;
 import java.net.URL;

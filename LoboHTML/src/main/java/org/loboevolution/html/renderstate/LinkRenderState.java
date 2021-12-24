@@ -28,7 +28,8 @@ import org.loboevolution.html.style.AbstractCSSProperties;
 import org.loboevolution.http.HtmlRendererContext;
 import org.loboevolution.laf.ColorFactory;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Cursor;
 import java.util.Optional;
 
 /**

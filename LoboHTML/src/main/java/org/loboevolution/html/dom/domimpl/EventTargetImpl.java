@@ -30,17 +30,25 @@ import org.loboevolution.html.dom.filter.TagNameFilter;
 import org.loboevolution.html.dom.nodeimpl.NodeImpl;
 import org.loboevolution.html.dom.nodeimpl.NodeListImpl;
 import org.loboevolution.html.js.Executor;
-import org.loboevolution.html.node.*;
+import org.loboevolution.html.node.Attr;
+import org.loboevolution.html.node.Element;
+import org.loboevolution.html.node.Node;
+import org.loboevolution.html.node.NodeList;
+import org.loboevolution.html.node.NodeType;
 import org.loboevolution.html.node.events.Event;
 import org.loboevolution.html.node.events.EventTarget;
 import org.loboevolution.html.style.CSSUtilities;
 import org.loboevolution.html.style.StyleSheetAggregator;
 import org.mozilla.javascript.Function;
-import org.w3c.dom.EntityReference;
 import org.w3c.dom.TypeInfo;
 import org.w3c.dom.events.EventException;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Stream;
 
 /**

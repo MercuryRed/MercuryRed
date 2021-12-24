@@ -19,12 +19,21 @@
  */
 package org.loboevolution.html.renderer.table;
 
-import org.loboevolution.html.dom.domimpl.*;
+
+import org.loboevolution.html.dom.domimpl.HTMLCollectionImpl;
+import org.loboevolution.html.dom.domimpl.HTMLDocumentImpl;
+import org.loboevolution.html.dom.domimpl.HTMLElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLTableCaptionElementImpl;
+import org.loboevolution.html.dom.domimpl.HTMLTableElementImpl;
 import org.loboevolution.html.dom.filter.CaptionFilter;
 import org.loboevolution.html.dom.filter.ColumnsFilter;
 import org.loboevolution.html.dom.nodeimpl.NodeListImpl;
 import org.loboevolution.html.node.Node;
-import org.loboevolution.html.renderer.*;
+import org.loboevolution.html.renderer.FrameContext;
+import org.loboevolution.html.renderer.RBlock;
+import org.loboevolution.html.renderer.RElement;
+import org.loboevolution.html.renderer.RenderableContainer;
+import org.loboevolution.html.renderer.RenderableSpot;
 import org.loboevolution.html.renderer.info.RBlockInfo;
 import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.html.style.AbstractCSSProperties;
@@ -35,9 +44,18 @@ import org.loboevolution.http.UserAgentContext;
 import org.loboevolution.info.CaptionSizeInfo;
 import org.loboevolution.info.SizeInfo;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Insets;
+import java.awt.Rectangle;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
-import java.util.*;
+import java.util.Map;
+
 
 class TableMatrix {
 

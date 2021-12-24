@@ -21,7 +21,6 @@
 package org.loboevolution.html.renderstate;
 
 import org.loboevolution.common.Strings;
-import org.loboevolution.html.CSSValues;
 import org.loboevolution.html.dom.domimpl.HTMLElementImpl;
 import org.loboevolution.html.node.css.CSS3Properties;
 import org.loboevolution.html.style.FontValues;
@@ -30,7 +29,9 @@ import org.loboevolution.laf.FontFactory;
 import org.loboevolution.laf.FontKey;
 import org.loboevolution.laf.LAFType;
 
-import java.awt.*;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Toolkit;
 import java.util.HashMap;
 import java.util.Map;
 
