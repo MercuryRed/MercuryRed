@@ -7,12 +7,14 @@ import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.BodyDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
+import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.body.TypeDeclaration;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
+import java.util.HashSet;
 
 import static com.github.javaparser.ast.Modifier.createModifierList;
 
@@ -56,46 +58,41 @@ public class Refactor {
 
         originalDepCUs.put(clsName, cls.getPrimaryType().get());
 
-        TypeDeclaration newInterface = new ClassOrInterfaceDeclaration(createModifierList(Modifier.Keyword.PUBLIC), true, clsName);
+        TypeDeclaration newInterface = classToInterface(cls.getPrimaryType().get(), null);
 
         generatedDepInterfaces.put(clsName, cls.getPrimaryType().get());
 
         System.out.println(cls.getPrimaryType().get().getFullyQualifiedName().get());
 
-        System.out.println(
-                cls.getPrimaryType()
-                        .get()
+        chestbuster = chestbuster + extractChestbusterConstructors(cls.getPrimaryType().get());
+
+        System.out.println(newInterface);
+
+        System.out.println(chestbuster);
+    }
+
+    // TODO type of chestbuster: DevNull, Swing or Skija
+    static String extractChestbusterConstructors(TypeDeclaration<?> cls) {
+        BodyDeclaration[] constructors =
+                cls
                         .getMembers()
                         .stream()
-                        .filter(bodyDeclaration -> bodyDeclaration.isMethodDeclaration())
-                        .toArray()[0]);
+                        .filter(bodyDeclaration -> bodyDeclaration.isConstructorDeclaration())
+                        .toArray(BodyDeclaration[]::new);
 
-        // todo ... port methods into teh interface
-
-
-
-        BodyDeclaration[] constructors =
-                cls.getPrimaryType()
-                .get()
-                .getMembers()
-                .stream()
-                .filter(bodyDeclaration -> bodyDeclaration.isConstructorDeclaration())
-                .toArray(BodyDeclaration[]::new);
-
-        System.out.println(constructors[0]);
-
+        String code = "";
 
         if (constructors.length == 0) {
-        // This should be based on constructors
-        chestbuster = chestbuster +
-                "\n" +
-                "public static " + clsName + " create" + clsName + "() {\n" +
-                "  return null;\n" +
-                "}\n";
+            // This should be based on constructors
+           return
+                    "\n" +
+                    "public static " + cls.getNameAsString() + " create" + cls.getNameAsString() + "() {\n" +
+                    "  return null;\n" +
+                    "}\n";
         } else {
             for (BodyDeclaration cnstr: constructors) {
-                String code = "\n" +
-                        "public static " + clsName + " create" + clsName + "(";
+                code = code + "\n" +
+                        "public static " + cls.getNameAsString() + " create" + cls.getNameAsString() + "(";
 
                 NodeList<Parameter> params = cnstr.asConstructorDeclaration().getParameters();
 
@@ -103,7 +100,7 @@ public class Refactor {
                     code = code + params.get(i).getTypeAsString() + " " + params.get(i).getNameAsString();
                     if (i < params.size() - 1) {
                         code = code + ", ";
-                   }
+                    }
                 }
 
                 code = code + ") {\n";
@@ -111,12 +108,49 @@ public class Refactor {
                         "  return null;\n" +
                         "}\n";
 
-                chestbuster = chestbuster + code;
             }
+            return code;
+        }
+    }
+
+    // if filter is null, no filter
+    // if a method is used with multiple param names, just extract all of them
+    static TypeDeclaration classToInterface(TypeDeclaration<?> cls, HashSet<String> filterMethods) {
+        TypeDeclaration newInterface = new ClassOrInterfaceDeclaration(
+                createModifierList(Modifier.Keyword.PUBLIC),
+                true,
+                cls.getNameAsString());
+
+        MethodDeclaration[] methods =
+                cls
+                        .getMembers()
+                        .stream()
+                        .filter(bodyDeclaration -> bodyDeclaration.isMethodDeclaration())
+                        .toArray(MethodDeclaration[]::new);
+
+        for (MethodDeclaration method: methods) {
+
+            MethodDeclaration decl = newInterface.addMethod(method.asMethodDeclaration().getNameAsString());
+            decl.setParameters(method.getParameters());
+            decl.setBody(null);
+            decl.setType(method.getType());
         }
 
-        System.out.println(newInterface);
+        return newInterface;
+    };
 
-        System.out.println(chestbuster);
-    }
+
+    // MercuryRedSettings: RenderEngine: Null, Swing, Skija
+
+    // createFoo():
+    //  return new MyFoo(new Foo())
+
+    // Foo is interface
+    // MyFoo is the hidden class, impl Foo
+    // MyFoo has private awt.Foo _foo member
+
+    // this way we can test in between engines
+    // and android uses the Null one
+    // but w can test locally with Swing, and implement Skija for future and do SxS testing between Skija and Swing
+    // with extract image ..
 }
