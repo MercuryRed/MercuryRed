@@ -69,9 +69,17 @@ public class Refactor {
         System.out.println(newInterface);
 
         System.out.println(chestbuster);
+
+
+        // TODO add IRenderEngine
+        // the 3 chestbusters will implement IRenderEngine
+
+        // TODO create the 3 types of chestbusters ... fully qualified
+        // com.MercuryRed.UI - package
+        // New Foo() -> com.MercuryRed.UI.RenderEngines.Main.createFoo() ...
     }
 
-    // TODO type of chestbuster: DevNull, Swing or Skija
+    // TODO type of chestbuster: DevNull, Swing or Skija - also one param will just generate the IRenderInterface
     static String extractChestbusterConstructors(TypeDeclaration<?> cls) {
         BodyDeclaration[] constructors =
                 cls
