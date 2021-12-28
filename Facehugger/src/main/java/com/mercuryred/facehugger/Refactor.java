@@ -7,6 +7,7 @@ import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.BodyDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
+import com.github.javaparser.ast.body.ConstructorDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.body.TypeDeclaration;
@@ -179,6 +180,17 @@ public class Refactor {
             newEntity.addField(
                     cls.getFullyQualifiedName().get(), "_" + cls.getNameAsString(), Modifier.Keyword.PUBLIC
             );
+
+            // todo  go over all constructors ...
+            // create Cstr(params) as _Foo = new awt.Foo(params)
+            // or have the factory create the foo, and pass it here .. I think better ...
+            // then the wrapper classes only have to deal with one constructor ...
+
+            // the factory will do _foo = new Foo(); return myFoo(_foo);
+            // and the awt supid stuff stays contained ... does not need to polute skija ...
+
+            ConstructorDeclaration cd = newEntity.addConstructor(Modifier.Keyword.PUBLIC);
+            // cd.setParameters(); // todo .. the can
         }
 
         MethodDeclaration[] methods =
