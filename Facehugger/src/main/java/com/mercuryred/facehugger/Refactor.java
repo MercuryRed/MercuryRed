@@ -10,6 +10,12 @@ import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.body.TypeDeclaration;
+import com.github.javaparser.ast.expr.Expression;
+import com.github.javaparser.ast.expr.MethodCallExpr;
+import com.github.javaparser.ast.expr.NameExpr;
+import com.github.javaparser.ast.stmt.BlockStmt;
+import com.github.javaparser.ast.stmt.ExpressionStmt;
+import com.github.javaparser.ast.stmt.ReturnStmt;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -164,10 +170,16 @@ public class Refactor {
     // if a method is used with multiple param names, just extract all of them
     // todo ... create class wrapper ...
     static TypeDeclaration cloneClass(TypeDeclaration<?> cls, HashSet<String> filterMethods, boolean asInterface, boolean asDevNull, boolean asWrapper) {
-        TypeDeclaration newInterface = new ClassOrInterfaceDeclaration(
+        TypeDeclaration newEntity = new ClassOrInterfaceDeclaration(
                 createModifierList(Modifier.Keyword.PUBLIC),
                 asInterface,
                 cls.getNameAsString());
+
+        if (asWrapper) {
+            newEntity.addField(
+                    cls.getFullyQualifiedName().get(), "_" + cls.getNameAsString(), Modifier.Keyword.PUBLIC
+            );
+        }
 
         MethodDeclaration[] methods =
                 cls
@@ -178,11 +190,43 @@ public class Refactor {
 
         for (MethodDeclaration method: methods) {
 
-            MethodDeclaration decl = newInterface.addMethod(method.asMethodDeclaration().getNameAsString());
+            MethodDeclaration decl = newEntity.addMethod(method.asMethodDeclaration().getNameAsString());
             decl.setParameters(method.getParameters());
+
+            Expression[] params = new Expression[method.getParameters().size()];
+
+            for (int ip = 0; ip < params.length; ip++) {
+                params[ip] = new NameExpr(method.getParameters().get(ip).getName());
+            }
+
             if (asInterface) {
                 decl.setBody(null);
             } else if (asWrapper) {
+                if (method.getType().isVoidType()) {
+                    decl.setBody(
+                            new BlockStmt(
+                                    new NodeList(
+                                            new ExpressionStmt(
+                                                    new MethodCallExpr(
+                                                            "_" + cls.getNameAsString() + "." + method.asMethodDeclaration().getNameAsString(),
+                                                            params)
+                                            )
+                                    )
+                            )
+                    );
+                } else {
+                    decl.setBody(
+                            new BlockStmt(
+                                    new NodeList(
+                                            new ReturnStmt(
+                                                    new MethodCallExpr(
+                                                            "_" + cls.getNameAsString() + "." + method.asMethodDeclaration().getNameAsString(),
+                                                            params)
+                                            )
+                                    )
+                            )
+                    );
+                }
                 // todo add _class.foo(...)
             } else if (asDevNull) {
                 // nothing ?
@@ -190,7 +234,7 @@ public class Refactor {
             decl.setType(method.getType());
         }
 
-        return newInterface;
+        return newEntity;
     };
 
 
