@@ -11,12 +11,15 @@ import com.github.javaparser.ast.body.ConstructorDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.body.TypeDeclaration;
+import com.github.javaparser.ast.expr.AssignExpr;
 import com.github.javaparser.ast.expr.Expression;
 import com.github.javaparser.ast.expr.MethodCallExpr;
 import com.github.javaparser.ast.expr.NameExpr;
 import com.github.javaparser.ast.stmt.BlockStmt;
 import com.github.javaparser.ast.stmt.ExpressionStmt;
 import com.github.javaparser.ast.stmt.ReturnStmt;
+import com.github.javaparser.ast.stmt.ThrowStmt;
+import com.github.javaparser.ast.type.ClassOrInterfaceType;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -75,11 +78,9 @@ public class Refactor {
 
         chestbuster = chestbuster + extractChestbusterConstructors(cls.getPrimaryType().get(), false, null);
 
-        chestbuster = chestbuster + extractChestbusterConstructors(cls.getPrimaryType().get(), true, cls.getPrimaryType().get().getFullyQualifiedName().get());
-
         chestbuster = chestbuster + extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
 
-        chestbuster = chestbuster + extractChestbusterConstructors(cls.getPrimaryType().get(), true, "com.mercuryred.devnull." + cls.getPrimaryType().get().getNameAsString());
+        chestbuster = chestbuster + extractChestbusterConstructors(cls.getPrimaryType().get(), true, "com.mercuryred.awt." + cls.getPrimaryType().get().getNameAsString());
 
 
         System.out.println(newInterface);
@@ -117,7 +118,7 @@ public class Refactor {
                             (implement ? "public " : "") + cls.getNameAsString() + " create" + cls.getNameAsString() + "()";
            if (implement) {
                code = code + " {\n" +
-                       "  return " + (factory == null ? "null" : "new " + factory + "()") + ";\n" +
+                       "  return " + (factory == null ? "null" : "new " + factory + "(new " + cls.getFullyQualifiedName().get() + "())") + ";\n" +
                        "}\n";
            } else {
                code = code + ";";
@@ -136,7 +137,7 @@ public class Refactor {
                     }
                 }
 
-                code = code + ")";
+                code = code + "))";
                 if (implement) {
                     code = code + " {\n" +
                             "  return ";
@@ -144,7 +145,7 @@ public class Refactor {
                     if (factory == null) {
                         code = code + "null";
                     } else {
-                        code = code + "new " + factory + "(";
+                        code = code + "new " + factory + "(new " + cls.getFullyQualifiedName().get() + "(";
 
                         for (int i = 0 ; i < params.size(); i++) {
                             code = code + params.get(i).getNameAsString();
@@ -153,7 +154,7 @@ public class Refactor {
                             }
                         }
 
-                        code = code + ")";
+                        code = code + "))";
                     }
 
                     code = code + ";\n" +
@@ -170,7 +171,7 @@ public class Refactor {
     // if filter is null, no filter
     // if a method is used with multiple param names, just extract all of them
     // todo ... create class wrapper ...
-    static TypeDeclaration cloneClass(TypeDeclaration<?> cls, HashSet<String> filterMethods, boolean asInterface, boolean asDevNull, boolean asWrapper) {
+    static TypeDeclaration cloneClass(TypeDeclaration<?> cls, HashSet<String> filterMethods, boolean asInterface, boolean asNyi, boolean asWrapper) {
         TypeDeclaration newEntity = new ClassOrInterfaceDeclaration(
                 createModifierList(Modifier.Keyword.PUBLIC),
                 asInterface,
@@ -189,8 +190,24 @@ public class Refactor {
             // the factory will do _foo = new Foo(); return myFoo(_foo);
             // and the awt supid stuff stays contained ... does not need to polute skija ...
 
-            ConstructorDeclaration cd = newEntity.addConstructor(Modifier.Keyword.PUBLIC);
-            // cd.setParameters(); // todo .. the can
+            ConstructorDeclaration cd = newEntity.addConstructor(Modifier.Keyword.PRIVATE);
+            cd.setParameters(NodeList.nodeList(
+                    new Parameter(new ClassOrInterfaceType(cls.getFullyQualifiedName().get()), "value")
+            ));
+
+            cd.setBody(
+                    new BlockStmt(NodeList.nodeList(
+                            new ExpressionStmt(
+                                    new AssignExpr(
+                                            new NameExpr("_" + cls.getNameAsString()),
+                                            new NameExpr("value"),
+                                            AssignExpr.Operator.ASSIGN
+                                    )
+                            )
+
+                    ))
+
+            );
         }
 
         MethodDeclaration[] methods =
@@ -239,9 +256,20 @@ public class Refactor {
                             )
                     );
                 }
-                // todo add _class.foo(...)
-            } else if (asDevNull) {
-                // nothing ?
+            } else if (asNyi) {
+                decl.setBody(
+                        new BlockStmt(
+                                new NodeList(
+                                        new ThrowStmt(
+                                                new MethodCallExpr("com.mercuryred.nyi.ReportNyi")
+//                                                new ExplicitConstructorInvocationStmt(
+//                                                        false,
+//                                                        new NameExpr("NotYetImplementedException"),
+//                                                        new NodeList())
+                                        )
+                                )
+                        )
+                );
             }
             decl.setType(method.getType());
         }
