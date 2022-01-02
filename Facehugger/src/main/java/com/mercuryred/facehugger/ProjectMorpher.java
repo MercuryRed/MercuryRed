@@ -95,11 +95,11 @@ public class ProjectMorpher
             // e.g. /.git
             if (filePath.toAbsolutePath().toString().contains("/.")) continue;
 
-            ProcessJavaFile(filePath);
+            ProcessJavaFile(filePath, usage);
         }
     }
 
-    static void ProcessJavaFile(Path filePath) throws IOException {
+    static void ProcessJavaFile(Path filePath, HashMap<String, HashSet<String>> usage) throws IOException {
         String code = new String(Files.readAllBytes(filePath), StandardCharsets.UTF_8);
 
         char[] newCode = new char[code.length() * 2 + 100];
@@ -112,8 +112,8 @@ public class ProjectMorpher
         {
             if (ch == '\r' || ch == '\n')
             {
-                line = rebuildLineImports(line);
-                line = rebuildLineNews(line);
+                line = rebuildLineImports(line, usage);
+                line = rebuildLineNews(line);  // todo ... minimize contructors to created? we could just manually remove also
                 for (char x: line.toCharArray())
                 {
                     newCode[len++] = x;
@@ -158,7 +158,7 @@ public class ProjectMorpher
 
 
     // rebuilds line, also copied the target file from source folder to dest folder
-    private static String rebuildLineImports(String line) throws FileNotFoundException, UnsupportedEncodingException {
+    private static String rebuildLineImports(String line, HashMap<String, HashSet<String>> usage) throws FileNotFoundException, UnsupportedEncodingException {
         if (line.length() == 0) return line;
         if (!line.startsWith("import ")) {
             // todo ... line replace new foo(...) with ... factory create
@@ -214,7 +214,11 @@ public class ProjectMorpher
                     return line;
                 }
 
-                Egg egg = Refactor.ProcessLibFile(from.toString());
+                if (!usage.containsKey(from.toString())) {
+                    usage.put(from.toString(), new HashSet<String>());
+                }
+
+                Egg egg = Refactor.ProcessLibFile(from.toString(), usage.get(from.toString()));
 
                 if (egg != null) {
                     ImplantEgg(egg, relPath);

@@ -36,7 +36,7 @@ public class Refactor {
     // todo Chestbuster.createFoo() -> constructors
     // Facehugger .... generates what ...
 
-    static Egg ProcessLibFile(String name) throws FileNotFoundException {
+    static Egg ProcessLibFile(String name, HashSet<String> usage) throws FileNotFoundException {
 
         Egg egg = new Egg();
 
@@ -59,10 +59,10 @@ public class Refactor {
 
         originalDepCUs.put(clsName, cls.getPrimaryType().get());
 
-        egg.newInterface = cloneClass(cls.getPrimaryType().get(), null, true, false, false);
-        egg.swingWrapper = cloneClass(cls.getPrimaryType().get(), null, false, false, true);
-        egg.devnull = cloneClass(cls.getPrimaryType().get(), null, false, true, false);
-        egg.skija = cloneClass(cls.getPrimaryType().get(), null, false, true, false);
+        egg.newInterface = cloneClass(cls.getPrimaryType().get(), usage, true, false, false);
+        egg.swingWrapper = cloneClass(cls.getPrimaryType().get(), usage, false, false, true);
+        egg.devnull = cloneClass(cls.getPrimaryType().get(), usage, false, true, false);
+        egg.skija = cloneClass(cls.getPrimaryType().get(), usage, false, true, false);
 
         generatedDepInterfaces.put(clsName, cls.getPrimaryType().get());
 
@@ -157,7 +157,7 @@ public class Refactor {
     // if filter is null, no filter
     // if a method is used with multiple param names, just extract all of them
     // todo ... create class wrapper ...
-    static TypeDeclaration cloneClass(TypeDeclaration<?> cls, HashSet<String> filterMethods, boolean asInterface, boolean asNyi, boolean asWrapper) {
+    static TypeDeclaration cloneClass(TypeDeclaration<?> cls, HashSet<String> usage, boolean asInterface, boolean asNyi, boolean asWrapper) {
         TypeDeclaration newEntity = new ClassOrInterfaceDeclaration(
                 createModifierList(Modifier.Keyword.PUBLIC),
                 asInterface,
@@ -204,6 +204,9 @@ public class Refactor {
                         .toArray(MethodDeclaration[]::new);
 
         for (MethodDeclaration method: methods) {
+
+            // todo impl usage extract first .... 
+            // if (!usage.contains(method.asMethodDeclaration().getNameAsString())) continue;
 
             MethodDeclaration decl = newEntity.addMethod(method.asMethodDeclaration().getNameAsString());
             decl.setParameters(method.getParameters());
