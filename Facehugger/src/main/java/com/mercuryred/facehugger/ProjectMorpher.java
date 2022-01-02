@@ -49,8 +49,6 @@ public class ProjectMorpher
             // e.g. /.git
             if (filePath.toAbsolutePath().toString().contains("/.")) continue;
 
-            System.out.println(filePath.toAbsolutePath().toString());
-
             ProcessJavaFile(filePath);
         }
     }
@@ -153,8 +151,6 @@ public class ProjectMorpher
 
                 String dir = MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH + dest.replace(".", "\\") + "\\" + subPackage.replace(".", "\\");
 
-                System.err.println("Rebuilding " + from + " " + to);
-
                 // todo
                 new File(dir).mkdirs();
 
@@ -175,7 +171,6 @@ public class ProjectMorpher
                 Egg egg = Refactor.ProcessLibFile(from.toString());
 
                 if (egg != null) {
-                    System.out.println(egg.renderEngineInterface);
                     ImplantEgg(egg, relPath);
                 }
 
@@ -191,11 +186,31 @@ public class ProjectMorpher
         return line;
     }
 
+    private static String mapPkg(String importFullName) {
+        int i = -1;
+        for (String pkg: packages) {
+            i++;
+            String dest = dests[i];
+
+            if (importFullName.equals(pkg)) {
+                return dest;
+            }
+
+            if (importFullName.startsWith(pkg + ".")) {
+                String subImport = importFullName.substring(pkg.length() + 1);
+                return dest + "." + subImport;
+            }
+        }
+        return null;
+    }
+
     private static void ImplantEgg(Egg egg, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
-        ImplantCode(egg.newInterface, true, "interfaces", egg.pkg, MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH, relPath);
-        ImplantCode(egg.devnull, false, "devnull", egg.pkg, MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH, relPath);
-        ImplantCode(egg.swingWrapper, false, "swing", egg.pkg, MERCURY_RED_RENDER_ENGINE_SWING_PATH, relPath);
-        ImplantCode(egg.skija, false, "skija", egg.pkg, MERCURY_RED_RENDER_ENGINE_SKIJA_PATH, relPath);
+        String pkg = mapPkg(egg.pkg);
+
+        ImplantCode(egg.newInterface, true, "interfaces", pkg, MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH, relPath);
+        ImplantCode(egg.devnull, false, "devnull", pkg, MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH, relPath);
+        ImplantCode(egg.swingWrapper, false, "swing", pkg, MERCURY_RED_RENDER_ENGINE_SWING_PATH, relPath);
+        ImplantCode(egg.skija, false, "skija", pkg, MERCURY_RED_RENDER_ENGINE_SKIJA_PATH, relPath);
     }
 
     // TODO determine minimum amount of methods to be generated, remove unused ones!
@@ -205,13 +220,11 @@ public class ProjectMorpher
         new File(new File(host + relPath).getParent()).mkdirs();
 
         PrintWriter writer = new PrintWriter(host + relPath, "UTF-8");
-        writer.println("package " + pkgBase + "." + pkg + ";");
+        writer.println("package com.mercuryred.render." + pkgBase + "." + pkg + ";");
         writer.println();
-        if (!isInterface) {
-            writer.println("import com.mercuryred.render.ui.*;");
-            writer.println("import com.mercuryred.render.uiplus.*;");
-            writer.println("import com.mercuryred.render.imageio.*;");
-        }
+
+        // todo the egg should list classes imported, along with packages
+
         writer.println();
         writer.println();
         writer.println(code);

@@ -40,7 +40,6 @@ public class Refactor {
 
         Egg egg = new Egg();
 
-        System.out.println(name);
         JavaParser jp = new JavaParser();
 
         ParseResult<CompilationUnit> cu = jp.parse(new File(name));
