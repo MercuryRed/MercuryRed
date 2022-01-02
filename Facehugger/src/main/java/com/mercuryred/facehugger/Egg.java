@@ -3,6 +3,8 @@ package com.mercuryred.facehugger;
 import com.github.javaparser.ast.body.TypeDeclaration;
 
 public class Egg {
+    public String pkg;
+
     public TypeDeclaration newInterface;
     public TypeDeclaration swingWrapper;
     public TypeDeclaration devnull;

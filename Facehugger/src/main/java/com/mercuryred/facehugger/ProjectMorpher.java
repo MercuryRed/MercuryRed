@@ -192,19 +192,26 @@ public class ProjectMorpher
     }
 
     private static void ImplantEgg(Egg egg, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
-        ImplantCode(egg.newInterface, MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH, relPath);
-        ImplantCode(egg.devnull, MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH, relPath);
-        ImplantCode(egg.swingWrapper, MERCURY_RED_RENDER_ENGINE_SWING_PATH, relPath);
-        ImplantCode(egg.skija, MERCURY_RED_RENDER_ENGINE_SKIJA_PATH, relPath);
+        ImplantCode(egg.newInterface, true, "interfaces", egg.pkg, MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH, relPath);
+        ImplantCode(egg.devnull, false, "devnull", egg.pkg, MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH, relPath);
+        ImplantCode(egg.swingWrapper, false, "swing", egg.pkg, MERCURY_RED_RENDER_ENGINE_SWING_PATH, relPath);
+        ImplantCode(egg.skija, false, "skija", egg.pkg, MERCURY_RED_RENDER_ENGINE_SKIJA_PATH, relPath);
     }
 
-    private static void ImplantCode(TypeDeclaration type, String host, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
+    // TODO determine minimum amount of methods to be generated, remove unused ones!
+    private static void ImplantCode(TypeDeclaration type, boolean isInterface, String pkgBase, String pkg, String host, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
         String code = type.toString();
 
         new File(new File(host + relPath).getParent()).mkdirs();
 
         PrintWriter writer = new PrintWriter(host + relPath, "UTF-8");
-        writer.println("package TODO;");
+        writer.println("package " + pkgBase + "." + pkg + ";");
+        writer.println();
+        if (!isInterface) {
+            writer.println("import com.mercuryred.render.ui.*;");
+            writer.println("import com.mercuryred.render.uiplus.*;");
+            writer.println("import com.mercuryred.render.imageio.*;");
+        }
         writer.println();
         writer.println();
         writer.println(code);

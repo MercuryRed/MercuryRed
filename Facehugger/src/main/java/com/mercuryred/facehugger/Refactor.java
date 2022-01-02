@@ -67,8 +67,6 @@ public class Refactor {
 
         generatedDepInterfaces.put(clsName, cls.getPrimaryType().get());
 
-        System.out.println(cls.getPrimaryType().get().getFullyQualifiedName().get());
-
         egg.renderEngineInterface = extractChestbusterConstructors(cls.getPrimaryType().get(), false, null);
 
         egg.renderEngineDevnull = extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
@@ -83,6 +81,8 @@ public class Refactor {
         // TODO create the 3 types of chestbusters ... fully qualified
         // com.mercuryred.ui - package
         // New Foo() -> com.mercuryred.ui.RenderEngines.Get().createFoo() ...
+
+        egg.pkg = cls.getPackageDeclaration().get().getNameAsString();
 
         return egg;
     }
