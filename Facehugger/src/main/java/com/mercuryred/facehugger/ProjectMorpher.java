@@ -23,6 +23,12 @@ public class ProjectMorpher
     static final String MERCURY_RED_RENDER_ENGINE_SWING_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "swing\\";
     static final String MERCURY_RED_RENDER_ENGINE_SKIJA_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "skija\\";
 
+    static String factoryInterfaces = "";
+    static String factoryDevnull = "";
+    static String factorySkija = "";
+    static String factorySwing = "";
+
+
     public static void main(String[] args) {
         //two passes, to import only used methods, and remove any unused methods to limit amount of boilerplate generated
         // ? usage = VisitDirectory(args[0], args[1]);
@@ -32,8 +38,11 @@ public class ProjectMorpher
             e.printStackTrace();
         }
 
+        System.out.println(factoryInterfaces);
+        System.out.println(factoryDevnull);
+        System.out.println(factorySkija);
+        System.out.println(factorySwing);
 
-        // todo ... call with a tool on *.java files recursively
     }
 
     static void MorphDirectory() throws IOException {
@@ -172,10 +181,13 @@ public class ProjectMorpher
 
                 if (egg != null) {
                     ImplantEgg(egg, relPath);
+
+                    factoryInterfaces = factoryInterfaces + egg.renderEngineInterface;
+                    factoryDevnull = factoryDevnull + egg.renderEngineDevnull;
+                    factorySkija = factorySkija + egg.renderEngineSkija;
+                    factorySwing = factorySwing + egg.renderEngineSwing;
                 }
 
-                // todo ... create interface
-                // call refactor ...
 
                 return line; // todo modify
             }
