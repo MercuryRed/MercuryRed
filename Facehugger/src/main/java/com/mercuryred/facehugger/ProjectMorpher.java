@@ -167,7 +167,11 @@ public class ProjectMorpher
                     return line;
                 }
 
-                Refactor.ProcessLibFile(from.toString());
+                Egg egg = Refactor.ProcessLibFile(from.toString());
+
+                if (egg != null) {
+                    System.out.println(egg.renderEngineInterface);
+                }
 
                 // todo ... create interface
                 // call refactor ...

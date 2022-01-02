@@ -32,13 +32,13 @@ public class Refactor {
     static HashMap<String, TypeDeclaration> originalDepCUs = new HashMap<String, TypeDeclaration> ();
     static HashMap<String, TypeDeclaration> generatedDepInterfaces = new HashMap<String, TypeDeclaration> ();
 
-    static String chestbuster = "";
-
     // todo factory imports
     // todo Chestbuster.createFoo() -> constructors
     // Facehugger .... generates what ...
 
-    static void ProcessLibFile(String name) throws FileNotFoundException {
+    static Egg ProcessLibFile(String name) throws FileNotFoundException {
+
+        Egg egg = new Egg();
 
         System.out.println(name);
         JavaParser jp = new JavaParser();
@@ -52,7 +52,7 @@ public class Refactor {
             if (cls.getPrimaryType().get().getFullyQualifiedName().get().equals(
                     originalDepCUs.get(clsName).getFullyQualifiedName().get())
             ) {
-                return;
+                return null;
             }
             // else
             throw new RuntimeException("Class name collision: " + clsName);
@@ -60,29 +60,22 @@ public class Refactor {
 
         originalDepCUs.put(clsName, cls.getPrimaryType().get());
 
-        TypeDeclaration newInterface = cloneClass(cls.getPrimaryType().get(), null, true, false, false);
-        TypeDeclaration wrapper = cloneClass(cls.getPrimaryType().get(), null, false, false, true);
-        TypeDeclaration devNull = cloneClass(cls.getPrimaryType().get(), null, false, true, false);
+        egg.newInterface = cloneClass(cls.getPrimaryType().get(), null, true, false, false);
+        egg.swingWrapper = cloneClass(cls.getPrimaryType().get(), null, false, false, true);
+        egg.devnull = cloneClass(cls.getPrimaryType().get(), null, false, true, false);
+        egg.skija = cloneClass(cls.getPrimaryType().get(), null, false, true, false);
 
         generatedDepInterfaces.put(clsName, cls.getPrimaryType().get());
 
         System.out.println(cls.getPrimaryType().get().getFullyQualifiedName().get());
 
-        chestbuster = chestbuster + extractChestbusterConstructors(cls.getPrimaryType().get(), false, null);
+        egg.renderEngineInterface = extractChestbusterConstructors(cls.getPrimaryType().get(), false, null);
 
-        chestbuster = chestbuster + extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
+        egg.renderEngineDevnull = extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
 
-        chestbuster = chestbuster + extractChestbusterConstructors(cls.getPrimaryType().get(), true, "com.mercuryred.awt." + cls.getPrimaryType().get().getNameAsString());
+        egg.renderEngineSkija = extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
 
-
-        System.out.println(newInterface);
-
-        System.out.println(devNull);
-
-        System.out.println(wrapper);
-
-        System.out.println(chestbuster);
-
+        egg.renderEngineSwing = extractChestbusterConstructors(cls.getPrimaryType().get(), true, "com.mercuryred.awt." + cls.getPrimaryType().get().getNameAsString());
 
         // TODO add IRenderEngine
         // the 3 chestbusters will implement IRenderEngine
@@ -90,6 +83,8 @@ public class Refactor {
         // TODO create the 3 types of chestbusters ... fully qualified
         // com.mercuryred.ui - package
         // New Foo() -> com.mercuryred.ui.RenderEngines.Get().createFoo() ...
+
+        return egg;
     }
 
     // TODO type of chestbuster: DevNull, Swing or Skija - also one param will just generate the IRenderInterface
@@ -129,7 +124,7 @@ public class Refactor {
                     }
                 }
 
-                code = code + "))";
+                code = code + ")";
                 if (implement) {
                     code = code + " {\n" +
                             "  return ";
