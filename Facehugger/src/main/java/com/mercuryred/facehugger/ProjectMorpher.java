@@ -1,46 +1,62 @@
 package com.mercuryred.facehugger;
 
 import java.io.Console;
-import java.io.FileNotFoundException;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class ProjectMorpher
 {
+    static final String FROM = "c:\\12\\Android\\MercuryRedDevNull\\";
+    static final String TO = "c:\\12\\Android\\MercuryRedDest\\";
+
+
     public static void main(String[] args) {
         //two passes, to import only used methods, and remove any unused methods to limit amount of boilerplate generated
-        ? usage = VisitDirectory(args[0], args[1]);
+        // ? usage = VisitDirectory(args[0], args[1]);
         MorphDirectory(args[0], args[1], usage);
+
+
+
+        // todo ... call with a tool on *.java files recursively
     }
 
-        const string FROM = @"c:\12\Android\MercuryRedDevNull\";
-        const string TO = @"c:\12\Android\MercuryRedDest\";
+    static void MorphDirectory(String codebasePath, String libsToClonePath) throws IOException {
 
-    // todo ... call with a tool on *.java files recursively
+        Path dir = Paths.get(codebasePath);
+        Path[] filePaths = Files.walk(dir).toArray(Path[]::new);
 
-    static void Main(string[] args)
-    {
-        string[] filenames = Directory.GetFiles(@"c:\12\Android\MercuryRed\", "*.java", SearchOption.AllDirectories);
-
-        foreach (string filename in filenames)
+        for (Path filePath: filePaths)
         {
+            if (!filePath.endsWith(".java")
+                    // e.g. /.git
+                    || filePath.toAbsolutePath().toString().contains("\\.")
+                    || filePath.toAbsolutePath().toString().contains("/.")) continue;
+
             //Console.WriteLine(filename);
-            ProcessJavaFile(filename);
+            ProcessJavaFile(filePath);
         }
     }
 
-    static void ProcessJavaFile(string filename)
-    {
-        string code = File.ReadAllText(filename);
+    static void ProcessJavaFile(Path filePath) throws IOException {
+        String code = new String(Files.readAllBytes(filePath), StandardCharsets.UTF_8);
 
-        char[] newCode = new char[code.Length * 2 + 100];
+        char[] newCode = new char[code.length() * 2 + 100];
         int len = 0;
 
+        char[] codeChars = code.toCharArray();
+
         String line = "";
-        foreach (char ch in code)
+        for (char ch: codeChars)
         {
             if (ch == '\r' || ch == '\n')
             {
-                line = rebuildLine(line);
-                foreach (char x in line)
+                line = rebuildLineImports(line);
+                line = rebuildLineNews(line);
+                for (char x: line.toCharArray())
                 {
                     newCode[len++] = x;
                 }
@@ -53,7 +69,7 @@ public class ProjectMorpher
         }
 
         // flush last line
-        foreach (char x in line)
+        for (char x: line.toCharArray())
         {
             newCode[len++] = x;
         }
@@ -62,14 +78,19 @@ public class ProjectMorpher
         // File.WriteAllText(filename, new string(newCode, 0, len));
     }
 
-    static string[] packages = new string[]
+    private static String rebuildLineNews(String line) {
+        return null;
+    }
+
+
+    static String[] packages = new String[]
             {
                     "java.awt",
                     "javax.swing",
                     "javax.imageio",
             };
 
-    static string[] dests = new string[]
+    static String[] dests = new String[]
             {
                     "com.mercuryred.ui",
                     "com.mercuryred.uiplus",
@@ -78,41 +99,42 @@ public class ProjectMorpher
 
 
     // rebuilds line, also copied the target file from source folder to dest folder
-    private static string rebuildLine(string line)
+    private static String rebuildLineImports(String line)
     {
-        if (line.Length == 0) return line;
-        if (!line.StartsWith("import ")) return line;
+        if (line.length() == 0) return line;
+        if (!line.startsWith("import ")) return line;
 
-        string importFullName = line.Substring("import ".Length);
-        importFullName = importFullName.Trim(' ');
-        importFullName = importFullName.Trim(';');
-        importFullName = importFullName.Trim(' ');
+        String importFullName = line.substring("import ".length());
+        importFullName = importFullName.trim();
+        importFullName = importFullName.replaceAll(";$", "");
+        importFullName = importFullName.trim();
 
         // special case, importing static constants, will handle manually
-        if (importFullName.EndsWith("*")) return line;
+        if (importFullName.endsWith("*")) return line;
 
         int i = -1;
-        foreach (string package in packages)
+        for (String pkg: packages)
         {
             i++;
-            string dest = dests[i];
+            String dest = dests[i];
 
-            if (importFullName.StartsWith(package + "."))
+            if (importFullName.startsWith(pkg + "."))
             {
-                string subImport = importFullName.Substring(package.Length + 1);
-                int index = subImport.LastIndexOf(".");
-                string subPackage = index > 0 ? subImport.Substring(0, index) : "";
+                String subImport = importFullName.substring(pkg.length() + 1);
+                int index = subImport.lastIndexOf(".");
+                String subPackage = index > 0 ? subImport.substring(0, index) : "";
 
                 /// todo .. subpackage structure maintain ...
                 // remove package
-                string[] parts = importFullName.Split('.');
-                string className = parts[parts.Length - 1];
+                String[] parts = importFullName.split("\\.");
+                String className = parts[parts.length - 1];
 
-                string from = FROM + importFullName.Replace(".", "\\") + ".java";
-                string to = TO + dest.Replace(".", "\\") + "\\" + subImport.Replace(".", "\\") + ".java";
+                String from = FROM + importFullName.replace(".", "\\") + ".java";
+                String to = TO + dest.replace(".", "\\") + "\\" + subImport.replace(".", "\\") + ".java";
 
-                string dir = TO + dest.Replace(".", "\\") + "\\" + subPackage.Replace(".", "\\");
+                String dir = TO + dest.replace(".", "\\") + "\\" + subPackage.replace(".", "\\");
 
+                // todo
                 System.IO.Directory.CreateDirectory(dir);
 
                 if (!File.Exists(from))
@@ -132,4 +154,6 @@ public class ProjectMorpher
 
         return line;
     }
+
+ */
 }
