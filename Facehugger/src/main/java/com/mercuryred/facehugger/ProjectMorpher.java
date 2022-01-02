@@ -38,12 +38,14 @@ public class ProjectMorpher
 
         for (Path filePath: filePaths)
         {
-            if (!filePath.endsWith(".java")
-                    // e.g. /.git
-                    || filePath.toAbsolutePath().toString().contains("\\.")
-                    || filePath.toAbsolutePath().toString().contains("/.")) continue;
+            if (!filePath.toString().endsWith(".java")) continue;
+            // e.g. \.git
+            if (filePath.toAbsolutePath().toString().contains("\\.")) continue;
+            // e.g. /.git
+            if (filePath.toAbsolutePath().toString().contains("/.")) continue;
 
-            //Console.WriteLine(filename);
+            System.out.println(filePath.toAbsolutePath().toString());
+
             ProcessJavaFile(filePath);
         }
     }
@@ -86,7 +88,8 @@ public class ProjectMorpher
     }
 
     private static String rebuildLineNews(String line) {
-        return null;
+        // todo NYI
+        return line;
     }
 
 
