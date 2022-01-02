@@ -38,14 +38,6 @@ public class Refactor {
     // todo Chestbuster.createFoo() -> constructors
     // Facehugger .... generates what ...
 
-    public static void main(String[] args) {
-        try {
-            ProcessFile(args[0]);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
     static void ProcessFile(String name) throws FileNotFoundException {
 
         System.out.println(name);

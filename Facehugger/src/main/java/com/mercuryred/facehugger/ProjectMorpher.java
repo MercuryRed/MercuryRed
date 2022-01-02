@@ -1,6 +1,5 @@
 package com.mercuryred.facehugger;
 
-import java.io.Console;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -10,15 +9,20 @@ import java.nio.file.Paths;
 
 public class ProjectMorpher
 {
-    static final String FROM = "c:\\12\\Android\\MercuryRedDevNull\\";
-    static final String TO = "c:\\12\\Android\\MercuryRedDest\\";
+    static final String PROJECT_PATH = "c:\\12\\Android\\MercuryRed\\";
+    static final String JAVA_LIBS_SRC_PATH = "c:\\12\\Android\\JavaLibsSrc\\";
 
+    static final String MERCURY_RED_RENDER_ENGINE_PATH = PROJECT_PATH + "MercuryRedUI\\src\\main\\java\\com\\mercuryred\\render\\";
+    static final String MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "interfaces\\";
+    static final String MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "devnull\\";
+    static final String MERCURY_RED_RENDER_ENGINE_SWING_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "swing\\";
+    static final String MERCURY_RED_RENDER_ENGINE_SKIJA_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "skija\\";
 
     public static void main(String[] args) {
         //two passes, to import only used methods, and remove any unused methods to limit amount of boilerplate generated
         // ? usage = VisitDirectory(args[0], args[1]);
         try {
-            MorphDirectory(args[0], args[1]);
+            MorphDirectory();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -27,9 +31,9 @@ public class ProjectMorpher
         // todo ... call with a tool on *.java files recursively
     }
 
-    static void MorphDirectory(String codebasePath, String libsToClonePath) throws IOException {
+    static void MorphDirectory() throws IOException {
 
-        Path dir = Paths.get(codebasePath);
+        Path dir = Paths.get(PROJECT_PATH);
         Path[] filePaths = Files.walk(dir).toArray(Path[]::new);
 
         for (Path filePath: filePaths)
@@ -135,10 +139,12 @@ public class ProjectMorpher
                 String[] parts = importFullName.split("\\.");
                 String className = parts[parts.length - 1];
 
-                String from = FROM + importFullName.replace(".", "\\") + ".java";
-                String to = TO + dest.replace(".", "\\") + "\\" + subImport.replace(".", "\\") + ".java";
+                String from = JAVA_LIBS_SRC_PATH + importFullName.replace(".", "\\") + ".java";
+                String to = MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH + dest.replace(".", "\\") + "\\" + subImport.replace(".", "\\") + ".java";
 
-                String dir = TO + dest.replace(".", "\\") + "\\" + subPackage.replace(".", "\\");
+                String dir = MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH + dest.replace(".", "\\") + "\\" + subPackage.replace(".", "\\");
+
+                System.err.println("Rebuilding " + from + " " + to);
 
                 // todo
                 new File(dir).mkdirs();
@@ -163,5 +169,4 @@ public class ProjectMorpher
         return line;
     }
 
- */
 }
