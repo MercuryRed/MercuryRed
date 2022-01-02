@@ -1,5 +1,8 @@
 package com.mercuryred.facehugger;
 
+import com.github.javaparser.JavaParser;
+import com.github.javaparser.ParseResult;
+import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.TypeDeclaration;
 
 import java.io.File;
@@ -11,6 +14,8 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class ProjectMorpher
 {
@@ -31,9 +36,9 @@ public class ProjectMorpher
 
     public static void main(String[] args) {
         //two passes, to import only used methods, and remove any unused methods to limit amount of boilerplate generated
-        // ? usage = VisitDirectory(args[0], args[1]);
         try {
-            MorphDirectory();
+            HashMap<String, HashSet<String>> usage = ExtractUsageFromProjectSource();
+            MorphDirectory(usage);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -45,7 +50,39 @@ public class ProjectMorpher
 
     }
 
-    static void MorphDirectory() throws IOException {
+    private static HashMap<String, HashSet<String>> ExtractUsageFromProjectSource() throws IOException {
+        Path dir = Paths.get(PROJECT_PATH);
+        Path[] filePaths = Files.walk(dir).toArray(Path[]::new);
+
+        HashMap<String, HashSet<String>> usage = new HashMap<String, HashSet<String>>();
+
+        for (Path filePath: filePaths)
+        {
+            if (!filePath.toString().endsWith(".java")) continue;
+            // e.g. \.git
+            if (filePath.toAbsolutePath().toString().contains("\\.")) continue;
+            // e.g. /.git
+            if (filePath.toAbsolutePath().toString().contains("/.")) continue;
+
+            AddProjectSourceFileUsage(filePath, usage);
+        }
+
+        return usage;
+    }
+
+    private static void AddProjectSourceFileUsage(Path filePath, HashMap<String, HashSet<String>> usage) throws IOException {
+        JavaParser jp = new JavaParser();
+
+        ParseResult<CompilationUnit> cu = jp.parse(filePath);
+
+        CompilationUnit cls = cu.getResult().get();
+
+        // todo .. go over all methods and their bodies,
+        // for method call foo.bar(...), where type of foo is Foo
+        // add usage[Foo].add(bar)
+    }
+
+    static void MorphDirectory(HashMap<String, HashSet<String>> usage) throws IOException {
 
         Path dir = Paths.get(PROJECT_PATH);
         Path[] filePaths = Files.walk(dir).toArray(Path[]::new);
