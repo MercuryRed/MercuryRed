@@ -102,7 +102,10 @@ public class ProjectMorpher
     private static String rebuildLineImports(String line)
     {
         if (line.length() == 0) return line;
-        if (!line.startsWith("import ")) return line;
+        if (!line.startsWith("import ")) {
+            // todo ... line replace new foo(...) with ... factory create
+            return line;
+        }
 
         String importFullName = line.substring("import ".length());
         importFullName = importFullName.trim();
@@ -135,16 +138,18 @@ public class ProjectMorpher
                 String dir = TO + dest.replace(".", "\\") + "\\" + subPackage.replace(".", "\\");
 
                 // todo
-                System.IO.Directory.CreateDirectory(dir);
+                new File(dir).mkdirs();
 
-                if (!File.Exists(from))
+
+                if (!new File(from).exists())
                 {
-                    Console.WriteLine("MISSING " + importFullName);
+                    System.err.println("MISSING " + importFullName);
                     // ERROR
                     return line;
                 }
 
-                System.IO.File.Copy(from, to, true);
+                // todo ... create interface
+                // call refactor ...
 
                 return line; // todo modify
             }
