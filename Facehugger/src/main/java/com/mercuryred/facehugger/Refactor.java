@@ -38,7 +38,7 @@ public class Refactor {
     // todo Chestbuster.createFoo() -> constructors
     // Facehugger .... generates what ...
 
-    static void ProcessFile(String name) throws FileNotFoundException {
+    static void ProcessLibFile(String name) throws FileNotFoundException {
 
         System.out.println(name);
         JavaParser jp = new JavaParser();

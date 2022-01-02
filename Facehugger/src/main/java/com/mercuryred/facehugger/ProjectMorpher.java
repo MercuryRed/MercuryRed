@@ -1,6 +1,7 @@
 package com.mercuryred.facehugger;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -102,15 +103,14 @@ public class ProjectMorpher
 
     static String[] dests = new String[]
             {
-                    "com.mercuryred.ui",
-                    "com.mercuryred.uiplus",
-                    "com.mercuryred.imageio",
+                    "ui",
+                    "uiplus",
+                    "imageio",
             };
 
 
     // rebuilds line, also copied the target file from source folder to dest folder
-    private static String rebuildLineImports(String line)
-    {
+    private static String rebuildLineImports(String line) throws FileNotFoundException {
         if (line.length() == 0) return line;
         if (!line.startsWith("import ")) {
             // todo ... line replace new foo(...) with ... factory create
@@ -143,6 +143,7 @@ public class ProjectMorpher
                 String className = parts[parts.length - 1];
 
                 String from = JAVA_LIBS_SRC_PATH + importFullName.replace(".", "\\") + ".java";
+
                 String to = MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH + dest.replace(".", "\\") + "\\" + subImport.replace(".", "\\") + ".java";
 
                 String dir = MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH + dest.replace(".", "\\") + "\\" + subPackage.replace(".", "\\");
@@ -159,6 +160,14 @@ public class ProjectMorpher
                     // ERROR
                     return line;
                 }
+
+                // todo multiple tos ...
+                if (new File(to).exists())
+                {
+                    return line;
+                }
+
+                Refactor.ProcessLibFile(from.toString());
 
                 // todo ... create interface
                 // call refactor ...
