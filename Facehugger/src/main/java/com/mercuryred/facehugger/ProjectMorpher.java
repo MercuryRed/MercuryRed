@@ -1,8 +1,12 @@
 package com.mercuryred.facehugger;
 
+import com.github.javaparser.ast.body.TypeDeclaration;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -110,7 +114,7 @@ public class ProjectMorpher
 
 
     // rebuilds line, also copied the target file from source folder to dest folder
-    private static String rebuildLineImports(String line) throws FileNotFoundException {
+    private static String rebuildLineImports(String line) throws FileNotFoundException, UnsupportedEncodingException {
         if (line.length() == 0) return line;
         if (!line.startsWith("import ")) {
             // todo ... line replace new foo(...) with ... factory create
@@ -144,7 +148,8 @@ public class ProjectMorpher
 
                 String from = JAVA_LIBS_SRC_PATH + importFullName.replace(".", "\\") + ".java";
 
-                String to = MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH + dest.replace(".", "\\") + "\\" + subImport.replace(".", "\\") + ".java";
+                String relPath = dest.replace(".", "\\") + "\\" + subImport.replace(".", "\\") + ".java";
+                String to = MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH + relPath;
 
                 String dir = MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH + dest.replace(".", "\\") + "\\" + subPackage.replace(".", "\\");
 
@@ -171,6 +176,7 @@ public class ProjectMorpher
 
                 if (egg != null) {
                     System.out.println(egg.renderEngineInterface);
+                    ImplantEgg(egg, relPath);
                 }
 
                 // todo ... create interface
@@ -183,6 +189,26 @@ public class ProjectMorpher
 
 
         return line;
+    }
+
+    private static void ImplantEgg(Egg egg, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
+        ImplantCode(egg.newInterface, MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH, relPath);
+        ImplantCode(egg.devnull, MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH, relPath);
+        ImplantCode(egg.swingWrapper, MERCURY_RED_RENDER_ENGINE_SWING_PATH, relPath);
+        ImplantCode(egg.skija, MERCURY_RED_RENDER_ENGINE_SKIJA_PATH, relPath);
+    }
+
+    private static void ImplantCode(TypeDeclaration type, String host, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
+        String code = type.toString();
+
+        new File(new File(host + relPath).getParent()).mkdirs();
+
+        PrintWriter writer = new PrintWriter(host + relPath, "UTF-8");
+        writer.println("package TODO;");
+        writer.println();
+        writer.println();
+        writer.println(code);
+        writer.close();
     }
 
 }
