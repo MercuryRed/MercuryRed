@@ -17,8 +17,11 @@ public class ProjectMorpher
     public static void main(String[] args) {
         //two passes, to import only used methods, and remove any unused methods to limit amount of boilerplate generated
         // ? usage = VisitDirectory(args[0], args[1]);
-        MorphDirectory(args[0], args[1], usage);
-
+        try {
+            MorphDirectory(args[0], args[1]);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
         // todo ... call with a tool on *.java files recursively
