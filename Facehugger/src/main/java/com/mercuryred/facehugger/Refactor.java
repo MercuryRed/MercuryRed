@@ -58,21 +58,27 @@ public class Refactor {
         }
 
         originalDepCUs.put(clsName, cls.getPrimaryType().get());
-
-        egg.newInterface = cloneClass(cls.getPrimaryType().get(), usage, true, false, false);
-        egg.swingWrapper = cloneClass(cls.getPrimaryType().get(), usage, false, false, true);
-        egg.devnull = cloneClass(cls.getPrimaryType().get(), usage, false, true, false);
-        egg.skija = cloneClass(cls.getPrimaryType().get(), usage, false, true, false);
-
         generatedDepInterfaces.put(clsName, cls.getPrimaryType().get());
 
-        egg.renderEngineInterface = extractChestbusterConstructors(cls.getPrimaryType().get(), false, null);
 
-        egg.renderEngineDevnull = extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
+        if (usage == null) {
+            // todo extract constants
+            egg.newInterface = cloneClass(cls.getPrimaryType().get(), new HashSet<String>(), false, false, false);
+        } else {
+            egg.newInterface = cloneClass(cls.getPrimaryType().get(), usage, true, false, false);
+            egg.swingWrapper = cloneClass(cls.getPrimaryType().get(), usage, false, false, true);
+            egg.devnull = cloneClass(cls.getPrimaryType().get(), usage, false, true, false);
+            egg.skija = cloneClass(cls.getPrimaryType().get(), usage, false, true, false);
 
-        egg.renderEngineSkija = extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
+            egg.renderEngineInterface = extractChestbusterConstructors(cls.getPrimaryType().get(), false, null);
 
-        egg.renderEngineSwing = extractChestbusterConstructors(cls.getPrimaryType().get(), true, "com.mercuryred.awt." + cls.getPrimaryType().get().getNameAsString());
+            egg.renderEngineDevnull = extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
+
+            egg.renderEngineSkija = extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
+
+            egg.renderEngineSwing = extractChestbusterConstructors(cls.getPrimaryType().get(), true, "com.mercuryred.awt." + cls.getPrimaryType().get().getNameAsString());
+        }
+
 
         // TODO add IRenderEngine
         // the 3 chestbusters will implement IRenderEngine
@@ -201,7 +207,7 @@ public class Refactor {
                         .getMembers()
                         .stream()
                         .filter(bodyDeclaration -> bodyDeclaration.isMethodDeclaration())
-                        .filter(bodyDeclaration -> usage.contains(((MethodDeclaration)bodyDeclaration).getNameAsString()))
+                        .filter(bodyDeclaration -> usage == null || usage.contains(((MethodDeclaration)bodyDeclaration).getNameAsString()))
                         .toArray(MethodDeclaration[]::new);
 
         for (MethodDeclaration method: methods) {

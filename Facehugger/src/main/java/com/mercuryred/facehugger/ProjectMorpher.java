@@ -103,6 +103,8 @@ public class ProjectMorpher
             if (scope.isPresent()) {
                 String type = parentStack.get(scope.get().toString());
                 if (type != null) {
+                    type = type.split("<")[0];  // e.g. JComboBox<String>
+
                     if (!usage.containsKey(type)) {
                         usage.put(type, new HashSet<String>());
                     }
@@ -267,7 +269,7 @@ public class ProjectMorpher
                 String subImport = importFullName.substring(pkg.length() + 1);
                 int index = subImport.lastIndexOf(".");
                 String subPackage = index > 0 ? subImport.substring(0, index) : "";
-                String importName = subImport.substring(index > 0 ? index : 0);
+                String importName = subImport.substring(index >= 0 ? index + 1 : 0);
 
                 /// todo .. subpackage structure maintain ...
                 // remove package
@@ -301,7 +303,6 @@ public class ProjectMorpher
                 HashSet<String> clsUsage = usage.get(importName);
                 if (clsUsage == null) {
                     // TODO from this class we only need to extract constant, we do not need an interface?
-                    clsUsage = new HashSet<String>();
                     System.err.println("NO INTERFACE? " + importName);
                 }
 
@@ -355,6 +356,8 @@ public class ProjectMorpher
 
     // TODO determine minimum amount of methods to be generated, remove unused ones!
     private static void ImplantCode(TypeDeclaration type, boolean isInterface, String pkgBase, String pkg, String host, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
+        if (type == null) return;
+
         String code = type.toString();
 
         new File(new File(host + relPath).getParent()).mkdirs();
