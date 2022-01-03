@@ -4,8 +4,11 @@ import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
+import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.TypeDeclaration;
+import com.github.javaparser.ast.body.VariableDeclarator;
 import com.github.javaparser.ast.expr.MethodCallExpr;
+import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -79,30 +82,44 @@ public class ProjectMorpher
 
         CompilationUnit cls = cu.getResult().get();
 
-        VisitCodeNode(cls, usage);
+        VisitCodeNode(cls, usage, new HashMap<String, String>());
 
         // todo .. go over all methods and their bodies,
         // for method call foo.bar(...), where type of foo is Foo
         // add usage[Foo].add(bar)
     }
 
-    private static void VisitCodeNode(Node node, HashMap<String, HashSet<String>> usage) {
-
-        // todo ... create stack, and capture variable declaration and its type
-
-        // evacuate when scope closes
-
-
+    private static void VisitCodeNode(Node node, HashMap<String, HashSet<String>> usage, HashMap<String, String> parentStack) {
         if (node instanceof MethodCallExpr) {
             MethodCallExpr mc = (MethodCallExpr) node;
-            // todo
-            System.out.println(mc.getScope().get().toString());
+            String type = parentStack.get(mc.getScope().get().toString());
+            if (type != null) {
+                System.out.println(type);
+            }
         }
 
-        // todo make deep copy of stack variables
+        HashMap<String, String> stack = new HashMap<String, String>(parentStack);
+
+        // todo method definition ... get type ...
 
         for (Node child : node.getChildNodes()) {
-            VisitCodeNode(child, usage); // todo add stack
+            if (child instanceof FieldDeclaration) {
+                FieldDeclaration fd = (FieldDeclaration) child;
+                // stack.put()
+            } else if (child instanceof VariableDeclarationExpr) {
+
+            }
+            else if (child instanceof VariableDeclarator) {
+                VariableDeclarator vd = (VariableDeclarator) child;
+
+                stack.put(vd.getTypeAsString(), vd.getTypeAsString());
+            }
+        }
+
+        // go 2 times, first capture cars ... the go again recursively
+
+        for (Node child : node.getChildNodes()) {
+            VisitCodeNode(child, usage, stack);
         }
     }
 
