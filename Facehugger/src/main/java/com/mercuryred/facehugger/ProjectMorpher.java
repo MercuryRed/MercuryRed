@@ -51,14 +51,15 @@ public class ProjectMorpher
         try {
             HashMap<String, HashSet<String>> usage = ExtractUsageFromProjectSource();
             MorphDirectory(usage);
+
+            ImplantRenderEngine("IRenderEngine", "interfaces", factoryInterfaces, null);
+            ImplantRenderEngine("DevNullRenderEngine", "devnull", factoryDevnull, "IRenderEngine");
+            ImplantRenderEngine("SkijaRenderEngine", "skija", factorySkija, "IRenderEngine");
+            ImplantRenderEngine("SwingRenderEngine", "swing", factorySwing, "IRenderEngine");
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        System.out.println(factoryInterfaces);
-        System.out.println(factoryDevnull);
-        System.out.println(factorySkija);
-        System.out.println(factorySwing);
 
     }
 
@@ -371,6 +372,28 @@ public class ProjectMorpher
         writer.println();
         writer.println();
         writer.println(code);
+        writer.close();
+    }
+
+    private static void ImplantRenderEngine(String name, String route, String code, String baseInterface) throws FileNotFoundException, UnsupportedEncodingException {
+
+        PrintWriter writer = new PrintWriter(MERCURY_RED_RENDER_ENGINE_PATH + route + "\\" + name + ".java", "UTF-8");
+        writer.println("package com.mercuryred.render." + route + ";");
+        writer.println();
+
+        if (baseInterface != null) {
+            writer.println("import com.mercuryred.render.interfaces" + baseInterface + ";");
+        }
+
+        // todo the rest of imports
+
+        writer.println();
+
+        writer.println("public " + (baseInterface == null ? "interface " : "class ") + name + " " + (baseInterface == null ? "" : "extends " + baseInterface) + " {");
+        writer.println(code);
+        writer.println("}");
+        writer.println();
+
         writer.close();
     }
 
