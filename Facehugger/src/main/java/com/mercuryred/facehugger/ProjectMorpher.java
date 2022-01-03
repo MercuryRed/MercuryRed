@@ -3,7 +3,9 @@ package com.mercuryred.facehugger;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.body.TypeDeclaration;
+import com.github.javaparser.ast.expr.MethodCallExpr;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -77,9 +79,31 @@ public class ProjectMorpher
 
         CompilationUnit cls = cu.getResult().get();
 
+        VisitCodeNode(cls, usage);
+
         // todo .. go over all methods and their bodies,
         // for method call foo.bar(...), where type of foo is Foo
         // add usage[Foo].add(bar)
+    }
+
+    private static void VisitCodeNode(Node node, HashMap<String, HashSet<String>> usage) {
+
+        // todo ... create stack, and capture variable declaration and its type
+
+        // evacuate when scope closes
+
+
+        if (node instanceof MethodCallExpr) {
+            MethodCallExpr mc = (MethodCallExpr) node;
+            // todo
+            System.out.println(mc.getScope().get().toString());
+        }
+
+        // todo make deep copy of stack variables
+
+        for (Node child : node.getChildNodes()) {
+            VisitCodeNode(child, usage); // todo add stack
+        }
     }
 
     static void MorphDirectory(HashMap<String, HashSet<String>> usage) throws IOException {

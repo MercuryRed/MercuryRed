@@ -205,7 +205,7 @@ public class Refactor {
 
         for (MethodDeclaration method: methods) {
 
-            // todo impl usage extract first .... 
+            // todo impl usage extract first ....
             // if (!usage.contains(method.asMethodDeclaration().getNameAsString())) continue;
 
             MethodDeclaration decl = newEntity.addMethod(method.asMethodDeclaration().getNameAsString());
