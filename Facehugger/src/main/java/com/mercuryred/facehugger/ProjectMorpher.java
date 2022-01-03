@@ -4,9 +4,14 @@ import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
+import com.github.javaparser.ast.NodeList;
+import com.github.javaparser.ast.body.ConstructorDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
+import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.body.TypeDeclaration;
 import com.github.javaparser.ast.body.VariableDeclarator;
+import com.github.javaparser.ast.expr.Expression;
 import com.github.javaparser.ast.expr.MethodCallExpr;
 import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 
@@ -21,6 +26,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
 
 public class ProjectMorpher
 {
@@ -92,34 +99,69 @@ public class ProjectMorpher
     private static void VisitCodeNode(Node node, HashMap<String, HashSet<String>> usage, HashMap<String, String> parentStack) {
         if (node instanceof MethodCallExpr) {
             MethodCallExpr mc = (MethodCallExpr) node;
-            String type = parentStack.get(mc.getScope().get().toString());
-            if (type != null) {
-                System.out.println(type);
+            Optional<Expression> scope = mc.getScope();
+            if (scope.isPresent()) {
+                String type = parentStack.get(scope.get().toString());
+                if (type != null) {
+                    if (!usage.containsKey(type)) {
+                        usage.put(type, new HashSet<String>());
+                    }
+                    usage.get(type).add(mc.getNameAsString()); // todo ... support overloading, probably not worth it. We could let compiler list unused
+                }
             }
         }
 
         HashMap<String, String> stack = new HashMap<String, String>(parentStack);
 
-        // todo method definition ... get type ...
+        NodeList<Parameter> params = null;
+
+        if (node instanceof MethodDeclaration) {
+            MethodDeclaration md = (MethodDeclaration) node;
+            params = md.getParameters();
+        }
+        if (node instanceof ConstructorDeclaration) {
+            ConstructorDeclaration cd = (ConstructorDeclaration) node;
+            params = cd.getParameters();
+        }
+
+        if (params != null) {
+
+            for (Parameter param: params) {
+                stack.put(param.getNameAsString(), param.getTypeAsString());
+            }
+        }
 
         for (Node child : node.getChildNodes()) {
             if (child instanceof FieldDeclaration) {
-                FieldDeclaration fd = (FieldDeclaration) child;
-                // stack.put()
+                StoreVaribleDeclarations(child.getChildNodes(), stack);
             } else if (child instanceof VariableDeclarationExpr) {
-
+                StoreVaribleDeclarations(child.getChildNodes(), stack);
             }
             else if (child instanceof VariableDeclarator) {
                 VariableDeclarator vd = (VariableDeclarator) child;
+
+                StoreVaribleDeclaration(child, stack);
 
                 stack.put(vd.getTypeAsString(), vd.getTypeAsString());
             }
         }
 
-        // go 2 times, first capture cars ... the go again recursively
-
         for (Node child : node.getChildNodes()) {
             VisitCodeNode(child, usage, stack);
+        }
+    }
+
+    private static void StoreVaribleDeclaration(Node node, HashMap<String, String> stack) {
+        if (node instanceof VariableDeclarator) {
+            VariableDeclarator vd = (VariableDeclarator) node;
+
+            stack.put(vd.getTypeAsString(), vd.getTypeAsString());
+        }
+    }
+
+    private static void StoreVaribleDeclarations(List<Node> nodes, HashMap<String, String> stack) {
+        for (Node node : nodes) {
+            StoreVaribleDeclaration(node, stack);
         }
     }
 
@@ -225,6 +267,7 @@ public class ProjectMorpher
                 String subImport = importFullName.substring(pkg.length() + 1);
                 int index = subImport.lastIndexOf(".");
                 String subPackage = index > 0 ? subImport.substring(0, index) : "";
+                String importName = subImport.substring(index > 0 ? index : 0);
 
                 /// todo .. subpackage structure maintain ...
                 // remove package
@@ -255,11 +298,14 @@ public class ProjectMorpher
                     return line;
                 }
 
-                if (!usage.containsKey(from.toString())) {
-                    usage.put(from.toString(), new HashSet<String>());
+                HashSet<String> clsUsage = usage.get(importName);
+                if (clsUsage == null) {
+                    // TODO from this class we only need to extract constant, we do not need an interface?
+                    clsUsage = new HashSet<String>();
+                    System.err.println("NO INTERFACE? " + importName);
                 }
 
-                Egg egg = Refactor.ProcessLibFile(from.toString(), usage.get(from.toString()));
+                Egg egg = Refactor.ProcessLibFile(from.toString(), clsUsage);
 
                 if (egg != null) {
                     ImplantEgg(egg, relPath);

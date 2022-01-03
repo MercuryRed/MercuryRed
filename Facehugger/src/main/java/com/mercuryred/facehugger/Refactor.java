@@ -201,6 +201,7 @@ public class Refactor {
                         .getMembers()
                         .stream()
                         .filter(bodyDeclaration -> bodyDeclaration.isMethodDeclaration())
+                        .filter(bodyDeclaration -> usage.contains(((MethodDeclaration)bodyDeclaration).getNameAsString()))
                         .toArray(MethodDeclaration[]::new);
 
         for (MethodDeclaration method: methods) {
