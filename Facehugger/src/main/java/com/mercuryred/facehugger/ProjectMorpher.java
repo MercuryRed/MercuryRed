@@ -339,7 +339,7 @@ public class ProjectMorpher
                     factorySwing = factorySwing + egg.renderEngineSwing;
                 }
 
-                return "import com.mercuryred.render." + dest + "." + subImport + "." + className + ";";
+                return "import com.mercuryred.render.interfaces." + dest + "." + subImport + ";";
             }
         }
 
