@@ -28,6 +28,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ProjectMorpher
 {
@@ -193,13 +195,14 @@ public class ProjectMorpher
 
         char[] codeChars = code.toCharArray();
 
+        HashSet<String> imports = new HashSet<String>();
         String line = "";
         for (char ch: codeChars)
         {
             if (ch == '\r' || ch == '\n')
             {
-                line = rebuildLineImports(line, usage);
-                line = rebuildLineNews(line);  // todo ... minimize contructors to created? we could just manually remove also
+                line = rebuildLineImports(line, usage, imports);
+                line = rebuildLineNews(line, usage, imports);  // todo ... minimize contructors to created? we could just manually remove also
                 for (char x: line.toCharArray())
                 {
                     newCode[len++] = x;
@@ -222,9 +225,23 @@ public class ProjectMorpher
         // File.WriteAllText(filename, new string(newCode, 0, len));
     }
 
-    private static String rebuildLineNews(String line) {
-        // todo NYI
-        return line;
+    private static String  regex   = ".*(new\\s+([a-zA-Z0-9]+)\\s*)[<(]";
+    private static Pattern pattern = Pattern.compile(regex);
+
+    private static String rebuildLineNews(String line, HashMap<String, HashSet<String>> usage, HashSet<String> imports) {
+        if (!line.contains("new")) return line;  // optimization
+
+       Matcher matcher = pattern.matcher(line);
+
+        if (!matcher.matches()) return line;
+
+        String newFoo = matcher.group(1);
+        String foo = matcher.group(2);
+
+        if (!imports.contains(foo)) return line;  // must be an imported package from awt or swing
+        // if (!usage.containsKey(foo)) return line; // todo ?!?
+
+        return line.replaceAll(newFoo, "com.mercuryred.ui.RenderEngines.Get().create" + foo);
     }
 
 
@@ -244,7 +261,7 @@ public class ProjectMorpher
 
 
     // rebuilds line, also copied the target file from source folder to dest folder
-    private static String rebuildLineImports(String line, HashMap<String, HashSet<String>> usage) throws FileNotFoundException, UnsupportedEncodingException {
+    private static String rebuildLineImports(String line, HashMap<String, HashSet<String>> usage, HashSet<String> imports) throws FileNotFoundException, UnsupportedEncodingException {
         if (line.length() == 0) return line;
         if (!line.startsWith("import ")) {
             // todo ... line replace new foo(...) with ... factory create
@@ -295,6 +312,8 @@ public class ProjectMorpher
                     return line;
                 }
 
+                imports.add(importName);
+
                 // todo multiple tos ...
                 if (new File(to).exists())
                 {
@@ -318,8 +337,7 @@ public class ProjectMorpher
                     factorySwing = factorySwing + egg.renderEngineSwing;
                 }
 
-
-                return line; // todo modify
+                return "import " + dest + "." + subImport + "." + className + ";";
             }
         }
 
