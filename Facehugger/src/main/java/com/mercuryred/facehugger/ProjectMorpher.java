@@ -221,8 +221,10 @@ public class ProjectMorpher
             newCode[len++] = x;
         }
 
-        // rewrite file - todo
-        // File.WriteAllText(filename, new string(newCode, 0, len));
+        PrintWriter writer = new PrintWriter(filePath.toString(), "UTF-8");
+        writer.print(new String(newCode, 0, len));
+
+        writer.close();
     }
 
     private static String  regex   = ".*(new\\s+([a-zA-Z0-9]+)\\s*)[<(]";
