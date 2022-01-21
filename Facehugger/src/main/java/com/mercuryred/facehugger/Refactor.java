@@ -32,10 +32,6 @@ public class Refactor {
     static HashMap<String, TypeDeclaration> originalDepCUs = new HashMap<String, TypeDeclaration> ();
     static HashMap<String, TypeDeclaration> generatedDepInterfaces = new HashMap<String, TypeDeclaration> ();
 
-    // todo factory imports
-    // todo Chestbuster.createFoo() -> constructors
-    // Facehugger .... generates what ...
-
     static Egg ProcessLibFile(String name, HashSet<String> usage) throws FileNotFoundException {
 
         Egg egg = new Egg();
@@ -66,7 +62,6 @@ public class Refactor {
             egg.newInterface = cloneClass(cls.getPrimaryType().get(), new HashSet<String>(), false, false, false);
         } else {
             egg.newInterface = cloneClass(cls.getPrimaryType().get(), usage, true, false, false);
-            egg.swingWrapper = cloneClass(cls.getPrimaryType().get(), usage, false, false, true);
             egg.devnull = cloneClass(cls.getPrimaryType().get(), usage, false, true, false);
             egg.skija = cloneClass(cls.getPrimaryType().get(), usage, false, true, false);
 
@@ -75,8 +70,6 @@ public class Refactor {
             egg.renderEngineDevnull = extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
 
             egg.renderEngineSkija = extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
-
-            egg.renderEngineSwing = extractChestbusterConstructors(cls.getPrimaryType().get(), true, "com.mercuryred.awt." + cls.getPrimaryType().get().getNameAsString());
         }
 
 
@@ -274,17 +267,4 @@ public class Refactor {
     };
 
 
-    // MercuryRedSettings: RenderEngine: Null, Swing, Skija
-
-    // createFoo():
-    //  return new MyFoo(new Foo())
-
-    // Foo is interface
-    // MyFoo is the hidden class, impl Foo
-    // MyFoo has private awt.Foo _foo member
-
-    // this way we can test in between engines
-    // and android uses the Null one
-    // but w can test locally with Swing, and implement Skija for future and do SxS testing between Skija and Swing
-    // with extract image ..
 }

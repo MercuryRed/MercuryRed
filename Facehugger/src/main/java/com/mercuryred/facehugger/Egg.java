@@ -9,12 +9,10 @@ public class Egg {
     public String pkg;
 
     public TypeDeclaration newInterface;
-    public TypeDeclaration swingWrapper;
     public TypeDeclaration devnull;
     public TypeDeclaration skija;
 
     public String renderEngineInterface;
-    public String renderEngineSwing;
     public String renderEngineDevnull;
     public String renderEngineSkija;
 
@@ -22,7 +20,6 @@ public class Egg {
 
     public Egg() {
         renderEngineInterface = "";
-        renderEngineSwing = "";
         renderEngineDevnull = "";
         renderEngineSkija = "";
 

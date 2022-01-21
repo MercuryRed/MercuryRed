@@ -39,13 +39,11 @@ public class ProjectMorpher
     static final String MERCURY_RED_RENDER_ENGINE_PATH = PROJECT_PATH + "MercuryRedUI\\src\\main\\java\\com\\mercuryred\\render\\";
     static final String MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "interfaces\\";
     static final String MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "devnull\\";
-    static final String MERCURY_RED_RENDER_ENGINE_SWING_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "swing\\";
     static final String MERCURY_RED_RENDER_ENGINE_SKIJA_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "skija\\";
 
     static String factoryInterfaces = "";
     static String factoryDevnull = "";
     static String factorySkija = "";
-    static String factorySwing = "";
 
 
     public static void main(String[] args) {
@@ -57,7 +55,6 @@ public class ProjectMorpher
             ImplantRenderEngine("IRenderEngine", "interfaces", factoryInterfaces, null);
             ImplantRenderEngine("DevNullRenderEngine", "devnull", factoryDevnull, "IRenderEngine");
             ImplantRenderEngine("SkijaRenderEngine", "skija", factorySkija, "IRenderEngine");
-            ImplantRenderEngine("SwingRenderEngine", "swing", factorySwing, "IRenderEngine");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -265,24 +262,40 @@ public class ProjectMorpher
     // rebuilds line, also copied the target file from source folder to dest folder
     private static String rebuildLineImports(String line, HashMap<String, HashSet<String>> usage, HashSet<String> imports) throws FileNotFoundException, UnsupportedEncodingException {
         if (line.length() == 0) return line;
-        if (!line.startsWith("import ")) {
-            // todo ... line replace new foo(...) with ... factory create
-            return line;
-        }
 
-        String importFullName = line.substring("import ".length());
-        importFullName = importFullName.trim();
-        importFullName = importFullName.replaceAll(";$", "");
-        importFullName = importFullName.trim();
+//        if (!line.startsWith("import ")) {
+//            // todo ... line replace new foo(...) with ... factory create
+//            return line;
+//        }
 
-        // special case, importing static constants, will handle manually
-        if (importFullName.endsWith("*")) return line;
 
         int i = -1;
         for (String pkg: packages)
         {
             i++;
             String dest = dests[i];
+
+            if (!line.contains(pkg + ".")) continue;
+
+//            String importFullName = line.substring("import ".length());
+//            importFullName = importFullName.trim();
+//            importFullName = importFullName.replaceAll(";$", "");
+//            importFullName = importFullName.trim();
+
+            String[] parts0 = line.split((pkg + ".").replaceAll("\\.", "\\."));
+            if (parts0.length != 2) {
+                System.out.println("!!! Too many hits of " + pkg + " in line " + line);
+                continue;
+            }
+
+            String rewrite = parts0[0] + "com.mercuryred.render.interfaces." + dest + "." + parts0[1];
+
+            String[] after = parts0[1].split("[^a-zA-Z0-9_.]");
+            String clsName = after[0];
+            String importFullName = pkg + "." + clsName;
+
+            // special case, importing static constants, will handle manually
+            if (importFullName.endsWith("*")) return line;
 
             if (importFullName.startsWith(pkg + "."))
             {
@@ -306,7 +319,6 @@ public class ProjectMorpher
                 // todo
                 new File(dir).mkdirs();
 
-
                 if (!new File(from).exists())
                 {
                     System.err.println("MISSING " + importFullName);
@@ -316,10 +328,9 @@ public class ProjectMorpher
 
                 imports.add(importName);
 
-                // todo multiple tos ...
                 if (new File(to).exists())
                 {
-                    return line;
+                    return rewrite;
                 }
 
                 HashSet<String> clsUsage = usage.get(importName);
@@ -336,10 +347,9 @@ public class ProjectMorpher
                     factoryInterfaces = factoryInterfaces + egg.renderEngineInterface;
                     factoryDevnull = factoryDevnull + egg.renderEngineDevnull;
                     factorySkija = factorySkija + egg.renderEngineSkija;
-                    factorySwing = factorySwing + egg.renderEngineSwing;
                 }
 
-                return "import com.mercuryred.render.interfaces." + dest + "." + subImport + ";";
+                return rewrite;
             }
         }
 
@@ -371,11 +381,9 @@ public class ProjectMorpher
 
         ImplantCode(egg.newInterface, true, "interfaces", pkg, MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH, relPath);
         ImplantCode(egg.devnull, false, "devnull", pkg, MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH, relPath);
-        ImplantCode(egg.swingWrapper, false, "swing", pkg, MERCURY_RED_RENDER_ENGINE_SWING_PATH, relPath);
         ImplantCode(egg.skija, false, "skija", pkg, MERCURY_RED_RENDER_ENGINE_SKIJA_PATH, relPath);
     }
 
-    // TODO determine minimum amount of methods to be generated, remove unused ones!
     private static void ImplantCode(TypeDeclaration type, boolean isInterface, String pkgBase, String pkg, String host, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
         if (type == null) return;
 
