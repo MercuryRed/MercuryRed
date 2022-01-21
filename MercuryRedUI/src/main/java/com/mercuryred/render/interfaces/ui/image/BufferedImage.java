@@ -1,6 +1,7 @@
 package com.mercuryred.render.interfaces.ui.image;
 
 
+import com.mercuryred.render.interfaces.ui.Rectangle;
 
 public interface BufferedImage {
 

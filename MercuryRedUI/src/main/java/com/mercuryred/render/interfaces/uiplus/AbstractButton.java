@@ -1,6 +1,7 @@
 package com.mercuryred.render.interfaces.uiplus;
 
 
+import com.mercuryred.render.interfaces.ui.Insets;
 
 public interface AbstractButton {
 

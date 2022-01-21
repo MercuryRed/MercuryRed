@@ -1,6 +1,7 @@
 package com.mercuryred.render.interfaces.ui.image;
 
 
+import com.mercuryred.render.interfaces.ui.Point;
 
 public interface Raster {
 

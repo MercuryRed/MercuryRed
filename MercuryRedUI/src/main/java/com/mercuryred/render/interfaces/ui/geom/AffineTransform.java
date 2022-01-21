@@ -1,6 +1,7 @@
 package com.mercuryred.render.interfaces.ui.geom;
 
 
+import com.mercuryred.render.interfaces.ui.Shape;
 
 public interface AffineTransform {
 

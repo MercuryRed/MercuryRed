@@ -1,6 +1,12 @@
 package com.mercuryred.render.interfaces.uiplus;
 
 
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
 
 public interface JComponent {
 

@@ -1,6 +1,11 @@
 package com.mercuryred.render.interfaces.imageio;
 
 
+import com.mercuryred.render.interfaces.imageio.metadata.IIOMetadata;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.Raster;
+
+import java.util.Set;
 
 public interface ImageReader {
 

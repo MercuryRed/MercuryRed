@@ -1,6 +1,14 @@
 package com.mercuryred.render.interfaces.ui.dnd;
 
 
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Cursor;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.datatransfer.Transferable;
+import com.mercuryred.render.interfaces.ui.event.InputEvent;
+
+import java.awt.dnd.DragSourceListener;
 
 public interface DragGestureEvent {
 

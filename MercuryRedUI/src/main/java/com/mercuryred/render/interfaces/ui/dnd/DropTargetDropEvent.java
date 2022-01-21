@@ -1,6 +1,8 @@
 package com.mercuryred.render.interfaces.ui.dnd;
 
 
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.datatransfer.Transferable;
 
 public interface DropTargetDropEvent {
 

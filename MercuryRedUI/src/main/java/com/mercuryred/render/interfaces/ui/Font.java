@@ -6,8 +6,8 @@ import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
 
 import java.io.File;
 import java.io.InputStream;
-import java.util.Map;
 import java.text.AttributedCharacterIterator.Attribute;
+import java.util.Map;
 
 public interface Font {
 

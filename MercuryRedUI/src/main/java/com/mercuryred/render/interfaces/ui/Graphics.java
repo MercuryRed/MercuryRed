@@ -1,6 +1,9 @@
 package com.mercuryred.render.interfaces.ui;
 
 
+import com.mercuryred.render.interfaces.ui.image.ImageObserver;
+
+import java.text.AttributedCharacterIterator;
 
 public interface Graphics {
 

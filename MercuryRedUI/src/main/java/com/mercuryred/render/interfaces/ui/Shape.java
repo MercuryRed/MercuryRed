@@ -1,6 +1,7 @@
 package com.mercuryred.render.interfaces.ui;
 
 
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 
 public interface Shape {
 

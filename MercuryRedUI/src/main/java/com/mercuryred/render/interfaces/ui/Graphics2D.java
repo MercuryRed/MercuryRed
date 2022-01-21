@@ -1,6 +1,12 @@
 package com.mercuryred.render.interfaces.ui;
 
 
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.BufferedImageOp;
+import com.mercuryred.render.interfaces.ui.image.ImageObserver;
+
+import java.text.AttributedCharacterIterator;
 
 public interface Graphics2D {
 
@@ -26,7 +32,8 @@ public interface Graphics2D {
 
     void setStroke(Stroke s);
 
-    void setRenderingHint(Key hintKey, Object hintValue);
+    // TODO was RenderingHints.Key
+    void setRenderingHint(/*Key*/Object hintKey, Object hintValue);
 
     void translate(int x, int y);
 
