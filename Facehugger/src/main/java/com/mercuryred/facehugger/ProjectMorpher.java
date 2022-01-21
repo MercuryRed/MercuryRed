@@ -285,7 +285,12 @@ public class ProjectMorpher
             String[] parts0 = line.split((pkg + ".").replaceAll("\\.", "\\."));
             if (parts0.length != 2) {
                 System.out.println("!!! Too many hits of " + pkg + " in line " + line);
-                continue;
+
+                // In places where it happens, nothing interesting, we can just fis string
+
+                return line.replaceAll((pkg + ".").replaceAll("\\.", "\\."), "com.mercuryred.render.interfaces." + dest + ".")
+                        .replaceAll((pkg).replaceAll("\\.", "\\."), "com.mercuryred.render.interfaces." + dest);
+
             }
 
             String rewrite = parts0[0] + "com.mercuryred.render.interfaces." + dest + "." + parts0[1];

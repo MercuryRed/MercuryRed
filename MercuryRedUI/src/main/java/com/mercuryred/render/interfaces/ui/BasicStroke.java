@@ -4,7 +4,7 @@ package com.mercuryred.render.interfaces.ui;
 
 public interface BasicStroke {
 
-    Object CAP_BUTT = ;
+    int CAP_BUTT = 0; // TODO
 
     float getLineWidth();
 
