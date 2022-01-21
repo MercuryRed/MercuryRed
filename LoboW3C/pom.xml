@@ -40,6 +40,11 @@
     <dependencies>
         <dependency>
             <groupId>org.loboevolution</groupId>
+            <artifactId>MercuryRedUI</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.loboevolution</groupId>
             <artifactId>LoboParser</artifactId>
             <version>1.0</version>
         </dependency>
@@ -47,6 +52,12 @@
             <groupId>xalan</groupId>
             <artifactId>xalan</artifactId>
             <version>2.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.loboevolution</groupId>
+            <artifactId>MercuryRedUI</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
