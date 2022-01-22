@@ -289,7 +289,10 @@ public class Refactor {
         for (int i = 0; i < exts.size(); i++) {
             String name = exts.get(i).getName().asString();
 
-            String target = pkg + "." + name;
+            String found = null; //
+
+            ArrayList<String> candidates = new ArrayList<>();
+            candidates.add(pkg + ".*");
 
             NodeList<ImportDeclaration> imports = tp.findCompilationUnit().get().getImports();
 
@@ -299,11 +302,31 @@ public class Refactor {
                 String full = id.getNameAsString();
 
                 if (full.endsWith("." + name)) {
-                    target = full;
+                    found = full;
+                } else if (full.endsWith(".*")) {
+                    candidates.add(full);
                 }
             }
 
-            String from = ProjectMorpher.JAVA_LIBS_SRC_PATH + target.replace(".", "\\") + ".java";
+            String from = null;
+
+            if (found != null) {
+                from = ProjectMorpher.JAVA_LIBS_SRC_PATH + found.replace(".", "\\") + ".java";
+            } else {
+                for (String candidate: candidates) {
+                    String fullName = candidate.replace("*", name);
+                    String potential = ProjectMorpher.JAVA_LIBS_SRC_PATH + fullName.replace(".", "\\") + ".java";
+                    if (new File(potential).exists()) {
+                        from = potential;
+                        break;
+                    }
+                }
+            }
+
+            if (from == null) {
+                System.err.println("Could not import " + name);
+                continue;
+            }
 
             JavaParser jp = new JavaParser();
 
