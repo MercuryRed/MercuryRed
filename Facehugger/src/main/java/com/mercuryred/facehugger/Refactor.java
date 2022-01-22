@@ -3,6 +3,7 @@ package com.mercuryred.facehugger;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.ImportDeclaration;
 import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.BodyDeclaration;
@@ -201,22 +202,11 @@ public class Refactor {
             );
         }
 
-        // todo ... get all methods of the parent class!!!!
-        List<MethodDeclaration> methods0 = new ArrayList<>();
+        List<MethodDeclaration> allMethods = GetAllMethodsRecursive(cls);
 
-        for (BodyDeclaration<?> bd: cls.getMembers()) {
-            if (bd.isMethodDeclaration()) {
-                MethodDeclaration md = bd.asMethodDeclaration();
-                String name = md.getNameAsString();
-                if (usage == null || usage.contains(name)) {
-                    methods0.add(md);
-                }
-            }
-        }
 
         MethodDeclaration[] methods =
-                cls
-                        .getMembers()
+                allMethods
                         .stream()
                         .filter(bodyDeclaration -> bodyDeclaration.isMethodDeclaration())
                         .filter(bodyDeclaration -> usage == null || usage.contains(((MethodDeclaration)bodyDeclaration).getNameAsString()))
@@ -283,7 +273,55 @@ public class Refactor {
         }
 
         return newEntity;
-    };
+    }
+
+    private static List<MethodDeclaration> GetAllMethodsRecursive(TypeDeclaration<?> tp) {
+        List<MethodDeclaration> methods = new ArrayList<>();
+
+        methods.addAll(tp.getMethods());
+
+        String pkg = tp.findCompilationUnit().get().getPackageDeclaration().get().getNameAsString();
+
+        ClassOrInterfaceDeclaration cls = tp.findCompilationUnit().get().getPrimaryType().get().asClassOrInterfaceDeclaration();
+
+        NodeList<ClassOrInterfaceType> exts = cls.getExtendedTypes();
+
+        for (int i = 0; i < exts.size(); i++) {
+            String name = exts.get(i).getName().asString();
+
+            String target = pkg + "." + name;
+
+            NodeList<ImportDeclaration> imports = tp.findCompilationUnit().get().getImports();
+
+            for (int j = 0; j < imports.size(); j++) {
+                ImportDeclaration id = imports.get(j);
+
+                String full = id.getNameAsString();
+
+                if (full.endsWith("." + name)) {
+                    target = full;
+                }
+            }
+
+            String from = ProjectMorpher.JAVA_LIBS_SRC_PATH + target.replace(".", "\\") + ".java";
+
+            JavaParser jp = new JavaParser();
+
+            try {
+                ParseResult<CompilationUnit> cu = jp.parse(new File(from));
+
+                CompilationUnit cur = cu.getResult().get();
+
+                methods.addAll(GetAllMethodsRecursive(cur.getPrimaryType().get()));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return methods;
+    }
+
+
 
 
 }
