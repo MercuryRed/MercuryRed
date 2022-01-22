@@ -3,6 +3,7 @@ package com.mercuryred.facehugger;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.ImportDeclaration;
 import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.ConstructorDeclaration;
@@ -52,9 +53,9 @@ public class ProjectMorpher
             Usages usages = ExtractUsageFromProjectSource();
             MorphDirectory(usages);
 
-            ImplantRenderEngine("IRenderEngine", "interfaces", factoryInterfaces, null);
-//            ImplantRenderEngine("DevNullRenderEngine", "devnull", factoryDevnull, "IRenderEngine");
-//            ImplantRenderEngine("SkijaRenderEngine", "skija", factorySkija, "IRenderEngine");
+            ImplantRenderEngine(usages,"IRenderEngine", "interfaces", factoryInterfaces, null);
+//            ImplantRenderEngine(usages, "DevNullRenderEngine", "devnull", factoryDevnull, "IRenderEngine");
+//            ImplantRenderEngine(usages, "SkijaRenderEngine", "skija", factorySkija, "IRenderEngine");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -122,6 +123,29 @@ public class ProjectMorpher
                     // TODO why JTextField.getText is not added, ... or reported?
                     usages.usage.get(type).add(mc.getNameAsString()); // todo ... support overloading, probably not worth it. We could let compiler list unused
                 }
+            }
+        }
+
+        if (node instanceof ImportDeclaration) {
+
+            ImportDeclaration id = (ImportDeclaration) node;
+
+            String imp = id.getNameAsString();
+
+            int i = -1;
+            for (String pkg: packages) {
+                i++;
+                String dest = dests[i];
+
+                if (!imp.contains(pkg + ".")) continue;
+
+                String subImport = imp.substring(pkg.length() + 1);
+                int index = subImport.lastIndexOf(".");
+                String subPackage = index > 0 ? subImport.substring(0, index) : "";
+                String importName = subImport.substring(index >= 0 ? index + 1 : 0);
+
+                usages.remaps.put(importName, "com.mercuryred.render.interfaces." + dest + "." + subPackage + (subPackage.equals("") ? "" : ".") + importName);
+
             }
         }
 
@@ -259,14 +283,14 @@ public class ProjectMorpher
     }
 
 
-    static String[] packages = new String[]
+    public static String[] packages = new String[]
             {
                     "java.awt",
                     "javax.swing",
                     "javax.imageio",
             };
 
-    static String[] dests = new String[]
+    public static String[] dests = new String[]
             {
                     "ui",
                     "uiplus",
@@ -324,8 +348,6 @@ public class ProjectMorpher
                 String subPackage = index > 0 ? subImport.substring(0, index) : "";
                 String importName = subImport.substring(index >= 0 ? index + 1 : 0);
 
-                usages.remaps.put(importName, "com.mercuryred.render.interfaces." + dest + "." + clsName);
-
                 /// todo .. subpackage structure maintain ...
                 // remove package
                 String[] parts = importFullName.split("\\.");
@@ -365,7 +387,7 @@ public class ProjectMorpher
                 Egg egg = Refactor.ProcessLibFile(from.toString(), clsUsage);
 
                 if (egg != null) {
-                    ImplantEgg(egg, relPath);
+                    ImplantEgg(usages, egg, relPath);
 
                     factoryInterfaces = factoryInterfaces + egg.renderEngineInterface;
                     factoryDevnull = factoryDevnull + egg.renderEngineDevnull;
@@ -399,15 +421,15 @@ public class ProjectMorpher
         return null;
     }
 
-    private static void ImplantEgg(Egg egg, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
+    private static void ImplantEgg(Usages usages, Egg egg, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
         String pkg = mapPkg(egg.pkg);
 
-        ImplantCode(egg.newInterface, true, "interfaces", pkg, MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH, relPath);
-//        ImplantCode(egg.devnull, false, "devnull", pkg, MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH, relPath);
-//        ImplantCode(egg.skija, false, "skija", pkg, MERCURY_RED_RENDER_ENGINE_SKIJA_PATH, relPath);
+        ImplantCode(usages, egg.newInterface, true, "interfaces", pkg, MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH, relPath);
+//        ImplantCode(usages, egg.devnull, false, "devnull", pkg, MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH, relPath);
+//        ImplantCode(usages, egg.skija, false, "skija", pkg, MERCURY_RED_RENDER_ENGINE_SKIJA_PATH, relPath);
     }
 
-    private static void ImplantCode(TypeDeclaration type, boolean isInterface, String pkgBase, String pkg, String host, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
+    private static void ImplantCode(Usages usages, TypeDeclaration type, boolean isInterface, String pkgBase, String pkg, String host, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
         if (type == null) return;
 
         String code = type.toString();
@@ -418,7 +440,11 @@ public class ProjectMorpher
         writer.println("package com.mercuryred.render." + pkgBase + "." + pkg + ";");
         writer.println();
 
-        // todo the egg should list classes imported, along with packages
+        for (String cls: usages.remaps.keySet()) {
+            if (code.contains(cls)) {
+                writer.println("import " + usages.remaps.get(cls) + ";");
+            }
+        }
 
         writer.println();
         writer.println();
@@ -426,7 +452,7 @@ public class ProjectMorpher
         writer.close();
     }
 
-    private static void ImplantRenderEngine(String name, String route, String code, String baseInterface) throws FileNotFoundException, UnsupportedEncodingException {
+    private static void ImplantRenderEngine(Usages usages, String name, String route, String code, String baseInterface) throws FileNotFoundException, UnsupportedEncodingException {
 
         PrintWriter writer = new PrintWriter(MERCURY_RED_RENDER_ENGINE_PATH + route + "\\" + name + ".java", "UTF-8");
         writer.println("package com.mercuryred.render." + route + ";");
@@ -436,7 +462,11 @@ public class ProjectMorpher
             writer.println("import com.mercuryred.render.interfaces" + baseInterface + ";");
         }
 
-        // todo the rest of imports
+        for (String cls: usages.remaps.keySet()) {
+            if (code.contains(cls)) {
+                writer.println("import " + usages.remaps.get(cls) + ";");
+            }
+        }
 
         writer.println();
 
