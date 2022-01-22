@@ -303,8 +303,8 @@ public class Refactor {
 
                 if (full.endsWith("." + name)) {
                     found = full;
-                } else if (full.endsWith(".*")) {
-                    candidates.add(full);
+                } else if (id.toString().trim().endsWith(".*;")) {
+                    candidates.add(full + ".*");
                 }
             }
 
