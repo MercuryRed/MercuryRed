@@ -282,7 +282,14 @@ public class Refactor {
 
         String pkg = tp.findCompilationUnit().get().getPackageDeclaration().get().getNameAsString();
 
-        ClassOrInterfaceDeclaration cls = tp.findCompilationUnit().get().getPrimaryType().get().asClassOrInterfaceDeclaration();
+        ClassOrInterfaceDeclaration cls = null;
+        try {
+            // Might be enum instead, ignore
+            cls = tp.findCompilationUnit().get().getPrimaryType().get().asClassOrInterfaceDeclaration();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return methods;
+        }
 
         NodeList<ClassOrInterfaceType> exts = cls.getExtendedTypes();
 
