@@ -49,8 +49,8 @@ public class ProjectMorpher
     public static void main(String[] args) {
         //two passes, to import only used methods, and remove any unused methods to limit amount of boilerplate generated
         try {
-            HashMap<String, HashSet<String>> usage = ExtractUsageFromProjectSource();
-            MorphDirectory(usage);
+            Usages usages = ExtractUsageFromProjectSource();
+            MorphDirectory(usages);
 
             ImplantRenderEngine("IRenderEngine", "interfaces", factoryInterfaces, null);
 //            ImplantRenderEngine("DevNullRenderEngine", "devnull", factoryDevnull, "IRenderEngine");
@@ -62,11 +62,15 @@ public class ProjectMorpher
 
     }
 
-    private static HashMap<String, HashSet<String>> ExtractUsageFromProjectSource() throws IOException {
+    private static Usages ExtractUsageFromProjectSource() throws IOException {
         Path dir = Paths.get(PROJECT_PATH);
         Path[] filePaths = Files.walk(dir).toArray(Path[]::new);
 
         HashMap<String, HashSet<String>> usage = new HashMap<String, HashSet<String>>();
+        HashMap<String, String> remaps = new HashMap<>();
+        Usages usages = new Usages();
+        usages.usage = usage;
+        usages.remaps = remaps;
 
         for (Path filePath: filePaths)
         {
@@ -76,13 +80,13 @@ public class ProjectMorpher
             // e.g. /.git
             if (filePath.toAbsolutePath().toString().contains("/.")) continue;
 
-            AddProjectSourceFileUsage(filePath, usage);
+            AddProjectSourceFileUsage(filePath, usages);
         }
 
-        return usage;
+        return usages;
     }
 
-    private static void AddProjectSourceFileUsage(Path filePath, HashMap<String, HashSet<String>> usage) throws IOException {
+    private static void AddProjectSourceFileUsage(Path filePath, Usages usages) throws IOException {
 
         if (filePath.toString().contains("BackAction")) {
             int a = 3;
@@ -94,14 +98,14 @@ public class ProjectMorpher
 
         CompilationUnit cls = cu.getResult().get();
 
-        VisitCodeNode(cls, usage, new HashMap<String, String>());
+        VisitCodeNode(cls, usages, new HashMap<String, String>());
 
         // todo .. go over all methods and their bodies,
         // for method call foo.bar(...), where type of foo is Foo
         // add usage[Foo].add(bar)
     }
 
-    private static void VisitCodeNode(Node node, HashMap<String, HashSet<String>> usage, HashMap<String, String> parentStack) {
+    private static void VisitCodeNode(Node node, Usages usages, HashMap<String, String> parentStack) {
         if (node instanceof MethodCallExpr) {
             MethodCallExpr mc = (MethodCallExpr) node;
             Optional<Expression> scope = mc.getScope();
@@ -112,11 +116,11 @@ public class ProjectMorpher
                 if (type != null) {
                     type = type.split("<")[0];  // e.g. JComboBox<String>
 
-                    if (!usage.containsKey(type)) {
-                        usage.put(type, new HashSet<String>());
+                    if (!usages.usage.containsKey(type)) {
+                        usages.usage.put(type, new HashSet<String>());
                     }
                     // TODO why JTextField.getText is not added, ... or reported?
-                    usage.get(type).add(mc.getNameAsString()); // todo ... support overloading, probably not worth it. We could let compiler list unused
+                    usages.usage.get(type).add(mc.getNameAsString()); // todo ... support overloading, probably not worth it. We could let compiler list unused
                 }
             }
         }
@@ -157,7 +161,7 @@ public class ProjectMorpher
         }
 
         for (Node child : node.getChildNodes()) {
-            VisitCodeNode(child, usage, stack);
+            VisitCodeNode(child, usages, stack);
         }
     }
 
@@ -178,7 +182,7 @@ public class ProjectMorpher
         }
     }
 
-    static void MorphDirectory(HashMap<String, HashSet<String>> usage) throws IOException {
+    static void MorphDirectory(Usages usages) throws IOException {
 
         Path dir = Paths.get(PROJECT_PATH);
         Path[] filePaths = Files.walk(dir).toArray(Path[]::new);
@@ -191,11 +195,11 @@ public class ProjectMorpher
             // e.g. /.git
             if (filePath.toAbsolutePath().toString().contains("/.")) continue;
 
-            ProcessJavaFile(filePath, usage);
+            ProcessJavaFile(filePath, usages);
         }
     }
 
-    static void ProcessJavaFile(Path filePath, HashMap<String, HashSet<String>> usage) throws IOException {
+    static void ProcessJavaFile(Path filePath, Usages usages) throws IOException {
         String code = new String(Files.readAllBytes(filePath), StandardCharsets.UTF_8);
 
         char[] newCode = new char[code.length() * 2 + 100];
@@ -209,8 +213,8 @@ public class ProjectMorpher
         {
             if (ch == '\r' || ch == '\n')
             {
-                line = rebuildLineImports(line, usage, imports);
-                line = rebuildLineNews(line, usage, imports);  // todo ... minimize contructors to created? we could just manually remove also
+                line = rebuildLineImports(line, usages, imports);
+                line = rebuildLineNews(line, usages, imports);  // todo ... minimize contructors to created? we could just manually remove also
                 for (char x: line.toCharArray())
                 {
                     newCode[len++] = x;
@@ -238,7 +242,7 @@ public class ProjectMorpher
     private static String  regex   = ".*(new\\s+([a-zA-Z0-9]+)\\s*)[<(]";
     private static Pattern pattern = Pattern.compile(regex);
 
-    private static String rebuildLineNews(String line, HashMap<String, HashSet<String>> usage, HashSet<String> imports) {
+    private static String rebuildLineNews(String line, Usages usages, HashSet<String> imports) {
         if (!line.contains("new")) return line;  // optimization
 
        Matcher matcher = pattern.matcher(line);
@@ -271,7 +275,7 @@ public class ProjectMorpher
 
 
     // rebuilds line, also copied the target file from source folder to dest folder
-    private static String rebuildLineImports(String line, HashMap<String, HashSet<String>> usage, HashSet<String> imports) throws FileNotFoundException, UnsupportedEncodingException {
+    private static String rebuildLineImports(String line, Usages usages, HashSet<String> imports) throws FileNotFoundException, UnsupportedEncodingException {
         if (line.length() == 0) return line;
 
 //        if (!line.startsWith("import ")) {
@@ -310,6 +314,8 @@ public class ProjectMorpher
             String clsName = after[0];
             String importFullName = pkg + "." + clsName;
 
+            usages.remaps.put(clsName, "com.mercuryred.render.interfaces." + dest + "." + clsName);
+
             // special case, importing static constants, will handle manually
             if (importFullName.endsWith("*")) return line;
 
@@ -344,17 +350,17 @@ public class ProjectMorpher
 
                 imports.add(importName);
 
-                HashSet<String> clsUsage = usage.get(importName);
+                HashSet<String> clsUsage = usages.usage.get(importName);
                 if (clsUsage == null) {
                     // TODO from this class we only need to extract constant, we do not need an interface?
                     System.err.println("NO INTERFACE? " + importName);
                 }
 
-                if (usage.containsKey(from.toString())) {
+                if (usages.usage.containsKey(from.toString())) {
                     return rewrite;
                 }
 
-                usage.put(from.toString(), null);
+                usages.usage.put(from.toString(), null);
 
                 Egg egg = Refactor.ProcessLibFile(from.toString(), clsUsage);
 
