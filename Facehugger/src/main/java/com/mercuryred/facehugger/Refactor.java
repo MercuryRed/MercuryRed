@@ -23,8 +23,10 @@ import com.github.javaparser.ast.type.ClassOrInterfaceType;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 import static com.github.javaparser.ast.Modifier.createModifierList;
 
@@ -162,6 +164,10 @@ public class Refactor {
                 asInterface,
                 cls.getNameAsString());
 
+        if (cls.getNameAsString().equals("JTextField")) {
+            int b = 1;
+        }
+
         if (asWrapper) {
             newEntity.addField(
                     cls.getFullyQualifiedName().get(), "_" + cls.getNameAsString(), Modifier.Keyword.PUBLIC
@@ -193,6 +199,19 @@ public class Refactor {
                     ))
 
             );
+        }
+
+        // todo ... get all methods of the parent class!!!!
+        List<MethodDeclaration> methods0 = new ArrayList<>();
+
+        for (BodyDeclaration<?> bd: cls.getMembers()) {
+            if (bd.isMethodDeclaration()) {
+                MethodDeclaration md = bd.asMethodDeclaration();
+                String name = md.getNameAsString();
+                if (usage == null || usage.contains(name)) {
+                    methods0.add(md);
+                }
+            }
         }
 
         MethodDeclaration[] methods =

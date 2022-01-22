@@ -53,8 +53,8 @@ public class ProjectMorpher
             MorphDirectory(usage);
 
             ImplantRenderEngine("IRenderEngine", "interfaces", factoryInterfaces, null);
-            ImplantRenderEngine("DevNullRenderEngine", "devnull", factoryDevnull, "IRenderEngine");
-            ImplantRenderEngine("SkijaRenderEngine", "skija", factorySkija, "IRenderEngine");
+//            ImplantRenderEngine("DevNullRenderEngine", "devnull", factoryDevnull, "IRenderEngine");
+//            ImplantRenderEngine("SkijaRenderEngine", "skija", factorySkija, "IRenderEngine");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -83,6 +83,11 @@ public class ProjectMorpher
     }
 
     private static void AddProjectSourceFileUsage(Path filePath, HashMap<String, HashSet<String>> usage) throws IOException {
+
+        if (filePath.toString().contains("BackAction")) {
+            int a = 3;
+        }
+
         JavaParser jp = new JavaParser();
 
         ParseResult<CompilationUnit> cu = jp.parse(filePath);
@@ -101,13 +106,16 @@ public class ProjectMorpher
             MethodCallExpr mc = (MethodCallExpr) node;
             Optional<Expression> scope = mc.getScope();
             if (scope.isPresent()) {
-                String type = parentStack.get(scope.get().toString());
+                String varName = scope.get().toString();
+
+                String type = parentStack.get(varName);
                 if (type != null) {
                     type = type.split("<")[0];  // e.g. JComboBox<String>
 
                     if (!usage.containsKey(type)) {
                         usage.put(type, new HashSet<String>());
                     }
+                    // TODO why JTextField.getText is not added, ... or reported?
                     usage.get(type).add(mc.getNameAsString()); // todo ... support overloading, probably not worth it. We could let compiler list unused
                 }
             }
@@ -135,16 +143,16 @@ public class ProjectMorpher
 
         for (Node child : node.getChildNodes()) {
             if (child instanceof FieldDeclaration) {
-                StoreVaribleDeclarations(child.getChildNodes(), stack);
+                StoreVaribleDeclarations(child.getChildNodes(), stack, true);
             } else if (child instanceof VariableDeclarationExpr) {
-                StoreVaribleDeclarations(child.getChildNodes(), stack);
+                StoreVaribleDeclarations(child.getChildNodes(), stack, false);
             }
             else if (child instanceof VariableDeclarator) {
                 VariableDeclarator vd = (VariableDeclarator) child;
 
-                StoreVaribleDeclaration(child, stack);
+                StoreVaribleDeclaration(child, stack, false);
 
-                stack.put(vd.getTypeAsString(), vd.getTypeAsString());
+                stack.put(vd.getNameAsString(), vd.getTypeAsString());
             }
         }
 
@@ -153,17 +161,20 @@ public class ProjectMorpher
         }
     }
 
-    private static void StoreVaribleDeclaration(Node node, HashMap<String, String> stack) {
+    private static void StoreVaribleDeclaration(Node node, HashMap<String, String> stack, boolean addThis) {
         if (node instanceof VariableDeclarator) {
             VariableDeclarator vd = (VariableDeclarator) node;
 
-            stack.put(vd.getTypeAsString(), vd.getTypeAsString());
+            stack.put(vd.getNameAsString(), vd.getTypeAsString());
+            if (addThis) {
+                stack.put("this." + vd.getNameAsString(), vd.getTypeAsString());
+            }
         }
     }
 
-    private static void StoreVaribleDeclarations(List<Node> nodes, HashMap<String, String> stack) {
+    private static void StoreVaribleDeclarations(List<Node> nodes, HashMap<String, String> stack, boolean addThis) {
         for (Node node : nodes) {
-            StoreVaribleDeclaration(node, stack);
+            StoreVaribleDeclaration(node, stack, addThis);
         }
     }
 
@@ -333,16 +344,17 @@ public class ProjectMorpher
 
                 imports.add(importName);
 
-                if (new File(to).exists())
-                {
-                    return rewrite;
-                }
-
                 HashSet<String> clsUsage = usage.get(importName);
                 if (clsUsage == null) {
                     // TODO from this class we only need to extract constant, we do not need an interface?
                     System.err.println("NO INTERFACE? " + importName);
                 }
+
+                if (usage.containsKey(from.toString())) {
+                    return rewrite;
+                }
+
+                usage.put(from.toString(), null);
 
                 Egg egg = Refactor.ProcessLibFile(from.toString(), clsUsage);
 
@@ -385,8 +397,8 @@ public class ProjectMorpher
         String pkg = mapPkg(egg.pkg);
 
         ImplantCode(egg.newInterface, true, "interfaces", pkg, MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH, relPath);
-        ImplantCode(egg.devnull, false, "devnull", pkg, MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH, relPath);
-        ImplantCode(egg.skija, false, "skija", pkg, MERCURY_RED_RENDER_ENGINE_SKIJA_PATH, relPath);
+//        ImplantCode(egg.devnull, false, "devnull", pkg, MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH, relPath);
+//        ImplantCode(egg.skija, false, "skija", pkg, MERCURY_RED_RENDER_ENGINE_SKIJA_PATH, relPath);
     }
 
     private static void ImplantCode(TypeDeclaration type, boolean isInterface, String pkgBase, String pkg, String host, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
