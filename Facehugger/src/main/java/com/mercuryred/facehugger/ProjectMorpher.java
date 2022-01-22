@@ -314,8 +314,6 @@ public class ProjectMorpher
             String clsName = after[0];
             String importFullName = pkg + "." + clsName;
 
-            usages.remaps.put(clsName, "com.mercuryred.render.interfaces." + dest + "." + clsName);
-
             // special case, importing static constants, will handle manually
             if (importFullName.endsWith("*")) return line;
 
@@ -325,6 +323,8 @@ public class ProjectMorpher
                 int index = subImport.lastIndexOf(".");
                 String subPackage = index > 0 ? subImport.substring(0, index) : "";
                 String importName = subImport.substring(index >= 0 ? index + 1 : 0);
+
+                usages.remaps.put(importName, "com.mercuryred.render.interfaces." + dest + "." + clsName);
 
                 /// todo .. subpackage structure maintain ...
                 // remove package
