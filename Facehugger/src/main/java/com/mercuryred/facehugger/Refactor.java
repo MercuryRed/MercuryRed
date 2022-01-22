@@ -289,7 +289,11 @@ public class Refactor {
         for (int i = 0; i < exts.size(); i++) {
             String name = exts.get(i).getName().asString();
 
-            String found = null; //
+            String found = null;
+
+            if (!exts.get(i).getNameWithScope().equals(name)) {
+                found = exts.get(i).getNameWithScope();
+            }
 
             ArrayList<String> candidates = new ArrayList<>();
             candidates.add(pkg + ".*");
