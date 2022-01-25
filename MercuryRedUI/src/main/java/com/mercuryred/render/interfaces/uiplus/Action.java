@@ -2,5 +2,8 @@ package com.mercuryred.render.interfaces.uiplus;
 
 
 
-public class Action {
+
+public interface Action {
+
+    void setEnabled(boolean b);
 }

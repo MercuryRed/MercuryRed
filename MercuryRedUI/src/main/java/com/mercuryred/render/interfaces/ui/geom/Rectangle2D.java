@@ -2,7 +2,15 @@ package com.mercuryred.render.interfaces.ui.geom;
 
 
 
+
 public interface Rectangle2D {
 
-    void union(Rectangle2D src1, Rectangle2D src2, Rectangle2D dest);
+    boolean equals(Object obj);
+    double getX();
+    double getY();
+    double getWidth();
+    double getHeight();
+    double getMinX();
+    double getMinY();
+    boolean isEmpty();
 }

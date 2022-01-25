@@ -38,9 +38,9 @@ public class ProjectMorpher
     static final String JAVA_LIBS_SRC_PATH = "c:\\12\\Android\\JavaLibsSrc\\";
 
     static final String MERCURY_RED_RENDER_ENGINE_PATH = PROJECT_PATH + "MercuryRedUI\\src\\main\\java\\com\\mercuryred\\render\\";
-    static final String MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "interfaces\\";
-    static final String MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "devnull\\";
-    static final String MERCURY_RED_RENDER_ENGINE_SKIJA_PATH = MERCURY_RED_RENDER_ENGINE_PATH + "skija\\";
+    static final String MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH = "c:\\12\\Unreusable\\MercuryRedUIInterfaces\\src\\com\\mercuryred\\render\\interfaces\\";
+    static final String MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH = "c:\\12\\Unreusable\\MercuryRedUIDevNull\\src\\com\\mercuryred\\render\\devnull\\";
+    static final String MERCURY_RED_RENDER_ENGINE_SKIJA_PATH = "c:\\12\\Unreusable\\MercuryRedUISkija\\src\\com\\mercuryred\\render\\skija\\";
 
     static String factoryInterfaces = "";
     static String factoryDevnull = "";
@@ -53,9 +53,9 @@ public class ProjectMorpher
             Usages usages = ExtractUsageFromProjectSource();
             MorphDirectory(usages);
 
-            ImplantRenderEngine(usages,"IRenderEngine", "interfaces", factoryInterfaces, null);
-//            ImplantRenderEngine(usages, "DevNullRenderEngine", "devnull", factoryDevnull, "IRenderEngine");
-//            ImplantRenderEngine(usages, "SkijaRenderEngine", "skija", factorySkija, "IRenderEngine");
+            // ImplantRenderEngine(usages,"IRenderEngine", "interfaces", factoryInterfaces, null, MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH);
+            // ImplantRenderEngine(usages, "DevNullRenderEngine", "devnull", factoryDevnull, "IRenderEngine", MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH);
+            // ImplantRenderEngine(usages, "SkijaRenderEngine", "skija", factorySkija, "IRenderEngine", MERCURY_RED_RENDER_ENGINE_SKIJA_PATH);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -355,8 +355,7 @@ public class ProjectMorpher
 
                 String from = JAVA_LIBS_SRC_PATH + importFullName.replace(".", "\\") + ".java";
 
-                String relPath = dest.replace(".", "\\") + "\\" + subImport.replace(".", "\\") + ".java";
-                String to = MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH + relPath;
+                String relPath = dest.replace(".", "\\") + "\\" + subPackage.replace(".", "\\");
 
                 String dir = MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH + dest.replace(".", "\\") + "\\" + subPackage.replace(".", "\\");
 
@@ -424,24 +423,76 @@ public class ProjectMorpher
     private static void ImplantEgg(Usages usages, Egg egg, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
         String pkg = mapPkg(egg.pkg);
 
-        ImplantCode(usages, egg.newInterface, true, "interfaces", pkg, MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH, relPath);
-//        ImplantCode(usages, egg.devnull, false, "devnull", pkg, MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH, relPath);
-//        ImplantCode(usages, egg.skija, false, "skija", pkg, MERCURY_RED_RENDER_ENGINE_SKIJA_PATH, relPath);
+        // ImplantCode(usages, egg.newInterface, true, "interfaces", pkg, MERCURY_RED_RENDER_ENGINE_INTERFACES_PATH, relPath, "");
+        // ImplantCode(usages, egg.devnull, false, "devnull", pkg, MERCURY_RED_RENDER_ENGINE_DEVNULL_PATH, relPath, "DevNull");
+        // ImplantCode(usages, egg.skija, false, "skija", pkg, MERCURY_RED_RENDER_ENGINE_SKIJA_PATH, relPath, "Skija");
     }
 
-    private static void ImplantCode(Usages usages, TypeDeclaration type, boolean isInterface, String pkgBase, String pkg, String host, String relPath) throws FileNotFoundException, UnsupportedEncodingException {
+    private static void ImplantCode(Usages usages, TypeDeclaration type, boolean isInterface, String pkgBase, String pkg, String host, String relPath, String classPrefix) throws FileNotFoundException, UnsupportedEncodingException {
         if (type == null) return;
 
         String code = type.toString();
 
-        new File(new File(host + relPath).getParent()).mkdirs();
+        // todo remove dupe lines
+        String[] lines = code.split("\n"); // maybe break by ; ... or track { } for bodies
+        HashSet<String> existing = new HashSet<String>();
 
-        PrintWriter writer = new PrintWriter(host + relPath, "UTF-8");
+        String baseClassName = type.getNameAsString();
+
+        String newCode = "";
+        boolean collect = true;
+        for (String line: lines) {
+            if (isInterface) {
+                if (!existing.contains(line)) {
+                    newCode = newCode + "\n" + line;
+                    existing.add(line);
+                }
+            } else {
+                if (line.contains(" class ")) {
+                    newCode = newCode + "\n" + "public class " + classPrefix + baseClassName + " implements " + baseClassName + " {";
+                } else if (line.contains("{")) {
+                    if (!existing.contains(line)) {
+                        existing.add(line);
+                        newCode = newCode + "\n" + line;
+                        collect = true;
+                    } else {
+                        collect = false;
+                    }
+                }
+                else {
+                    if (collect) {
+                        newCode = newCode + "\n" + line;
+                    }
+                }
+
+                if (line.trim().equals("}")) collect = false;
+
+                // end class
+                if (line.equals("}")) {
+                    newCode = newCode + "\n" + line;
+                }
+            }
+
+        }
+
+        code = newCode;
+
+        new File(host + relPath).mkdirs();
+
+        PrintWriter writer = new PrintWriter(host + relPath + "\\" + classPrefix + baseClassName + ".java", "UTF-8");
         writer.println("package com.mercuryred.render." + pkgBase + "." + pkg + ";");
         writer.println();
 
+        String[] tokens = code.split("\\W+");
+        HashSet<String> keywords = new HashSet<String>();
+        for (String token: tokens) {
+            keywords.add(token);
+        }
+
         for (String cls: usages.remaps.keySet()) {
-            if (code.contains(cls)) {
+            if (isInterface && cls.equals(type.getNameAsString())) continue;
+
+            if (keywords.contains(cls)) {
                 writer.println("import " + usages.remaps.get(cls) + ";");
             }
         }
@@ -452,9 +503,9 @@ public class ProjectMorpher
         writer.close();
     }
 
-    private static void ImplantRenderEngine(Usages usages, String name, String route, String code, String baseInterface) throws FileNotFoundException, UnsupportedEncodingException {
+    private static void ImplantRenderEngine(Usages usages, String name, String route, String code, String baseInterface, String path) throws FileNotFoundException, UnsupportedEncodingException {
 
-        PrintWriter writer = new PrintWriter(MERCURY_RED_RENDER_ENGINE_PATH + route + "\\" + name + ".java", "UTF-8");
+        PrintWriter writer = new PrintWriter(path + name + ".java", "UTF-8");
         writer.println("package com.mercuryred.render." + route + ";");
         writer.println();
 
@@ -470,7 +521,7 @@ public class ProjectMorpher
 
         writer.println();
 
-        writer.println("public " + (baseInterface == null ? "interface " : "class ") + name + " " + (baseInterface == null ? "" : "extends " + baseInterface) + " {");
+        writer.println("public " + (baseInterface == null ? "interface " : "class ") + name + " " + (baseInterface == null ? "" : "implements " + baseInterface) + " {");
         writer.println(code);
         writer.println("}");
         writer.println();

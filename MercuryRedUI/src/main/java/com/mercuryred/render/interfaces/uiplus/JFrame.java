@@ -2,5 +2,9 @@ package com.mercuryred.render.interfaces.uiplus;
 
 
 
-public class JFrame {
+
+public interface JFrame {
+
+    void setVisible(boolean b);
+    void dispose();
 }

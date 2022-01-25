@@ -70,9 +70,9 @@ public class Refactor {
 
             egg.renderEngineInterface = extractChestbusterConstructors(cls.getPrimaryType().get(), false, null);
 
-            egg.renderEngineDevnull = extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
+            egg.renderEngineDevnull = extractChestbusterConstructors(cls.getPrimaryType().get(), true, "DevNull");
 
-            egg.renderEngineSkija = extractChestbusterConstructors(cls.getPrimaryType().get(), true, null);
+            egg.renderEngineSkija = extractChestbusterConstructors(cls.getPrimaryType().get(), true, "Skija");
         }
 
 
@@ -89,7 +89,7 @@ public class Refactor {
     }
 
     // TODO type of chestbuster: DevNull, Swing or Skija - also one param will just generate the IRenderInterface
-    static String extractChestbusterConstructors(TypeDeclaration<?> cls, boolean implement, String factory) {
+    static String extractChestbusterConstructors(TypeDeclaration<?> cls, boolean implement, String prefix) {
         BodyDeclaration[] constructors =
                 cls
                         .getMembers()
@@ -106,7 +106,7 @@ public class Refactor {
                             (implement ? "public " : "") + cls.getNameAsString() + " create" + cls.getNameAsString() + "()";
            if (implement) {
                code = code + " {\n" +
-                       "  return " + (factory == null ? "null" : "new " + factory + "(new " + cls.getFullyQualifiedName().get() + "())") + ";\n" +
+                       "  return " + (prefix == null ? "null" : "new " + prefix + cls.getNameAsString() + "()") + ";\n" +
                        "}\n";
            } else {
                code = code + ";";
@@ -130,10 +130,10 @@ public class Refactor {
                     code = code + " {\n" +
                             "  return ";
 
-                    if (factory == null) {
+                    if (prefix == null) {
                         code = code + "null";
                     } else {
-                        code = code + "new " + factory + "(new " + cls.getFullyQualifiedName().get() + "(";
+                        code = code + "new " + prefix + cls.getNameAsString() + "(/*";
 
                         for (int i = 0 ; i < params.size(); i++) {
                             code = code + params.get(i).getNameAsString();
@@ -142,7 +142,7 @@ public class Refactor {
                             }
                         }
 
-                        code = code + "))";
+                        code = code + "*/)";
                     }
 
                     code = code + ";\n" +
@@ -229,6 +229,7 @@ public class Refactor {
             if (asInterface) {
                 decl.setBody(null);
             } else if (asWrapper) {
+                decl.setModifiers(Modifier.Keyword.PUBLIC);
                 if (method.getType().isVoidType()) {
                     decl.setBody(
                             new BlockStmt(
@@ -255,11 +256,12 @@ public class Refactor {
                     );
                 }
             } else if (asNyi) {
+                decl.setModifiers(Modifier.Keyword.PUBLIC);
                 decl.setBody(
                         new BlockStmt(
                                 new NodeList(
                                         new ThrowStmt(
-                                                new MethodCallExpr("com.mercuryred.nyi.ReportNyi")
+                                                new MethodCallExpr("com.mercuryred.utils.Nyi.ReportNyi")
 //                                                new ExplicitConstructorInvocationStmt(
 //                                                        false,
 //                                                        new NameExpr("NotYetImplementedException"),

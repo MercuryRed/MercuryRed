@@ -2,5 +2,10 @@ package com.mercuryred.render.interfaces.ui.event;
 
 
 
-public class InputEvent {
+
+public interface InputEvent {
+
+    boolean isShiftDown();
+    boolean isControlDown();
+    boolean isAltDown();
 }

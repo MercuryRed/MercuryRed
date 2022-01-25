@@ -2,5 +2,11 @@ package com.mercuryred.render.interfaces.uiplus.text;
 
 
 
-public class JTextComponent {
+
+public interface JTextComponent {
+
+    String getText(int offs, int len);
+    void setText(String t);
+    String getText();
+    String getSelectedText();
 }

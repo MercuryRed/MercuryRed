@@ -2,5 +2,8 @@ package com.mercuryred.render.interfaces.ui.datatransfer;
 
 
 
-public class DataFlavor {
+
+public interface DataFlavor {
+
+    boolean isFlavorJavaFileListType();
 }

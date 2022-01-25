@@ -2,5 +2,8 @@ package com.mercuryred.render.interfaces.uiplus.plaf;
 
 
 
-public class FontUIResource {
+
+public interface FontUIResource {
+
+    int getSize();
 }
