@@ -18,8 +18,16 @@
  */
 package org.loboevolution.pdfview;
 
+import com.mercuryred.render.interfaces.ui.Graphics;
 import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.ColorModel;
+import com.mercuryred.render.interfaces.ui.image.ImageObserver;
+import com.mercuryred.render.interfaces.ui.image.ImageProducer;
+import com.mercuryred.render.interfaces.ui.image.Raster;
+import com.mercuryred.render.interfaces.ui.image.WritableRaster;
+import com.mercuryred.utils.Nyi;
 
 /**
  * A BufferedImage subclass that holds a strong reference to its graphics
@@ -31,7 +39,7 @@ import com.mercuryred.render.interfaces.ui.image.BufferedImage;
   *
   *
  */
-public class RefImage extends BufferedImage {
+public class RefImage implements BufferedImage {
 
     /** a strong reference to the graphics object */
     private Graphics2D g;
@@ -44,10 +52,68 @@ public class RefImage extends BufferedImage {
      * @param type a int.
      */
     public RefImage(int width, int height, int type) {
-        super(width, height, type);
+        init(width, height, type);
     }
 
-	/**
+    private void init(int width, int height, int type) {
+        throw com.mercuryred.utils.Nyi.ReportNyi();
+    }
+
+    @Override
+    public int getType() {
+        throw Nyi.ReportNyi();
+        // return 0;
+    }
+
+    @Override
+    public ColorModel getColorModel() {
+        throw Nyi.ReportNyi();
+        // return null;
+    }
+
+    @Override
+    public WritableRaster getRaster() {
+        throw Nyi.ReportNyi();
+        // return null;
+    }
+
+    @Override
+    public int getRGB(int x, int y) {
+        throw Nyi.ReportNyi();
+        // return 0;
+    }
+
+    @Override
+    public int[] getRGB(int startX, int startY, int w, int h, int[] rgbArray, int offset, int scansize) {
+        throw Nyi.ReportNyi();
+        // return new int[0];
+    }
+
+    @Override
+    public int getWidth() {
+        throw Nyi.ReportNyi();
+        // return 0;
+    }
+
+    @Override
+    public int getHeight() {
+        throw Nyi.ReportNyi();
+        // return 0;
+    }
+
+    @Override
+    public int getWidth(ImageObserver observer) {
+        throw Nyi.ReportNyi();
+        // return 0;
+    }
+
+    @Override
+    public int getHeight(ImageObserver observer) {
+        throw Nyi.ReportNyi();
+        // return 0;
+    }
+
+    /**
 	 * {@inheritDoc}
 	 *
 	 * Create a graphics object only if it is currently null, otherwise
@@ -55,10 +121,65 @@ public class RefImage extends BufferedImage {
 	 */
     @Override
 	public Graphics2D createGraphics() {
-        if (this.g == null) {
-            this.g = super.createGraphics();
-        }
+        throw com.mercuryred.utils.Nyi.ReportNyi();
+//        if (this.g == null) {
+//            this.g = super.createGraphics();
+//        }
 
-        return this.g;
+        // return this.g;
+    }
+
+    @Override
+    public BufferedImage getSubimage(int x, int y, int w, int h) {
+        throw Nyi.ReportNyi();
+        // return null;
+    }
+
+    @Override
+    public void coerceData(boolean isAlphaPremultiplied) {
+        throw Nyi.ReportNyi();
+        //
+    }
+
+    @Override
+    public int getMinX() {
+        throw Nyi.ReportNyi();
+        // return 0;
+    }
+
+    @Override
+    public int getMinY() {
+        throw Nyi.ReportNyi();
+        // return 0;
+    }
+
+    @Override
+    public Raster getData() {
+        throw Nyi.ReportNyi();
+        // return null;
+    }
+
+    @Override
+    public Raster getData(Rectangle rect) {
+        throw Nyi.ReportNyi();
+        // return null;
+    }
+
+    @Override
+    public Graphics getGraphics() {
+        throw Nyi.ReportNyi();
+        // return null;
+    }
+
+    @Override
+    public void flush() {
+        throw Nyi.ReportNyi();
+        //
+    }
+
+    @Override
+    public ImageProducer getSource() {
+        throw Nyi.ReportNyi();
+        // return null;
     }
 }

@@ -3,5 +3,5 @@ package com.mercuryred.render.interfaces.ui.image;
 
 
 
-public class DataBufferByte {
+public interface DataBufferByte extends DataBuffer {
 }

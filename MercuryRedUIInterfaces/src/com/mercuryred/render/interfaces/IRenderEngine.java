@@ -60,6 +60,7 @@ import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import com.mercuryred.render.interfaces.ui.image.ColorModel;
 import com.mercuryred.render.interfaces.ui.image.DataBuffer;
+import com.mercuryred.render.interfaces.ui.image.DataBufferByte;
 import com.mercuryred.render.interfaces.ui.image.ImageObserver;
 import com.mercuryred.render.interfaces.ui.image.ImageProducer;
 import com.mercuryred.render.interfaces.ui.image.IndexColorModel;
@@ -687,6 +688,8 @@ public interface IRenderEngine {
 
   TableCellRenderer createTableCellRenderer();
 
+  DataBufferByte createDataBufferByte(byte[] bytes, int size);
+
   DataBuffer createDataBuffer(int dataType, int size);
 
   DataBuffer createDataBuffer(DataBuffer.State initialState, int dataType, int size);
@@ -736,5 +739,7 @@ public interface IRenderEngine {
   void invokeLater(Runnable runnable);
 
   Rectangle2D createRectangle2D(float x, float y, float w, float h);
+
+  WritableRaster createPackedRaster(DataBuffer db, int width, int height, int i, Object o);
 }
 

@@ -52,12 +52,7 @@ package org.jpedal.jbig2.image;
 
 import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import com.mercuryred.render.interfaces.ui.image.DataBuffer;
-import com.mercuryred.render.interfaces.ui.image.DataBufferByte;
-import com.mercuryred.render.interfaces.ui.image.Raster;
 import com.mercuryred.render.interfaces.ui.image.WritableRaster;
-import java.io.IOException;
-import java.util.logging.Logger;
-
 import org.jpedal.jbig2.JBIG2Exception;
 import org.jpedal.jbig2.decoders.ArithmeticDecoder;
 import org.jpedal.jbig2.decoders.DecodeIntResult;
@@ -65,6 +60,9 @@ import org.jpedal.jbig2.decoders.HuffmanDecoder;
 import org.jpedal.jbig2.decoders.JBIG2StreamDecoder;
 import org.jpedal.jbig2.decoders.MMRDecoder;
 import org.jpedal.jbig2.util.BinaryOperation;
+
+import java.io.IOException;
+import java.util.logging.Logger;
 
 /**
  * <p>JBIG2Bitmap class.</p>
@@ -1368,11 +1366,11 @@ public final class JBIG2Bitmap {
 		System.arraycopy(bytes, 0, copy, 0, len);
 
 		/** create an image from the raw data */
-		DataBuffer db = new DataBufferByte(copy, copy.length);
+		DataBuffer db = com.mercuryred.ui.RenderEngines.Get().createDataBufferByte(copy, copy.length);
 
-		WritableRaster raster = Raster.createPackedRaster(db, width, height, 1, null);
+		WritableRaster raster = com.mercuryred.ui.RenderEngines.Get().createPackedRaster(db, width, height, 1, null);
 
-		BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_BINARY);
+		BufferedImage image = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(width, height, BufferedImage.TYPE_BYTE_BINARY);
 		image.setData(raster);
 
 		return image;

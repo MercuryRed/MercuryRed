@@ -31,4 +31,6 @@ public interface BufferedImage extends Image {
     void flush();
 
     ImageProducer getSource();
+
+    void setData(WritableRaster raster);
 }
