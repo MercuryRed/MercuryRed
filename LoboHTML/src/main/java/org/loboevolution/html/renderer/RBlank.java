@@ -22,9 +22,9 @@
  */
 package org.loboevolution.html.renderer;
 
-import java.awt.Color;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 import org.loboevolution.html.renderstate.RenderState;
@@ -38,7 +38,7 @@ final class RBlank extends BaseBoundableRenderable {
 	 * <p>Constructor for RBlank.</p>
 	 *
 	 * @param me a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
-	 * @param fm a {@link java.awt.FontMetrics} object.
+	 * @param fm a {@link com.mercuryred.render.interfaces.ui.FontMetrics} object.
 	 * @param container a {@link org.loboevolution.html.renderer.RenderableContainer} object.
 	 * @param ascentPlusLeading a int.
 	 * @param width a int.
@@ -94,7 +94,7 @@ final class RBlank extends BaseBoundableRenderable {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see net.sourceforge.xamj.domimpl.markup.Renderable#paint(java.awt.Graphics)
+	 * @see net.sourceforge.xamj.domimpl.markup.Renderable#paint(com.mercuryred.render.interfaces.ui.Graphics)
 	 */
 	/** {@inheritDoc} */
 	@Override
@@ -144,7 +144,7 @@ final class RBlank extends BaseBoundableRenderable {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.loboevolution.html.rendered.BoundableRenderable#paintSelection(java.awt.
+	 * @see org.loboevolution.html.rendered.BoundableRenderable#paintSelection(com.mercuryred.render.interfaces.ui.
 	 * Graphics, boolean, org.loboevolution.html.rendered.RenderablePoint,
 	 * org.loboevolution.html.rendered.RenderablePoint)
 	 */

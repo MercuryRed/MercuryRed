@@ -20,16 +20,16 @@
 
 package org.loboevolution.tab;
 
-import java.awt.AWTException;
-import java.awt.Point;
-import java.awt.Robot;
-import java.awt.dnd.DragSource;
-import java.awt.dnd.DragSourceAdapter;
-import java.awt.dnd.DragSourceDragEvent;
-import java.awt.dnd.DragSourceDropEvent;
-import java.awt.dnd.DragSourceEvent;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
+import com.mercuryred.render.interfaces.ui.AWTException;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Robot;
+import com.mercuryred.render.interfaces.ui.dnd.DragSource;
+import com.mercuryred.render.interfaces.ui.dnd.DragSourceAdapter;
+import com.mercuryred.render.interfaces.ui.dnd.DragSourceDragEvent;
+import com.mercuryred.render.interfaces.ui.dnd.DragSourceDropEvent;
+import com.mercuryred.render.interfaces.ui.dnd.DragSourceEvent;
+import com.mercuryred.render.interfaces.ui.event.InputEvent;
+import com.mercuryred.render.interfaces.ui.event.KeyEvent;
 
 /**
  * <p>DragSourceAdapterImpl class.</p>

@@ -23,16 +23,16 @@
 
 package org.loboevolution.img;
 
-import java.awt.Color;
-import java.awt.Insets;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.beans.PropertyChangeListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.event.ChangeListener;
+import com.mercuryred.render.interfaces.uiplus.BorderFactory;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JLabel;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.event.ChangeListener;
 
 import org.loboevolution.common.Objects;
 
@@ -41,7 +41,7 @@ import org.loboevolution.common.Objects;
  * image. Call the {@link #setPixel(int, int)} function to specify which pixel
  * it should display. The current implementation shows the position and color of
  * the pixel; override
- * {@link #updateLabel(java.awt.image.BufferedImage, int, int, int)} to
+ * {@link #updateLabel(com.mercuryred.render.interfaces.ui.image.BufferedImage, int, int, int)} to
  * customize this information.
  *
  * Author Kazo Csaba

@@ -23,9 +23,9 @@
 
 package com.jtattoo.plaf;
 
-import javax.swing.JComponent;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicScrollPaneUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicScrollPaneUI;
 
 /**
  * <p>BaseScrollPaneUI class.</p>

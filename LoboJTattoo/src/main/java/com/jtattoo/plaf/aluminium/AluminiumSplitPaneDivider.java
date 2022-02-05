@@ -23,10 +23,10 @@
 
 package com.jtattoo.plaf.aluminium;
 
-import java.awt.AlphaComposite;
-import java.awt.Composite;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseSplitPaneDivider;

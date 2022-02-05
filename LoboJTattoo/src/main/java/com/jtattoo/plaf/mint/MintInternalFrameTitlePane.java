@@ -22,10 +22,10 @@
  */
 package com.jtattoo.plaf.mint;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
-import javax.swing.JInternalFrame;
+import com.mercuryred.render.interfaces.uiplus.JInternalFrame;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseInternalFrameTitlePane;
@@ -48,7 +48,7 @@ public class MintInternalFrameTitlePane extends BaseInternalFrameTitlePane {
 	/**
 	 * <p>Constructor for MintInternalFrameTitlePane.</p>
 	 *
-	 * @param f a {@link javax.swing.JInternalFrame} object.
+	 * @param f a {@link com.mercuryred.render.interfaces.uiplus.JInternalFrame} object.
 	 */
 	public MintInternalFrameTitlePane(JInternalFrame f) {
 		super(f);

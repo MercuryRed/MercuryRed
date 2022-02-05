@@ -23,12 +23,12 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicDesktopPaneUI;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicDesktopPaneUI;
 
 /**
  * <p>BaseDesktopPaneUI class.</p>

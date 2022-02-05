@@ -23,7 +23,7 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
 /**
  * A helper class for handling color values.

@@ -20,14 +20,14 @@
 
 package org.loboevolution.html.dom.input;
 
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Dimension;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.JFormattedTextField;
-import javax.swing.text.MaskFormatter;
+import com.mercuryred.render.interfaces.uiplus.JFormattedTextField;
+import com.mercuryred.render.interfaces.uiplus.text.MaskFormatter;
 
 import org.loboevolution.html.control.InputControl;
 import org.loboevolution.html.dom.domimpl.HTMLInputElementImpl;

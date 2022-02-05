@@ -22,9 +22,9 @@
  */
 package com.jtattoo.plaf.hifi;
 
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Point;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Point;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.JTattooUtilities;
@@ -40,8 +40,8 @@ public final class HiFiUtils {
 	/**
 	 * <p>fillComponent.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link java.awt.Component} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 */
 	public static void fillComponent(Graphics g, Component c) {
 		if (AbstractLookAndFeel.getTheme().isBackgroundPatternOn()) {

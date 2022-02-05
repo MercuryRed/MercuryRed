@@ -1,6 +1,6 @@
 package com.jtattoo.plaf.lobo;
 
-import javax.swing.JCheckBox;
+import com.mercuryred.render.interfaces.uiplus.JCheckBox;
 
 /**
  * <p>LoboCheckBox class.</p>

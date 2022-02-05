@@ -20,8 +20,8 @@
 
 package org.loboevolution.html.dom.svgimpl;
 
-import java.awt.geom.AffineTransform;
-import java.awt.geom.NoninvertibleTransformException;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.NoninvertibleTransformException;
 
 import org.loboevolution.html.dom.svg.SVGException;
 import org.loboevolution.html.dom.svg.SVGMatrix;
@@ -271,7 +271,7 @@ public class SVGMatrixImpl implements SVGMatrix {
 	/**
 	 * <p>getAffineTransform.</p>
 	 *
-	 * @return a {@link java.awt.geom.AffineTransform} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
 	 */
 	public AffineTransform getAffineTransform() {
 		return transform;

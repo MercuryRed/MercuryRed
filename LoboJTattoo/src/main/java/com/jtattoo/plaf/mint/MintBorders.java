@@ -22,18 +22,18 @@
  */
 package com.jtattoo.plaf.mint;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Composite;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Insets;
 
-import javax.swing.AbstractButton;
-import javax.swing.ButtonModel;
-import javax.swing.border.Border;
-import javax.swing.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.ButtonModel;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseBorders;
@@ -223,7 +223,7 @@ public class MintBorders extends BaseBorders {
 	/**
 	 * <p>getButtonBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getButtonBorder() {
 		if (buttonBorder == null) {
@@ -235,7 +235,7 @@ public class MintBorders extends BaseBorders {
 	/**
 	 * <p>getInternalFrameBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getInternalFrameBorder() {
 		if (internalFrameBorder == null) {
@@ -247,7 +247,7 @@ public class MintBorders extends BaseBorders {
 	/**
 	 * <p>getRolloverToolButtonBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getRolloverToolButtonBorder() {
 		if (rolloverToolButtonBorder == null) {
@@ -259,7 +259,7 @@ public class MintBorders extends BaseBorders {
 	/**
 	 * <p>getToggleButtonBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getToggleButtonBorder() {
 		if (buttonBorder == null) {

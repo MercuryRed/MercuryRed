@@ -18,26 +18,26 @@
  */
 package org.loboevolution.pdfview;
 
-import java.awt.AlphaComposite;
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Paint;
-import java.awt.Rectangle;
-import java.awt.RenderingHints;
-import java.awt.Shape;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Rectangle2D;
-import java.awt.image.BufferedImage;
-import java.awt.image.BufferedImageOp;
-import java.awt.image.ColorModel;
-import java.awt.image.ConvolveOp;
-import java.awt.image.ImageObserver;
-import java.awt.image.IndexColorModel;
-import java.awt.image.Kernel;
-import java.awt.image.WritableRaster;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.BasicStroke;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Paint;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.BufferedImageOp;
+import com.mercuryred.render.interfaces.ui.image.ColorModel;
+import com.mercuryred.render.interfaces.ui.image.ConvolveOp;
+import com.mercuryred.render.interfaces.ui.image.ImageObserver;
+import com.mercuryred.render.interfaces.ui.image.IndexColorModel;
+import com.mercuryred.render.interfaces.ui.image.Kernel;
+import com.mercuryred.render.interfaces.ui.image.WritableRaster;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -110,7 +110,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
      *
      * @param page the current page
      * @param imageinfo the paramters of the image to render
-     * @param bi a {@link java.awt.image.BufferedImage} object.
+     * @param bi a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
      */
     public PDFRenderer(PDFPage page, ImageInfo imageinfo, BufferedImage bi) {
         super();
@@ -277,7 +277,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
      * fill an outline using the current fill paint
      *
      * @param s the path to fill
-     * @return a {@link java.awt.geom.Rectangle2D} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      */
     public Rectangle2D fill(GeneralPath s) {
         this.g.setComposite(this.state.fillAlpha);
@@ -294,7 +294,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
      * draw an image.
      *
      * @param image the image to draw
-     * @return a {@link java.awt.geom.Rectangle2D} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      */
     public Rectangle2D drawImage(PDFImage image) {
 
@@ -491,7 +491,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
      * add the path to the current clip.  The new clip will be the intersection
      * of the old clip and given path.
      *
-     * @param s a {@link java.awt.geom.GeneralPath} object.
+     * @param s a {@link com.mercuryred.render.interfaces.ui.geom.GeneralPath} object.
      */
     public void clip(GeneralPath s) {
         this.g.clip(s);
@@ -510,7 +510,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
     /**
      * get the current affinetransform
      *
-     * @return a {@link java.awt.geom.AffineTransform} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      */
     public AffineTransform getTransform() {
         return this.state.xform;
@@ -519,7 +519,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
     /**
      * concatenate the given transform with the current transform
      *
-     * @param at a {@link java.awt.geom.AffineTransform} object.
+     * @param at a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      */
     public void transform(AffineTransform at) {
         this.state.xform.concatenate(at);
@@ -529,7 +529,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
     /**
      * replace the current transform with the given one.
      *
-     * @param at a {@link java.awt.geom.AffineTransform} object.
+     * @param at a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      */
     public void setTransform(AffineTransform at) {
         this.state.xform = at;
@@ -539,7 +539,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
     /**
      * get the initial transform from page space to Java space
      *
-     * @return a {@link java.awt.geom.AffineTransform} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      */
     public AffineTransform getInitialTransform() {
         return this.page.getInitialTransform(this.imageinfo.width,
@@ -589,7 +589,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
     /**
      * get the current stroke as a BasicStroke
      *
-     * @return a {@link java.awt.BasicStroke} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.BasicStroke} object.
      */
     public BasicStroke getStroke() {
         return this.state.stroke;
@@ -598,7 +598,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
     /**
      * set the current stroke as a BasicStroke
      *
-     * @param bs a {@link java.awt.BasicStroke} object.
+     * @param bs a {@link com.mercuryred.render.interfaces.ui.BasicStroke} object.
      */
     public void setStroke(BasicStroke bs) {
         this.state.stroke = bs;
@@ -645,7 +645,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
     /**
      * Add an image observer
      *
-     * @param observer a {@link java.awt.image.ImageObserver} object.
+     * @param observer a {@link com.mercuryred.render.interfaces.ui.image.ImageObserver} object.
      */
     public void addObserver(ImageObserver observer) {
         if (observer == null) {
@@ -680,7 +680,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
     /**
      * Remove an image observer
      *
-     * @param observer a {@link java.awt.image.ImageObserver} object.
+     * @param observer a {@link com.mercuryred.render.interfaces.ui.image.ImageObserver} object.
      */
     public void removeObserver(ImageObserver observer) {
         synchronized (this.observers) {
@@ -691,7 +691,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
     /**
      * Set the last shape drawn
      *
-     * @param shape a {@link java.awt.geom.GeneralPath} object.
+     * @param shape a {@link com.mercuryred.render.interfaces.ui.geom.GeneralPath} object.
      */
     public void setLastShape(GeneralPath shape) {
         this.lastShape = shape;
@@ -700,7 +700,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
     /**
      * Get the last shape drawn
      *
-     * @return a {@link java.awt.geom.GeneralPath} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.GeneralPath} object.
      */
     public GeneralPath getLastShape() {
         return this.lastShape;

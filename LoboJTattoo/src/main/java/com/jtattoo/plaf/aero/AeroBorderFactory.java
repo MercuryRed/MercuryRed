@@ -23,7 +23,7 @@
 
 package com.jtattoo.plaf.aero;
 
-import javax.swing.border.Border;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
 
 import com.jtattoo.plaf.AbstractBorderFactory;
 import com.jtattoo.plaf.BaseBorders;

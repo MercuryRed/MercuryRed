@@ -22,18 +22,18 @@
  */
 package com.jtattoo.plaf.hifi;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Composite;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Insets;
 
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.border.AbstractBorder;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.border.AbstractBorder;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.BaseComboBoxUI;
 import com.jtattoo.plaf.NoFocusButton;

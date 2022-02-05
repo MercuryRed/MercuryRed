@@ -23,13 +23,13 @@
 
 package org.loboevolution.img;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+import com.mercuryred.render.interfaces.ui.BorderLayout;
+import com.mercuryred.render.interfaces.ui.FlowLayout;
 
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JLabel;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
 
 /**
  * A component for displaying a series of images. Supports paging through GUI as

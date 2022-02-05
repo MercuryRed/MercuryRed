@@ -27,9 +27,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
 
-import javax.swing.JComponent;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.event.ChangeEvent;
+import com.mercuryred.render.interfaces.uiplus.event.ChangeListener;
 
 import org.loboevolution.common.Objects;
 

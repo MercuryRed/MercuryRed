@@ -18,10 +18,10 @@
  */
 package org.loboevolution.pdf;
 
-import java.awt.print.PrinterException;
-import java.awt.print.PrinterJob;
+import com.mercuryred.render.interfaces.ui.print.PrinterException;
+import com.mercuryred.render.interfaces.ui.print.PrinterJob;
 
-import javax.swing.JOptionPane;
+import com.mercuryred.render.interfaces.uiplus.JOptionPane;
 
 /**
  * A thread for printing in.

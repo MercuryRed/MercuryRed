@@ -26,7 +26,7 @@ import org.loboevolution.html.style.HtmlValues;
 import org.loboevolution.info.BackgroundInfo;
 import org.loboevolution.laf.ColorFactory;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
 
 /**

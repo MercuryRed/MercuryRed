@@ -16,7 +16,6 @@
     </properties>
 
     <modules>
-        <module>MercuryRedUI</module>
 	    <module>LoboW3C</module>
         <module>LoboCommon</module>
         <module>LoboStore</module>
@@ -31,11 +30,6 @@
     </modules>
 
     <dependencies>
-        <dependency>
-            <groupId>org.loboevolution</groupId>
-            <artifactId>MercuryRedUI</artifactId>
-            <version>1.0</version>
-        </dependency>
         <dependency>
             <groupId>org.loboevolution</groupId>
             <artifactId>LoboCommon</artifactId>

@@ -22,12 +22,12 @@
  */
 package org.loboevolution.img;
 
-import java.awt.Dimension;
-import java.awt.Rectangle;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 
-import javax.swing.JLayeredPane;
-import javax.swing.JViewport;
-import javax.swing.Scrollable;
+import com.mercuryred.render.interfaces.uiplus.JLayeredPane;
+import com.mercuryred.render.interfaces.uiplus.JViewport;
+import com.mercuryred.render.interfaces.uiplus.Scrollable;
 
 /**
  * <p>ScrollableLayeredPane class.</p>
@@ -64,7 +64,7 @@ public class ScrollableLayeredPane extends JLayeredPane implements Scrollable {
 
 	/*
 	 * The getScrollableTracksViewportXxx functions below are used by
-	 * javax.swing.ScrollPaneLayout to determine whether the scroll bars should be
+	 * com.mercuryred.render.interfaces.uiplus.ScrollPaneLayout to determine whether the scroll bars should be
 	 * visible; so these need to be implemented.
 	 */
 	/** {@inheritDoc} */

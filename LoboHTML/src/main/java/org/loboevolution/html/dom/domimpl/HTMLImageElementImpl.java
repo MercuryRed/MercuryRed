@@ -22,7 +22,7 @@
  */
 package org.loboevolution.html.dom.domimpl;
 
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Dimension;
 import java.net.URL;
 import java.util.logging.Level;
 

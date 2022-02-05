@@ -22,18 +22,18 @@
  */
 package com.jtattoo.plaf.graphite;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Composite;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
 
-import javax.swing.ButtonModel;
-import javax.swing.JComponent;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.ButtonModel;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JMenu;
+import com.mercuryred.render.interfaces.uiplus.JMenuBar;
+import com.mercuryred.render.interfaces.uiplus.JMenuItem;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseMenuUI;

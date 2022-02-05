@@ -18,23 +18,31 @@
  */
 package org.loboevolution.pdf;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Rectangle;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.MenuComponent;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.PopupMenu;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.MouseAdapter;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.ImageObserver;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.JPanel;
-import javax.swing.JViewport;
-import javax.swing.Scrollable;
-import javax.swing.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JViewport;
+import com.mercuryred.render.interfaces.uiplus.Scrollable;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
 
+import com.mercuryred.render.interfaces.uiplus.border.Border;
 import org.loboevolution.pdfview.PDFFile;
 import org.loboevolution.pdfview.PDFPage;
 
@@ -45,7 +53,7 @@ import org.loboevolution.pdfview.PDFPage;
   *
   *
  */
-public class ThumbPanel extends JPanel implements Runnable, Scrollable, ImageObserver {
+public class ThumbPanel implements JPanel, Runnable, Scrollable, ImageObserver {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -6761217072379594185L;
@@ -132,6 +140,12 @@ public class ThumbPanel extends JPanel implements Runnable, Scrollable, ImageObs
 		}
 	}
 
+	private void addMouseListener(MouseAdapter mouseAdapter) {
+	}
+
+	private void setPreferredSize(Dimension dimension) {
+	}
+
 	/**
 	 * {@inheritDoc}
 	 *
@@ -184,7 +198,7 @@ public class ThumbPanel extends JPanel implements Runnable, Scrollable, ImageObs
 				logger.log(Level.SEVERE, e.getMessage(), e);
 
 				int size = lineheight - border;
-				images[workingon] = new BufferedImage(size, size, BufferedImage.TYPE_BYTE_BINARY);
+				images[workingon] = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(size, size, BufferedImage.TYPE_BYTE_BINARY);
 			}
 		}
 	}
@@ -279,6 +293,10 @@ public class ThumbPanel extends JPanel implements Runnable, Scrollable, ImageObs
 		}
 	}
 
+	// TODO must be put in some of the parent interface
+	private void scrollRectToVisible(Rectangle r) {
+	}
+
 	/**
 	 * Notifies the listeners that a page has been selected. Performs the
 	 * notification in the AWT thread. Also highlights the selected page. Does
@@ -288,7 +306,7 @@ public class ThumbPanel extends JPanel implements Runnable, Scrollable, ImageObs
 	 */
 	public void showPage(int pagenum) {
 		pageShown(pagenum);
-		SwingUtilities.invokeLater(new GotoLater(pagenum, this));
+		com.mercuryred.ui.RenderEngines.Get().invokeLater(new GotoLater(pagenum, this));
 	}
 	
 	/**
@@ -296,13 +314,12 @@ public class ThumbPanel extends JPanel implements Runnable, Scrollable, ImageObs
 	 *
 	 * Updates the positions of the thumbnails, and draws them to the screen.
 	 */
-	@Override
 	public void paint(final Graphics g) {
 		int x = 0;
 		int y = 0;
 		int maxwidth = 0;
 		Rectangle clip = g.getClipBounds();
-		g.setColor(Color.gray);
+		g.setColor(Color.GRAY);
 		int width = getWidth();
 		g.fillRect(0, 0, width, getHeight());
 
@@ -328,14 +345,14 @@ public class ThumbPanel extends JPanel implements Runnable, Scrollable, ImageObs
 						needdrawn = i;
 					}
 					// ... and draw a blank thumbnail.
-					g.setColor(Color.lightGray);
+					g.setColor(Color.LIGHT_GRAY);
 					g.fillRect(x + 1, y + 1, w - border, lineheight - border);
-					g.setColor(Color.darkGray);
+					g.setColor(Color.DARK_GRAY);
 					g.drawRect(x + 1, y + 1, w - border - 1, lineheight - border - 1);
 				}
 				// draw the selection highlight if needed.
 				if (i == showing) {
-					g.setColor(Color.red);
+					g.setColor(Color.RED);
 					g.drawRect(x, y, w - 1, lineheight - 1);
 					g.drawRect(x + 1, y + 1, w - 3, lineheight - 3);
 				}
@@ -359,45 +376,33 @@ public class ThumbPanel extends JPanel implements Runnable, Scrollable, ImageObs
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * Handles notification of any image updates. Not used any more.
-	 */
-	@Override
-	public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
-		// if ((infoflags & ALLBITS)!=0) {
-		// flag.set();
-		// }
-		return (infoflags & (ALLBITS | ERROR | ABORT)) == 0;
+	// TODO must be put in parent interface
+	private int getHeight() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
 	}
 
+
 	/** {@inheritDoc} */
-	@Override
 	public Dimension getPreferredScrollableViewportSize() {
 		return getPreferredSize();
 	}
 
 	/** {@inheritDoc} */
-	@Override
 	public int getScrollableBlockIncrement(Rectangle visrect, int orientation, int direction) {
 		return Math.max(lineheight, visrect.height / lineheight * lineheight);
 	}
 
 	/** {@inheritDoc} */
-	@Override
 	public boolean getScrollableTracksViewportHeight() {
 		return false;
 	}
 
 	/** {@inheritDoc} */
-	@Override
 	public boolean getScrollableTracksViewportWidth() {
 		return true;
 	}
 
 	/** {@inheritDoc} */
-	@Override
 	public int getScrollableUnitIncrement(Rectangle visrect, int orientation, int direction) {
 		return lineheight;
 	}
@@ -418,5 +423,130 @@ public class ThumbPanel extends JPanel implements Runnable, Scrollable, ImageObs
 	 */
 	public void setListener(PageChangeListener listener) {
 		this.listener = listener;
+	}
+
+	@Override
+	public Dimension getPreferredSize() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void setBorder(Border border) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public Insets getInsets() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public Insets getInsets(Insets insets) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void setFont(Font font) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public Point getPopupLocation(MouseEvent event) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public int getWidth() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void repaint(long tm, int x, int y, int width, int height) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void repaint(Rectangle r) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void revalidate() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public Component add(Component comp) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public Component add(String name, Component comp) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public Component add(Component comp, int index) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void add(Component comp, Object constraints) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void add(Component comp, Object constraints, int index) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void remove(int index) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void remove(Component comp) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public Container getParent() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void setBounds(int x, int y, int width, int height) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void setBounds(Rectangle r) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void repaint() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void repaint(long tm) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void repaint(int x, int y, int width, int height) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void add(PopupMenu popup) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public void remove(MenuComponent popup) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
 	}
 }

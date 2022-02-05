@@ -18,7 +18,7 @@
  */
 package org.loboevolution.pdfview;
 
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.lang.ref.SoftReference;
 import java.util.Collections;
 import java.util.HashMap;

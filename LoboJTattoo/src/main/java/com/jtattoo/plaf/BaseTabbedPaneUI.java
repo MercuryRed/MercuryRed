@@ -27,40 +27,40 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Composite;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Event;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.LayoutManager;
-import java.awt.Point;
-import java.awt.Polygon;
-import java.awt.Rectangle;
-import java.awt.RenderingHints;
-import java.awt.Shape;
-import java.awt.event.ActionEvent;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
-import java.awt.event.ContainerEvent;
-import java.awt.event.ContainerListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionAdapter;
-import java.awt.event.MouseMotionListener;
-import java.awt.geom.Area;
-import java.awt.geom.Rectangle2D;
-import java.awt.geom.RoundRectangle2D;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Event;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.LayoutManager;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Polygon;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.ComponentEvent;
+import com.mercuryred.render.interfaces.ui.event.ComponentListener;
+import com.mercuryred.render.interfaces.ui.event.ContainerEvent;
+import com.mercuryred.render.interfaces.ui.event.ContainerListener;
+import com.mercuryred.render.interfaces.ui.event.FocusAdapter;
+import com.mercuryred.render.interfaces.ui.event.FocusEvent;
+import com.mercuryred.render.interfaces.ui.event.FocusListener;
+import com.mercuryred.render.interfaces.ui.event.MouseAdapter;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.event.MouseListener;
+import com.mercuryred.render.interfaces.ui.event.MouseMotionAdapter;
+import com.mercuryred.render.interfaces.ui.event.MouseMotionListener;
+import com.mercuryred.render.interfaces.ui.geom.Area;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.geom.RoundRectangle2D;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
@@ -68,37 +68,37 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.AbstractAction;
-import javax.swing.ActionMap;
-import javax.swing.BorderFactory;
-import javax.swing.Icon;
-import javax.swing.InputMap;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JTabbedPane;
-import javax.swing.JViewport;
-import javax.swing.KeyStroke;
-import javax.swing.LookAndFeel;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.plaf.ActionMapUIResource;
-import javax.swing.plaf.ComponentInputMapUIResource;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.TabbedPaneUI;
-import javax.swing.plaf.UIResource;
-import javax.swing.plaf.basic.BasicGraphicsUtils;
-import javax.swing.plaf.basic.BasicHTML;
-import javax.swing.plaf.metal.MetalLookAndFeel;
-import javax.swing.text.View;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.ActionMap;
+import com.mercuryred.render.interfaces.uiplus.BorderFactory;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.InputMap;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JMenuItem;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JPopupMenu;
+import com.mercuryred.render.interfaces.uiplus.JTabbedPane;
+import com.mercuryred.render.interfaces.uiplus.JViewport;
+import com.mercuryred.render.interfaces.uiplus.KeyStroke;
+import com.mercuryred.render.interfaces.uiplus.LookAndFeel;
+import com.mercuryred.render.interfaces.uiplus.SwingConstants;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.event.ChangeEvent;
+import com.mercuryred.render.interfaces.uiplus.event.ChangeListener;
+import com.mercuryred.render.interfaces.uiplus.plaf.ActionMapUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentInputMapUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.TabbedPaneUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicGraphicsUtils;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicHTML;
+import com.mercuryred.render.interfaces.uiplus.plaf.metal.MetalLookAndFeel;
+import com.mercuryred.render.interfaces.uiplus.text.View;
 
 /**
- * This class is a modified copy of the javax.swing.plaf.basic.BasicTabbedPaneUI
+ * This class is a modified copy of the com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicTabbedPaneUI
  *
  * A Basic L&amp;F implementation of TabbedPaneUI.
  *
@@ -2123,8 +2123,8 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>rotateInsets.</p>
 	 *
-	 * @param topInsets a {@link java.awt.Insets} object.
-	 * @param targetInsets a {@link java.awt.Insets} object.
+	 * @param topInsets a {@link com.mercuryred.render.interfaces.ui.Insets} object.
+	 * @param targetInsets a {@link com.mercuryred.render.interfaces.ui.Insets} object.
 	 * @param targetPlacement a int.
 	 */
 	protected static void rotateInsets(Insets topInsets, Insets targetInsets, int targetPlacement) {
@@ -2411,7 +2411,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 *
 	 * @param tabPlacement a int.
 	 * @param tabIndex a int.
-	 * @param metrics a {@link java.awt.FontMetrics} object.
+	 * @param metrics a {@link com.mercuryred.render.interfaces.ui.FontMetrics} object.
 	 * @return a int.
 	 */
 	protected int calculateTabWidth(int tabPlacement, int tabIndex, FontMetrics metrics) {
@@ -2461,7 +2461,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>createChangeListener.</p>
 	 *
-	 * @return a {@link javax.swing.event.ChangeListener} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.event.ChangeListener} object.
 	 */
 	protected ChangeListener createChangeListener() {
 		return new TabSelectionHandler();
@@ -2470,7 +2470,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>createComponentListener.</p>
 	 *
-	 * @return a {@link java.awt.event.ComponentListener} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.event.ComponentListener} object.
 	 */
 	protected ComponentListener createComponentListener() {
 		return new TabComponentHandler();
@@ -2534,7 +2534,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>createFocusListener.</p>
 	 *
-	 * @return a {@link java.awt.event.FocusListener} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.event.FocusListener} object.
 	 */
 	protected FocusListener createFocusListener() {
 		return new FocusHandler();
@@ -2560,7 +2560,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 *
 	 * @return a layout manager object
 	 * @see TabbedPaneLayout
-	 * @see javax.swing.JTabbedPane#getTabLayoutPolicy
+	 * @see com.mercuryred.render.interfaces.uiplus.JTabbedPane#getTabLayoutPolicy
 	 */
 	protected LayoutManager createLayoutManager() {
 		if (tabPane.getTabLayoutPolicy() == JTabbedPane.SCROLL_TAB_LAYOUT) {
@@ -2573,7 +2573,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>createMouseListener.</p>
 	 *
-	 * @return a {@link java.awt.event.MouseListener} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.event.MouseListener} object.
 	 */
 	protected MouseListener createMouseListener() {
 		return new MouseHandler();
@@ -2582,7 +2582,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>createMouseMotionListener.</p>
 	 *
-	 * @return a {@link java.awt.event.MouseMotionListener} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.event.MouseMotionListener} object.
 	 */
 	protected MouseMotionListener createMouseMotionListener() {
 		return new MouseMotionHandler();
@@ -2676,7 +2676,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>getContentBorderColor.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	protected Color getContentBorderColor() {
 		return AbstractLookAndFeel.getFrameColor();
@@ -2686,7 +2686,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>getContentBorderColors.</p>
 	 *
 	 * @param tabPlacement a int.
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	protected Color[] getContentBorderColors(int tabPlacement) {
 		int sepHeight = tabAreaInsets.bottom;
@@ -2700,7 +2700,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>Getter for the field contentBorderInsets.</p>
 	 *
 	 * @param tabPlacement a int.
-	 * @return a {@link java.awt.Insets} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Insets} object.
 	 */
 	protected Insets getContentBorderInsets(int tabPlacement) {
 		if (tabPane.getBorder() == null) {
@@ -2712,7 +2712,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>getFontMetrics.</p>
 	 *
-	 * @return a {@link java.awt.FontMetrics} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.FontMetrics} object.
 	 */
 	protected FontMetrics getFontMetrics() {
 		Font font = tabPane.getFont().deriveFont(Font.BOLD);
@@ -2723,7 +2723,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>getGapColor.</p>
 	 *
 	 * @param tabIndex a int.
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	protected Color getGapColor(int tabIndex) {
 		if (isTabOpaque() || tabIndex == tabPane.getSelectedIndex()) {
@@ -2752,7 +2752,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>getHiBorderColor.</p>
 	 *
 	 * @param tabIndex a int.
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	protected Color getHiBorderColor(int tabIndex) {
 		Color backColor = tabPane.getBackgroundAt(tabIndex);
@@ -2777,7 +2777,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>getIconForTab.</p>
 	 *
 	 * @param tabIndex a int.
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	protected Icon getIconForTab(int tabIndex) {
 		if (tabIndex >= 0 && tabIndex < tabCount) {
@@ -2800,7 +2800,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>getLoBorderColor.</p>
 	 *
 	 * @param tabIndex a int.
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	protected Color getLoBorderColor(int tabIndex) {
 		return MetalLookAndFeel.getControlDarkShadow();
@@ -2930,7 +2930,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>Getter for the field selectedTabPadInsets.</p>
 	 *
 	 * @param tabPlacement a int.
-	 * @return a {@link java.awt.Insets} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Insets} object.
 	 */
 	protected Insets getSelectedTabPadInsets(int tabPlacement) {
 		rotateInsets(selectedTabPadInsets, currentPadInsets, tabPlacement);
@@ -2941,7 +2941,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>Getter for the field tabAreaInsets.</p>
 	 *
 	 * @param tabPlacement a int.
-	 * @return a {@link java.awt.Insets} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Insets} object.
 	 */
 	protected Insets getTabAreaInsets(int tabPlacement) {
 		rotateInsets(tabAreaInsets, currentTabAreaInsets, tabPlacement);
@@ -3028,7 +3028,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * @param tabIndex a int.
 	 * @param isSelected a boolean.
 	 * @param isRollover a boolean.
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	protected Color[] getTabColors(int tabIndex, boolean isSelected, boolean isRollover) {
 		Color[] colorArr = AbstractLookAndFeel.getTheme().getTabColors();
@@ -3070,7 +3070,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>getTabFont.</p>
 	 *
 	 * @param isSelected a boolean.
-	 * @return a {@link java.awt.Font} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Font} object.
 	 */
 	protected Font getTabFont(boolean isSelected) {
 		return tabPane.getFont();
@@ -3081,7 +3081,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 *
 	 * @param tabPlacement a int.
 	 * @param tabIndex a int.
-	 * @return a {@link java.awt.Insets} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Insets} object.
 	 */
 	protected Insets getTabInsets(int tabPlacement, int tabIndex) {
 		return tabInsets;
@@ -3233,7 +3233,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>Getter for the field visibleComponent.</p>
 	 *
-	 * @return a {@link java.awt.Component} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 */
 	protected Component getVisibleComponent() {
 		return visibleComponent;
@@ -3437,13 +3437,13 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>layoutLabel.</p>
 	 *
 	 * @param tabPlacement a int.
-	 * @param metrics a {@link java.awt.FontMetrics} object.
+	 * @param metrics a {@link com.mercuryred.render.interfaces.ui.FontMetrics} object.
 	 * @param tabIndex a int.
 	 * @param title a {@link java.lang.String} object.
-	 * @param icon a {@link javax.swing.Icon} object.
-	 * @param tabRect a {@link java.awt.Rectangle} object.
-	 * @param iconRect a {@link java.awt.Rectangle} object.
-	 * @param textRect a {@link java.awt.Rectangle} object.
+	 * @param icon a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
+	 * @param tabRect a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
+	 * @param iconRect a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
+	 * @param textRect a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 * @param isSelected a boolean.
 	 */
 	protected void layoutLabel(int tabPlacement, FontMetrics metrics, int tabIndex, String title, Icon icon,
@@ -3575,7 +3575,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>paintBottomTabBorder.</p>
 	 *
 	 * @param tabIndex a int.
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param x1 a int.
 	 * @param y1 a int.
 	 * @param x2 a int.
@@ -3625,7 +3625,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>paintContentBorder.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param tabPlacement a int.
 	 * @param selectedIndex a int.
 	 * @param x a int.
@@ -3810,12 +3810,12 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>paintFocusIndicator.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param tabPlacement a int.
-	 * @param rects an array of {@link java.awt.Rectangle} objects.
+	 * @param rects an array of {@link com.mercuryred.render.interfaces.ui.Rectangle} objects.
 	 * @param tabIndex a int.
-	 * @param iconRect a {@link java.awt.Rectangle} object.
-	 * @param textRect a {@link java.awt.Rectangle} object.
+	 * @param iconRect a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
+	 * @param textRect a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 * @param isSelected a boolean.
 	 */
 	protected void paintFocusIndicator(Graphics g, int tabPlacement, Rectangle[] rects, int tabIndex,
@@ -3830,11 +3830,11 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>paintIcon.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param tabPlacement a int.
 	 * @param tabIndex a int.
-	 * @param icon a {@link javax.swing.Icon} object.
-	 * @param iconRect a {@link java.awt.Rectangle} object.
+	 * @param icon a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
+	 * @param iconRect a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 * @param isSelected a boolean.
 	 */
 	protected void paintIcon(Graphics g, int tabPlacement, int tabIndex, Icon icon, Rectangle iconRect,
@@ -3848,7 +3848,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>paintLeftTabBorder.</p>
 	 *
 	 * @param tabIndex a int.
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param x1 a int.
 	 * @param y1 a int.
 	 * @param x2 a int.
@@ -3909,7 +3909,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>paintRightTabBorder.</p>
 	 *
 	 * @param tabIndex a int.
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param x1 a int.
 	 * @param y1 a int.
 	 * @param x2 a int.
@@ -3962,7 +3962,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>paintRoundedBottomTabBorder.</p>
 	 *
 	 * @param tabIndex a int.
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param x1 a int.
 	 * @param y1 a int.
 	 * @param x2 a int.
@@ -3990,7 +3990,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>paintRoundedTopTabBorder.</p>
 	 *
 	 * @param tabIndex a int.
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param x1 a int.
 	 * @param y1 a int.
 	 * @param x2 a int.
@@ -4024,7 +4024,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>paintScrollContentBorder.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param tabPlacement a int.
 	 * @param selectedIndex a int.
 	 * @param x a int.
@@ -4059,12 +4059,12 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>paintTab.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param tabPlacement a int.
-	 * @param rects an array of {@link java.awt.Rectangle} objects.
+	 * @param rects an array of {@link com.mercuryred.render.interfaces.ui.Rectangle} objects.
 	 * @param tabIndex a int.
-	 * @param iconRect a {@link java.awt.Rectangle} object.
-	 * @param textRect a {@link java.awt.Rectangle} object.
+	 * @param iconRect a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
+	 * @param textRect a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 */
 	protected void paintTab(Graphics g, int tabPlacement, Rectangle[] rects, int tabIndex, Rectangle iconRect,
 			Rectangle textRect) {
@@ -4190,7 +4190,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>paintTabBackground.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param tabPlacement a int.
 	 * @param tabIndex a int.
 	 * @param x a int.
@@ -4275,7 +4275,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>paintTabBorder.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param tabPlacement a int.
 	 * @param tabIndex a int.
 	 * @param x a int.
@@ -4315,13 +4315,13 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>paintText.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param tabPlacement a int.
-	 * @param font a {@link java.awt.Font} object.
-	 * @param metrics a {@link java.awt.FontMetrics} object.
+	 * @param font a {@link com.mercuryred.render.interfaces.ui.Font} object.
+	 * @param metrics a {@link com.mercuryred.render.interfaces.ui.FontMetrics} object.
 	 * @param tabIndex a int.
 	 * @param title a {@link java.lang.String} object.
-	 * @param textRect a {@link java.awt.Rectangle} object.
+	 * @param textRect a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 * @param isSelected a boolean.
 	 */
 	protected void paintText(Graphics g, int tabPlacement, Font font, FontMetrics metrics, int tabIndex, String title,
@@ -4378,7 +4378,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	 * <p>paintTopTabBorder.</p>
 	 *
 	 * @param tabIndex a int.
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param x1 a int.
 	 * @param y1 a int.
 	 * @param x2 a int.
@@ -4575,7 +4575,7 @@ public class BaseTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
 	/**
 	 * <p>Setter for the field visibleComponent.</p>
 	 *
-	 * @param component a {@link java.awt.Component} object.
+	 * @param component a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 */
 	protected void setVisibleComponent(Component component) {
 		if (visibleComponent != null && visibleComponent != component && visibleComponent.getParent() == tabPane) {

@@ -22,7 +22,7 @@
  */
 package com.jtattoo.plaf.hifi;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.ColorHelper;

@@ -19,8 +19,8 @@
  */
 package org.loboevolution.html.renderer;
 
-import java.awt.Insets;
-import java.awt.Point;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Point;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

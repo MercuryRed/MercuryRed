@@ -18,11 +18,11 @@
  */
 package org.loboevolution.pdfview;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Paint;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Paint;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 
 /**
  * PDFPaint is some kind of shader that knows how to fill a path.
@@ -39,7 +39,7 @@ public class PDFPaint {
     /**
      * create a new PDFPaint based on a solid color
      *
-     * @param p a {@link java.awt.Paint} object.
+     * @param p a {@link com.mercuryred.render.interfaces.ui.Paint} object.
      */
     protected PDFPaint(Paint p) {
         this.mainPaint = p;
@@ -48,7 +48,7 @@ public class PDFPaint {
     /**
      * get the PDFPaint representing a solid color
      *
-     * @param c a {@link java.awt.Color} object.
+     * @param c a {@link com.mercuryred.render.interfaces.ui.color} object.
      * @return a {@link org.loboevolution.pdfview.PDFPaint} object.
      */
     public static PDFPaint getColorPaint(Color c) {
@@ -58,7 +58,7 @@ public class PDFPaint {
     /**
      * get the PDFPaint representing a generic paint
      *
-     * @param p a {@link java.awt.Paint} object.
+     * @param p a {@link com.mercuryred.render.interfaces.ui.Paint} object.
      * @return a {@link org.loboevolution.pdfview.PDFPaint} object.
      */
     public static PDFPaint getPaint(Paint p) {
@@ -71,7 +71,7 @@ public class PDFPaint {
      * @param state the current graphics state
      * @param g the graphics into which to draw
      * @param s the path to fill
-     * @return a {@link java.awt.geom.Rectangle2D} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      */
     public Rectangle2D fill(PDFRenderer state, Graphics2D g,
             GeneralPath s) {
@@ -84,7 +84,7 @@ public class PDFPaint {
     /**
      * get the primary color associated with this PDFPaint.
      *
-     * @return a {@link java.awt.Paint} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.Paint} object.
      */
     public Paint getPaint() {
         return this.mainPaint;

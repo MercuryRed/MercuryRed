@@ -20,18 +20,18 @@
 
 package org.loboevolution.component;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.RenderingHints;
-import java.awt.Shape;
-import java.awt.geom.Area;
-import java.awt.geom.Rectangle2D;
-import java.awt.geom.RoundRectangle2D;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.Area;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.geom.RoundRectangle2D;
 
-import javax.swing.border.AbstractBorder;
+import com.mercuryred.render.interfaces.uiplus.border.AbstractBorder;
 
 /**
  * <p>RoundedCornerBorder class.</p>
@@ -63,7 +63,7 @@ public class RoundedCornerBorder extends AbstractBorder {
 	 * @param y a int.
 	 * @param w a int.
 	 * @param h a int.
-	 * @return a {@link java.awt.Shape} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Shape} object.
 	 */
 	public Shape getBorderShape(int x, int y, int w, int h) {
 		final int r = h;

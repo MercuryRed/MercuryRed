@@ -20,12 +20,12 @@
 
 package org.loboevolution.menu.view;
 
-import java.awt.DisplayMode;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.DisplayMode;
+import com.mercuryred.render.interfaces.ui.GraphicsDevice;
+import com.mercuryred.render.interfaces.ui.GraphicsEnvironment;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 
-import javax.swing.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
 
 import org.loboevolution.component.BrowserFrame;
 

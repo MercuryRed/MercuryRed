@@ -22,9 +22,9 @@
  */
 package com.jtattoo.plaf.mint;
 
-import javax.swing.JComponent;
-import javax.swing.JInternalFrame;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JInternalFrame;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.BaseInternalFrameUI;
 
@@ -44,7 +44,7 @@ public class MintInternalFrameUI extends BaseInternalFrameUI {
 	/**
 	 * <p>Constructor for MintInternalFrameUI.</p>
 	 *
-	 * @param b a {@link javax.swing.JInternalFrame} object.
+	 * @param b a {@link com.mercuryred.render.interfaces.uiplus.JInternalFrame} object.
 	 */
 	public MintInternalFrameUI(JInternalFrame b) {
 		super(b);

@@ -20,10 +20,10 @@
 
 package org.loboevolution.menu;
 
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 
-import javax.swing.AbstractAction;
-import javax.swing.JComponent;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
 
 import org.loboevolution.common.Strings;
 import org.loboevolution.component.BrowserFrame;

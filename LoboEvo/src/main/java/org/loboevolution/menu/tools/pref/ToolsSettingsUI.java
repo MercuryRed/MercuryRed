@@ -20,13 +20,13 @@
 
 package org.loboevolution.menu.tools.pref;
 
-import java.awt.Component;
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Dimension;
 import java.util.Collection;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.border.EmptyBorder;
+import com.mercuryred.render.interfaces.uiplus.Box;
+import com.mercuryred.render.interfaces.uiplus.BoxLayout;
+import com.mercuryred.render.interfaces.uiplus.border.EmptyBorder;
 
 import org.loboevolution.gui.ItemEditorFactory;
 import org.loboevolution.gui.SwingTasks;

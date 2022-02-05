@@ -18,8 +18,8 @@
  */
 package org.loboevolution.pdfview.font;
 
-import java.awt.geom.AffineTransform;
-import java.awt.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -265,7 +265,7 @@ public class TTFFont extends OutlineFont {
      * Render a simple glyf
      *
      * @param g a {@link org.loboevolution.pdfview.font.ttf.GlyfSimple} object.
-     * @return a {@link java.awt.geom.GeneralPath} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.GeneralPath} object.
      */
     protected GeneralPath renderSimpleGlyph (GlyfSimple g) {
         // the current contour
@@ -310,7 +310,7 @@ public class TTFFont extends OutlineFont {
      *
      * @param glyf a {@link org.loboevolution.pdfview.font.ttf.GlyfTable} object.
      * @param g a {@link org.loboevolution.pdfview.font.ttf.GlyfCompound} object.
-     * @return a {@link java.awt.geom.GeneralPath} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.GeneralPath} object.
      */
     protected GeneralPath renderCompoundGlyph (GlyfTable glyf, GlyfCompound g) {
         GeneralPath gp = new GeneralPath ();

@@ -19,25 +19,25 @@
 
 package org.loboevolution.pdfview.pattern;
 
-import java.awt.AlphaComposite;
-import java.awt.Graphics2D;
-import java.awt.Paint;
-import java.awt.PaintContext;
-import java.awt.Rectangle;
-import java.awt.RenderingHints;
-import java.awt.Shape;
-import java.awt.Transparency;
-import java.awt.color.ColorSpace;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.NoninvertibleTransformException;
-import java.awt.geom.Rectangle2D;
-import java.awt.image.BufferedImage;
-import java.awt.image.ColorModel;
-import java.awt.image.ComponentColorModel;
-import java.awt.image.DataBuffer;
-import java.awt.image.Raster;
-import java.awt.image.WritableRaster;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Paint;
+import com.mercuryred.render.interfaces.ui.PaintContext;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.Transparency;
+import com.mercuryred.render.interfaces.ui.color.ColorSpace;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.NoninvertibleTransformException;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.ColorModel;
+import com.mercuryred.render.interfaces.ui.image.ComponentColorModel;
+import com.mercuryred.render.interfaces.ui.image.DataBuffer;
+import com.mercuryred.render.interfaces.ui.image.Raster;
+import com.mercuryred.render.interfaces.ui.image.WritableRaster;
 import java.io.IOException;
 import java.util.Map;
 
@@ -205,7 +205,7 @@ public class PatternType1 extends PDFPattern {
     /**
      * get the bounding box
      *
-     * @return a {@link java.awt.geom.Rectangle2D} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      */
     public Rectangle2D getBBox() {
         return this.bbox;

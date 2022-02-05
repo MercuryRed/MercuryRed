@@ -23,8 +23,8 @@ package org.loboevolution.init;
 import java.io.File;
 import java.util.Properties;
 
-import javax.swing.UIManager;
-import javax.swing.WindowConstants;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.WindowConstants;
 
 import com.loboevolution.store.laf.LAFSettings;
 import org.loboevolution.component.BrowserFrame;

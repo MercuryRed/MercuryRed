@@ -23,13 +23,13 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.AlphaComposite;
-import java.awt.Composite;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
 
-import javax.swing.Action;
-import javax.swing.Icon;
+import com.mercuryred.render.interfaces.uiplus.Action;
+import com.mercuryred.render.interfaces.uiplus.Icon;
 
 /**
  * <p>BaseTitleButton class.</p>
@@ -48,9 +48,9 @@ public class BaseTitleButton extends NoFocusButton {
 	/**
 	 * <p>Constructor for BaseTitleButton.</p>
 	 *
-	 * @param action a {@link javax.swing.Action} object.
+	 * @param action a {@link com.mercuryred.render.interfaces.uiplus.Action} object.
 	 * @param accessibleName a {@link java.lang.String} object.
-	 * @param icon a {@link javax.swing.Icon} object.
+	 * @param icon a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 * @param alpha a float.
 	 */
 	public BaseTitleButton(Action action, String accessibleName, Icon icon, float alpha) {

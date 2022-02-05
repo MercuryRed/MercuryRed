@@ -20,12 +20,12 @@
 
 package org.loboevolution.menu.view;
 
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
 
 import org.loboevolution.component.BrowserFrame;
 import org.loboevolution.component.ToolBar;

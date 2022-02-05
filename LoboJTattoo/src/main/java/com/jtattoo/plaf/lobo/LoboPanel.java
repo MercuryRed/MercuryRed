@@ -1,10 +1,10 @@
 package com.jtattoo.plaf.lobo;
 
-import java.awt.LayoutManager;
+import com.mercuryred.render.interfaces.ui.LayoutManager;
 
-import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
-import javax.swing.border.TitledBorder;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.border.LineBorder;
+import com.mercuryred.render.interfaces.uiplus.border.TitledBorder;
 
 /**
  * <p>LoboPanel class.</p>
@@ -38,7 +38,7 @@ public class LoboPanel extends JPanel implements LoboLookAndFeel {
 	/**
 	 * <p>Constructor for LoboPanel.</p>
 	 *
-	 * @param layout a {@link java.awt.LayoutManager} object.
+	 * @param layout a {@link com.mercuryred.render.interfaces.ui.LayoutManager} object.
 	 * @param title a {@link java.lang.String} object.
 	 */
 	public LoboPanel(LayoutManager layout, String title) {

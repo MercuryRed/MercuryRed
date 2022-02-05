@@ -22,10 +22,10 @@
  */
 package com.jtattoo.plaf.fast;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
-import javax.swing.Icon;
+import com.mercuryred.render.interfaces.uiplus.Icon;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseIcons;

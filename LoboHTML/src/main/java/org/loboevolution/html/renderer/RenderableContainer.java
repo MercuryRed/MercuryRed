@@ -20,11 +20,11 @@
 
 package org.loboevolution.html.renderer;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Insets;
-import java.awt.Point;
-import java.awt.Rectangle;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 import java.util.Collection;
 
 /**
@@ -39,8 +39,8 @@ public interface RenderableContainer {
 	/**
 	 * <p>addComponent.</p>
 	 *
-	 * @param component a {@link java.awt.Component} object.
-	 * @return a {@link java.awt.Component} object.
+	 * @param component a {@link com.mercuryred.render.interfaces.ui.Component} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 */
 	Component addComponent(Component component);
 
@@ -71,7 +71,7 @@ public interface RenderableContainer {
 	/**
 	 * <p>getPaintedBackgroundColor.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	Color getPaintedBackgroundColor();
 
@@ -112,7 +112,7 @@ public interface RenderableContainer {
      *
      * @param hscroll a boolean.
      * @param vscroll a boolean.
-     * @return a {@link java.awt.Insets} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.Insets} object.
      */
     Insets getInsetsMarginBorder(final boolean hscroll, final boolean vscroll);
     
@@ -121,7 +121,7 @@ public interface RenderableContainer {
      *
      * @param hscroll a boolean.
      * @param vscroll a boolean.
-     * @return a {@link java.awt.Insets} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.Insets} object.
      */
     Insets getInsets(final boolean hscroll, final boolean vscroll);
     
@@ -149,7 +149,7 @@ public interface RenderableContainer {
     /**
      * <p>getVisualBounds.</p>
      *
-     * @return a {@link java.awt.Rectangle} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
      */
     Rectangle getVisualBounds();
     
@@ -172,7 +172,7 @@ public interface RenderableContainer {
      *
      * @param x a int.
      * @param y a int.
-     * @return a {@link java.awt.Point} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.Point} object.
      */
     Point getGUIPoint(int x, int y);
     
@@ -182,7 +182,7 @@ public interface RenderableContainer {
      * @param descendent a {@link org.loboevolution.html.renderer.BoundableRenderable} object.
      * @param x a int.
      * @param y a int.
-     * @return a {@link java.awt.Point} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.Point} object.
      */
     Point translateDescendentPoint(BoundableRenderable descendent, int x, int y);
 
@@ -190,7 +190,7 @@ public interface RenderableContainer {
 	 * <p>getOriginRelativeToAbs.</p>
 	 *
 	 * @param bodyLayout a {@link org.loboevolution.html.renderer.RCollection} object.
-	 * @return a {@link java.awt.Point} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 */
 	public Point getOriginRelativeToAbs(RCollection bodyLayout);
 }

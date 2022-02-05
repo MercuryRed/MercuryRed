@@ -20,15 +20,15 @@
 
 package org.loboevolution.menu.tools.pref;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.border.EmptyBorder;
+import com.mercuryred.render.interfaces.uiplus.Box;
+import com.mercuryred.render.interfaces.uiplus.BoxLayout;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
+import com.mercuryred.render.interfaces.uiplus.JScrollPane;
+import com.mercuryred.render.interfaces.uiplus.border.EmptyBorder;
 
 import org.loboevolution.component.BrowserFrame;
 

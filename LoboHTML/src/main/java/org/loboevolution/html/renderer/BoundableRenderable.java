@@ -19,11 +19,11 @@
  */
 package org.loboevolution.html.renderer;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 
@@ -36,21 +36,21 @@ public interface BoundableRenderable extends Renderable {
 	/**
 	 * <p>getSize.</p>
 	 *
-	 * @return a {@link java.awt.Dimension} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Dimension} object.
 	 */
 	Dimension getSize();
 
 	/**
 	 * <p>getBounds.</p>
 	 *
-	 * @return a {@link java.awt.Rectangle} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 */
 	Rectangle getBounds();
 
 	/**
 	 * <p>getVisualBounds.</p>
 	 *
-	 * @return a {@link java.awt.Rectangle} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 */
 	Rectangle getVisualBounds();
 
@@ -77,14 +77,14 @@ public interface BoundableRenderable extends Renderable {
 	 *
 	 * @param clientX a int.
 	 * @param clientY a int.
-	 * @return a {@link java.awt.Point} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 */
 	Point getGUIPoint(int clientX, int clientY);
 
 	/**
 	 * <p>getOrigin.</p>
 	 *
-	 * @return a {@link java.awt.Point} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 */
 	Point getOrigin();
 
@@ -93,7 +93,7 @@ public interface BoundableRenderable extends Renderable {
 	 *
 	 * @param guiX a int.
 	 * @param guiY a int.
-	 * @return a {@link java.awt.Point} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 */
 	Point getRenderablePoint(int guiX, int guiY);
 
@@ -101,7 +101,7 @@ public interface BoundableRenderable extends Renderable {
 	 * <p>getOriginRelativeTo.</p>
 	 *
 	 * @param ancestor a {@link org.loboevolution.html.renderer.RCollection} object.
-	 * @return a {@link java.awt.Point} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 */
 	Point getOriginRelativeTo(RCollection ancestor);
 
@@ -109,7 +109,7 @@ public interface BoundableRenderable extends Renderable {
 	 * <p>getOriginRelativeToNoScroll.</p>
 	 *
 	 * @param ancestor a {@link org.loboevolution.html.renderer.RCollection} object.
-	 * @return a {@link java.awt.Point} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 */
 	Point getOriginRelativeToNoScroll(RCollection ancestor);
 
@@ -117,7 +117,7 @@ public interface BoundableRenderable extends Renderable {
 	 * <p>getOriginRelativeToAbs.</p>
 	 *
 	 * @param ancestor a {@link org.loboevolution.html.renderer.RCollection} object.
-	 * @return a {@link java.awt.Point} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 */
 	public Point getOriginRelativeToAbs(RCollection ancestor);
 
@@ -215,7 +215,7 @@ public interface BoundableRenderable extends Renderable {
 	/**
 	 * <p>onDoubleClick.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @return a boolean.
@@ -225,7 +225,7 @@ public interface BoundableRenderable extends Renderable {
 	/**
 	 * <p>onMouseClick.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @return a boolean.
@@ -235,7 +235,7 @@ public interface BoundableRenderable extends Renderable {
 	/**
 	 * <p>onMouseDisarmed.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @return a boolean.
 	 */
 	boolean onMouseDisarmed(final MouseEvent event);
@@ -243,7 +243,7 @@ public interface BoundableRenderable extends Renderable {
 	/**
 	 * <p>onMouseMoved.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param triggerEvent a boolean.
@@ -254,7 +254,7 @@ public interface BoundableRenderable extends Renderable {
 	/**
 	 * <p>onMousePressed.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @return a boolean.
@@ -264,7 +264,7 @@ public interface BoundableRenderable extends Renderable {
 	/**
 	 * <p>onMouseReleased.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @return a boolean.
@@ -274,7 +274,7 @@ public interface BoundableRenderable extends Renderable {
 	/**
 	 * <p>onRightClick.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @return a boolean.
@@ -286,7 +286,7 @@ public interface BoundableRenderable extends Renderable {
 	/**
 	 * <p>paintSelection.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param inSelection a boolean.
 	 * @param startPoint a {@link org.loboevolution.html.renderer.RenderableSpot} object.
 	 * @param endPoint a {@link org.loboevolution.html.renderer.RenderableSpot} object.
@@ -314,7 +314,7 @@ public interface BoundableRenderable extends Renderable {
 	/**
 	 * <p>onMouseOut.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param limit a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
@@ -324,7 +324,7 @@ public interface BoundableRenderable extends Renderable {
 	/**
 	 * <p>paintTranslated.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 */
 	void paintTranslated(Graphics g);
 

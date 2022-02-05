@@ -24,7 +24,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
 /**
  * <p>BorderInfo class.</p>

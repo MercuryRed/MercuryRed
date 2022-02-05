@@ -19,7 +19,7 @@
 
 package org.loboevolution.pdfview.colorspace;
 
-import java.awt.color.ColorSpace;
+import com.mercuryred.render.interfaces.ui.color.ColorSpace;
 
 /**
  * A ColorSpace for the YCCK color space.  This color space converts to CMYK and then
@@ -30,7 +30,7 @@ import java.awt.color.ColorSpace;
  * Author Ben Day
   *
  */
-public class YCCKColorSpace extends ColorSpace
+public class YCCKColorSpace implements ColorSpace
 {
 
     private final ColorSpace cmykColorSpace;
@@ -38,7 +38,7 @@ public class YCCKColorSpace extends ColorSpace
     /**
      * create a new YCCK color space:  a ColorSpace with 4 components
      *
-     * @param existingCmykColorSpace a {@link java.awt.color.ColorSpace} object.
+     * @param existingCmykColorSpace a {@link com.mercuryred.render.interfaces.ui.color.ColorSpace} object.
      */
     public YCCKColorSpace(ColorSpace existingCmykColorSpace)
     {

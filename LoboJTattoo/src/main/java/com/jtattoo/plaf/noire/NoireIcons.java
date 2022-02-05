@@ -22,7 +22,7 @@
  */
 package com.jtattoo.plaf.noire;
 
-import javax.swing.Icon;
+import com.mercuryred.render.interfaces.uiplus.Icon;
 
 import com.jtattoo.plaf.BaseIcons;
 import com.jtattoo.plaf.hifi.HiFiIcons;
@@ -38,7 +38,7 @@ public class NoireIcons extends HiFiIcons {
 	/**
 	 * <p>getDownArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getDownArrowIcon() {
 		return BaseIcons.getDownArrowIcon();
@@ -47,7 +47,7 @@ public class NoireIcons extends HiFiIcons {
 	/**
 	 * <p>getLeftArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getLeftArrowIcon() {
 		return BaseIcons.getLeftArrowIcon();
@@ -56,7 +56,7 @@ public class NoireIcons extends HiFiIcons {
 	/**
 	 * <p>getRightArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getRightArrowIcon() {
 		return BaseIcons.getRightArrowIcon();
@@ -65,7 +65,7 @@ public class NoireIcons extends HiFiIcons {
 	/**
 	 * <p>getUpArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getUpArrowIcon() {
 		return BaseIcons.getUpArrowIcon();

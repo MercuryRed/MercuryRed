@@ -1,10 +1,10 @@
 package com.jtattoo.plaf.lobo;
 
-import java.awt.Cursor;
-import java.awt.Font;
+import com.mercuryred.render.interfaces.ui.Cursor;
+import com.mercuryred.render.interfaces.ui.Font;
 
-import javax.swing.JButton;
-import javax.swing.border.LineBorder;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.border.LineBorder;
 
 /**
  * <p>LoboButton class.</p>

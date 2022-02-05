@@ -20,8 +20,8 @@
 
 package org.loboevolution.html.js;
 
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
+import com.mercuryred.render.interfaces.ui.GraphicsDevice;
+import com.mercuryred.render.interfaces.ui.GraphicsEnvironment;
 
 import org.loboevolution.html.node.js.Screen;
 import org.loboevolution.js.AbstractScriptableDelegate;

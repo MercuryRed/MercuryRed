@@ -23,7 +23,7 @@
 
 package com.jtattoo.plaf.acryl;
 
-import javax.swing.Icon;
+import com.mercuryred.render.interfaces.uiplus.Icon;
 
 import com.jtattoo.plaf.AbstractIconFactory;
 import com.jtattoo.plaf.BaseIcons;

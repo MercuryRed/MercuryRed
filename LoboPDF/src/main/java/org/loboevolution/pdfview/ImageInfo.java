@@ -18,8 +18,8 @@
  */
 package org.loboevolution.pdfview;
 
-import java.awt.Color;
-import java.awt.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 
 /**
  * <p>ImageInfo class.</p>
@@ -39,7 +39,7 @@ public class ImageInfo {
      *
      * @param width a int.
      * @param height a int.
-     * @param clip a {@link java.awt.geom.Rectangle2D} object.
+     * @param clip a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      */
     public ImageInfo(int width, int height, Rectangle2D clip) {
         this(width, height, clip, Color.WHITE);
@@ -50,8 +50,8 @@ public class ImageInfo {
      *
      * @param width a int.
      * @param height a int.
-     * @param clip a {@link java.awt.geom.Rectangle2D} object.
-     * @param bgColor a {@link java.awt.Color} object.
+     * @param clip a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
+     * @param bgColor a {@link com.mercuryred.render.interfaces.ui.color} object.
      */
     public ImageInfo(int width, int height, Rectangle2D clip, Color bgColor) {
         this.width = width;

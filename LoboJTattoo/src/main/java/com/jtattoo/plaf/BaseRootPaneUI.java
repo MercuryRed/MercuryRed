@@ -22,46 +22,46 @@
  */
 package com.jtattoo.plaf;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Cursor;
-import java.awt.Dialog;
-import java.awt.Dimension;
-import java.awt.Frame;
-import java.awt.Graphics;
-import java.awt.GraphicsConfiguration;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-import java.awt.Insets;
-import java.awt.LayoutManager;
-import java.awt.LayoutManager2;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.Toolkit;
-import java.awt.Window;
-import java.awt.event.InputEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Cursor;
+import com.mercuryred.render.interfaces.ui.Dialog;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Frame;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.GraphicsConfiguration;
+import com.mercuryred.render.interfaces.ui.GraphicsDevice;
+import com.mercuryred.render.interfaces.ui.GraphicsEnvironment;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.LayoutManager;
+import com.mercuryred.render.interfaces.ui.LayoutManager2;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.Toolkit;
+import com.mercuryred.render.interfaces.ui.Window;
+import com.mercuryred.render.interfaces.ui.event.InputEvent;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.event.WindowAdapter;
+import com.mercuryred.render.interfaces.ui.event.WindowEvent;
+import com.mercuryred.render.interfaces.ui.event.WindowListener;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import javax.swing.JComponent;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
-import javax.swing.JRootPane;
-import javax.swing.LookAndFeel;
-import javax.swing.SwingUtilities;
-import javax.swing.event.MouseInputListener;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicRootPaneUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JDialog;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
+import com.mercuryred.render.interfaces.uiplus.JLayeredPane;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JRootPane;
+import com.mercuryred.render.interfaces.uiplus.LookAndFeel;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.event.MouseInputListener;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicRootPaneUI;
 
 /**
- * This source is a modified copy of javax.swing.plaf.metal.MetalRootPaneUI
+ * This source is a modified copy of com.mercuryred.render.interfaces.uiplus.plaf.metal.MetalRootPaneUI
  * Provides the base look and feel implementation of RootPaneUI.
  * <p>
  * BaseRootPaneUI provides support for the
@@ -88,7 +88,7 @@ import javax.swing.plaf.basic.BasicRootPaneUI;
  */
 public class BaseRootPaneUI extends BasicRootPaneUI {
 
-	// Konstanten aus javax.swing.JRootPane damit Attribute aus Java 1.4 sich mit
+	// Konstanten aus com.mercuryred.render.interfaces.uiplus.JRootPane damit Attribute aus Java 1.4 sich mit
 	// Java 1.3 uebersetzen lassen
 
 	// ------------------------------------------------------------------------------
@@ -689,7 +689,7 @@ public class BaseRootPaneUI extends BasicRootPaneUI {
 	public static final int QUESTION_DIALOG = 7;
 	/** Constant WARNING_DIALOG=8 */
 	public static final int WARNING_DIALOG = 8;
-	// Konstanten aus java.awt.Frame damit Attribute aus Java 1.4 sich mit Java 1.3
+	// Konstanten aus com.mercuryred.render.interfaces.ui.Frame damit Attribute aus Java 1.4 sich mit Java 1.3
 	// uebersetzen lassen
 	/** Constant MAXIMIZED_HORIZ=2 */
 	public static final int MAXIMIZED_HORIZ = 2;
@@ -816,7 +816,7 @@ public class BaseRootPaneUI extends BasicRootPaneUI {
 	/**
 	 * <p>getRootPane.</p>
 	 *
-	 * @return a {@link javax.swing.JRootPane} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.JRootPane} object.
 	 */
 	public JRootPane getRootPane() {
 		return root;
@@ -839,7 +839,7 @@ public class BaseRootPaneUI extends BasicRootPaneUI {
 	/**
 	 * <p>installBorder.</p>
 	 *
-	 * @param root a {@link javax.swing.JRootPane} object.
+	 * @param root a {@link com.mercuryred.render.interfaces.uiplus.JRootPane} object.
 	 */
 	public void installBorder(JRootPane root) {
 		int style = root.getWindowDecorationStyle();
@@ -853,7 +853,7 @@ public class BaseRootPaneUI extends BasicRootPaneUI {
 	/**
 	 * <p>installClientDecorations.</p>
 	 *
-	 * @param root a {@link javax.swing.JRootPane} object.
+	 * @param root a {@link com.mercuryred.render.interfaces.uiplus.JRootPane} object.
 	 */
 	public void installClientDecorations(JRootPane root) {
 		installBorder(root);
@@ -1025,7 +1025,7 @@ public class BaseRootPaneUI extends BasicRootPaneUI {
 	/**
 	 * <p>uninstallClientDecorations.</p>
 	 *
-	 * @param root a {@link javax.swing.JRootPane} object.
+	 * @param root a {@link com.mercuryred.render.interfaces.uiplus.JRootPane} object.
 	 */
 	public void uninstallClientDecorations(JRootPane root) {
 		uninstallBorder(root);
@@ -1048,7 +1048,7 @@ public class BaseRootPaneUI extends BasicRootPaneUI {
 	/**
 	 * <p>uninstallLayout.</p>
 	 *
-	 * @param root a {@link javax.swing.JRootPane} object.
+	 * @param root a {@link com.mercuryred.render.interfaces.uiplus.JRootPane} object.
 	 */
 	public void uninstallLayout(JRootPane root) {
 		if (savedOldLayout != null) {

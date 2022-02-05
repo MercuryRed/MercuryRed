@@ -21,13 +21,13 @@
 package org.loboevolution.menu.tools.screen;
 
 
-import javax.swing.JFrame;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
 import org.loboevolution.component.BrowserFrame;
 
-import java.awt.Color;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-import java.awt.Rectangle;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.GraphicsDevice;
+import com.mercuryred.render.interfaces.ui.GraphicsEnvironment;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 
 /**
  * <p>ScreenShootWindow class.</p>

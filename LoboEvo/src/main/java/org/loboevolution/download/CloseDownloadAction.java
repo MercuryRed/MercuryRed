@@ -21,9 +21,9 @@
 package org.loboevolution.download;
 
 
-import javax.swing.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
 
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 
 /**
  * <p>CloseDownloadAction class.</p>

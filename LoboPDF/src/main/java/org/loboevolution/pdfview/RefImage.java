@@ -18,8 +18,8 @@
  */
 package org.loboevolution.pdfview;
 
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 
 /**
  * A BufferedImage subclass that holds a strong reference to its graphics

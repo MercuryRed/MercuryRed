@@ -19,7 +19,7 @@
  */
 package org.loboevolution.html.renderer;
 
-import javax.swing.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
 import org.loboevolution.common.ArrayUtilities;
 import org.loboevolution.common.Strings;
 import org.loboevolution.html.HTMLTag;
@@ -45,12 +45,12 @@ import org.loboevolution.http.HtmlRendererContext;
 import org.loboevolution.http.UserAgentContext;
 import org.loboevolution.info.FloatingInfo;
 
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Insets;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -549,7 +549,7 @@ public class RBlockViewport extends BaseRCollection {
 	 *
 	 * @param canvasWidth   The new width of the viewport. It could be different to
 	 *                      the previously calculated width.
-	 * @param paddingInsets a {@link java.awt.Insets} object.
+	 * @param paddingInsets a {@link com.mercuryred.render.interfaces.ui.Insets} object.
 	 * @param alignXPercent a int.
 	 */
 	public void alignX(int alignXPercent, int canvasWidth, Insets paddingInsets) {
@@ -587,7 +587,7 @@ public class RBlockViewport extends BaseRCollection {
 	 * Applies vertical alignment.
 	 *
 	 * @param canvasHeight a int.
-	 * @param paddingInsets a {@link java.awt.Insets} object.
+	 * @param paddingInsets a {@link com.mercuryred.render.interfaces.ui.Insets} object.
 	 * @param alignYPercent a int.
 	 */
 	public void alignY(int alignYPercent, int canvasHeight, Insets paddingInsets) {
@@ -785,7 +785,7 @@ public class RBlockViewport extends BaseRCollection {
 	/**
 	 * <p>getRenderable.</p>
 	 *
-	 * @param point a {@link java.awt.Point} object.
+	 * @param point a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 * @return a {@link org.loboevolution.html.renderer.BoundableRenderable} object.
 	 */
 	public BoundableRenderable getRenderable(Point point) {
@@ -872,10 +872,10 @@ public class RBlockViewport extends BaseRCollection {
 	/**
 	 * <p>getRenderables.</p>
 	 *
-	 * @param point a {@link java.awt.Point} object.
+	 * @param point a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 * @return a {@link java.util.Iterator} object.
 	 */
-	public Iterator<Renderable> getRenderables(java.awt.Point point) {
+	public Iterator<Renderable> getRenderables(com.mercuryred.render.interfaces.ui.Point point) {
 		return this.getRenderables(point.x, point.y);
 	}
 
@@ -1022,7 +1022,7 @@ public class RBlockViewport extends BaseRCollection {
 	 *               goes beyond this y-coordinate point.
 	 * @param desiredWidth a int.
 	 * @param desiredHeight a int.
-	 * @param paddingInsets a {@link java.awt.Insets} object.
+	 * @param paddingInsets a {@link com.mercuryred.render.interfaces.ui.Insets} object.
 	 * @param floatBounds a {@link org.loboevolution.html.renderer.FloatingBounds} object.
 	 * @param sizeOnly a boolean.
 	 */

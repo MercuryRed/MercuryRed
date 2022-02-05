@@ -26,7 +26,7 @@ import org.loboevolution.html.style.HtmlInsets;
 import org.loboevolution.html.style.HtmlValues;
 import org.loboevolution.info.BorderInfo;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
 
 /**

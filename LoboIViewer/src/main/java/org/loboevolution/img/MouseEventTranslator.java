@@ -22,14 +22,14 @@
  */
 package org.loboevolution.img;
 
-import java.awt.Point;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.awt.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.event.ComponentAdapter;
+import com.mercuryred.render.interfaces.ui.event.ComponentEvent;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import javax.swing.event.MouseInputListener;
+import com.mercuryred.render.interfaces.uiplus.event.MouseInputListener;
 
 /**
  * Helper class that generates ImageMouseEvents by translating normal mouse

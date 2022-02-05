@@ -30,9 +30,9 @@ import org.loboevolution.html.node.js.Window;
 import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.laf.FontKey;
 
-import java.awt.GraphicsEnvironment;
-import java.awt.Toolkit;
-import java.awt.font.TextAttribute;
+import com.mercuryred.render.interfaces.ui.GraphicsEnvironment;
+import com.mercuryred.render.interfaces.ui.Toolkit;
+import com.mercuryred.render.interfaces.ui.font.TextAttribute;
 
 /**
  * <p>FontValues class.</p>

@@ -44,11 +44,11 @@ import org.loboevolution.http.UserAgentContext;
 import org.loboevolution.info.CaptionSizeInfo;
 import org.loboevolution.info.SizeInfo;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Insets;
-import java.awt.Rectangle;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -103,7 +103,7 @@ class TableMatrix {
 	/**
 	 * Called on every relayout. Element children might have changed.
 	 *
-	 * @param insets a {@link java.awt.Insets} object.
+	 * @param insets a {@link com.mercuryred.render.interfaces.ui.Insets} object.
 	 * @param availWidth a int.
 	 * @param availHeight a int.
 	 */
@@ -181,7 +181,7 @@ class TableMatrix {
 	/**
 	 * Sets bounds of each cell's component, and sumps up table width and height.
 	 *
-	 * @param insets a {@link java.awt.Insets} object.
+	 * @param insets a {@link com.mercuryred.render.interfaces.ui.Insets} object.
 	 */
 	public final void doLayout(Insets insets) {
 
@@ -237,8 +237,8 @@ class TableMatrix {
 	/**
 	 * <p>paint.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param size a {@link java.awt.Dimension} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param size a {@link com.mercuryred.render.interfaces.ui.Dimension} object.
 	 */
 	public final void paint(Graphics g, Dimension size) {
 		final List<RTableCell> allCells = this.allCells;

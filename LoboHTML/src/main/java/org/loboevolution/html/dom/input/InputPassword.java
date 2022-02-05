@@ -20,16 +20,16 @@
 
 package org.loboevolution.html.dom.input;
 
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Dimension;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
-import javax.swing.JPasswordField;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.PlainDocument;
+import com.mercuryred.render.interfaces.uiplus.JPasswordField;
+import com.mercuryred.render.interfaces.uiplus.text.AttributeSet;
+import com.mercuryred.render.interfaces.uiplus.text.BadLocationException;
+import com.mercuryred.render.interfaces.uiplus.text.PlainDocument;
 
 import org.loboevolution.common.ArrayUtilities;
 import org.loboevolution.common.Strings;

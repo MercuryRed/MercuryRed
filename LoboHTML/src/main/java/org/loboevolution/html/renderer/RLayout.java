@@ -50,7 +50,7 @@ import org.loboevolution.html.dom.svgimpl.SVGSVGElementImpl;
 import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.http.UserAgentContext;
 
-import java.awt.Image;
+import com.mercuryred.render.interfaces.ui.Image;
 import java.util.HashMap;
 import java.util.Map;
 

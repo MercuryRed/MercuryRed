@@ -22,17 +22,17 @@
  */
 package com.jtattoo.plaf.smart;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.Shape;
-import java.awt.geom.Area;
-import java.awt.geom.RoundRectangle2D;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.Area;
+import com.mercuryred.render.interfaces.ui.geom.RoundRectangle2D;
 
-import javax.swing.AbstractButton;
-import javax.swing.JComponent;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseButtonUI;

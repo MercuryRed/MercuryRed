@@ -23,26 +23,26 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.Rectangle;
-import java.awt.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
 
-import javax.swing.AbstractButton;
-import javax.swing.ButtonModel;
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicGraphicsUtils;
-import javax.swing.plaf.basic.BasicHTML;
-import javax.swing.plaf.basic.BasicRadioButtonUI;
-import javax.swing.text.View;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.ButtonModel;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicGraphicsUtils;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicHTML;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicRadioButtonUI;
+import com.mercuryred.render.interfaces.uiplus.text.View;
 
 /**
  * <p>BaseRadioButtonUI class.</p>
@@ -124,8 +124,8 @@ public class BaseRadioButtonUI extends BasicRadioButtonUI {
 	/**
 	 * <p>paintBackground.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link javax.swing.JComponent} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.uiplus.JComponent} object.
 	 */
 	protected void paintBackground(Graphics g, JComponent c) {
 		g.setColor(c.getBackground());
@@ -185,10 +185,10 @@ public class BaseRadioButtonUI extends BasicRadioButtonUI {
 	/**
 	 * <p>paintText.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link javax.swing.JComponent} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.uiplus.JComponent} object.
 	 * @param text a {@link java.lang.String} object.
-	 * @param textRect a {@link java.awt.Rectangle} object.
+	 * @param textRect a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 */
 	protected void paintText(Graphics g, JComponent c, String text, Rectangle textRect) {
 		View v = (View) c.getClientProperty(BasicHTML.propertyKey);

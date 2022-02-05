@@ -1,6 +1,6 @@
 package com.jtattoo.plaf.lobo;
 
-import javax.swing.JLabel;
+import com.mercuryred.render.interfaces.uiplus.JLabel;
 
 /**
  * <p>LoboLabel class.</p>

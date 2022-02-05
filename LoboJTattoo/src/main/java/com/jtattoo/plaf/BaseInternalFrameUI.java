@@ -22,26 +22,26 @@
  */
 package com.jtattoo.plaf;
 
-import java.awt.Container;
-import java.awt.Window;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Window;
+import com.mercuryred.render.interfaces.ui.event.WindowAdapter;
+import com.mercuryred.render.interfaces.ui.event.WindowEvent;
+import com.mercuryred.render.interfaces.ui.event.WindowListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.JDesktopPane;
-import javax.swing.JInternalFrame;
-import javax.swing.LookAndFeel;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.UIResource;
-import javax.swing.plaf.basic.BasicInternalFrameUI;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JDesktopPane;
+import com.mercuryred.render.interfaces.uiplus.JInternalFrame;
+import com.mercuryred.render.interfaces.uiplus.LookAndFeel;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
+import com.mercuryred.render.interfaces.uiplus.border.EmptyBorder;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicInternalFrameUI;
 
 /**
  * <p>BaseInternalFrameUI class.</p>
@@ -146,7 +146,7 @@ public class BaseInternalFrameUI extends BasicInternalFrameUI {
 	/**
 	 * <p>Constructor for BaseInternalFrameUI.</p>
 	 *
-	 * @param b a {@link javax.swing.JInternalFrame} object.
+	 * @param b a {@link com.mercuryred.render.interfaces.uiplus.JInternalFrame} object.
 	 */
 	public BaseInternalFrameUI(JInternalFrame b) {
 		super(b);

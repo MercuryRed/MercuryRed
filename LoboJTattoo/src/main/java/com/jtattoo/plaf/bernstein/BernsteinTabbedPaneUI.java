@@ -23,10 +23,10 @@
 
 package com.jtattoo.plaf.bernstein;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
-import javax.swing.JComponent;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.BaseTabbedPaneUI;
 

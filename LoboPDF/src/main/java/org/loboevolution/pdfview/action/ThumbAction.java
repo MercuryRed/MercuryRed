@@ -1,10 +1,10 @@
 package org.loboevolution.pdfview.action;
 
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import javax.swing.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
 
 import org.loboevolution.pdf.PDFViewer;
 
@@ -58,7 +58,7 @@ public class ThumbAction extends AbstractAction implements PropertyChangeListene
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.
+	 * @see com.mercuryred.render.interfaces.ui.event.ActionListener#actionPerformed(com.mercuryred.render.interfaces.ui.event.
 	 * ActionEvent)
 	 */
 	/** {@inheritDoc} */

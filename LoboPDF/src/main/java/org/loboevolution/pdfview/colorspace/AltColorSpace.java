@@ -1,6 +1,6 @@
 package org.loboevolution.pdfview.colorspace;
 
-import java.awt.color.ColorSpace;
+import com.mercuryred.render.interfaces.ui.color.ColorSpace;
 
 import org.loboevolution.pdfview.function.PDFFunction;
 
@@ -14,7 +14,7 @@ import org.loboevolution.pdfview.function.PDFFunction;
  ***************************************************************************
   *
  */
-public class AltColorSpace extends ColorSpace {
+public class AltColorSpace implements ColorSpace {
 
 	private final PDFFunction fkt;
 	private final ColorSpace origCs;
@@ -22,19 +22,23 @@ public class AltColorSpace extends ColorSpace {
 	 * Create a new CMYKColorSpace Instance.
 	 *
 	 * @param fkt a {@link org.loboevolution.pdfview.function.PDFFunction} object.
-	 * @param origCs a {@link java.awt.color.ColorSpace} object.
+	 * @param origCs a {@link com.mercuryred.render.interfaces.ui.color.ColorSpace} object.
 	 */
 	public AltColorSpace(PDFFunction fkt, ColorSpace origCs) {
-		super(origCs.getType(), fkt.getNumInputs());
+		init(origCs.getType(), fkt.getNumInputs());
 		this.fkt = fkt;
 		this.origCs = origCs;
+	}
+
+	private void init(int type, int numInputs) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
 	 * Converts from CIEXYZ.
-	 * @see java.awt.color.ColorSpace#fromCIEXYZ(float[])
+	 * @see com.mercuryred.render.interfaces.ui.color.ColorSpace#fromCIEXYZ(float[])
 	 */
 	@Override
 	public float[] fromCIEXYZ(float[] p_colorvalue) {
@@ -42,11 +46,21 @@ public class AltColorSpace extends ColorSpace {
 		return this.origCs.fromCIEXYZ(p_colorvalue);
 	}
 
+	@Override
+	public int getType() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public int getNumComponents() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
 	/**
 	 * {@inheritDoc}
 	 *
 	 * Converts a given RGB.
-	 * @see java.awt.color.ColorSpace#fromRGB(float[])
+	 * @see com.mercuryred.render.interfaces.ui.color.ColorSpace#fromRGB(float[])
 	 */
 	@Override
 	public float[] fromRGB(float[] p_rgbvalue) {
@@ -58,7 +72,7 @@ public class AltColorSpace extends ColorSpace {
 	 * {@inheritDoc}
 	 *
 	 * Converts to CIEXYZ.
-	 * @see java.awt.color.ColorSpace#toCIEXYZ(float[])
+	 * @see com.mercuryred.render.interfaces.ui.color.ColorSpace#toCIEXYZ(float[])
 	 */
 	@Override
 	public float[] toCIEXYZ(float[] p_colorvalue) {
@@ -70,7 +84,7 @@ public class AltColorSpace extends ColorSpace {
 	 * {@inheritDoc}
 	 *
 	 * Converts to RGB.
-	 * @see java.awt.color.ColorSpace#toRGB(float[])
+	 * @see com.mercuryred.render.interfaces.ui.color.ColorSpace#toRGB(float[])
 	 */
 	@Override
 	public float[] toRGB(float[] p_colorvalue) {

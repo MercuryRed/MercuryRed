@@ -22,16 +22,16 @@
  */
 package com.jtattoo.plaf.bernstein;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Insets;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Insets;
 
-import javax.swing.AbstractButton;
-import javax.swing.ButtonModel;
-import javax.swing.border.Border;
-import javax.swing.plaf.UIResource;
-import javax.swing.plaf.metal.MetalLookAndFeel;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.ButtonModel;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.metal.MetalLookAndFeel;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseBorders;
@@ -280,7 +280,7 @@ public class BernsteinBorders extends BaseBorders {
 	/**
 	 * <p>getButtonBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getButtonBorder() {
 		if (buttonBorder == null) {
@@ -292,7 +292,7 @@ public class BernsteinBorders extends BaseBorders {
 	/**
 	 * <p>getInternalFrameBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getInternalFrameBorder() {
 		if (internalFrameBorder == null) {
@@ -304,7 +304,7 @@ public class BernsteinBorders extends BaseBorders {
 	/**
 	 * <p>getRolloverToolButtonBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getRolloverToolButtonBorder() {
 		if (rolloverToolButtonBorder == null) {
@@ -316,7 +316,7 @@ public class BernsteinBorders extends BaseBorders {
 	/**
 	 * <p>getToggleButtonBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getToggleButtonBorder() {
 		return getButtonBorder();

@@ -22,14 +22,14 @@
  */
 package com.jtattoo.plaf.texture;
 
-import java.awt.AlphaComposite;
-import java.awt.Composite;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
 
-import javax.swing.Icon;
-import javax.swing.JSplitPane;
-import javax.swing.UIManager;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JSplitPane;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseSplitPaneDivider;

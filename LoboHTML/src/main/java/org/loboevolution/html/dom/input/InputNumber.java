@@ -20,13 +20,13 @@
 
 package org.loboevolution.html.dom.input;
 
-import java.awt.Color;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.event.KeyAdapter;
+import com.mercuryred.render.interfaces.ui.event.KeyEvent;
+import com.mercuryred.render.interfaces.ui.event.KeyListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.JTextField;
+import com.mercuryred.render.interfaces.uiplus.BorderFactory;
+import com.mercuryred.render.interfaces.uiplus.JTextField;
 
 import org.loboevolution.common.Strings;
 import org.loboevolution.html.control.InputControl;

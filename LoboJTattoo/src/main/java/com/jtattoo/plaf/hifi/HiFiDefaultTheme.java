@@ -22,11 +22,11 @@
  */
 package com.jtattoo.plaf.hifi;
 
-import java.awt.Color;
-import java.awt.Font;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Font;
 
-import javax.swing.plaf.ColorUIResource;
-import javax.swing.plaf.FontUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.FontUIResource;
 
 import com.jtattoo.plaf.AbstractTheme;
 import com.jtattoo.plaf.ColorHelper;

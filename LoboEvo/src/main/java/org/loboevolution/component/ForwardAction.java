@@ -21,8 +21,8 @@
 package org.loboevolution.component;
 
 
-import javax.swing.AbstractAction;
-import javax.swing.JTextField;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.JTextField;
 import org.loboevolution.common.Strings;
 import org.loboevolution.html.dom.domimpl.HTMLDocumentImpl;
 import org.loboevolution.html.gui.HtmlPanel;
@@ -30,8 +30,8 @@ import org.loboevolution.info.BookmarkInfo;
 import org.loboevolution.store.NavigationStore;
 import org.loboevolution.store.TabStore;
 
-import java.awt.Component;
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 import java.util.List;
 
 /**
@@ -49,7 +49,7 @@ public class ForwardAction extends AbstractAction {
 	 * <p>Constructor for ForwardAction.</p>
 	 *
 	 * @param panel a {@link org.loboevolution.component.IBrowserPanel} object.
-	 * @param addressBar a {@link javax.swing.JTextField} object.
+	 * @param addressBar a {@link com.mercuryred.render.interfaces.uiplus.JTextField} object.
 	 */
 	public ForwardAction(IBrowserPanel panel, JTextField addressBar) {
 		this.panel = panel;

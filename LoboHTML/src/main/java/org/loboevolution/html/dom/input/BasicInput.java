@@ -20,21 +20,21 @@
 
 package org.loboevolution.html.dom.input;
 
-import javax.swing.event.CaretEvent;
-import javax.swing.event.CaretListener;
-import javax.swing.text.JTextComponent;
+import com.mercuryred.render.interfaces.uiplus.event.CaretEvent;
+import com.mercuryred.render.interfaces.uiplus.event.CaretListener;
+import com.mercuryred.render.interfaces.uiplus.text.JTextComponent;
 import org.loboevolution.common.Strings;
 import org.loboevolution.html.dom.HTMLInputElement;
 import org.loboevolution.html.dom.domimpl.HTMLBasicInputElement;
 import org.loboevolution.html.js.Executor;
 import org.loboevolution.store.InputStore;
 
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import com.mercuryred.render.interfaces.ui.event.FocusEvent;
+import com.mercuryred.render.interfaces.ui.event.FocusListener;
+import com.mercuryred.render.interfaces.ui.event.KeyEvent;
+import com.mercuryred.render.interfaces.ui.event.KeyListener;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.event.MouseListener;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

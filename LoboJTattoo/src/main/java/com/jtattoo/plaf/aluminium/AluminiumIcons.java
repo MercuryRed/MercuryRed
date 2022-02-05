@@ -22,10 +22,10 @@
  */
 package com.jtattoo.plaf.aluminium;
 
-import java.awt.Color;
-import java.awt.Insets;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Insets;
 
-import javax.swing.Icon;
+import com.mercuryred.render.interfaces.uiplus.Icon;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseIcons;
@@ -42,7 +42,7 @@ public class AluminiumIcons extends BaseIcons {
 	/**
 	 * <p>getCloseIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getCloseIcon() {
 		if (closeIcon == null) {
@@ -62,7 +62,7 @@ public class AluminiumIcons extends BaseIcons {
 	/**
 	 * <p>getIconIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getIconIcon() {
 		if (iconIcon == null) {
@@ -82,7 +82,7 @@ public class AluminiumIcons extends BaseIcons {
 	/**
 	 * <p>getMaxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMaxIcon() {
 		if (maxIcon == null) {
@@ -102,7 +102,7 @@ public class AluminiumIcons extends BaseIcons {
 	/**
 	 * <p>getMinIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMinIcon() {
 		if (minIcon == null) {
@@ -122,7 +122,7 @@ public class AluminiumIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterDownArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterDownArrowIcon() {
 		if (splitterDownArrowIcon == null) {
@@ -134,7 +134,7 @@ public class AluminiumIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterLeftArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterLeftArrowIcon() {
 		if (splitterLeftArrowIcon == null) {
@@ -146,7 +146,7 @@ public class AluminiumIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterRightArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterRightArrowIcon() {
 		if (splitterRightArrowIcon == null) {
@@ -158,7 +158,7 @@ public class AluminiumIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterUpArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterUpArrowIcon() {
 		if (splitterUpArrowIcon == null) {
@@ -170,7 +170,7 @@ public class AluminiumIcons extends BaseIcons {
 	/**
 	 * <p>getThumbHorIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbHorIcon() {
 		if (thumbHorIcon == null) {
@@ -182,7 +182,7 @@ public class AluminiumIcons extends BaseIcons {
 	/**
 	 * <p>getThumbHorIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbHorIconRollover() {
 		if (thumbHorIconRollover == null) {
@@ -194,7 +194,7 @@ public class AluminiumIcons extends BaseIcons {
 	/**
 	 * <p>getThumbVerIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbVerIcon() {
 		if (thumbVerIcon == null) {
@@ -206,7 +206,7 @@ public class AluminiumIcons extends BaseIcons {
 	/**
 	 * <p>getThumbVerIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbVerIconRollover() {
 		if (thumbVerIconRollover == null) {

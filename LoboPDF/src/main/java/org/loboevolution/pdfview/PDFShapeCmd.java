@@ -17,11 +17,11 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
 package org.loboevolution.pdfview;
-import java.awt.BasicStroke;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.PathIterator;
-import java.awt.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.BasicStroke;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.PathIterator;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 
 /**
  * Encapsulates a path. Also contains extra fields and logic to check

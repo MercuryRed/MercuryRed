@@ -18,43 +18,43 @@
  */
 package org.loboevolution.pdfview;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Point;
-import java.awt.Transparency;
-import java.awt.color.ColorSpace;
-import java.awt.color.ICC_ColorSpace;
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
-import java.awt.image.BufferedImage;
-import java.awt.image.ColorConvertOp;
-import java.awt.image.ColorModel;
-import java.awt.image.ComponentColorModel;
-import java.awt.image.DataBuffer;
-import java.awt.image.DataBufferByte;
-import java.awt.image.DataBufferInt;
-import java.awt.image.IndexColorModel;
-import java.awt.image.MultiPixelPackedSampleModel;
-import java.awt.image.PackedColorModel;
-import java.awt.image.PixelInterleavedSampleModel;
-import java.awt.image.Raster;
-import java.awt.image.RasterFormatException;
-import java.awt.image.SampleModel;
-import java.awt.image.WritableRaster;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Transparency;
+import com.mercuryred.render.interfaces.ui.color.ColorSpace;
+import com.mercuryred.render.interfaces.ui.color.ICC_ColorSpace;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.image.AffineTransformOp;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.ColorConvertOp;
+import com.mercuryred.render.interfaces.ui.image.ColorModel;
+import com.mercuryred.render.interfaces.ui.image.ComponentColorModel;
+import com.mercuryred.render.interfaces.ui.image.DataBuffer;
+import com.mercuryred.render.interfaces.ui.image.DataBufferByte;
+import com.mercuryred.render.interfaces.ui.image.DataBufferInt;
+import com.mercuryred.render.interfaces.ui.image.IndexColorModel;
+import com.mercuryred.render.interfaces.ui.image.MultiPixelPackedSampleModel;
+import com.mercuryred.render.interfaces.ui.image.PackedColorModel;
+import com.mercuryred.render.interfaces.ui.image.PixelInterleavedSampleModel;
+import com.mercuryred.render.interfaces.ui.image.Raster;
+import com.mercuryred.render.interfaces.ui.image.RasterFormatException;
+import com.mercuryred.render.interfaces.ui.image.SampleModel;
+import com.mercuryred.render.interfaces.ui.image.WritableRaster;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 
-import javax.imageio.IIOException;
-import javax.imageio.ImageIO;
-import javax.imageio.ImageReadParam;
-import javax.imageio.ImageReader;
-import javax.imageio.metadata.IIOMetadata;
-import javax.imageio.metadata.IIOMetadataFormatImpl;
+import com.mercuryred.render.interfaces.imageio.IIOException;
+import com.mercuryred.render.interfaces.imageio.ImageIO;
+import com.mercuryred.render.interfaces.imageio.ImageReadParam;
+import com.mercuryred.render.interfaces.imageio.ImageReader;
+import com.mercuryred.render.interfaces.imageio.metadata.IIOMetadata;
+import com.mercuryred.render.interfaces.imageio.metadata.IIOMetadataFormatImpl;
 
 import org.loboevolution.pdfview.colorspace.AlternateColorSpace;
 import org.loboevolution.pdfview.colorspace.IndexedColor;
@@ -288,7 +288,7 @@ public class PDFImage {
 	 * @param jpegData
 	 *            a byte buffer if data still requiring the DCDTecode filter is
 	 *            being used
-	 * @return a {@link java.awt.image.BufferedImage} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
 	 * @throws java.io.IOException if any.
 	 */
 	protected BufferedImage parseData(byte[] data, ByteBuffer jpegData) throws IOException {
@@ -538,8 +538,8 @@ public class PDFImage {
 	/**
 	 * Scale the softmask image to the size of the actual image
 	 * 
-	 * @param sMaskImage a {@link java.awt.image.BufferedImage} object.
-	 * @return a {@link java.awt.image.BufferedImage} object.
+	 * @param sMaskImage a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
 	 * @throws org.loboevolution.pdfview.PDFImageParseException if any.
 	 */
 	private BufferedImage scaleSMaskImage(PDFImage sMaskImage) throws PDFImageParseException {

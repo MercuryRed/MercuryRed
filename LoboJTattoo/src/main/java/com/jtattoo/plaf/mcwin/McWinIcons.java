@@ -22,20 +22,20 @@
  */
 package com.jtattoo.plaf.mcwin;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.Shape;
-import java.awt.geom.Area;
-import java.awt.geom.Ellipse2D;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.Area;
+import com.mercuryred.render.interfaces.ui.geom.Ellipse2D;
 import java.io.Serializable;
 
-import javax.swing.AbstractButton;
-import javax.swing.ButtonModel;
-import javax.swing.Icon;
-import javax.swing.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.ButtonModel;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseIcons;
@@ -319,7 +319,7 @@ public class McWinIcons extends BaseIcons {
 	/**
 	 * <p>getCheckBoxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getCheckBoxIcon() {
 		if (checkBoxIcon == null) {
@@ -331,7 +331,7 @@ public class McWinIcons extends BaseIcons {
 	/**
 	 * <p>getCloseIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getCloseIcon() {
 		if (closeIcon == null) {
@@ -343,7 +343,7 @@ public class McWinIcons extends BaseIcons {
 	/**
 	 * <p>getIconIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getIconIcon() {
 		if (iconIcon == null) {
@@ -355,7 +355,7 @@ public class McWinIcons extends BaseIcons {
 	/**
 	 * <p>getMaxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMaxIcon() {
 		if (maxIcon == null) {
@@ -367,7 +367,7 @@ public class McWinIcons extends BaseIcons {
 	/**
 	 * <p>getMinIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMinIcon() {
 		if (minIcon == null) {
@@ -379,7 +379,7 @@ public class McWinIcons extends BaseIcons {
 	/**
 	 * <p>getRadioButtonIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getRadioButtonIcon() {
 		if (radioButtonIcon == null) {
@@ -391,7 +391,7 @@ public class McWinIcons extends BaseIcons {
 	/**
 	 * <p>getThumbHorIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbHorIcon() {
 		if (thumbHorIcon == null) {
@@ -403,7 +403,7 @@ public class McWinIcons extends BaseIcons {
 	/**
 	 * <p>getThumbHorIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbHorIconRollover() {
 		if (thumbHorIconRollover == null) {
@@ -415,7 +415,7 @@ public class McWinIcons extends BaseIcons {
 	/**
 	 * <p>getThumbVerIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbVerIcon() {
 		if (thumbVerIcon == null) {
@@ -427,7 +427,7 @@ public class McWinIcons extends BaseIcons {
 	/**
 	 * <p>getThumbVerIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbVerIconRollover() {
 		if (thumbVerIconRollover == null) {

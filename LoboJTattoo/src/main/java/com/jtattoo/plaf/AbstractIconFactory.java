@@ -23,7 +23,7 @@
 
 package com.jtattoo.plaf;
 
-import javax.swing.Icon;
+import com.mercuryred.render.interfaces.uiplus.Icon;
 
 /**
  * <p>AbstractIconFactory interface.</p>
@@ -36,301 +36,301 @@ public interface AbstractIconFactory {
     /**
      * <p>getCheckBoxIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getCheckBoxIcon();
 
     /**
      * <p>getCloseIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getCloseIcon();
 
     /**
      * <p>getComboBoxIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getComboBoxIcon();
 
     /**
      * <p>getDownArrowIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getDownArrowIcon();
 
     /**
      * <p>getFileChooserDetailViewIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getFileChooserDetailViewIcon();
 
     /**
      * <p>getFileChooserHomeFolderIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getFileChooserHomeFolderIcon();
 
     /**
      * <p>getFileChooserListViewIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getFileChooserListViewIcon();
 
     /**
      * <p>getFileChooserNewFolderIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getFileChooserNewFolderIcon();
 
     /**
      * <p>getFileChooserUpFolderIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getFileChooserUpFolderIcon();
 
     /**
      * <p>getFileViewComputerIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getFileViewComputerIcon();
 
     /**
      * <p>getFileViewFloppyDriveIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getFileViewFloppyDriveIcon();
 
     /**
      * <p>getFileViewHardDriveIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getFileViewHardDriveIcon();
 
     /**
      * <p>getIconIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getIconIcon();
 
     /**
      * <p>getLeftArrowIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getLeftArrowIcon();
 
     /**
      * <p>getMaxIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getMaxIcon();
 
     /**
      * <p>getMenuArrowIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getMenuArrowIcon();
 
     /**
      * <p>getMenuCheckBoxIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getMenuCheckBoxIcon();
 
     /**
      * <p>getMenuIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getMenuIcon();
 
     /**
      * <p>getMenuRadioButtonIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getMenuRadioButtonIcon();
 
     /**
      * <p>getMinIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getMinIcon();
 
     /**
      * <p>getOptionPaneErrorIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getOptionPaneErrorIcon();
 
     /**
      * <p>getOptionPaneInformationIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getOptionPaneInformationIcon();
 
     /**
      * <p>getOptionPaneQuestionIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getOptionPaneQuestionIcon();
 
     /**
      * <p>getOptionPaneWarningIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getOptionPaneWarningIcon();
 
     /**
      * <p>getPaletteCloseIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getPaletteCloseIcon();
 
     /**
      * <p>getRadioButtonIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getRadioButtonIcon();
 
     /**
      * <p>getRightArrowIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getRightArrowIcon();
 
     /**
      * <p>getSplitterDownArrowIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getSplitterDownArrowIcon();
 
     /**
      * <p>getSplitterHorBumpIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getSplitterHorBumpIcon();
 
     /**
      * <p>getSplitterLeftArrowIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getSplitterLeftArrowIcon();
 
     /**
      * <p>getSplitterRightArrowIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getSplitterRightArrowIcon();
 
     /**
      * <p>getSplitterUpArrowIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getSplitterUpArrowIcon();
 
     /**
      * <p>getSplitterVerBumpIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getSplitterVerBumpIcon();
 
     /**
      * <p>getThumbHorIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getThumbHorIcon();
 
     /**
      * <p>getThumbHorIconRollover.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getThumbHorIconRollover();
 
     /**
      * <p>getThumbVerIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getThumbVerIcon();
 
     /**
      * <p>getThumbVerIconRollover.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getThumbVerIconRollover();
 
     /**
      * <p>getTreeCloseIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getTreeCloseIcon();
 
     /**
      * <p>getTreeCollapsedIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getTreeCollapsedIcon();
 
     /**
      * <p>getTreeExpandedIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getTreeExpandedIcon();
 
     /**
      * <p>getTreeLeafIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getTreeLeafIcon();
 
     /**
      * <p>getTreeOpenIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getTreeOpenIcon();
 
     /**
      * <p>getUpArrowIcon.</p>
      *
-     * @return a {@link javax.swing.Icon} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
      */
     Icon getUpArrowIcon();
 

@@ -22,7 +22,7 @@
  */
 package org.loboevolution.html.dom.domimpl;
 
-import java.awt.Rectangle;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 
@@ -38,14 +38,14 @@ public interface UINode {
 	/**
 	 * <p>getBounds.</p>
 	 *
-	 * @return a {@link java.awt.Rectangle} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 */
 	Rectangle getBounds();
 
 	/**
 	 * <p>getBoundsRelativeToBlock.</p>
 	 *
-	 * @return a {@link java.awt.Rectangle} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 */
 	Rectangle getBoundsRelativeToBlock();
 

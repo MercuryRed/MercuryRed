@@ -19,21 +19,21 @@
  */
 package org.loboevolution.menu.tools.screen;
 
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.ImageIcon;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
 import org.loboevolution.component.BrowserFrame;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.Robot;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.geom.Area;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.Robot;
+import com.mercuryred.render.interfaces.ui.event.MouseAdapter;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.geom.Area;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

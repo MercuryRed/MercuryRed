@@ -23,10 +23,10 @@
 
 package com.jtattoo.plaf.aero;
 
-import java.awt.Color;
-import java.awt.Insets;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Insets;
 
-import javax.swing.Icon;
+import com.mercuryred.render.interfaces.uiplus.Icon;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseIcons;
@@ -42,7 +42,7 @@ public class AeroIcons extends BaseIcons {
 	/**
 	 * <p>getCloseIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getCloseIcon() {
 		if (closeIcon == null) {
@@ -58,7 +58,7 @@ public class AeroIcons extends BaseIcons {
 	/**
 	 * <p>getIconIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getIconIcon() {
 		if (iconIcon == null) {
@@ -74,7 +74,7 @@ public class AeroIcons extends BaseIcons {
 	/**
 	 * <p>getMaxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMaxIcon() {
 		if (maxIcon == null) {
@@ -90,7 +90,7 @@ public class AeroIcons extends BaseIcons {
 	/**
 	 * <p>getMinIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMinIcon() {
 		if (minIcon == null) {

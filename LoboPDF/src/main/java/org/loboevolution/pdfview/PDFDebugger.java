@@ -1,16 +1,16 @@
 package org.loboevolution.pdfview;
 
-import java.awt.Rectangle;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Point2D;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.Point2D;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import javax.imageio.ImageIO;
+import com.mercuryred.render.interfaces.imageio.ImageIO;
 
 /**
  * <p>PDFDebugger class.</p>
@@ -69,7 +69,7 @@ public class PDFDebugger {
     /**
      * <p>debugImage.</p>
      *
-     * @param image a {@link java.awt.image.BufferedImage} object.
+     * @param image a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
      * @param name a {@link java.lang.String} object.
      */
     public static void debugImage(BufferedImage image, String name) {
@@ -151,7 +151,7 @@ public class PDFDebugger {
     /**
      * <p>logPath.</p>
      *
-     * @param path a {@link java.awt.geom.GeneralPath} object.
+     * @param path a {@link com.mercuryred.render.interfaces.ui.geom.GeneralPath} object.
      * @param operation a {@link java.lang.String} object.
      */
     public static void logPath(GeneralPath path, String operation) {

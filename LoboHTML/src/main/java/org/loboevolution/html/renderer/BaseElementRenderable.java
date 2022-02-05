@@ -20,15 +20,15 @@
 
 package org.loboevolution.html.renderer;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Insets;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.image.ImageObserver;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.image.ImageObserver;
 import java.net.URL;
 import java.util.Collection;
 import java.util.HashSet;
@@ -133,7 +133,7 @@ public abstract class BaseElementRenderable extends BaseRCollection implements R
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.loboevolution.html.rendered.RenderableContainer#add(java.awt.Component)
+	 * @see org.loboevolution.html.rendered.RenderableContainer#add(com.mercuryred.render.interfaces.ui.Component)
 	 */
 	/** {@inheritDoc} */
 	@Override
@@ -150,7 +150,7 @@ public abstract class BaseElementRenderable extends BaseRCollection implements R
     /**
      * <p>Getter for the field borderInsets.</p>
      *
-     * @return a {@link java.awt.Insets} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.Insets} object.
      */
     public Insets getBorderInsets() {
         return this.borderInsets == null ? RBlockViewport.ZERO_INSETS : this.borderInsets;
@@ -159,7 +159,7 @@ public abstract class BaseElementRenderable extends BaseRCollection implements R
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.loboevolution.html.rendered.RenderableContainer#add(java.awt.Component)
+	 * @see org.loboevolution.html.rendered.RenderableContainer#add(com.mercuryred.render.interfaces.ui.Component)
 	 */
 	/** {@inheritDoc} */
 	@Override
@@ -754,7 +754,7 @@ public abstract class BaseElementRenderable extends BaseRCollection implements R
 	 *
 	 * @param hscroll a boolean.
 	 * @param vscroll a boolean.
-	 * @return a {@link java.awt.Insets} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Insets} object.
 	 */
 	public Insets getInsetsPadding(final boolean hscroll, final boolean vscroll) {
 		return getInsets(hscroll, vscroll, false, false, true);
@@ -1021,7 +1021,7 @@ public abstract class BaseElementRenderable extends BaseRCollection implements R
 	/**
 	 * <p>prePaint.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 */
 	protected void prePaint(Graphics g) {
 		final int startWidth = this.width;

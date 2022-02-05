@@ -19,14 +19,14 @@
 
 package org.loboevolution.pdf;
 
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Dimension;
 
-import javax.swing.Box;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JToolBar;
+import com.mercuryred.render.interfaces.uiplus.Box;
+import com.mercuryred.render.interfaces.uiplus.ImageIcon;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.JLabel;
+import com.mercuryred.render.interfaces.uiplus.JTextField;
+import com.mercuryred.render.interfaces.uiplus.JToolBar;
 
 import org.loboevolution.pdfview.PDFFile;
 

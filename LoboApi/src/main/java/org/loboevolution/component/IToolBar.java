@@ -20,7 +20,7 @@
 
 package org.loboevolution.component;
 
-import javax.swing.JTextField;
+import com.mercuryred.render.interfaces.uiplus.JTextField;
 
 /**
  * <p>IToolBar interface.</p>
@@ -30,7 +30,7 @@ public interface IToolBar {
 	/**
 	 * <p>getAddressBar.</p>
 	 *
-	 * @return a {@link javax.swing.JTextField} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.JTextField} object.
 	 */
 	JTextField getAddressBar();
 

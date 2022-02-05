@@ -19,7 +19,7 @@
  */
 package org.loboevolution.html.dom.svg;
 
-import java.awt.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
 
 
 
@@ -222,7 +222,7 @@ public interface SVGMatrix {
 	/**
 	 * <p>getAffineTransform.</p>
 	 *
-	 * @return a {@link java.awt.geom.AffineTransform} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
 	 */
 	AffineTransform getAffineTransform();
 }

@@ -52,9 +52,9 @@ package org.jpedal.jbig2.jai;
 import java.io.IOException;
 import java.util.Arrays;
 
-import javax.imageio.ImageReader;
-import javax.imageio.spi.ImageReaderSpi;
-import javax.imageio.stream.ImageInputStream;
+import com.mercuryred.render.interfaces.imageio.ImageReader;
+import com.mercuryred.render.interfaces.imageio.spi.ImageReaderSpi;
+import com.mercuryred.render.interfaces.imageio.stream.ImageInputStream;
 
 /**
  * <p>JBIG2ImageReaderSpi class.</p>

@@ -23,25 +23,25 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Composite;
-import java.awt.Container;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.LayoutManager;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Cursor;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.LayoutManager;
 
-import javax.swing.Icon;
-import javax.swing.JButton;
-import javax.swing.JSplitPane;
-import javax.swing.UIManager;
-import javax.swing.border.Border;
-import javax.swing.plaf.basic.BasicSplitPaneDivider;
-import javax.swing.plaf.basic.BasicSplitPaneUI;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.JSplitPane;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicSplitPaneDivider;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicSplitPaneUI;
 
 /**
  * <p>BaseSplitPaneDivider class.</p>
@@ -163,7 +163,7 @@ public class BaseSplitPaneDivider extends BasicSplitPaneDivider {
 	/**
 	 * <p>Constructor for BaseSplitPaneDivider.</p>
 	 *
-	 * @param ui a {@link javax.swing.plaf.basic.BasicSplitPaneUI} object.
+	 * @param ui a {@link com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicSplitPaneUI} object.
 	 */
 	public BaseSplitPaneDivider(BasicSplitPaneUI ui) {
 		super(ui);
@@ -302,7 +302,7 @@ public class BaseSplitPaneDivider extends BasicSplitPaneDivider {
 	/**
 	 * <p>getRolloverColor.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	public Color getRolloverColor() {
 		return ColorHelper.darker(AbstractLookAndFeel.getTheme().getRolloverColor(), 16);

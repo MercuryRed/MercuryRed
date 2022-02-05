@@ -22,12 +22,12 @@
  */
 package com.jtattoo.plaf.mcwin;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
-import javax.swing.JComponent;
-import javax.swing.JMenuBar;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JMenuBar;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseBorders;

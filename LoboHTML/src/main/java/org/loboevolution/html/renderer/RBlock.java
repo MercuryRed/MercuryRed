@@ -19,7 +19,7 @@
  */
 package org.loboevolution.html.renderer;
 
-import javax.swing.JScrollBar;
+import com.mercuryred.render.interfaces.uiplus.JScrollBar;
 import org.loboevolution.html.dom.HTMLHtmlElement;
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 import org.loboevolution.html.dom.nodeimpl.NodeImpl;
@@ -32,12 +32,12 @@ import org.loboevolution.html.renderstate.RenderThreadState;
 import org.loboevolution.http.HtmlRendererContext;
 import org.loboevolution.info.FloatingInfo;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Insets;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.logging.Logger;
@@ -357,7 +357,7 @@ public class RBlock extends BaseElementRenderable {
 	/**
 	 * <p>ensureVisible.</p>
 	 *
-	 * @param point a {@link java.awt.Point} object.
+	 * @param point a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 */
 	public void ensureVisible(Point point) {
 		final RBlockViewport bodyLayout = this.bodyLayout;

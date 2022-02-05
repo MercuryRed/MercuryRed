@@ -1,17 +1,16 @@
 package org.loboevolution.pdfview.annotation;
 
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Rectangle2D;
-import java.awt.geom.Rectangle2D.Float;
-import java.io.IOException;
-import java.lang.reflect.Constructor;
-import java.util.ArrayList;
-import java.util.List;
-
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 import org.loboevolution.pdfview.Configuration;
 import org.loboevolution.pdfview.PDFCmd;
 import org.loboevolution.pdfview.PDFObject;
 import org.loboevolution.pdfview.PDFParseException;
+
+import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  ***************************************************************************
@@ -90,7 +89,7 @@ public class PDFAnnotation{
 	
 	private final PDFObject pdfObj;
 	private final ANNOTATION_TYPE type;
-	private final Float rect;
+	private final Rectangle2D rect;
 
 	/**
 	 ***********************************************************************
@@ -183,11 +182,11 @@ public class PDFAnnotation{
      * @return a {@link java.awt.geom.Rectangle2D.Float} object.
      * @throws java.io.IOException if any.
      */
-    public Rectangle2D.Float parseRect(PDFObject obj) throws IOException {
+    public Rectangle2D parseRect(PDFObject obj) throws IOException {
         if (obj.getType() == PDFObject.ARRAY) {
             PDFObject[] bounds = obj.getArray();
             if (bounds.length == 4) {
-                return new Rectangle2D.Float(bounds[0].getFloatValue(),
+                return com.mercuryred.ui.RenderEngines.Get().createRectangle2D(bounds[0].getFloatValue(),
                         bounds[1].getFloatValue(),
                         bounds[2].getFloatValue() - bounds[0].getFloatValue(),
                         bounds[3].getFloatValue() - bounds[1].getFloatValue());
@@ -228,7 +227,7 @@ public class PDFAnnotation{
 	 * @return Rectangle2D.Float
 	 ***********************************************************************
 	 */
-	public Float getRect() {
+	public Rectangle2D getRect() {
 		return this.rect;
 	}
 
@@ -252,10 +251,10 @@ public class PDFAnnotation{
 	 * <p>getScalingTransformation.</p>
 	 *
 	 * @param bbox a {@link java.awt.geom.Rectangle2D.Float} object.
-	 * @return a {@link java.awt.geom.AffineTransform} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
 	 */
-	protected AffineTransform getScalingTransformation(Float bbox) {
-		AffineTransform at = new AffineTransform();		
+	protected AffineTransform getScalingTransformation(Rectangle2D bbox) {
+		AffineTransform at = com.mercuryred.ui.RenderEngines.Get().createAffineTransform();
 		double scaleHeight = getRect().getHeight()/bbox.getHeight();
         double scaleWidth = getRect().getWidth()/bbox.getWidth();
         at.scale(scaleWidth, scaleHeight);

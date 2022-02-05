@@ -22,11 +22,11 @@
  */
 package com.jtattoo.plaf.graphite;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
 
-import javax.swing.JRootPane;
+import com.mercuryred.render.interfaces.uiplus.JRootPane;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseRootPaneUI;
@@ -50,7 +50,7 @@ public class GraphiteTitlePane extends BaseTitlePane {
 	/**
 	 * <p>Constructor for GraphiteTitlePane.</p>
 	 *
-	 * @param root a {@link javax.swing.JRootPane} object.
+	 * @param root a {@link com.mercuryred.render.interfaces.uiplus.JRootPane} object.
 	 * @param ui a {@link com.jtattoo.plaf.BaseRootPaneUI} object.
 	 */
 	public GraphiteTitlePane(JRootPane root, BaseRootPaneUI ui) {

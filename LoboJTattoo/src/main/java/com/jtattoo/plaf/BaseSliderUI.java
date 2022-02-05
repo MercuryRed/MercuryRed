@@ -23,23 +23,23 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Composite;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
-import java.awt.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.JSlider;
-import javax.swing.SwingConstants;
-import javax.swing.UIManager;
-import javax.swing.plaf.ColorUIResource;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicSliderUI;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JSlider;
+import com.mercuryred.render.interfaces.uiplus.SwingConstants;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicSliderUI;
 
 /**
  * <p>BaseSliderUI class.</p>
@@ -96,7 +96,7 @@ public class BaseSliderUI extends BasicSliderUI {
 	/**
 	 * <p>Constructor for BaseSliderUI.</p>
 	 *
-	 * @param slider a {@link javax.swing.JSlider} object.
+	 * @param slider a {@link com.mercuryred.render.interfaces.uiplus.JSlider} object.
 	 */
 	public BaseSliderUI(JSlider slider) {
 		super(slider);
@@ -111,7 +111,7 @@ public class BaseSliderUI extends BasicSliderUI {
 	/**
 	 * <p>getThumbHorIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public Icon getThumbHorIcon() {
 		if (UIManager.getLookAndFeel() instanceof AbstractLookAndFeel) {
@@ -123,7 +123,7 @@ public class BaseSliderUI extends BasicSliderUI {
 	/**
 	 * <p>getThumbHorIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public Icon getThumbHorIconRollover() {
 		if (UIManager.getLookAndFeel() instanceof AbstractLookAndFeel) {
@@ -151,7 +151,7 @@ public class BaseSliderUI extends BasicSliderUI {
 	/**
 	 * <p>getThumbVerIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public Icon getThumbVerIcon() {
 		if (UIManager.getLookAndFeel() instanceof AbstractLookAndFeel) {
@@ -163,7 +163,7 @@ public class BaseSliderUI extends BasicSliderUI {
 	/**
 	 * <p>getThumbVerIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public Icon getThumbVerIconRollover() {
 		if (UIManager.getLookAndFeel() instanceof AbstractLookAndFeel) {
@@ -223,8 +223,8 @@ public class BaseSliderUI extends BasicSliderUI {
 	/**
 	 * <p>paintBackground.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link javax.swing.JComponent} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.uiplus.JComponent} object.
 	 */
 	public void paintBackground(Graphics g, JComponent c) {
 		if (c.isOpaque()) {

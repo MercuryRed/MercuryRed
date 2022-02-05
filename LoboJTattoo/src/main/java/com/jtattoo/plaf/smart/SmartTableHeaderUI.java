@@ -23,8 +23,8 @@
 
 package com.jtattoo.plaf.smart;
 
-import javax.swing.JComponent;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.BaseTableHeaderUI;
 

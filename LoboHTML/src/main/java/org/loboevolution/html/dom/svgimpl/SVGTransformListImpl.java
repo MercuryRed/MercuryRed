@@ -20,7 +20,7 @@
 
 package org.loboevolution.html.dom.svgimpl;
 
-import java.awt.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -146,7 +146,7 @@ public class SVGTransformListImpl implements SVGTransformList {
 	/**
 	 * <p>getAffineTransform.</p>
 	 *
-	 * @return a {@link java.awt.geom.AffineTransform} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
 	 */
 	protected AffineTransform getAffineTransform() {
 		int numTransforms = getNumberOfItems();

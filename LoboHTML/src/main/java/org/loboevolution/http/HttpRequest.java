@@ -22,8 +22,8 @@
  */
 package org.loboevolution.http;
 
-import java.awt.Image;
-import java.awt.Toolkit;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Toolkit;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -231,7 +231,7 @@ public class HttpRequest {
 	/**
 	 * <p>getResponseImage.</p>
 	 *
-	 * @return a {@link java.awt.Image} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Image} object.
 	 */
 	public synchronized Image getResponseImage() {
 		final byte[] bytes = this.responseBytes;

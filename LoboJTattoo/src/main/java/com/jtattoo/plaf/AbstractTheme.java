@@ -23,18 +23,18 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-import javax.swing.Icon;
-import javax.swing.plaf.ColorUIResource;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.plaf.metal.MetalTheme;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.FontUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.metal.MetalTheme;
 
 /**
  * <p>Abstract AbstractTheme class.</p>
@@ -363,8 +363,8 @@ public abstract class AbstractTheme extends MetalTheme {
 	 * <p>createColor.</p>
 	 *
 	 * @param colorProp a {@link java.lang.String} object.
-	 * @param color a {@link javax.swing.plaf.ColorUIResource} object.
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @param color a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	protected static ColorUIResource createColor(String colorProp, ColorUIResource color) {
 		if (colorProp != null && colorProp.trim().length() >= 5) {
@@ -396,7 +396,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	 * <p>createFont.</p>
 	 *
 	 * @param fontProp a {@link java.lang.String} object.
-	 * @return a {@link javax.swing.plaf.FontUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.FontUIResource} object.
 	 */
 	protected static FontUIResource createFont(String fontProp) {
 		if (fontProp != null && fontProp.trim().length() > 5) {
@@ -468,7 +468,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getActiveColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getActiveColors() {
 		return ACTIVE_COLORS;
@@ -477,7 +477,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field alterBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getAlterBackgroundColor() {
 		return alterBackgroundColor;
@@ -486,7 +486,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field alterBackgroundTexture.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public Icon getAlterBackgroundTexture() {
 		return alterBackgroundTexture;
@@ -495,7 +495,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field backgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getBackgroundColor() {
 		return backgroundColor;
@@ -504,7 +504,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field backgroundColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getBackgroundColorDark() {
 		return backgroundColorDark;
@@ -513,7 +513,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field backgroundColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getBackgroundColorLight() {
 		return backgroundColorLight;
@@ -522,7 +522,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field backgroundTexture.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public Icon getBackgroundTexture() {
 		return backgroundTexture;
@@ -531,7 +531,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field buttonBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getButtonBackgroundColor() {
 		return buttonBackgroundColor;
@@ -540,7 +540,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field buttonColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getButtonColorDark() {
 		return buttonColorDark;
@@ -549,7 +549,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field buttonColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getButtonColorLight() {
 		return buttonColorLight;
@@ -558,7 +558,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getButtonColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getButtonColors() {
 		return BUTTON_COLORS;
@@ -567,7 +567,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field buttonForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getButtonForegroundColor() {
 		return buttonForegroundColor;
@@ -576,7 +576,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getCheckBoxColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getCheckBoxColors() {
 		return CHECKBOX_COLORS;
@@ -585,7 +585,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getColHeaderColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getColHeaderColors() {
 		return COL_HEADER_COLORS;
@@ -600,7 +600,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field controlBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getControlBackgroundColor() {
 		return controlBackgroundColor;
@@ -609,7 +609,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field controlColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getControlColorDark() {
 		return controlColorDark;
@@ -618,7 +618,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field controlColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getControlColorLight() {
 		return controlColorLight;
@@ -633,7 +633,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field controlDarkShadowColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getControlDarkShadowColor() {
 		return controlDarkShadowColor;
@@ -648,7 +648,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field controlForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getControlForegroundColor() {
 		return controlForegroundColor;
@@ -663,7 +663,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field controlHighlightColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getControlHighlightColor() {
 		return controlHighlightColor;
@@ -684,7 +684,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field controlShadowColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getControlShadowColor() {
 		return controlShadowColor;
@@ -712,7 +712,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getDefaultColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getDefaultColors() {
 		return DEFAULT_COLORS;
@@ -727,7 +727,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field disabledBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getDisabledBackgroundColor() {
 		return disabledBackgroundColor;
@@ -736,7 +736,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getDisabledColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getDisabledColors() {
 		return DISABLED_COLORS;
@@ -745,7 +745,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field disabledForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getDisabledForegroundColor() {
 		return disabledForegroundColor;
@@ -754,7 +754,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field disabledTexture.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public Icon getDisabledTexture() {
 		return disabledTexture;
@@ -763,7 +763,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field focusBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getFocusBackgroundColor() {
 		return focusBackgroundColor;
@@ -772,7 +772,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field focusCellColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getFocusCellColor() {
 		return focusCellColor;
@@ -787,7 +787,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getFocusColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getFocusColors() {
 		return FOCUS_COLORS;
@@ -796,7 +796,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field focusForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getFocusForegroundColor() {
 		return focusForegroundColor;
@@ -805,7 +805,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field focusFrameColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getFocusFrameColor() {
 		return focusFrameColor;
@@ -814,7 +814,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field foregroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getForegroundColor() {
 		return foregroundColor;
@@ -823,7 +823,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field frameColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getFrameColor() {
 		return frameColor;
@@ -832,7 +832,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field gridColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getGridColor() {
 		return gridColor;
@@ -841,7 +841,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getHiDefaultColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getHiDefaultColors() {
 		return HIDEFAULT_COLORS;
@@ -850,7 +850,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getInActiveColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getInActiveColors() {
 		return INACTIVE_COLORS;
@@ -859,7 +859,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field inputBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getInputBackgroundColor() {
 		return inputBackgroundColor;
@@ -868,7 +868,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field inputForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getInputForegroundColor() {
 		return inputForegroundColor;
@@ -900,7 +900,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field menuBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getMenuBackgroundColor() {
 		return menuBackgroundColor;
@@ -909,7 +909,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getMenuBarColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getMenuBarColors() {
 		return MENUBAR_COLORS;
@@ -918,7 +918,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field menubarTexture.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public Icon getMenubarTexture() {
 		return menubarTexture;
@@ -927,7 +927,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field menuColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getMenuColorDark() {
 		return menuColorDark;
@@ -936,7 +936,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field menuColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getMenuColorLight() {
 		return menuColorLight;
@@ -945,7 +945,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field menuForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getMenuForegroundColor() {
 		return menuForegroundColor;
@@ -954,7 +954,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field menuSelectionBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getMenuSelectionBackgroundColor() {
 		return menuSelectionBackgroundColor;
@@ -963,7 +963,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field menuSelectionBackgroundColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getMenuSelectionBackgroundColorDark() {
 		return menuSelectionBackgroundColorDark;
@@ -972,7 +972,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field menuSelectionBackgroundColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getMenuSelectionBackgroundColorLight() {
 		return menuSelectionBackgroundColorLight;
@@ -981,7 +981,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getMenuSelectionColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getMenuSelectionColors() {
 		return MENU_SELECTION_COLORS;
@@ -990,7 +990,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field menuSelectionForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getMenuSelectionForegroundColor() {
 		return menuSelectionForegroundColor;
@@ -1018,7 +1018,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field pressedBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getPressedBackgroundColor() {
 		return pressedBackgroundColor;
@@ -1027,7 +1027,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getPressedColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getPressedColors() {
 		return PRESSED_COLORS;
@@ -1036,7 +1036,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field pressedForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getPressedForegroundColor() {
 		return pressedForegroundColor;
@@ -1045,7 +1045,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field pressedTexture.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public Icon getPressedTexture() {
 		return pressedTexture;
@@ -1103,7 +1103,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getProgressBarColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getProgressBarColors() {
 		return PROGRESSBAR_COLORS;
@@ -1121,7 +1121,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field rolloverColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getRolloverColor() {
 		return rolloverColor;
@@ -1130,7 +1130,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field rolloverColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getRolloverColorDark() {
 		return rolloverColorDark;
@@ -1139,7 +1139,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field rolloverColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getRolloverColorLight() {
 		return rolloverColorLight;
@@ -1148,7 +1148,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getRolloverColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getRolloverColors() {
 		return ROLLOVER_COLORS;
@@ -1157,7 +1157,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field rolloverForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getRolloverForegroundColor() {
 		return rolloverForegroundColor;
@@ -1166,7 +1166,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field rolloverTexture.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public Icon getRolloverTexture() {
 		return rolloverTexture;
@@ -1193,7 +1193,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getSelectedColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getSelectedColors() {
 		return SELECTED_COLORS;
@@ -1202,7 +1202,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field selectedTexture.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public Icon getSelectedTexture() {
 		return selectedTexture;
@@ -1211,7 +1211,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field selectionBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getSelectionBackgroundColor() {
 		return selectionBackgroundColor;
@@ -1220,7 +1220,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field selectionBackgroundColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getSelectionBackgroundColorDark() {
 		return selectionBackgroundColorDark;
@@ -1229,7 +1229,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field selectionBackgroundColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getSelectionBackgroundColorLight() {
 		return selectionBackgroundColorLight;
@@ -1238,7 +1238,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getSelectionColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getSelectionColors() {
 		return SELECTION_COLORS;
@@ -1247,7 +1247,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field selectionForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getSelectionForegroundColor() {
 		return selectionForegroundColor;
@@ -1256,7 +1256,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field shadowColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getShadowColor() {
 		return shadowColor;
@@ -1265,7 +1265,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getSliderColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getSliderColors() {
 		return SLIDER_COLORS;
@@ -1306,7 +1306,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field tabAreaBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getTabAreaBackgroundColor() {
 		return tabAreaBackgroundColor;
@@ -1315,7 +1315,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getTabColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getTabColors() {
 		return TAB_COLORS;
@@ -1324,7 +1324,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field tabSelectionForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getTabSelectionForegroundColor() {
 		return tabSelectionForegroundColor;
@@ -1376,7 +1376,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getThumbColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getThumbColors() {
 		return THUMB_COLORS;
@@ -1385,7 +1385,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field toolbarBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getToolbarBackgroundColor() {
 		return toolbarBackgroundColor;
@@ -1394,7 +1394,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field toolbarColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getToolbarColorDark() {
 		return toolbarColorDark;
@@ -1403,7 +1403,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field toolbarColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getToolbarColorLight() {
 		return toolbarColorLight;
@@ -1412,7 +1412,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getToolBarColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getToolBarColors() {
 		return TOOLBAR_COLORS;
@@ -1421,7 +1421,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field toolbarForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getToolbarForegroundColor() {
 		return toolbarForegroundColor;
@@ -1430,7 +1430,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field tooltipBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getTooltipBackgroundColor() {
 		return tooltipBackgroundColor;
@@ -1448,7 +1448,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field tooltipForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getTooltipForegroundColor() {
 		return tooltipForegroundColor;
@@ -1466,7 +1466,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getTrackColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getTrackColors() {
 		return TRACK_COLORS;
@@ -1488,7 +1488,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowBorderColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowBorderColor() {
 		return windowBorderColor;
@@ -1497,7 +1497,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowIconColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowIconColor() {
 		return windowIconColor;
@@ -1506,7 +1506,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowIconRolloverColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowIconRolloverColor() {
 		return windowIconRolloverColor;
@@ -1515,7 +1515,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowIconShadowColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowIconShadowColor() {
 		return windowIconShadowColor;
@@ -1524,7 +1524,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowInactiveBorderColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowInactiveBorderColor() {
 		return windowInactiveBorderColor;
@@ -1533,7 +1533,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowInactiveTitleBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowInactiveTitleBackgroundColor() {
 		return windowInactiveTitleBackgroundColor;
@@ -1542,7 +1542,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowInactiveTitleColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowInactiveTitleColorDark() {
 		return windowInactiveTitleColorDark;
@@ -1551,7 +1551,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowInactiveTitleColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowInactiveTitleColorLight() {
 		return windowInactiveTitleColorLight;
@@ -1560,7 +1560,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getWindowInactiveTitleColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getWindowInactiveTitleColors() {
 		return WINDOW_INACTIVE_TITLE_COLORS;
@@ -1569,7 +1569,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowInactiveTitleForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowInactiveTitleForegroundColor() {
 		return windowInactiveTitleForegroundColor;
@@ -1578,7 +1578,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowTexture.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public Icon getWindowTexture() {
 		return windowTexture;
@@ -1587,7 +1587,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowTitleBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowTitleBackgroundColor() {
 		return windowTitleBackgroundColor;
@@ -1596,7 +1596,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowTitleColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowTitleColorDark() {
 		return windowTitleColorDark;
@@ -1605,7 +1605,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowTitleColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowTitleColorLight() {
 		return windowTitleColorLight;
@@ -1614,7 +1614,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>getWindowTitleColors.</p>
 	 *
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public Color[] getWindowTitleColors() {
 		return WINDOW_TITLE_COLORS;
@@ -1636,7 +1636,7 @@ public abstract class AbstractTheme extends MetalTheme {
 	/**
 	 * <p>Getter for the field windowTitleForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getWindowTitleForegroundColor() {
 		return windowTitleForegroundColor;

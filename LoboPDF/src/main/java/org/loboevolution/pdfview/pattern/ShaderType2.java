@@ -19,20 +19,20 @@
 
 package org.loboevolution.pdfview.pattern;
 
-import java.awt.Paint;
-import java.awt.PaintContext;
-import java.awt.Rectangle;
-import java.awt.RenderingHints;
-import java.awt.Transparency;
-import java.awt.color.ColorSpace;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
-import java.awt.image.ColorModel;
-import java.awt.image.ComponentColorModel;
-import java.awt.image.DataBuffer;
-import java.awt.image.Raster;
-import java.awt.image.WritableRaster;
+import com.mercuryred.render.interfaces.ui.Paint;
+import com.mercuryred.render.interfaces.ui.PaintContext;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Transparency;
+import com.mercuryred.render.interfaces.ui.color.ColorSpace;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.Point2D;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.image.ColorModel;
+import com.mercuryred.render.interfaces.ui.image.ComponentColorModel;
+import com.mercuryred.render.interfaces.ui.image.DataBuffer;
+import com.mercuryred.render.interfaces.ui.image.Raster;
+import com.mercuryred.render.interfaces.ui.image.WritableRaster;
 import java.io.IOException;
 
 import org.loboevolution.pdfview.PDFObject;
@@ -140,7 +140,7 @@ public class ShaderType2 extends PDFShader {
     /**
      * Get the start of the axis
      *
-     * @return a {@link java.awt.geom.Point2D} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.Point2D} object.
      */
     public Point2D getAxisStart() {
         return this.axisStart;
@@ -149,7 +149,7 @@ public class ShaderType2 extends PDFShader {
     /**
      * Set the start of the axis
      *
-     * @param axisStart a {@link java.awt.geom.Point2D} object.
+     * @param axisStart a {@link com.mercuryred.render.interfaces.ui.geom.Point2D} object.
      */
     protected void setAxisStart(Point2D axisStart) {
         this.axisStart = axisStart;
@@ -158,7 +158,7 @@ public class ShaderType2 extends PDFShader {
     /**
      * Get the end of the axis
      *
-     * @return a {@link java.awt.geom.Point2D} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.Point2D} object.
      */
     public Point2D getAxisEnd() {
         return this.axisEnd;
@@ -167,7 +167,7 @@ public class ShaderType2 extends PDFShader {
     /**
      * Set the start of the axis
      *
-     * @param axisEnd a {@link java.awt.geom.Point2D} object.
+     * @param axisEnd a {@link com.mercuryred.render.interfaces.ui.geom.Point2D} object.
      */
     protected void setAxisEnd(Point2D axisEnd) {
         this.axisEnd = axisEnd;

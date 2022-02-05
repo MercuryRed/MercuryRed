@@ -31,7 +31,7 @@ import org.loboevolution.tab.DnDTabbedPane;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
 
 /**
  * <p>PlatformInit class.</p>

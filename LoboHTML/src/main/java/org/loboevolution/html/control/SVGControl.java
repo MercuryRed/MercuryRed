@@ -20,9 +20,9 @@
 
 package org.loboevolution.html.control;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
 import java.util.logging.Logger;
 
 import org.loboevolution.html.dom.svgimpl.SVGSVGElementImpl;

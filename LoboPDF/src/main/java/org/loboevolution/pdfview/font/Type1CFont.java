@@ -18,9 +18,9 @@
  */
 package org.loboevolution.pdfview.font;
 
-import java.awt.geom.AffineTransform;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.NoninvertibleTransformException;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.NoninvertibleTransformException;
 import java.io.IOException;
 
 import org.loboevolution.pdfview.PDFDebugger;

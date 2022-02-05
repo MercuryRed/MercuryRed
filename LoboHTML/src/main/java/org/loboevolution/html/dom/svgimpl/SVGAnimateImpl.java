@@ -20,13 +20,13 @@
 
 package org.loboevolution.html.dom.svgimpl;
 
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.ActionListener;
 import java.util.StringTokenizer;
 
-import javax.swing.JComponent;
-import javax.swing.Timer;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.Timer;
 
 import org.loboevolution.html.dom.smil.ElementTargetAttributes;
 import org.loboevolution.html.dom.smil.TimeList;

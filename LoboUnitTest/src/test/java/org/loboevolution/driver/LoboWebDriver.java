@@ -34,7 +34,7 @@ import org.loboevolution.net.HttpNetwork;
 import org.loboevolution.net.UserAgent;
 import org.xml.sax.InputSource;
 
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Dimension;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;

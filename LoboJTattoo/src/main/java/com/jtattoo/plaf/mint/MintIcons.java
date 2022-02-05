@@ -22,17 +22,17 @@
  */
 package com.jtattoo.plaf.mint;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Shape;
-import java.awt.geom.Area;
-import java.awt.geom.RoundRectangle2D;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.GradientPaint;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.Area;
+import com.mercuryred.render.interfaces.ui.geom.RoundRectangle2D;
 
-import javax.swing.Icon;
-import javax.swing.JButton;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JButton;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseIcons;
@@ -156,7 +156,7 @@ public class MintIcons extends BaseIcons {
 	/**
 	 * <p>getCloseIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getCloseIcon() {
 		if (closeIcon == null) {
@@ -172,7 +172,7 @@ public class MintIcons extends BaseIcons {
 	/**
 	 * <p>getDownArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getDownArrowIcon() {
 		if (downArrowIcon == null) {
@@ -190,7 +190,7 @@ public class MintIcons extends BaseIcons {
 	/**
 	 * <p>getIconIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getIconIcon() {
 		if (iconIcon == null) {
@@ -206,7 +206,7 @@ public class MintIcons extends BaseIcons {
 	/**
 	 * <p>getLeftArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getLeftArrowIcon() {
 		if (leftArrowIcon == null) {
@@ -224,7 +224,7 @@ public class MintIcons extends BaseIcons {
 	/**
 	 * <p>getMaxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMaxIcon() {
 		if (maxIcon == null) {
@@ -240,7 +240,7 @@ public class MintIcons extends BaseIcons {
 	/**
 	 * <p>getMinIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMinIcon() {
 		if (minIcon == null) {
@@ -256,7 +256,7 @@ public class MintIcons extends BaseIcons {
 	/**
 	 * <p>getRightArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getRightArrowIcon() {
 		if (rightArrowIcon == null) {
@@ -274,7 +274,7 @@ public class MintIcons extends BaseIcons {
 	/**
 	 * <p>getUpArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getUpArrowIcon() {
 		if (upArrowIcon == null) {

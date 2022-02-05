@@ -31,7 +31,7 @@ import org.loboevolution.html.node.js.WindowProxy;
 import org.loboevolution.html.renderstate.IFrameRenderState;
 import org.loboevolution.html.renderstate.RenderState;
 
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Dimension;
 import java.net.URL;
 import java.util.logging.Level;
 

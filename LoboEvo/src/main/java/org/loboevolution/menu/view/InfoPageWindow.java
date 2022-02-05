@@ -20,25 +20,25 @@
 
 package org.loboevolution.menu.view;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Image;
+import com.mercuryred.render.interfaces.ui.BorderLayout;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Image;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTabbedPane;
-import javax.swing.JTable;
-import javax.swing.ListSelectionModel;
-import javax.swing.table.DefaultTableModel;
+import com.mercuryred.render.interfaces.uiplus.BoxLayout;
+import com.mercuryred.render.interfaces.uiplus.ImageIcon;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
+import com.mercuryred.render.interfaces.uiplus.JLabel;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JScrollPane;
+import com.mercuryred.render.interfaces.uiplus.JTabbedPane;
+import com.mercuryred.render.interfaces.uiplus.JTable;
+import com.mercuryred.render.interfaces.uiplus.ListSelectionModel;
+import com.mercuryred.render.interfaces.uiplus.table.DefaultTableModel;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.SyntaxConstants;

@@ -23,16 +23,16 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
-import javax.swing.JComponent;
-import javax.swing.JPopupMenu;
-import javax.swing.JSeparator;
-import javax.swing.SwingConstants;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicSeparatorUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JPopupMenu;
+import com.mercuryred.render.interfaces.uiplus.JSeparator;
+import com.mercuryred.render.interfaces.uiplus.SwingConstants;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicSeparatorUI;
 
 /**
  * <p>BaseSeparatorUI class.</p>

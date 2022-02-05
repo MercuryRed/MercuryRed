@@ -23,14 +23,14 @@
 
 package com.jtattoo.plaf.acryl;
 
-import java.awt.Color;
-import java.awt.Component;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.border.Border;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.BorderFactory;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseSpinnerUI;

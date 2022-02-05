@@ -20,10 +20,10 @@
 
 package org.loboevolution.menu.tools.pref.search;
 
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 
-import javax.swing.AbstractAction;
-import javax.swing.JOptionPane;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.JOptionPane;
 
 import org.loboevolution.store.ToolsStore;
 
@@ -52,7 +52,7 @@ public class SetAsDefaultAction<T> extends AbstractAction {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.
+	 * @see com.mercuryred.render.interfaces.ui.event.ActionListener#actionPerformed(com.mercuryred.render.interfaces.ui.event.
 	 * ActionEvent)
 	 */
 	/** {@inheritDoc} */

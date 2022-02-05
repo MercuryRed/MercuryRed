@@ -18,13 +18,13 @@
  */
 package org.loboevolution.pdfview.font;
 
-import java.awt.Font;
-import java.awt.FontFormatException;
-import java.awt.font.FontRenderContext;
-import java.awt.font.GlyphVector;
-import java.awt.font.OpenType;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.FontFormatException;
+import com.mercuryred.render.interfaces.ui.font.FontRenderContext;
+import com.mercuryred.render.interfaces.ui.font.GlyphVector;
+import com.mercuryred.render.interfaces.ui.font.OpenType;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -244,7 +244,7 @@ public class NativeFont extends OutlineFont {
      * Set the font
      *
      * @param fontdata the font data as a byte array
-     * @throws java.awt.FontFormatException if any.
+     * @throws com.mercuryred.render.interfaces.ui.FontFormatException if any.
      * @throws java.io.IOException if any.
      */
     protected void setFont (byte[] fontdata)

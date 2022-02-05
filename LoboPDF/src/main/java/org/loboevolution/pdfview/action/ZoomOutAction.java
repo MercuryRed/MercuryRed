@@ -1,8 +1,8 @@
 package org.loboevolution.pdfview.action;
 
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 
-import javax.swing.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
 
 import org.loboevolution.pdf.PDFViewer;
 

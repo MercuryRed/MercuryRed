@@ -23,13 +23,13 @@
 
 package org.loboevolution.img;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.LayoutManager;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.LayoutManager;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 
-import javax.swing.JViewport;
+import com.mercuryred.render.interfaces.uiplus.JViewport;
 
 /**
  * A custom layout manager for the image viewer scroll pane viewport. It is used

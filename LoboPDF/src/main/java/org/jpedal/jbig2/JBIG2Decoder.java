@@ -49,11 +49,11 @@
 */
 package org.jpedal.jbig2;
 
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBuffer;
-import java.awt.image.DataBufferByte;
-import java.awt.image.Raster;
-import java.awt.image.WritableRaster;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.DataBuffer;
+import com.mercuryred.render.interfaces.ui.image.DataBufferByte;
+import com.mercuryred.render.interfaces.ui.image.Raster;
+import com.mercuryred.render.interfaces.ui.image.WritableRaster;
 import java.io.DataInput;
 import java.io.File;
 import java.io.FileInputStream;
@@ -147,7 +147,7 @@ public class JBIG2Decoder {
 	 * <p>getPageAsBufferedImage.</p>
 	 *
 	 * @param page a int.
-	 * @return a {@link java.awt.image.BufferedImage} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
 	 */
 	public BufferedImage getPageAsBufferedImage(int page) {
 		page++;

@@ -20,8 +20,8 @@
 
 package org.loboevolution.html.dom.input;
 
-import javax.swing.ButtonGroup;
-import javax.swing.JRadioButton;
+import com.mercuryred.render.interfaces.uiplus.ButtonGroup;
+import com.mercuryred.render.interfaces.uiplus.JRadioButton;
 
 import org.loboevolution.html.control.InputControl;
 import org.loboevolution.html.dom.domimpl.HTMLInputElementImpl;

@@ -20,7 +20,7 @@
 
 package org.loboevolution.html.js;
 
-import java.awt.event.ActionListener;
+import com.mercuryred.render.interfaces.ui.event.ActionListener;
 import java.lang.ref.WeakReference;
 
 abstract class WeakWindowTask implements ActionListener {

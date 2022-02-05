@@ -22,7 +22,7 @@
  */
 package org.loboevolution.html.renderer;
 
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics;
 import java.util.Iterator;
 
 import org.loboevolution.html.dom.HTMLHtmlElement;
@@ -48,7 +48,7 @@ public interface Renderable {
 	/**
 	 * <p>paint.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 */
 	void paint(Graphics g);
 

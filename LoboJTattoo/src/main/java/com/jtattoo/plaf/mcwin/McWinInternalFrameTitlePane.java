@@ -22,15 +22,15 @@
  */
 package com.jtattoo.plaf.mcwin;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.LayoutManager;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.LayoutManager;
 
-import javax.swing.Icon;
-import javax.swing.JInternalFrame;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JInternalFrame;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseInternalFrameTitlePane;
@@ -214,7 +214,7 @@ public class McWinInternalFrameTitlePane extends BaseInternalFrameTitlePane {
 	/**
 	 * <p>Constructor for McWinInternalFrameTitlePane.</p>
 	 *
-	 * @param f a {@link javax.swing.JInternalFrame} object.
+	 * @param f a {@link com.mercuryred.render.interfaces.uiplus.JInternalFrame} object.
 	 */
 	public McWinInternalFrameTitlePane(JInternalFrame f) {
 		super(f);

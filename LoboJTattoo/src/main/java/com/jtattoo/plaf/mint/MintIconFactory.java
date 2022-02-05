@@ -22,7 +22,7 @@
  */
 package com.jtattoo.plaf.mint;
 
-import javax.swing.Icon;
+import com.mercuryred.render.interfaces.uiplus.Icon;
 
 import com.jtattoo.plaf.AbstractIconFactory;
 import com.jtattoo.plaf.BaseIcons;

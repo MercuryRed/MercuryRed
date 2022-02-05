@@ -23,28 +23,28 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Composite;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.Rectangle;
-import java.awt.RenderingHints;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
 
-import javax.swing.AbstractButton;
-import javax.swing.ButtonModel;
-import javax.swing.JComponent;
-import javax.swing.JMenuBar;
-import javax.swing.SwingUtilities;
-import javax.swing.plaf.ColorUIResource;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicButtonListener;
-import javax.swing.plaf.basic.BasicGraphicsUtils;
-import javax.swing.plaf.basic.BasicHTML;
-import javax.swing.plaf.basic.BasicToggleButtonUI;
-import javax.swing.text.View;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.ButtonModel;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JMenuBar;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicButtonListener;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicGraphicsUtils;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicHTML;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicToggleButtonUI;
+import com.mercuryred.render.interfaces.uiplus.text.View;
 
 /**
  * <p>BaseToggleButtonUI class.</p>
@@ -141,8 +141,8 @@ public class BaseToggleButtonUI extends BasicToggleButtonUI {
 	/**
 	 * <p>paintBackground.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param b a {@link javax.swing.AbstractButton} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param b a {@link com.mercuryred.render.interfaces.uiplus.AbstractButton} object.
 	 */
 	protected void paintBackground(Graphics g, AbstractButton b) {
 		if (!b.isContentAreaFilled() || b.getParent() instanceof JMenuBar) {

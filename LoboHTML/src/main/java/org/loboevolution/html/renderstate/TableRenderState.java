@@ -19,7 +19,7 @@
  */
 package org.loboevolution.html.renderstate;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 import java.util.Base64;
 
 import org.loboevolution.common.Strings;

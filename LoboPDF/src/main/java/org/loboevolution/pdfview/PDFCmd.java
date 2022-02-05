@@ -18,7 +18,7 @@
  */
 package org.loboevolution.pdfview;
 
-import java.awt.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 
 /**
  * The abstract superclass of all drawing commands for a PDFPage.

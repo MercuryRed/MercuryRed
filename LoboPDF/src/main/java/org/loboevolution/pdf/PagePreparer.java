@@ -19,7 +19,7 @@
 
 package org.loboevolution.pdf;
 
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Dimension;
 
 import org.loboevolution.pdfview.PDFFile;
 import org.loboevolution.pdfview.PDFPage;

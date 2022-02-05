@@ -19,7 +19,7 @@
 
 package org.loboevolution.pdfview.colorspace;
 
-import java.awt.color.ColorSpace;
+import com.mercuryred.render.interfaces.ui.color.ColorSpace;
 
 import org.loboevolution.pdfview.PDFPaint;
 import org.loboevolution.pdfview.function.PDFFunction;

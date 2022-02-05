@@ -25,10 +25,10 @@ package com.jtattoo.plaf;
 
 import java.beans.PropertyChangeListener;
 
-import javax.swing.JComponent;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicSplitPaneDivider;
-import javax.swing.plaf.basic.BasicSplitPaneUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicSplitPaneDivider;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicSplitPaneUI;
 
 /**
  * <p>BaseSplitPaneUI class.</p>

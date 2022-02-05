@@ -19,7 +19,7 @@
  */
 package org.loboevolution.html.dom;
 
-import java.awt.Font;
+import com.mercuryred.render.interfaces.ui.Font;
 
 /**
  * The public interface CanvasRenderingContext2D.

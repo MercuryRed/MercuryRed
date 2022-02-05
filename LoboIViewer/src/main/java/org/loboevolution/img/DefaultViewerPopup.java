@@ -23,27 +23,27 @@
 
 package org.loboevolution.img;
 
-import java.awt.Insets;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.event.MouseAdapter;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-import javax.imageio.ImageIO;
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JSeparator;
-import javax.swing.filechooser.FileNameExtensionFilter;
+import com.mercuryred.render.interfaces.imageio.ImageIO;
+import com.mercuryred.render.interfaces.uiplus.ButtonGroup;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.JCheckBoxMenuItem;
+import com.mercuryred.render.interfaces.uiplus.JFileChooser;
+import com.mercuryred.render.interfaces.uiplus.JLabel;
+import com.mercuryred.render.interfaces.uiplus.JMenu;
+import com.mercuryred.render.interfaces.uiplus.JMenuItem;
+import com.mercuryred.render.interfaces.uiplus.JOptionPane;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JPopupMenu;
+import com.mercuryred.render.interfaces.uiplus.JRadioButtonMenuItem;
+import com.mercuryred.render.interfaces.uiplus.JSeparator;
+import com.mercuryred.render.interfaces.uiplus.filechooser.FileNameExtensionFilter;
 
 /**
  * The default popup menu for image viewers. The contents of the menu are

@@ -22,7 +22,7 @@
  */
 package com.jtattoo.plaf.bernstein;
 
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
 import com.jtattoo.plaf.BaseSplitPaneDivider;
 

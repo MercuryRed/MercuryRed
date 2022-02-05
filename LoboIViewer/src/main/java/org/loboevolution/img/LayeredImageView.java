@@ -23,10 +23,10 @@
 
 package org.loboevolution.img;
 
-import java.awt.Component;
+import com.mercuryred.render.interfaces.ui.Component;
 
-import javax.swing.JComponent;
-import javax.swing.JLayeredPane;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JLayeredPane;
 
 /**
  * A component showing an image as well as an arbitrary number of overlays.

@@ -20,12 +20,12 @@
 
 package org.loboevolution.tab;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Insets;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Insets;
 
-import javax.swing.border.Border;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
 
 /**
  * <p>SubtleSquareBorder class.</p>

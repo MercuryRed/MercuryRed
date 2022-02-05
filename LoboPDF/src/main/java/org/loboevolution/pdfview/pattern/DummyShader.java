@@ -1,6 +1,6 @@
 package org.loboevolution.pdfview.pattern;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 import java.io.IOException;
 
 import org.loboevolution.pdfview.PDFObject;

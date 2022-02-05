@@ -23,17 +23,17 @@
 
 package com.jtattoo.plaf.smart;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Composite;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Image;
 
-import javax.swing.JDialog;
-import javax.swing.JRootPane;
+import com.mercuryred.render.interfaces.uiplus.JDialog;
+import com.mercuryred.render.interfaces.uiplus.JRootPane;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseRootPaneUI;
@@ -58,7 +58,7 @@ public class SmartTitlePane extends BaseTitlePane {
 	/**
 	 * <p>Constructor for SmartTitlePane.</p>
 	 *
-	 * @param root a {@link javax.swing.JRootPane} object.
+	 * @param root a {@link com.mercuryred.render.interfaces.uiplus.JRootPane} object.
 	 * @param ui a {@link com.jtattoo.plaf.BaseRootPaneUI} object.
 	 */
 	public SmartTitlePane(JRootPane root, BaseRootPaneUI ui) {

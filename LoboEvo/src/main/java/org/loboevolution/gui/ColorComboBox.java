@@ -20,17 +20,17 @@
 
 package org.loboevolution.gui;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
-import javax.swing.JComboBox;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.ListCellRenderer;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.LineBorder;
-import javax.swing.border.MatteBorder;
+import com.mercuryred.render.interfaces.uiplus.JComboBox;
+import com.mercuryred.render.interfaces.uiplus.JList;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.ListCellRenderer;
+import com.mercuryred.render.interfaces.uiplus.border.CompoundBorder;
+import com.mercuryred.render.interfaces.uiplus.border.LineBorder;
+import com.mercuryred.render.interfaces.uiplus.border.MatteBorder;
 
 /**
  * <p>ColorComboBox class.</p>

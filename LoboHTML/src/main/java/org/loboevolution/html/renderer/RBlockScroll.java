@@ -20,17 +20,17 @@
 
 package org.loboevolution.html.renderer;
 
-import javax.swing.BoundedRangeModel;
-import javax.swing.JScrollBar;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import com.mercuryred.render.interfaces.uiplus.BoundedRangeModel;
+import com.mercuryred.render.interfaces.uiplus.JScrollBar;
+import com.mercuryred.render.interfaces.uiplus.event.ChangeEvent;
+import com.mercuryred.render.interfaces.uiplus.event.ChangeListener;
 import org.loboevolution.html.renderstate.BlockRenderState;
 import org.loboevolution.html.renderstate.RenderState;
 
-import java.awt.Graphics;
-import java.awt.Insets;
-import java.awt.event.AdjustmentEvent;
-import java.awt.event.AdjustmentListener;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.event.AdjustmentEvent;
+import com.mercuryred.render.interfaces.ui.event.AdjustmentListener;
 
 /**
  * <p>RBlockScroll class.</p>
@@ -57,7 +57,7 @@ public class RBlockScroll {
     /**
      * <p>paintSroll.</p>
      *
-     * @param g a {@link java.awt.Graphics} object.
+     * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
      */
     public void paintSroll(Graphics g) {
         final JScrollBar hsb = this.hScrollBar;

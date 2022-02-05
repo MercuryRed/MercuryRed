@@ -20,9 +20,9 @@
 
 package org.loboevolution.menu.tools.pref.startup;
 
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 
-import javax.swing.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
 
 /**
  * <p>TextEditCancelAction class.</p>
@@ -51,7 +51,7 @@ public class TextEditCancelAction extends AbstractAction {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 * com.mercuryred.render.interfaces.ui.event.ActionListener#actionPerformed(com.mercuryred.render.interfaces.ui.event.ActionEvent)
 	 */
 	/** {@inheritDoc} */
 	@Override

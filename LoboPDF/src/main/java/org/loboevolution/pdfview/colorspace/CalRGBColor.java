@@ -21,7 +21,7 @@
 
 package org.loboevolution.pdfview.colorspace;
 
-import java.awt.color.ColorSpace;
+import com.mercuryred.render.interfaces.ui.color.ColorSpace;
 import java.io.IOException;
 
 import org.loboevolution.pdfview.PDFObject;
@@ -33,7 +33,7 @@ import org.loboevolution.pdfview.function.FunctionType0;
  * Author Mike Wessler
   *
  */
-public class CalRGBColor extends ColorSpace {
+public class CalRGBColor implements ColorSpace {
     private static final float[] vonKriesM = {  0.40024f, -0.22630f, 0.00000f, 
                                                 0.70760f,  1.16532f, 0.00000f,                                      
                                                -0.08081f,  0.04570f, 0.91822f };

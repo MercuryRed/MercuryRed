@@ -23,24 +23,24 @@
 
 package org.loboevolution.img;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.LayoutManager;
-import java.awt.Point;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.awt.geom.AffineTransform;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.BorderLayout;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.LayoutManager;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.event.MouseAdapter;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.event.MouseListener;
+import com.mercuryred.render.interfaces.ui.event.MouseMotionListener;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JScrollPane;
-import javax.swing.JViewport;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JPopupMenu;
+import com.mercuryred.render.interfaces.uiplus.JScrollPane;
+import com.mercuryred.render.interfaces.uiplus.JViewport;
 
 
 /**
@@ -331,7 +331,7 @@ public final class ImageViewer {
 
 	/**
 	 * Returns the current interpolation type. The default is
-	 * {@link java.awt.RenderingHints#VALUE_INTERPOLATION_BICUBIC}.
+	 * {@link com.mercuryred.render.interfaces.ui.RenderingHints#VALUE_INTERPOLATION_BICUBIC}.
 	 *
 	 * @return the interpolation type
 	 * @see #setInterpolationType(Object)
@@ -342,14 +342,14 @@ public final class ImageViewer {
 
 	/**
 	 * Sets the interpolation type to use when resizing images. See
-	 * {@link java.awt.RenderingHints#KEY_INTERPOLATION} for details. The default
+	 * {@link com.mercuryred.render.interfaces.ui.RenderingHints#KEY_INTERPOLATION} for details. The default
 	 * value is {@code RenderingHints.VALUE_INTERPOLATION_BICUBIC}.
 	 * <p>
 	 * The allowed values are:
 	 * <ul>
-	 * <li>{@link java.awt.RenderingHints#VALUE_INTERPOLATION_NEAREST_NEIGHBOR}
-	 * <li>{@link java.awt.RenderingHints#VALUE_INTERPOLATION_BILINEAR}
-	 * <li>{@link java.awt.RenderingHints#VALUE_INTERPOLATION_BICUBIC} (default)
+	 * <li>{@link com.mercuryred.render.interfaces.ui.RenderingHints#VALUE_INTERPOLATION_NEAREST_NEIGHBOR}
+	 * <li>{@link com.mercuryred.render.interfaces.ui.RenderingHints#VALUE_INTERPOLATION_BILINEAR}
+	 * <li>{@link com.mercuryred.render.interfaces.ui.RenderingHints#VALUE_INTERPOLATION_BICUBIC} (default)
 	 * </ul>
 	 * Changing the interpolation type to bilinear or nearest neighbor improves
 	 * painting performance when the image needs to be resized.

@@ -20,14 +20,12 @@
 
 package org.loboevolution.net;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
+import com.mercuryred.render.interfaces.imageio.ImageIO;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import org.loboevolution.common.Strings;
 import org.loboevolution.common.Urls;
 
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
@@ -111,7 +109,7 @@ public class HttpNetwork {
 	 *
 	 * @param href a {@link java.lang.String} object.
 	 * @param baseUri a {@link java.lang.String} object.
-	 * @return a {@link java.awt.Image} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Image} object.
 	 */
 	public static Image getImage(String href, String baseUri) {
 		try {
@@ -149,13 +147,13 @@ public class HttpNetwork {
 						if (in != null) {
 							BufferedImage bi = ImageIO.read(in);
 							if (bi != null) {
-								return Toolkit.getDefaultToolkit().createImage(bi.getSource());
+								return com.mercuryred.ui.RenderEngines.Get().createImage(bi.getSource());
 							}
 						}
 						return null;
 					} else if (href.endsWith(".gif")) {
 						try {
-							return new ImageIcon(u).getImage();
+							return com.mercuryred.ui.RenderEngines.Get().createImageIcon(u).getImage();
 						} catch (final Exception e) {
 							return ImageIO.read(in);
 						}

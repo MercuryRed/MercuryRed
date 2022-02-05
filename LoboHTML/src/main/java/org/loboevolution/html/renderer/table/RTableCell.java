@@ -31,7 +31,7 @@ import org.loboevolution.html.style.AbstractCSSProperties;
 import org.loboevolution.html.style.HtmlValues;
 import org.loboevolution.info.SizeInfo;
 
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Dimension;
 
 
 /**
@@ -65,7 +65,7 @@ public class RTableCell extends RBlock {
 	 * @param expandWidth a boolean.
 	 * @param expandHeight a boolean.
 	 * @param sizeOnly a boolean.
-	 * @return a {@link java.awt.Dimension} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Dimension} object.
 	 */
 	public Dimension doCellLayout(int width, int height, boolean expandWidth, boolean expandHeight,
 			boolean sizeOnly) {

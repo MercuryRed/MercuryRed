@@ -19,9 +19,9 @@
  */
 package org.loboevolution.html.renderstate;
 
-import java.awt.FontMetrics;
-import java.awt.GraphicsEnvironment;
-import java.awt.Toolkit;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.GraphicsEnvironment;
+import com.mercuryred.render.interfaces.ui.Toolkit;
 
 import org.loboevolution.html.dom.domimpl.HTMLElementImpl;
 import org.loboevolution.html.style.HtmlInsets;

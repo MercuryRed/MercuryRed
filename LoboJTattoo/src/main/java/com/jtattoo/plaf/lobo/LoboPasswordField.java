@@ -1,8 +1,8 @@
 package com.jtattoo.plaf.lobo;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
-import javax.swing.JPasswordField;
+import com.mercuryred.render.interfaces.uiplus.JPasswordField;
 
 /**
  * <p>LoboPasswordField class.</p>

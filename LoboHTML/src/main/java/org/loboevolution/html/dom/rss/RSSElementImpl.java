@@ -20,7 +20,7 @@
 
 package org.loboevolution.html.dom.rss;
 
-import java.awt.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
 
 import org.loboevolution.html.dom.nodeimpl.NodeListImpl;
 
@@ -44,7 +44,7 @@ public class RSSElementImpl extends RSSElement {
 	/**
 	 * <p>draw.</p>
 	 *
-	 * @param graphics a {@link java.awt.Graphics2D} object.
+	 * @param graphics a {@link com.mercuryred.render.interfaces.ui.Graphics2D} object.
 	 */
 	public void draw(final Graphics2D graphics) {
 		if (hasChildNodes()) {

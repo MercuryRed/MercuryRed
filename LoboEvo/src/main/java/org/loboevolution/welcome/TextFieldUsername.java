@@ -20,18 +20,18 @@
 
 package org.loboevolution.welcome;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Cursor;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.event.FocusEvent;
+import com.mercuryred.render.interfaces.ui.event.FocusListener;
 import java.util.HashMap;
 
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+import com.mercuryred.render.interfaces.uiplus.JTextField;
+import com.mercuryred.render.interfaces.uiplus.SwingConstants;
 
 import com.jtattoo.plaf.lobo.LoboLookAndFeel;
 
@@ -127,7 +127,7 @@ public class TextFieldUsername extends JTextField implements LoboLookAndFeel {
 	/**
 	 * <p>Setter for the field borderColor.</p>
 	 *
-	 * @param color a {@link java.awt.Color} object.
+	 * @param color a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	protected void setBorderColor(Color color) {
 		borderColor = color;

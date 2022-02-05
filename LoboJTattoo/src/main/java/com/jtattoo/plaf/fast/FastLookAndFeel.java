@@ -29,9 +29,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.swing.UIDefaults;
-import javax.swing.plaf.basic.BasicPopupMenuUI;
-import javax.swing.plaf.basic.BasicProgressBarUI;
+import com.mercuryred.render.interfaces.uiplus.UIDefaults;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicPopupMenuUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicProgressBarUI;
 
 import com.jtattoo.plaf.AbstractBorderFactory;
 import com.jtattoo.plaf.AbstractIconFactory;

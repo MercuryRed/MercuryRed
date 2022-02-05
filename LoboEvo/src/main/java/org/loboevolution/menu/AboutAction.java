@@ -20,10 +20,10 @@
 
 package org.loboevolution.menu;
 
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 
-import javax.swing.AbstractAction;
-import javax.swing.JOptionPane;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.JOptionPane;
 
 /**
  * <p>AboutAction class.</p>

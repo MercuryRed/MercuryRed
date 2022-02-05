@@ -733,7 +733,7 @@ public class PDFObject {
                 return "Keyword: " + getStringValue();
             /*	    } else if (type==IMAGE) {
             StringBuilder sb= new StringBuilder();
-            java.awt.Image im= (java.awt.Image)stream;
+            com.mercuryred.render.interfaces.ui.Image im= (com.mercuryred.render.interfaces.ui.Image)stream;
             sb.append("Image ("+im.getWidth(null)+"x"+im.getHeight(null)+", with keys:");
             HashMap hm= (HashMap)value;
             Iterator it= hm.keySet().iterator();

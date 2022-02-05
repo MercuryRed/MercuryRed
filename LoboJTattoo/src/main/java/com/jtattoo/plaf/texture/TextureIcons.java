@@ -22,10 +22,10 @@
  */
 package com.jtattoo.plaf.texture;
 
-import java.awt.Color;
-import java.awt.Insets;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Insets;
 
-import javax.swing.Icon;
+import com.mercuryred.render.interfaces.uiplus.Icon;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseIcons;
@@ -42,7 +42,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getCloseIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getCloseIcon() {
 		if (closeIcon == null) {
@@ -62,7 +62,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getDownArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getDownArrowIcon() {
 		if (downArrowIcon == null) {
@@ -80,7 +80,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getIconIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getIconIcon() {
 		if (iconIcon == null) {
@@ -100,7 +100,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getLeftArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getLeftArrowIcon() {
 		if (leftArrowIcon == null) {
@@ -118,7 +118,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getMaxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMaxIcon() {
 		if (maxIcon == null) {
@@ -138,7 +138,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getMinIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMinIcon() {
 		if (minIcon == null) {
@@ -158,7 +158,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getRightArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getRightArrowIcon() {
 		if (rightArrowIcon == null) {
@@ -176,7 +176,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterHorBumpIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterHorBumpIcon() {
 		if (splitterHorBumpIcon == null) {
@@ -188,7 +188,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterVerBumpIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterVerBumpIcon() {
 		if (splitterVerBumpIcon == null) {
@@ -200,7 +200,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getThumbHorIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbHorIcon() {
 		if ("Default".equals(AbstractLookAndFeel.getTheme().getName())) {
@@ -216,7 +216,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getThumbHorIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbHorIconRollover() {
 		if ("Default".equals(AbstractLookAndFeel.getTheme().getName())) {
@@ -232,7 +232,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getThumbVerIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbVerIcon() {
 		if ("Default".equals(AbstractLookAndFeel.getTheme().getName())) {
@@ -248,7 +248,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getThumbVerIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbVerIconRollover() {
 		if ("Default".equals(AbstractLookAndFeel.getTheme().getName())) {
@@ -264,7 +264,7 @@ public class TextureIcons extends BaseIcons {
 	/**
 	 * <p>getUpArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getUpArrowIcon() {
 		if (upArrowIcon == null) {

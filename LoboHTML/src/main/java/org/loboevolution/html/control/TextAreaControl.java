@@ -19,7 +19,7 @@
  */
 package org.loboevolution.html.control;
 
-import java.awt.ComponentOrientation;
+import com.mercuryred.render.interfaces.ui.ComponentOrientation;
 
 import org.loboevolution.common.WrapperLayout;
 import org.loboevolution.html.dom.domimpl.HTMLTextAreaElementImpl;
@@ -58,7 +58,7 @@ public class TextAreaControl extends BaseControl {
 	 * <p>direction.</p>
 	 *
 	 * @param dir a {@link java.lang.String} object.
-	 * @return a {@link java.awt.ComponentOrientation} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.ComponentOrientation} object.
 	 */
 	public ComponentOrientation direction(String dir) {
 		if ("ltr".equalsIgnoreCase(dir)) {

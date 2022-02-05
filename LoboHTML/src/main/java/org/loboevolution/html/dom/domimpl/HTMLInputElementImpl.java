@@ -44,7 +44,7 @@ import org.loboevolution.html.node.Node;
 import org.loboevolution.html.renderstate.DisplayRenderState;
 import org.loboevolution.html.renderstate.RenderState;
 
-import java.awt.Image;
+import com.mercuryred.render.interfaces.ui.Image;
 import java.util.Map;
 
 /**

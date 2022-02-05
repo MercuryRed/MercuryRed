@@ -22,21 +22,21 @@
  */
 package com.jtattoo.plaf.aluminium;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Composite;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.LinearGradientPaint;
-import java.awt.Point;
-import java.awt.Shape;
-import java.awt.geom.Area;
-import java.awt.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.LinearGradientPaint;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.Area;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 
-import javax.swing.Icon;
+import com.mercuryred.render.interfaces.uiplus.Icon;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.JTattooUtilities;
@@ -58,8 +58,8 @@ public final class AluminiumUtils {
 	/**
 	 * <p>fillComponent.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link java.awt.Component} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 */
 	public static void fillComponent(Graphics g, Component c) {
 		Graphics2D g2D = (Graphics2D) g;
@@ -108,8 +108,8 @@ public final class AluminiumUtils {
 	/**
 	 * <p>fillComponent.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link java.awt.Component} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.

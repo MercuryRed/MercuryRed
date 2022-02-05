@@ -20,10 +20,10 @@
 
 package org.loboevolution.html.control;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
 import org.loboevolution.html.HtmlObject;
 import org.loboevolution.html.renderer.BrokenComponent;
@@ -89,7 +89,7 @@ public class UIControlWrapper implements UIControl {
 	/**
 	 * <p>paintSelection.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param inSelection a boolean.
 	 * @param startPoint a {@link org.loboevolution.html.renderer.RenderableSpot} object.
 	 * @param endPoint a {@link org.loboevolution.html.renderer.RenderableSpot} object.

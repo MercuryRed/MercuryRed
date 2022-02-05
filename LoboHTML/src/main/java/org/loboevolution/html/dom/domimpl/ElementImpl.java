@@ -23,7 +23,7 @@
 package org.loboevolution.html.dom.domimpl;
 
 import com.gargoylesoftware.css.dom.DOMException;
-import javax.swing.JScrollBar;
+import com.mercuryred.render.interfaces.uiplus.JScrollBar;
 import org.loboevolution.common.Strings;
 import org.loboevolution.html.dom.nodeimpl.NamedNodeMapImpl;
 import org.loboevolution.html.dom.nodeimpl.NodeListImpl;
@@ -43,7 +43,7 @@ import org.loboevolution.html.style.AbstractCSSProperties;
 import org.loboevolution.html.style.HtmlValues;
 import org.loboevolution.http.HtmlRendererContext;
 
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Dimension;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.Arrays;

@@ -20,7 +20,7 @@
 
 package org.loboevolution.html.js;
 
-import javax.swing.Timer;
+import com.mercuryred.render.interfaces.uiplus.Timer;
 
 class TaskWrapper {
 	public final Timer timer;
@@ -28,7 +28,7 @@ class TaskWrapper {
 	/**
 	 * <p>Constructor for TaskWrapper.</p>
 	 *
-	 * @param timer a {@link javax.swing.Timer} object.
+	 * @param timer a {@link com.mercuryred.render.interfaces.uiplus.Timer} object.
 	 * @param retained a {@link java.lang.Object} object.
 	 */
 	public TaskWrapper(Timer timer, Object retained) {

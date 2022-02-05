@@ -18,14 +18,14 @@
  */
 package org.loboevolution.pdfview;
 
-import java.awt.Color;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Point2D;
-import java.util.List;
-
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.Point2D;
 import org.loboevolution.pdfview.font.PDFFont;
 import org.loboevolution.pdfview.font.PDFGlyph;
+
+import java.util.List;
 
 /**
  * a class encapsulating the text state
@@ -63,18 +63,18 @@ public class PDFTextFormat implements Cloneable {
     private final StringBuilder word = new StringBuilder();
     // this is where we build and keep the word list for this page.
     /** start location of the hunk of text */
-    private final Point2D.Float wordStart;
+    private final Point2D wordStart;
     /** location of the end of the previous hunk of text */
-    private final Point2D.Float prevEnd;
+    private final Point2D prevEnd;
 
     /**
      * create a new PDFTextFormat, with initial values
      */
     public PDFTextFormat() {
-        this.cur = new AffineTransform();
-        this.line = new AffineTransform();
-        this.wordStart = new Point2D.Float(-100, -100);
-        this.prevEnd = new Point2D.Float(-100, -100);
+        this.cur = com.mercuryred.ui.RenderEngines.Get().createAffineTransform();
+        this.line = com.mercuryred.ui.RenderEngines.Get().createAffineTransform();
+        this.wordStart = com.mercuryred.ui.RenderEngines.Get().createPoint2D(-100, -100);
+        this.prevEnd = com.mercuryred.ui.RenderEngines.Get().createPoint2D(-100, -100);
         this.tc = this.tw = this.tr = this.tk = 0;
         this.tm = PDFShapeCmd.FILL;
         this.th = 1;
@@ -285,14 +285,14 @@ public class PDFTextFormat implements Cloneable {
      * @param y a float.
      */
     public void carriageReturn(float x, float y) {
-        this.line.concatenate(AffineTransform.getTranslateInstance(x, y));
+        this.line.concatenate(com.mercuryred.ui.RenderEngines.Get().createAffineTransform().getTranslateInstance(x, y));
         this.cur.setTransform(this.line);
     }
 
     /**
      * Get the current transform
      *
-     * @return a {@link java.awt.geom.AffineTransform} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      */
     public AffineTransform getTransform() {
         return this.cur;
@@ -304,7 +304,7 @@ public class PDFTextFormat implements Cloneable {
      * @param matrix an array of {@link float} objects.
      */
     public void setMatrix(float[] matrix) {
-        this.line = new AffineTransform(matrix);
+        this.line = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(matrix);
         this.cur.setTransform(this.line);
     }
 
@@ -318,11 +318,11 @@ public class PDFTextFormat implements Cloneable {
      * @param autoAdjustStroke a boolean.
      */
     public void doText(PDFPage cmds, String text, boolean autoAdjustStroke) {
-        Point2D.Float zero = new Point2D.Float();
-        AffineTransform scale = new AffineTransform(this.fsize * this.th, 0, /* 0 */
+        Point2D zero = com.mercuryred.ui.RenderEngines.Get().createPoint2D();
+        AffineTransform scale = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(this.fsize * this.th, 0, /* 0 */
         0, this.fsize, /* 0 */
         0, this.tr /* 1 */);
-        AffineTransform at = new AffineTransform();
+        AffineTransform at = com.mercuryred.ui.RenderEngines.Get().createAffineTransform();
         List<PDFGlyph> l = this.font.getGlyphs(text);
         if (PDFDebugger.SHOW_TEXT_ANCHOR) {
             if (PDFDebugger.DEBUG_TEXT) {
@@ -333,7 +333,7 @@ public class PDFTextFormat implements Cloneable {
             at.setTransform(this.cur);
             at.concatenate(scale);
             if (PDFDebugger.SHOW_TEXT_REGIONS) {
-                GeneralPath path = new GeneralPath();
+                GeneralPath path = com.mercuryred.ui.RenderEngines.Get().createGeneralPath();
                 path.moveTo(0, 0);
                 path.lineTo(1, 0);
                 path.lineTo(1, 1);
@@ -364,9 +364,9 @@ public class PDFTextFormat implements Cloneable {
             }
             advanceX *= this.th;
             if (PDFDebugger.SHOW_TEXT_ANCHOR) {
-                AffineTransform at2 = new AffineTransform();
+                AffineTransform at2 = com.mercuryred.ui.RenderEngines.Get().createAffineTransform();
                 at2.setTransform(this.cur);
-                GeneralPath path = new GeneralPath();
+                GeneralPath path = com.mercuryred.ui.RenderEngines.Get().createGeneralPath();
                 path.moveTo(0, 0);
                 path.lineTo(6, 0);
                 path.lineTo(6, 6);

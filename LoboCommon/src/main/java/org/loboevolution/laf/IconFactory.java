@@ -19,16 +19,15 @@
  */
 package org.loboevolution.laf;
 
+import com.mercuryred.render.interfaces.uiplus.ImageIcon;
+import org.loboevolution.common.IORoutines;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import javax.swing.ImageIcon;
-
-import org.loboevolution.common.IORoutines;
 
 /**
  * A factory for creating Icon objects.
@@ -77,7 +76,7 @@ public class IconFactory {
 					}
 					try {
 						byte[] imageBytes = IORoutines.load(in, 4096);
-						icon = new ImageIcon(imageBytes);
+						icon = com.mercuryred.ui.RenderEngines.Get().createImageIcon(imageBytes);
 						this.iconMap.put(resourcePath, icon);
 					} finally {
 						in.close();

@@ -23,23 +23,23 @@
 package org.loboevolution.img;
 
 import java.applet.Applet;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.RenderingHints;
-import java.awt.Window;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.NoninvertibleTransformException;
-import java.awt.geom.Point2D;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Window;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.NoninvertibleTransformException;
+import com.mercuryred.render.interfaces.ui.geom.Point2D;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.CellRendererPane;
-import javax.swing.JComponent;
+import com.mercuryred.render.interfaces.uiplus.CellRendererPane;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
 
 import org.loboevolution.common.Objects;
 
@@ -173,7 +173,7 @@ class ImageComponent extends JComponent {
 	/**
 	 * <p>Setter for the field image.</p>
 	 *
-	 * @param newImage a {@link java.awt.image.BufferedImage} object.
+	 * @param newImage a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
 	 */
 	public void setImage(BufferedImage newImage) {
 		BufferedImage oldImage = image;
@@ -191,7 +191,7 @@ class ImageComponent extends JComponent {
 	/**
 	 * <p>Getter for the field image.</p>
 	 *
-	 * @return a {@link java.awt.image.BufferedImage} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
 	 */
 	public BufferedImage getImage() {
 		return image;

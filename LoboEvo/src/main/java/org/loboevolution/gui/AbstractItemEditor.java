@@ -20,7 +20,7 @@
 
 package org.loboevolution.gui;
 
-import javax.swing.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
 
 /**
  * <p>Abstract AbstractItemEditor class.</p>

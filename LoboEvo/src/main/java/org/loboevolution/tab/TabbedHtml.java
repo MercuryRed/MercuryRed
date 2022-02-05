@@ -29,7 +29,7 @@ import org.loboevolution.html.gui.HtmlPanel;
 import org.loboevolution.http.NavigationManager;
 import org.loboevolution.store.TabStore;
 
-import java.awt.Component;
+import com.mercuryred.render.interfaces.ui.Component;
 
 
 /**

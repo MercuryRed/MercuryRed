@@ -22,11 +22,11 @@
  */
 package org.loboevolution.http;
 
-import javax.imageio.ImageIO;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JTextField;
+import com.mercuryred.render.interfaces.imageio.ImageIO;
+import com.mercuryred.render.interfaces.uiplus.JOptionPane;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JPopupMenu;
+import com.mercuryred.render.interfaces.uiplus.JTextField;
 import org.loboevolution.common.BufferExceededException;
 import org.loboevolution.common.RecordedInputStream;
 import org.loboevolution.common.Strings;
@@ -57,12 +57,12 @@ import org.loboevolution.store.NavigationStore;
 import org.loboevolution.store.TabStore;
 import org.xml.sax.InputSource;
 
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.Rectangle;
-import java.awt.Window;
-import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Cursor;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.Window;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -568,7 +568,7 @@ public class HtmlRendererContext {
 	 * This method must be overridden to implement a context menu.
 	 *
 	 * @param element a {@link org.loboevolution.html.dom.HTMLElement} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @return a boolean.
 	 */
 	public boolean onContextMenu(HTMLElement element, MouseEvent event) {
@@ -604,7 +604,7 @@ public class HtmlRendererContext {
 	 * <p>onDoubleClick.</p>
 	 *
 	 * @param element a {@link org.loboevolution.html.dom.HTMLElement} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @return a boolean.
 	 */
 	public boolean onDoubleClick(HTMLElement element, MouseEvent event) {
@@ -615,7 +615,7 @@ public class HtmlRendererContext {
 	 * <p>onMouseClick.</p>
 	 *
 	 * @param element a {@link org.loboevolution.html.dom.HTMLElement} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @return a boolean.
 	 */
 	public boolean onMouseClick(HTMLElement element, MouseEvent event) {
@@ -627,7 +627,7 @@ public class HtmlRendererContext {
 	 * an element.
 	 *
 	 * @param element a {@link org.loboevolution.html.dom.HTMLElement} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 */
 	public void onMouseOut(HTMLElement element, MouseEvent event) {
 	}
@@ -637,7 +637,7 @@ public class HtmlRendererContext {
 	 * enters an element.
 	 *
 	 * @param element a {@link org.loboevolution.html.dom.HTMLElement} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 */
 	public void onMouseOver(HTMLElement element, MouseEvent event) {
 	}

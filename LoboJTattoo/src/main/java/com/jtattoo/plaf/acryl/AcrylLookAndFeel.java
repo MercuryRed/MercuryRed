@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.swing.UIDefaults;
+import com.mercuryred.render.interfaces.uiplus.UIDefaults;
 
 import com.jtattoo.plaf.AbstractBorderFactory;
 import com.jtattoo.plaf.AbstractIconFactory;

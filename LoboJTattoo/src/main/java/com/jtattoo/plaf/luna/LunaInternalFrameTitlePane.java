@@ -22,10 +22,10 @@
  */
 package com.jtattoo.plaf.luna;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
-import javax.swing.JInternalFrame;
+import com.mercuryred.render.interfaces.uiplus.JInternalFrame;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseInternalFrameTitlePane;
@@ -49,7 +49,7 @@ public class LunaInternalFrameTitlePane extends BaseInternalFrameTitlePane {
 	/**
 	 * <p>Constructor for LunaInternalFrameTitlePane.</p>
 	 *
-	 * @param f a {@link javax.swing.JInternalFrame} object.
+	 * @param f a {@link com.mercuryred.render.interfaces.uiplus.JInternalFrame} object.
 	 */
 	public LunaInternalFrameTitlePane(JInternalFrame f) {
 		super(f);

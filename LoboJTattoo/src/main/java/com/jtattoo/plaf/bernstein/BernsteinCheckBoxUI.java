@@ -22,10 +22,10 @@
  */
 package com.jtattoo.plaf.bernstein;
 
-import javax.swing.AbstractButton;
-import javax.swing.JComponent;
-import javax.swing.UIManager;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 /**
  * <p>BernsteinCheckBoxUI class.</p>

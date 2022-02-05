@@ -20,9 +20,9 @@
 
 package org.loboevolution.html.dom.svg;
 
-import java.awt.Graphics2D;
-import java.awt.Shape;
-import java.awt.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
 
 /**
  * <p>Drawable interface.</p>
@@ -35,15 +35,15 @@ public interface Drawable {
 	/**
 	 * <p>draw.</p>
 	 *
-	 * @param graphics a {@link java.awt.Graphics2D} object.
+	 * @param graphics a {@link com.mercuryred.render.interfaces.ui.Graphics2D} object.
 	 */
 	void draw(Graphics2D graphics);
 
 	/**
 	 * <p>createShape.</p>
 	 *
-	 * @param transform a {@link java.awt.geom.AffineTransform} object.
-	 * @return a {@link java.awt.Shape} object.
+	 * @param transform a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Shape} object.
 	 */
 	Shape createShape(AffineTransform transform);
 

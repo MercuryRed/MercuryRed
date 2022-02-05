@@ -18,9 +18,9 @@
  */
 package org.loboevolution.pdfview.font;
 
-import java.awt.geom.AffineTransform;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Point2D;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.Point2D;
 
 import org.loboevolution.pdfview.PDFPage;
 import org.loboevolution.pdfview.PDFShapeCmd;
@@ -49,10 +49,10 @@ public class PDFGlyph {
      *
      * @param src a char.
      * @param name a {@link java.lang.String} object.
-     * @param shape a {@link java.awt.geom.GeneralPath} object.
+     * @param shape a {@link com.mercuryred.render.interfaces.ui.geom.GeneralPath} object.
      * @param advance a {@link java.awt.geom.Point2D.Float} object.
      */
-    public PDFGlyph(char src, String name, GeneralPath shape, Point2D.Float advance) {
+    public PDFGlyph(char src, String name, GeneralPath shape, Point2D advance) {
         this.shape = shape;
         this.advance = advance;
         this.src = src;
@@ -65,7 +65,7 @@ public class PDFGlyph {
      * @param src a char.
      * @param name a {@link java.lang.String} object.
      * @param page a {@link org.loboevolution.pdfview.PDFPage} object.
-     * @param advance a {@link java.awt.geom.Point2D} object.
+     * @param advance a {@link com.mercuryred.render.interfaces.ui.geom.Point2D} object.
      */
     public PDFGlyph(char src, String name, PDFPage page, Point2D advance) {
         this.page = page;
@@ -95,7 +95,7 @@ public class PDFGlyph {
     /**
      * Get the shape of this glyph
      *
-     * @return a {@link java.awt.geom.GeneralPath} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.GeneralPath} object.
      */
     public GeneralPath getShape() {
         return this.shape;
@@ -114,9 +114,9 @@ public class PDFGlyph {
      * Add commands for this glyph to a page
      *
      * @param cmds a {@link org.loboevolution.pdfview.PDFPage} object.
-     * @param transform a {@link java.awt.geom.AffineTransform} object.
+     * @param transform a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      * @param mode a int.
-     * @return a {@link java.awt.geom.Point2D} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.Point2D} object.
      */
     public Point2D addCommands(PDFPage cmds, AffineTransform transform, int mode) {
         if (this.shape != null) {
@@ -131,7 +131,7 @@ public class PDFGlyph {
     /**
      * <p>Getter for the field <code>advance</code>.</p>
      *
-     * @return a {@link java.awt.geom.Point2D} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.Point2D} object.
      */
     public Point2D getAdvance() {
         return advance;

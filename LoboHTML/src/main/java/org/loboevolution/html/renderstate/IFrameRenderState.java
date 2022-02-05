@@ -19,7 +19,7 @@
  */
 package org.loboevolution.html.renderstate;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
 import org.loboevolution.html.dom.domimpl.HTMLElementImpl;
 import org.loboevolution.html.style.BorderInsets;

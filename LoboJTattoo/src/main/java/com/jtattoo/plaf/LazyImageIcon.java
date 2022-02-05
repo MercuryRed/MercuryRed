@@ -23,14 +23,14 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Image;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Image;
 import java.util.logging.Logger;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.ImageIcon;
 
 /**
  * <p>LazyImageIcon class.</p>
@@ -88,7 +88,7 @@ public class LazyImageIcon implements Icon {
 	/**
 	 * <p>getImage.</p>
 	 *
-	 * @return a {@link java.awt.Image} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Image} object.
 	 */
 	public Image getImage() {
 		if (getIcon() != null) {

@@ -19,7 +19,7 @@
  */
 package org.loboevolution.html.dom.canvas;
 
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 
 import org.loboevolution.html.dom.ImageData;
 
@@ -40,7 +40,7 @@ public class ImageDataImpl implements ImageData {
 	/**
 	 * <p>Constructor for ImageDataImpl.</p>
 	 *
-	 * @param image a {@link java.awt.image.BufferedImage} object.
+	 * @param image a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
 	 * @param sw a int.
 	 * @param sh a int.
 	 */

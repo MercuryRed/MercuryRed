@@ -21,7 +21,7 @@
 
 package org.loboevolution.common;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -124,9 +124,9 @@ public class ArrayUtilities {
 	/**
 	 * <p>removeColor.</p>
 	 *
-	 * @param arr an array of {@link java.awt.Color} objects.
+	 * @param arr an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 * @param index a int.
-	 * @return an array of {@link java.awt.Color} objects.
+	 * @return an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public static Color[] removeColor(Color[] arr, int index) {
 		if (arr == null || index < 0 || index >= arr.length) {

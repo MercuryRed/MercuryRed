@@ -18,7 +18,7 @@
  */
 package org.loboevolution.pdfview;
 
-import javax.swing.tree.DefaultMutableTreeNode;
+import com.mercuryred.render.interfaces.uiplus.tree.DefaultMutableTreeNode;
 
 import org.loboevolution.pdfview.action.PDFAction;
 

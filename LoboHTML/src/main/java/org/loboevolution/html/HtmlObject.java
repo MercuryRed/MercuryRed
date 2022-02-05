@@ -20,7 +20,7 @@
 
 package org.loboevolution.html;
 
-import java.awt.Component;
+import com.mercuryred.render.interfaces.ui.Component;
 
 /**
  * This interface should be implemented to provide OBJECT, EMBED or APPLET
@@ -38,7 +38,7 @@ public interface HtmlObject {
 	/**
 	 * <p>getComponent.</p>
 	 *
-	 * @return a {@link java.awt.Component} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 */
 	Component getComponent();
 

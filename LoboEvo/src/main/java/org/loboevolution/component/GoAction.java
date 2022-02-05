@@ -21,10 +21,10 @@
 package org.loboevolution.component;
 
 
-import javax.imageio.ImageIO;
-import javax.swing.AbstractAction;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import com.mercuryred.render.interfaces.imageio.ImageIO;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JTextField;
 import org.loboevolution.common.Strings;
 import org.loboevolution.component.input.Autocomplete;
 import org.loboevolution.html.dom.domimpl.HTMLDocumentImpl;
@@ -34,9 +34,9 @@ import org.loboevolution.img.ImageViewer;
 import org.loboevolution.pdf.PDFViewer;
 import org.loboevolution.store.TabStore;
 
-import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 
@@ -55,7 +55,7 @@ public class GoAction extends AbstractAction {
 	 * <p>Constructor for GoAction.</p>
 	 *
 	 * @param panel a {@link org.loboevolution.component.IBrowserPanel} object.
-	 * @param addressBar a {@link javax.swing.JTextField} object.
+	 * @param addressBar a {@link com.mercuryred.render.interfaces.uiplus.JTextField} object.
 	 */
 	public GoAction(IBrowserPanel panel, JTextField addressBar) {
 		this.panel = panel;

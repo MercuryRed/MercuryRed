@@ -23,9 +23,9 @@
 
 package org.loboevolution.img;
 
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.EventListenerList;
+import com.mercuryred.render.interfaces.uiplus.event.ChangeEvent;
+import com.mercuryred.render.interfaces.uiplus.event.ChangeListener;
+import com.mercuryred.render.interfaces.uiplus.event.EventListenerList;
 
 /**
  * Stores the x and y coordinate of a pixel. Either both coordinate is positive

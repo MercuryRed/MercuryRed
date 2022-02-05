@@ -20,11 +20,11 @@
 
 package org.loboevolution.menu;
 
-import javax.swing.Action;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.KeyStroke;
+import com.mercuryred.render.interfaces.uiplus.Action;
+import com.mercuryred.render.interfaces.uiplus.JMenu;
+import com.mercuryred.render.interfaces.uiplus.JMenuBar;
+import com.mercuryred.render.interfaces.uiplus.JMenuItem;
+import com.mercuryred.render.interfaces.uiplus.KeyStroke;
 import org.loboevolution.component.BrowserFrame;
 import org.loboevolution.menu.bookmarks.AddBookmarkAction;
 import org.loboevolution.menu.bookmarks.ShowBookmarksAction;
@@ -42,8 +42,8 @@ import org.loboevolution.menu.view.InfoPageAction;
 import org.loboevolution.menu.view.SourceAction;
 import org.loboevolution.menu.view.StyleAction;
 
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
+import com.mercuryred.render.interfaces.ui.event.InputEvent;
+import com.mercuryred.render.interfaces.ui.event.KeyEvent;
 
 
 /**

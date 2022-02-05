@@ -20,7 +20,7 @@
 
 package org.loboevolution.html.dom.domimpl;
 
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 
 import org.loboevolution.html.dom.CanvasRenderingContext2D;
 import org.loboevolution.html.dom.FileCallback;

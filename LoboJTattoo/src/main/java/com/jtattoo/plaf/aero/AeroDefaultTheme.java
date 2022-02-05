@@ -23,9 +23,9 @@
 
 package com.jtattoo.plaf.aero;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
-import javax.swing.plaf.ColorUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource;
 
 import com.jtattoo.plaf.AbstractTheme;
 import com.jtattoo.plaf.ColorHelper;

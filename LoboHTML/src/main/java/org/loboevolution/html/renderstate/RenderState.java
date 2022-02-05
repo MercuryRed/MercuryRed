@@ -22,10 +22,10 @@
  */
 package org.loboevolution.html.renderstate;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Cursor;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
 import java.util.Optional;
 
 import org.loboevolution.html.style.HtmlInsets;
@@ -204,7 +204,7 @@ public interface RenderState {
 	/**
 	 * <p>getBackgroundColor.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	Color getBackgroundColor();
 
@@ -232,7 +232,7 @@ public interface RenderState {
 	/**
 	 * <p>getColor.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	Color getColor();
 
@@ -290,7 +290,7 @@ public interface RenderState {
 	/**
 	 * <p>getFont.</p>
 	 *
-	 * @return a {@link java.awt.Font} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Font} object.
 	 */
 	Font getFont();
 
@@ -304,7 +304,7 @@ public interface RenderState {
 	/**
 	 * <p>getFontMetrics.</p>
 	 *
-	 * @return a {@link java.awt.FontMetrics} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.FontMetrics} object.
 	 */
 	FontMetrics getFontMetrics();
 
@@ -332,7 +332,7 @@ public interface RenderState {
 	/**
 	 * <p>getOverlayColor.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	Color getOverlayColor();
 
@@ -360,7 +360,7 @@ public interface RenderState {
 	/**
 	 * <p>getTextBackgroundColor.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	Color getTextBackgroundColor();
 

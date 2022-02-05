@@ -22,8 +22,8 @@ package org.loboevolution.store;
 
 import org.loboevolution.info.GeneralInfo;
 
-import java.awt.GraphicsEnvironment;
-import java.awt.Rectangle;
+import com.mercuryred.render.interfaces.ui.GraphicsEnvironment;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -105,10 +105,11 @@ public class GeneralStore implements Serializable {
 	/**
 	 * <p>getInitialWindowBounds.</p>
 	 *
-	 * @return a {@link java.awt.Rectangle} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 */
 	public static Rectangle getInitialWindowBounds() {
-		Rectangle bounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+		GraphicsEnvironment ge = com.mercuryred.ui.RenderEngines.Get().getLocalGraphicsEnvironment();
+		Rectangle bounds = ge.getMaximumWindowBounds();
 		if (DatabseSQLite.storeExist()) {
 			int width = -1;
 			int height = -1;
@@ -181,7 +182,7 @@ public class GeneralStore implements Serializable {
 	/**
 	 * <p>insertBounds.</p>
 	 *
-	 * @param rect a {@link java.awt.Rectangle} object.
+	 * @param rect a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 */
 	public static void insertBounds(Rectangle rect) {
 		try (Connection conn = DriverManager.getConnection(DB_PATH);

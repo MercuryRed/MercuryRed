@@ -23,8 +23,8 @@
 
 package com.jtattoo.plaf;
 
-import javax.swing.Icon;
-import javax.swing.JButton;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JButton;
 
 /**
  * <p>NoFocusButton class.</p>
@@ -50,7 +50,7 @@ public class NoFocusButton extends JButton {
 	/**
 	 * <p>Constructor for NoFocusButton.</p>
 	 *
-	 * @param ico a {@link javax.swing.Icon} object.
+	 * @param ico a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public NoFocusButton(Icon ico) {
 		super(ico);

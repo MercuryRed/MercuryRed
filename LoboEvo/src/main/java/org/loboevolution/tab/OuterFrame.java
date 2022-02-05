@@ -20,12 +20,12 @@
 
 package org.loboevolution.tab;
 
-import java.awt.Component;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.event.WindowAdapter;
+import com.mercuryred.render.interfaces.ui.event.WindowEvent;
 
-import javax.swing.Icon;
-import javax.swing.JFrame;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
 
 /**
  * <p>OuterFrame class.</p>

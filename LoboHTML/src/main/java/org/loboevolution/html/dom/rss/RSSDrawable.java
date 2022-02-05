@@ -20,7 +20,7 @@
 
 package org.loboevolution.html.dom.rss;
 
-import java.awt.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
 
 /**
  * <p>RSSDrawable interface.</p>
@@ -33,7 +33,7 @@ public interface RSSDrawable {
 	/**
 	 * <p>draw.</p>
 	 *
-	 * @param graphics a {@link java.awt.Graphics2D} object.
+	 * @param graphics a {@link com.mercuryred.render.interfaces.ui.Graphics2D} object.
 	 * @param yy a int.
 	 */
 	void draw(Graphics2D graphics, int yy);

@@ -1,7 +1,7 @@
 package org.loboevolution.pdfview.annotation;
 
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 import java.awt.geom.Rectangle2D.Float;
 import java.io.IOException;
 import java.util.ArrayList;

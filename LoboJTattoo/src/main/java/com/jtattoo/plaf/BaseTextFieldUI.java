@@ -23,25 +23,25 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.Toolkit;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Toolkit;
+import com.mercuryred.render.interfaces.ui.event.FocusEvent;
+import com.mercuryred.render.interfaces.ui.event.FocusListener;
+import com.mercuryred.render.interfaces.ui.event.InputEvent;
+import com.mercuryred.render.interfaces.ui.event.KeyEvent;
 
-import javax.swing.InputMap;
-import javax.swing.JComponent;
-import javax.swing.KeyStroke;
-import javax.swing.LookAndFeel;
-import javax.swing.UIManager;
-import javax.swing.border.Border;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.UIResource;
-import javax.swing.plaf.metal.MetalTextFieldUI;
-import javax.swing.text.DefaultEditorKit;
+import com.mercuryred.render.interfaces.uiplus.InputMap;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.KeyStroke;
+import com.mercuryred.render.interfaces.uiplus.LookAndFeel;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.metal.MetalTextFieldUI;
+import com.mercuryred.render.interfaces.uiplus.text.DefaultEditorKit;
 
 /**
  * <p>BaseTextFieldUI class.</p>

@@ -22,13 +22,13 @@
  */
 package com.jtattoo.plaf.mint;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Composite;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
 
-import javax.swing.JRootPane;
+import com.mercuryred.render.interfaces.uiplus.JRootPane;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseRootPaneUI;
@@ -53,7 +53,7 @@ public class MintTitlePane extends BaseTitlePane {
 	/**
 	 * <p>Constructor for MintTitlePane.</p>
 	 *
-	 * @param root a {@link javax.swing.JRootPane} object.
+	 * @param root a {@link com.mercuryred.render.interfaces.uiplus.JRootPane} object.
 	 * @param ui a {@link com.jtattoo.plaf.BaseRootPaneUI} object.
 	 */
 	public MintTitlePane(JRootPane root, BaseRootPaneUI ui) {

@@ -20,17 +20,17 @@
 
 package org.loboevolution.gui;
 
-import java.awt.Component;
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Dimension;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+import com.mercuryred.render.interfaces.uiplus.Box;
+import com.mercuryred.render.interfaces.uiplus.BoxLayout;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JLabel;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.SwingConstants;
 
 /**
  * The Class FormPanel.
@@ -77,7 +77,7 @@ public class FormPanel extends JComponent {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see java.awt.Container#doLayout()
+	 * @see com.mercuryred.render.interfaces.ui.Container#doLayout()
 	 */
 	/** {@inheritDoc} */
 	@Override
@@ -91,7 +91,7 @@ public class FormPanel extends JComponent {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see javax.swing.JComponent#getMaximumSize()
+	 * @see com.mercuryred.render.interfaces.uiplus.JComponent#getMaximumSize()
 	 */
 	/** {@inheritDoc} */
 	@Override
@@ -105,7 +105,7 @@ public class FormPanel extends JComponent {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see javax.swing.JComponent#getMinimumSize()
+	 * @see com.mercuryred.render.interfaces.uiplus.JComponent#getMinimumSize()
 	 */
 	/** {@inheritDoc} */
 	@Override
@@ -128,7 +128,7 @@ public class FormPanel extends JComponent {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see javax.swing.JComponent#getPreferredSize()
+	 * @see com.mercuryred.render.interfaces.uiplus.JComponent#getPreferredSize()
 	 */
 	/** {@inheritDoc} */
 	@Override
@@ -194,7 +194,7 @@ public class FormPanel extends JComponent {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see javax.swing.JComponent#revalidate()
+	 * @see com.mercuryred.render.interfaces.uiplus.JComponent#revalidate()
 	 */
 	/** {@inheritDoc} */
 	@Override

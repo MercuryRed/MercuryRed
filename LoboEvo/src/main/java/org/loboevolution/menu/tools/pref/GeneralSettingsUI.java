@@ -20,14 +20,14 @@
 
 package org.loboevolution.menu.tools.pref;
 
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Rectangle;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 import java.util.List;
 
-import javax.swing.BoxLayout;
-import javax.swing.JOptionPane;
-import javax.swing.border.EmptyBorder;
+import com.mercuryred.render.interfaces.uiplus.BoxLayout;
+import com.mercuryred.render.interfaces.uiplus.JOptionPane;
+import com.mercuryred.render.interfaces.uiplus.border.EmptyBorder;
 import org.loboevolution.common.Strings;
 import org.loboevolution.gui.FieldType;
 import org.loboevolution.gui.FormField;

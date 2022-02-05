@@ -20,17 +20,17 @@
 
 package org.loboevolution.tab;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 
-import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
 
 /**
  * <p>GlassPane class.</p>
@@ -60,7 +60,7 @@ class GlassPane extends JPanel {
 	/**
 	 * <p>createImage.</p>
 	 *
-	 * @param c a {@link java.awt.Component} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 */
 	public void createImage(Component c) {
 		final Rectangle rect = this.tab.getBoundsAt(this.tab.dragTabIdx);

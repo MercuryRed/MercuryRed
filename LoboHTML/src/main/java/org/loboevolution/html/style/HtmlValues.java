@@ -31,10 +31,10 @@ import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.laf.FontFactory;
 import org.loboevolution.net.HttpNetwork;
 
-import java.awt.Font;
-import java.awt.GraphicsEnvironment;
-import java.awt.Image;
-import java.awt.Toolkit;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.GraphicsEnvironment;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Toolkit;
 import java.util.ArrayList;
 
 /**
@@ -74,7 +74,7 @@ public class HtmlValues {
 	 * <p>getListStyleImage.</p>
 	 *
 	 * @param token a {@link java.lang.String} object.
-	 * @return a {@link java.awt.Image} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Image} object.
 	 * @param baseUri a {@link java.lang.String} object.
 	 */
 	public static Image getListStyleImage(String token, String baseUri) {

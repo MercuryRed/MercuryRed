@@ -22,7 +22,7 @@ package org.loboevolution.store;
 
 import com.loboevolution.store.laf.LAFSettings;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

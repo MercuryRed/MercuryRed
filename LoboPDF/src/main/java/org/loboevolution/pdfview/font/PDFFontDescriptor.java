@@ -18,7 +18,7 @@
  */
 package org.loboevolution.pdfview.font;
 
-import java.awt.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 import java.io.IOException;
 
 import org.loboevolution.pdfview.PDFObject;
@@ -91,7 +91,7 @@ public class PDFFontDescriptor {
     /** Holds value of property charSet. */
     private PDFObject charSet;
     /** Holds value of property fontBBox. */
-    private Rectangle2D.Float fontBBox;
+    private Rectangle2D fontBBox;
 
     /**
      * Creates a new instance of PDFFontDescriptor
@@ -578,7 +578,7 @@ public class PDFFontDescriptor {
      *
      * @return Value of property fontBBox.
      */
-    public Rectangle2D.Float getFontBBox() {
+    public Rectangle2D getFontBBox() {
         return this.fontBBox;
     }
 
@@ -587,7 +587,7 @@ public class PDFFontDescriptor {
      *
      * @param fontBBox New value of property fontBBox.
      */
-    public void setFontBBox(Rectangle2D.Float fontBBox) {
+    public void setFontBBox(Rectangle2D fontBBox) {
         this.fontBBox = fontBBox;
     }
 }

@@ -20,7 +20,7 @@
 package org.loboevolution.pdfview.pattern;
 
 
-import java.awt.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
 import java.io.IOException;
 import java.util.Map;
 
@@ -121,7 +121,7 @@ public abstract class PDFPattern {
     /**
      * Get the transform associated with this pattern
      *
-     * @return a {@link java.awt.geom.AffineTransform} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      */
     public AffineTransform getTransform() {
         return this.xform;
@@ -130,7 +130,7 @@ public abstract class PDFPattern {
     /**
      * Set the transform associated with this pattern
      *
-     * @param xform a {@link java.awt.geom.AffineTransform} object.
+     * @param xform a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      */
     protected void setTransform(AffineTransform xform) {
         this.xform = xform;

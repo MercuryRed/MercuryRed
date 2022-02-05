@@ -28,34 +28,34 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.LayoutManager;
-import java.awt.RenderingHints;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.LayoutManager;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.ActionListener;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import javax.swing.AbstractButton;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JInternalFrame;
-import javax.swing.JMenu;
-import javax.swing.JPanel;
-import javax.swing.UIManager;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.ImageIcon;
+import com.mercuryred.render.interfaces.uiplus.JInternalFrame;
+import com.mercuryred.render.interfaces.uiplus.JMenu;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicInternalFrameTitlePane;
 
 /**
  * This class is a modified copy of the
- * javax.swing.plaf.metal.MetalInternalFrameTitlePane
+ * com.mercuryred.render.interfaces.uiplus.plaf.metal.MetalInternalFrameTitlePane
  *
  * Class that manages a JLF title bar
  * <p>
@@ -269,7 +269,7 @@ public class BaseInternalFrameTitlePane extends BasicInternalFrameTitlePane impl
 	/**
 	 * <p>Constructor for BaseInternalFrameTitlePane.</p>
 	 *
-	 * @param f a {@link javax.swing.JInternalFrame} object.
+	 * @param f a {@link com.mercuryred.render.interfaces.uiplus.JInternalFrame} object.
 	 */
 	public BaseInternalFrameTitlePane(JInternalFrame f) {
 		super(f);
@@ -449,7 +449,7 @@ public class BaseInternalFrameTitlePane extends BasicInternalFrameTitlePane impl
 	/**
 	 * <p>paintBackground.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 */
 	public void paintBackground(Graphics g) {
 		if (isActive()) {
@@ -540,7 +540,7 @@ public class BaseInternalFrameTitlePane extends BasicInternalFrameTitlePane impl
 	/**
 	 * <p>paintIcon.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param x a int.
 	 * @return a int.
 	 */
@@ -572,7 +572,7 @@ public class BaseInternalFrameTitlePane extends BasicInternalFrameTitlePane impl
 	/**
 	 * <p>paintPalette.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 */
 	public void paintPalette(Graphics g) {
 		int width = getWidth();
@@ -589,7 +589,7 @@ public class BaseInternalFrameTitlePane extends BasicInternalFrameTitlePane impl
 	/**
 	 * <p>paintText.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param title a {@link java.lang.String} object.
@@ -615,7 +615,7 @@ public class BaseInternalFrameTitlePane extends BasicInternalFrameTitlePane impl
 	/**
 	 * <p>setCustomizedTitlePanel.</p>
 	 *
-	 * @param panel a {@link javax.swing.JPanel} object.
+	 * @param panel a {@link com.mercuryred.render.interfaces.uiplus.JPanel} object.
 	 */
 	public void setCustomizedTitlePanel(JPanel panel) {
 		if (customTitlePanel != null) {

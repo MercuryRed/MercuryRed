@@ -28,7 +28,7 @@ import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.info.BorderInfo;
 import org.loboevolution.laf.ColorFactory;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
 
 /**

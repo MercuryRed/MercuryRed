@@ -22,11 +22,11 @@
  */
 package com.jtattoo.plaf.luna;
 
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
-import javax.swing.JComponent;
-import javax.swing.border.Border;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.AbstractToolBarUI;

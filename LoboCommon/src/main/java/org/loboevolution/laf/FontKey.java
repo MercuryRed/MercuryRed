@@ -20,13 +20,12 @@
 
 package org.loboevolution.laf;
 
-import java.util.Locale;
-import java.util.Set;
-
-
 import lombok.Builder;
 import lombok.Data;
 import org.loboevolution.common.Objects;
+
+import java.util.Locale;
+import java.util.Set;
 
 /**
  * The Class FontKey.
@@ -135,5 +134,45 @@ public class FontKey {
 				+ this.fontWeight + ",variant=" + this.fontVariant + ",superscript=" + this.superscript
 				+ ",letterSpacing=" + this.letterSpacing + ",strikethrough=" + this.strikethrough + ",underline="
 				+ this.underline + "]";
+	}
+
+	public String getFontFamily() {
+		return this.fontFamily;
+	}
+
+	public int getLetterSpacing() {
+		return this.letterSpacing;
+	}
+
+	public Integer getSuperscript() {
+		return this.superscript;
+	}
+
+	public Integer getUnderline() {
+		return this.underline;
+	}
+
+	public Boolean getStrikethrough() {
+		return this.strikethrough;
+	}
+
+	public String getFontWeight() {
+		return this.fontWeight;
+	}
+
+	public String getFontStyle() {
+		return this.fontStyle;
+	}
+
+	public float getFontSize() {
+		return this.fontSize;
+	}
+
+	public Set<Locale> getLocales() {
+		return locales;
+	}
+
+	public String getFont() {
+		return this.font;
 	}
 }

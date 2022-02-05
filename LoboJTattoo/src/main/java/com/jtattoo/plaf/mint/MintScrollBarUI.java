@@ -22,9 +22,9 @@
  */
 package com.jtattoo.plaf.mint;
 
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.XPScrollBarUI;

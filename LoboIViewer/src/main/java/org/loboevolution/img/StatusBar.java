@@ -23,7 +23,7 @@
 
 package org.loboevolution.img;
 
-import javax.swing.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
 
 /**
  * Abstract superclass for status bars of the image viewer.

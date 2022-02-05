@@ -23,10 +23,10 @@ package org.loboevolution.menu.view;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
+import com.mercuryred.render.interfaces.uiplus.JScrollPane;
+import com.mercuryred.render.interfaces.uiplus.JTable;
+import com.mercuryred.render.interfaces.uiplus.table.DefaultTableModel;
 
 import org.loboevolution.info.CookieInfo;
 

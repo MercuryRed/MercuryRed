@@ -23,7 +23,7 @@ package org.loboevolution.laf;
 import org.loboevolution.common.Strings;
 
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -33,7 +33,7 @@ import java.util.Map;
 public final class ColorFactory {
 
 	/** Constant TRANSPARENT */
-	public static final Color TRANSPARENT = new Color(0, 0, 0, 0);
+	public static final Color TRANSPARENT = com.mercuryred.ui.RenderEngines.Get().createColor(0, 0, 0, 0);
 
 	/** The instance. */
 	private static ColorFactory instance;
@@ -66,7 +66,7 @@ public final class ColorFactory {
 	}
 	
 	/**
-	 * Instantiates a new color factory.
+	 * Instantiates a com.mercuryred.ui.RenderEngines.Get().createColor factory.
 	 */
 	private ColorFactory() {
 		synchronized (this) {
@@ -166,9 +166,9 @@ public final class ColorFactory {
 			final int blue =  (int) parseValue(splitComma[2].trim(), 255);
 			if (splitComma.length > 3) {
 				float alpha = parseAlpha(splitComma[splitComma.length - 1].trim());
-				color = new Color(normalize(red), normalize(green), normalize(blue), alpha);
+				color = com.mercuryred.ui.RenderEngines.Get().createColor(normalize(red), normalize(green), normalize(blue), alpha);
 			} else {
-				color = new Color(normalize(red), normalize(green), normalize(blue));
+				color = com.mercuryred.ui.RenderEngines.Get().createColor(normalize(red), normalize(green), normalize(blue));
 			}
 			this.colorMap.put(normalSpec, color);
 		} else {
@@ -228,14 +228,14 @@ public final class ColorFactory {
 	/**
 	 * <p>getAdjustedColor.</p>
 	 *
-	 * @param c a {@link java.awt.Color} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 * @param factor a double.
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	public static Color getAdjustedColor(Color c, double factor) {
 		double f = 1 - Math.min(Math.abs(factor), 1);
 		double inc = (factor > 0 ? 255 * (1 - f) : 0);
-		return new Color((int) (c.getRed() * f + inc), (int) (c.getGreen() * f + inc), (int) (c.getBlue() * f + inc));
+		return com.mercuryred.ui.RenderEngines.Get().createColor((int) (c.getRed() * f + inc), (int) (c.getGreen() * f + inc), (int) (c.getBlue() * f + inc));
 	}
 
 	private float parseAlpha(String alpha) {
@@ -279,7 +279,7 @@ public final class ColorFactory {
 		r = Math.min(r, 1.0f);
 		g = Math.min(g, 1.0f);
 		b = Math.min(b, 1.0f);
-		return new Color(r, g, b, alpha);
+		return com.mercuryred.ui.RenderEngines.Get().createColor(r, g, b, alpha);
 	}
 
 	private Color HexToColor(String hex) {
@@ -293,13 +293,13 @@ public final class ColorFactory {
 			red = Integer.valueOf(hex.substring(0, 2), 16);
 			green = Integer.valueOf(hex.substring(2, 4), 16);
 			blue = Integer.valueOf(hex.substring(4, 6), 16);
-			return new Color(red, green, blue);
+			return com.mercuryred.ui.RenderEngines.Get().createColor(red, green, blue);
 		case 8:
 			red = Integer.valueOf(hex.substring(0, 2), 16);
 			green = Integer.valueOf(hex.substring(2, 4), 16);
 			blue = Integer.valueOf(hex.substring(4, 6), 16);
 			alpha = Integer.valueOf(hex.substring(6, 8), 16);
-			return new Color(red, green, blue, alpha);
+			return com.mercuryred.ui.RenderEngines.Get().createColor(red, green, blue, alpha);
 		default:
 			return null;
 		}

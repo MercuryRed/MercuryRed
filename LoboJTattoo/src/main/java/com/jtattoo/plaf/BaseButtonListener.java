@@ -23,11 +23,11 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.event.FocusEvent;
-import java.awt.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.event.FocusEvent;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 
-import javax.swing.AbstractButton;
-import javax.swing.plaf.basic.BasicButtonListener;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicButtonListener;
 
 /**
  * <p>BaseButtonListener class.</p>
@@ -40,7 +40,7 @@ public class BaseButtonListener extends BasicButtonListener {
 	/**
 	 * <p>Constructor for BaseButtonListener.</p>
 	 *
-	 * @param b a {@link javax.swing.AbstractButton} object.
+	 * @param b a {@link com.mercuryred.render.interfaces.uiplus.AbstractButton} object.
 	 */
 	public BaseButtonListener(AbstractButton b) {
 		super(b);

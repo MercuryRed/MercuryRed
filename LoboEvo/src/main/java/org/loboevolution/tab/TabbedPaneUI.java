@@ -20,17 +20,17 @@
 
 package org.loboevolution.tab;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Insets;
-import java.awt.LayoutManager;
-import java.awt.Rectangle;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.LayoutManager;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 
-import javax.swing.JComponent;
-import javax.swing.JTabbedPane;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicTabbedPaneUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JTabbedPane;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicTabbedPaneUI;
 
 /**
  * <p>TabbedPaneUI class.</p>
@@ -55,7 +55,7 @@ public class TabbedPaneUI extends BasicTabbedPaneUI {
 	/**
 	 * <p>Constructor for TabbedPaneUI.</p>
 	 *
-	 * @param tabbedPane a {@link javax.swing.JTabbedPane} object.
+	 * @param tabbedPane a {@link com.mercuryred.render.interfaces.uiplus.JTabbedPane} object.
 	 */
 	public TabbedPaneUI(JTabbedPane tabbedPane) {
 		// FONT: BOLD

@@ -22,12 +22,12 @@
  */
 package com.jtattoo.plaf.bernstein;
 
-import java.awt.AlphaComposite;
-import java.awt.Composite;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
 
-import javax.swing.JRootPane;
+import com.mercuryred.render.interfaces.uiplus.JRootPane;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseRootPaneUI;
@@ -50,7 +50,7 @@ public class BernsteinTitlePane extends BaseTitlePane {
 	/**
 	 * <p>Constructor for BernsteinTitlePane.</p>
 	 *
-	 * @param root a {@link javax.swing.JRootPane} object.
+	 * @param root a {@link com.mercuryred.render.interfaces.uiplus.JRootPane} object.
 	 * @param ui a {@link com.jtattoo.plaf.BaseRootPaneUI} object.
 	 */
 	public BernsteinTitlePane(JRootPane root, BaseRootPaneUI ui) {

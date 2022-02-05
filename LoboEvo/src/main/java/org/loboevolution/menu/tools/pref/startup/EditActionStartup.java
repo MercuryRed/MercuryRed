@@ -20,10 +20,10 @@
 
 package org.loboevolution.menu.tools.pref.startup;
 
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 
-import javax.swing.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
 
 /**
  * <p>EditActionStartup class.</p>

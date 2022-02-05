@@ -21,7 +21,7 @@
  * Created on Apr 16, 2005
  */
 package org.loboevolution.html.renderer;
-import java.awt.Rectangle;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,7 +87,7 @@ final class MarkupUtilities {
    * <p>findRenderables.</p>
    *
    * @param renderables an array of {@link org.loboevolution.html.renderer.Renderable} objects.
-   * @param clipArea a {@link java.awt.Rectangle} object.
+   * @param clipArea a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
    * @param vertical a boolean.
    * @return a {@link org.loboevolution.html.renderer.Range} object.
    */

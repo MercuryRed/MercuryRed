@@ -22,11 +22,11 @@
  */
 package com.jtattoo.plaf.graphite;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
 
-import javax.swing.JInternalFrame;
+import com.mercuryred.render.interfaces.uiplus.JInternalFrame;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseInternalFrameTitlePane;
@@ -49,7 +49,7 @@ public class GraphiteInternalFrameTitlePane extends BaseInternalFrameTitlePane {
 	/**
 	 * <p>Constructor for GraphiteInternalFrameTitlePane.</p>
 	 *
-	 * @param f a {@link javax.swing.JInternalFrame} object.
+	 * @param f a {@link com.mercuryred.render.interfaces.uiplus.JInternalFrame} object.
 	 */
 	public GraphiteInternalFrameTitlePane(JInternalFrame f) {
 		super(f);

@@ -20,11 +20,11 @@
 
 package org.loboevolution.tab;
 
-import java.awt.Component;
-import java.awt.Point;
-import java.awt.dnd.DropTargetAdapter;
-import java.awt.dnd.DropTargetDragEvent;
-import java.awt.dnd.DropTargetDropEvent;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.dnd.DropTargetAdapter;
+import com.mercuryred.render.interfaces.ui.dnd.DropTargetDragEvent;
+import com.mercuryred.render.interfaces.ui.dnd.DropTargetDropEvent;
 import java.util.ArrayList;
 import java.util.List;
 

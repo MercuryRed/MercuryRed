@@ -20,7 +20,7 @@
 
 package org.loboevolution.install;
 
-import java.awt.Toolkit;
+import com.mercuryred.render.interfaces.ui.Toolkit;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -33,8 +33,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.JFrame;
-import javax.swing.SwingWorker;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
+import com.mercuryred.render.interfaces.uiplus.SwingWorker;
 
 import org.loboevolution.common.Files;
 import org.loboevolution.common.Strings;
@@ -55,7 +55,7 @@ public class StorageManager extends SwingWorker<Void, Void> {
 	/**
 	 * <p>Constructor for StorageManager.</p>
 	 *
-	 * @param frame a {@link javax.swing.JFrame} object.
+	 * @param frame a {@link com.mercuryred.render.interfaces.uiplus.JFrame} object.
 	 */
 	public StorageManager(JFrame frame) {
 		this.frame = frame;

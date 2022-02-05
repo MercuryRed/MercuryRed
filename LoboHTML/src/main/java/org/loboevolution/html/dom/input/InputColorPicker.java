@@ -20,12 +20,12 @@
 
 package org.loboevolution.html.dom.input;
 
-import java.awt.Color;
-import java.awt.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 
-import javax.swing.JButton;
-import javax.swing.JColorChooser;
-import javax.swing.event.MouseInputAdapter;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.JColorChooser;
+import com.mercuryred.render.interfaces.uiplus.event.MouseInputAdapter;
 
 import org.loboevolution.html.control.InputControl;
 import org.loboevolution.html.dom.domimpl.HTMLInputElementImpl;

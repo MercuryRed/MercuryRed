@@ -20,7 +20,7 @@
 
 package org.loboevolution.html.renderer;
 
-import java.awt.Point;
+import com.mercuryred.render.interfaces.ui.Point;
 
 /**
  * Contains a renderer node and a position in that node.
@@ -60,7 +60,7 @@ public class RenderableSpot {
 	/**
 	 * <p>getPoint.</p>
 	 *
-	 * @return a {@link java.awt.Point} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 */
 	public Point getPoint() {
 		return new Point(this.x, this.y);

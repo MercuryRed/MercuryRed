@@ -31,7 +31,7 @@ import org.loboevolution.html.style.HtmlValues;
 import org.loboevolution.info.CaptionSizeInfo;
 import org.loboevolution.info.SizeInfo;
 
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 

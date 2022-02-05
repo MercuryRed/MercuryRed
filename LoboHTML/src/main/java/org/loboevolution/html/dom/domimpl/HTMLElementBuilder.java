@@ -50,7 +50,7 @@ import org.loboevolution.html.dom.svgimpl.SVGSymbolElementImpl;
 import org.loboevolution.html.dom.svgimpl.SVGTextElementImpl;
 import org.loboevolution.html.dom.svgimpl.SVGUseElementImpl;
 
-import java.awt.font.TextAttribute;
+import com.mercuryred.render.interfaces.ui.font.TextAttribute;
 
 /**
  * <p>Abstract HTMLElementBuilder class.</p>

@@ -20,8 +20,8 @@
 
 package org.loboevolution.download;
 
-import javax.swing.JOptionPane;
-import javax.swing.SwingWorker;
+import com.mercuryred.render.interfaces.uiplus.JOptionPane;
+import com.mercuryred.render.interfaces.uiplus.SwingWorker;
 
 import java.io.File;
 import java.io.FileOutputStream;

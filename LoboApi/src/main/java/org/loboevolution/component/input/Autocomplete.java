@@ -20,17 +20,17 @@
 
 package org.loboevolution.component.input;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import com.mercuryred.render.interfaces.ui.BorderLayout;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.event.KeyAdapter;
+import com.mercuryred.render.interfaces.ui.event.KeyEvent;
 import java.util.List;
 
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
-import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
+import com.mercuryred.render.interfaces.uiplus.DefaultComboBoxModel;
+import com.mercuryred.render.interfaces.uiplus.JComboBox;
+import com.mercuryred.render.interfaces.uiplus.JTextField;
+import com.mercuryred.render.interfaces.uiplus.event.DocumentEvent;
+import com.mercuryred.render.interfaces.uiplus.event.DocumentListener;
 
 import org.loboevolution.common.Strings;
 
@@ -45,7 +45,7 @@ public class Autocomplete {
 	/**
 	 * <p>setupAutoComplete.</p>
 	 *
-	 * @param txtInput a {@link javax.swing.JTextField} object.
+	 * @param txtInput a {@link com.mercuryred.render.interfaces.uiplus.JTextField} object.
 	 * @param items a {@link java.util.List} object.
 	 */
 	public static void setupAutoComplete(final JTextField txtInput, final List<String> items) {

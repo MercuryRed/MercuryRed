@@ -23,11 +23,11 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.FontMetrics;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
 
-import javax.swing.JComponent;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicTableUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicTableUI;
 
 /**
  * <p>BaseTableUI class.</p>

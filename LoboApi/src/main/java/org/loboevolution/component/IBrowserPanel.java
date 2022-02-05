@@ -20,7 +20,7 @@
 
 package org.loboevolution.component;
 
-import javax.swing.JScrollPane;
+import com.mercuryred.render.interfaces.uiplus.JScrollPane;
 
 /**
  * <p>IBrowserPanel interface.</p>
@@ -37,7 +37,7 @@ public interface IBrowserPanel {
 	/**
 	 * <p>getScroll.</p>
 	 *
-	 * @return a {@link javax.swing.JScrollPane} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.JScrollPane} object.
 	 */
 	JScrollPane getScroll();
 	

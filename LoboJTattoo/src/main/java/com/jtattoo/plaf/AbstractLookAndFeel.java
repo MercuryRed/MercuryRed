@@ -22,18 +22,18 @@
  */
 package com.jtattoo.plaf;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.BorderFactory;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.UIDefaults;
-import javax.swing.plaf.ColorUIResource;
-import javax.swing.plaf.InsetsUIResource;
-import javax.swing.plaf.metal.MetalLookAndFeel;
-import javax.swing.plaf.metal.MetalTheme;
+import com.mercuryred.render.interfaces.uiplus.BorderFactory;
+import com.mercuryred.render.interfaces.uiplus.JDialog;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
+import com.mercuryred.render.interfaces.uiplus.UIDefaults;
+import com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.InsetsUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.metal.MetalLookAndFeel;
+import com.mercuryred.render.interfaces.uiplus.plaf.metal.MetalTheme;
 
 /**
  * <p>Abstract AbstractLookAndFeel class.</p>
@@ -53,7 +53,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getAlterBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getAlterBackgroundColor() {
 		return getTheme().getAlterBackgroundColor();
@@ -62,7 +62,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getBackgroundColor() {
 		return getTheme().getBackgroundColor();
@@ -71,7 +71,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getButtonBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getButtonBackgroundColor() {
 		return getTheme().getButtonBackgroundColor();
@@ -80,7 +80,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getButtonColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getButtonColorDark() {
 		return getTheme().getButtonColorDark();
@@ -89,7 +89,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getButtonColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getButtonColorLight() {
 		return getTheme().getButtonColorLight();
@@ -98,7 +98,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getButtonForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getButtonForegroundColor() {
 		return getTheme().getButtonForegroundColor();
@@ -107,7 +107,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getControlBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getControlBackgroundColor() {
 		return getTheme().getControlBackgroundColor();
@@ -116,7 +116,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getControlColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getControlColorDark() {
 		return getTheme().getControlColorDark();
@@ -125,7 +125,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getControlColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getControlColorLight() {
 		return getTheme().getControlColorLight();
@@ -134,7 +134,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getControlForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getControlForegroundColor() {
 		return getTheme().getControlForegroundColor();
@@ -143,7 +143,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getCurrentTheme.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.metal.MetalTheme} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.metal.MetalTheme} object.
 	 */
 	public static MetalTheme getCurrentTheme() {
 		return myTheme;
@@ -152,7 +152,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getDesktopColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getDesktopColor() {
 		return getTheme().getDesktopColor();
@@ -161,7 +161,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getDisabledBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getDisabledBackgroundColor() {
 		return getTheme().getDisabledBackgroundColor();
@@ -170,7 +170,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getDisabledForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getDisabledForegroundColor() {
 		return getTheme().getDisabledForegroundColor();
@@ -179,7 +179,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getFocusCellColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getFocusCellColor() {
 		return getTheme().getFocusCellColor();
@@ -188,7 +188,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getFocusColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getFocusColor() {
 		return getTheme().getFocusColor();
@@ -197,7 +197,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getForegroundColor() {
 		return getTheme().getForegroundColor();
@@ -206,7 +206,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getFrameColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getFrameColor() {
 		return getTheme().getFrameColor();
@@ -215,7 +215,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getGridColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getGridColor() {
 		return getTheme().getGridColor();
@@ -224,7 +224,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getInputBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getInputBackgroundColor() {
 		return getTheme().getInputBackgroundColor();
@@ -233,7 +233,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getInputForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getInputForegroundColor() {
 		return getTheme().getInputForegroundColor();
@@ -242,7 +242,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getMenuBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getMenuBackgroundColor() {
 		return getTheme().getMenuBackgroundColor();
@@ -251,7 +251,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getMenuColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getMenuColorDark() {
 		return getTheme().getMenuColorDark();
@@ -260,7 +260,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getMenuColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getMenuColorLight() {
 		return getTheme().getMenuColorLight();
@@ -269,7 +269,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getMenuForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getMenuForegroundColor() {
 		return getTheme().getMenuForegroundColor();
@@ -278,7 +278,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getMenuSelectionBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getMenuSelectionBackgroundColor() {
 		return getTheme().getMenuSelectionBackgroundColor();
@@ -287,7 +287,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getMenuSelectionForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getMenuSelectionForegroundColor() {
 		return getTheme().getMenuSelectionForegroundColor();
@@ -296,7 +296,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getSelectionBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getSelectionBackgroundColor() {
 		return getTheme().getSelectionBackgroundColor();
@@ -305,7 +305,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getSelectionForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getSelectionForegroundColor() {
 		return getTheme().getSelectionForegroundColor();
@@ -314,7 +314,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getTabAreaBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getTabAreaBackgroundColor() {
 		return getTheme().getTabAreaBackgroundColor();
@@ -323,7 +323,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getTabSelectionForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getTabSelectionForegroundColor() {
 		return getTheme().getTabSelectionForegroundColor();
@@ -352,7 +352,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getToolbarBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getToolbarBackgroundColor() {
 		return getTheme().getToolbarBackgroundColor();
@@ -361,7 +361,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getToolbarColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getToolbarColorDark() {
 		return getTheme().getToolbarColorDark();
@@ -370,7 +370,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getToolbarColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getToolbarColorLight() {
 		return getTheme().getToolbarColorLight();
@@ -379,7 +379,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getToolbarDockingColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getToolbarDockingColor() {
 		return getTheme().getFocusColor();
@@ -388,7 +388,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getToolbarForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getToolbarForegroundColor() {
 		return getTheme().getToolbarForegroundColor();
@@ -397,7 +397,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getTooltipBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getTooltipBackgroundColor() {
 		return getTheme().getTooltipBackgroundColor();
@@ -406,7 +406,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getTooltipForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getTooltipForegroundColor() {
 		return getTheme().getTooltipForegroundColor();
@@ -415,7 +415,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getWindowBorderColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getWindowBorderColor() {
 		return getTheme().getWindowBorderColor();
@@ -424,7 +424,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getWindowInactiveBorderColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getWindowInactiveBorderColor() {
 		return getTheme().getWindowInactiveBorderColor();
@@ -433,7 +433,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getWindowInactiveTitleBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getWindowInactiveTitleBackgroundColor() {
 		return getTheme().getWindowInactiveTitleBackgroundColor();
@@ -442,7 +442,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getWindowInactiveTitleColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getWindowInactiveTitleColorDark() {
 		return getTheme().getWindowInactiveTitleColorDark();
@@ -451,7 +451,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getWindowInactiveTitleColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getWindowInactiveTitleColorLight() {
 		return getTheme().getWindowInactiveTitleColorLight();
@@ -460,7 +460,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getWindowInactiveTitleForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getWindowInactiveTitleForegroundColor() {
 		return getTheme().getWindowInactiveTitleForegroundColor();
@@ -469,7 +469,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getWindowTitleBackgroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getWindowTitleBackgroundColor() {
 		return getTheme().getWindowTitleBackgroundColor();
@@ -478,7 +478,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getWindowTitleColorDark.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getWindowTitleColorDark() {
 		return getTheme().getWindowTitleColorDark();
@@ -487,7 +487,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getWindowTitleColorLight.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getWindowTitleColorLight() {
 		return getTheme().getWindowTitleColorLight();
@@ -496,7 +496,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getWindowTitleForegroundColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public static ColorUIResource getWindowTitleForegroundColor() {
 		return getTheme().getWindowTitleForegroundColor();
@@ -552,7 +552,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getControlDarkShadowColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getControlDarkShadowColor() {
 		return getTheme().getControlDarkShadowColor();
@@ -561,7 +561,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getControlHighlightColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getControlHighlightColor() {
 		return getTheme().getControlHighlightColor();
@@ -570,7 +570,7 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 	/**
 	 * <p>getControlShadowColor.</p>
 	 *
-	 * @return a {@link javax.swing.plaf.ColorUIResource} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource} object.
 	 */
 	public ColorUIResource getControlShadowColor() {
 		return getTheme().getControlShadowColor();
@@ -599,16 +599,16 @@ public abstract class AbstractLookAndFeel extends MetalLookAndFeel {
 		Object buttonBorder = getBorderFactory().getButtonBorder();
 		Object toggleButtonBorder = getBorderFactory().getToggleButtonBorder();
 		Object titledBorderBorder = new UIDefaults.ProxyLazyValue(
-				"javax.swing.plaf.BorderUIResource$LineBorderUIResource", new Object[] { getFrameColor() });
+				"com.mercuryred.render.interfaces.uiplus.plaf.BorderUIResource$LineBorderUIResource", new Object[] { getFrameColor() });
 		Object menuBarBorder = getBorderFactory().getMenuBarBorder();
 		Object popupMenuBorder = getBorderFactory().getPopupMenuBorder();
 		Object menuItemBorder = getBorderFactory().getMenuItemBorder();
 		Object toolBarBorder = getBorderFactory().getToolBarBorder();
 		Object progressBarBorder = getBorderFactory().getProgressBarBorder();
-		Object toolTipBorder = new UIDefaults.ProxyLazyValue("javax.swing.plaf.BorderUIResource$LineBorderUIResource",
+		Object toolTipBorder = new UIDefaults.ProxyLazyValue("com.mercuryred.render.interfaces.uiplus.plaf.BorderUIResource$LineBorderUIResource",
 				new Object[] { getFrameColor() });
 		Object focusCellHighlightBorder = new UIDefaults.ProxyLazyValue(
-				"javax.swing.plaf.BorderUIResource$LineBorderUIResource", new Object[] { getFocusCellColor() });
+				"com.mercuryred.render.interfaces.uiplus.plaf.BorderUIResource$LineBorderUIResource", new Object[] { getFocusCellColor() });
 		Object optionPaneBorder = BorderFactory.createEmptyBorder(0, 0, 0, 0);
 		Object optionPaneMessageAreaBorder = BorderFactory.createEmptyBorder(8, 8, 8, 8);
 		Object optionPaneButtonAreaBorder = BorderFactory.createEmptyBorder(0, 8, 8, 8);

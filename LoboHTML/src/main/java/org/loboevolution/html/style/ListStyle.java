@@ -19,7 +19,7 @@
  */
 package org.loboevolution.html.style;
 
-import java.awt.Image;
+import com.mercuryred.render.interfaces.ui.Image;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -47,7 +47,7 @@ public class ListStyle {
 	 * <p>Constructor for ListStyle.</p>
 	 *
 	 * @param type a int.
-	 * @param image a {@link java.awt.Image} object.
+	 * @param image a {@link com.mercuryred.render.interfaces.ui.Image} object.
 	 * @param position a int.
 	 */
 	public ListStyle(final int type, final Image image, final int position) {

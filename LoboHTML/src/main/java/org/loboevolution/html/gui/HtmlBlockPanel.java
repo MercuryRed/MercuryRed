@@ -22,10 +22,10 @@
  */
 package org.loboevolution.html.gui;
 
-import javax.swing.JComponent;
-import javax.swing.JScrollBar;
-import javax.swing.KeyStroke;
-import javax.swing.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JScrollBar;
+import com.mercuryred.render.interfaces.uiplus.KeyStroke;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
 import org.loboevolution.common.Nodes;
 import org.loboevolution.html.dom.domimpl.HTMLDocumentImpl;
 import org.loboevolution.html.dom.domimpl.HTMLElementImpl;
@@ -52,30 +52,30 @@ import org.loboevolution.http.HtmlRendererContext;
 import org.loboevolution.http.UserAgentContext;
 import org.loboevolution.laf.ColorFactory;
 
-import java.awt.Adjustable;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.GraphicsEnvironment;
-import java.awt.Insets;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.RenderingHints;
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.ClipboardOwner;
-import java.awt.datatransfer.StringSelection;
-import java.awt.datatransfer.Transferable;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseWheelEvent;
+import com.mercuryred.render.interfaces.ui.Adjustable;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.EventQueue;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.GraphicsEnvironment;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Toolkit;
+import com.mercuryred.render.interfaces.ui.datatransfer.Clipboard;
+import com.mercuryred.render.interfaces.ui.datatransfer.ClipboardOwner;
+import com.mercuryred.render.interfaces.ui.datatransfer.StringSelection;
+import com.mercuryred.render.interfaces.ui.datatransfer.Transferable;
+import com.mercuryred.render.interfaces.ui.event.ActionListener;
+import com.mercuryred.render.interfaces.ui.event.KeyEvent;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.event.MouseListener;
+import com.mercuryred.render.interfaces.ui.event.MouseMotionListener;
+import com.mercuryred.render.interfaces.ui.event.MouseWheelEvent;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -119,7 +119,7 @@ public class HtmlBlockPanel extends JComponent implements NodeRenderer, Renderab
 	/**
 	 * <p>Constructor for HtmlBlockPanel.</p>
 	 *
-	 * @param background a {@link java.awt.Color} object.
+	 * @param background a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 * @param opaque a boolean.
 	 * @param pcontext a {@link org.loboevolution.http.UserAgentContext} object.
 	 * @param rcontext a {@link org.loboevolution.http.HtmlRendererContext} object.
@@ -523,8 +523,8 @@ public class HtmlBlockPanel extends JComponent implements NodeRenderer, Renderab
 	 * (non-Javadoc)
 	 *
 	 * @see
-	 * java.awt.datatransfer.ClipboardOwner#lostOwnership(java.awt.datatransfer.
-	 * Clipboard, java.awt.datatransfer.Transferable)
+	 * com.mercuryred.render.interfaces.ui.datatransfer.ClipboardOwner#lostOwnership(com.mercuryred.render.interfaces.ui.datatransfer.
+	 * Clipboard, com.mercuryred.render.interfaces.ui.datatransfer.Transferable)
 	 */
 	/** {@inheritDoc} */
 	@Override
@@ -691,7 +691,7 @@ public class HtmlBlockPanel extends JComponent implements NodeRenderer, Renderab
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+	 * @see javax.swing.JComponent#paintComponent(com.mercuryred.render.interfaces.ui.Graphics)
 	 */
 	// protected void paintComponent(Graphics g) {
 	/** {@inheritDoc} */

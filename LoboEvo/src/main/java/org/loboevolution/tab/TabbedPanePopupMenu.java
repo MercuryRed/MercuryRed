@@ -20,12 +20,12 @@
 
 package org.loboevolution.tab;
 
-import java.awt.Component;
+import com.mercuryred.render.interfaces.ui.Component;
 import java.util.List;
 
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
+import com.mercuryred.render.interfaces.uiplus.JMenuItem;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JPopupMenu;
 
 import org.loboevolution.component.IBrowserFrame;
 import org.loboevolution.component.IBrowserPanel;

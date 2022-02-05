@@ -20,10 +20,10 @@
 
 package org.loboevolution.menu.tools.pref.startup;
 
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 
-import javax.swing.AbstractAction;
-import javax.swing.JTextArea;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.JTextArea;
 
 /**
  * <p>TextEditOkAction class.</p>
@@ -45,7 +45,7 @@ public class TextEditOkAction extends AbstractAction {
 	/**
 	 * <p>Constructor for TextEditOkAction.</p>
 	 *
-	 * @param textArea a {@link javax.swing.JTextArea} object.
+	 * @param textArea a {@link com.mercuryred.render.interfaces.uiplus.JTextArea} object.
 	 * @param search a {@link org.loboevolution.menu.tools.pref.startup.TextEdit} object.
 	 */
 	public TextEditOkAction(JTextArea textArea, TextEdit search) {
@@ -57,7 +57,7 @@ public class TextEditOkAction extends AbstractAction {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 * com.mercuryred.render.interfaces.ui.event.ActionListener#actionPerformed(com.mercuryred.render.interfaces.ui.event.ActionEvent)
 	 */
 	/** {@inheritDoc} */
 	@Override

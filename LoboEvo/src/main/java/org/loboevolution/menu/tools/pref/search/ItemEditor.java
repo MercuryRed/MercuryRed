@@ -20,15 +20,15 @@
 
 package org.loboevolution.menu.tools.pref.search;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.HeadlessException;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.HeadlessException;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.JFrame;
-import javax.swing.border.EmptyBorder;
+import com.mercuryred.render.interfaces.uiplus.Box;
+import com.mercuryred.render.interfaces.uiplus.BoxLayout;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
+import com.mercuryred.render.interfaces.uiplus.border.EmptyBorder;
 
 import org.loboevolution.gui.AbstractItemEditor;
 import org.loboevolution.gui.ItemEditorFactory;
@@ -68,8 +68,8 @@ public class ItemEditor<T> extends JFrame implements LoboLookAndFeel {
 	 * Instantiates a new item editor dialog.
 	 *
 	 * @param factory the factory
-	 * @throws java.awt.HeadlessException the headless exception
-	 * @throws java.awt.HeadlessException if any.
+	 * @throws com.mercuryred.render.interfaces.ui.HeadlessException the headless exception
+	 * @throws com.mercuryred.render.interfaces.ui.HeadlessException if any.
 	 */
 	public ItemEditor(ItemEditorFactory<T> factory) throws HeadlessException {
 		this.editor = factory.createItemEditor();

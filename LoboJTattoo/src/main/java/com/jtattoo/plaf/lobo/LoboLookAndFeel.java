@@ -1,6 +1,6 @@
 package com.jtattoo.plaf.lobo;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
 import com.loboevolution.store.laf.LAFSettings;
 import org.loboevolution.laf.ColorFactory;
@@ -17,7 +17,7 @@ public interface LoboLookAndFeel {
 	/**
 	 * <p>background.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	default Color background() {
 		Color color;
@@ -36,7 +36,7 @@ public interface LoboLookAndFeel {
 	/**
 	 * <p>foreground.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	default Color foreground() {
 		Color color;
@@ -58,7 +58,7 @@ public interface LoboLookAndFeel {
 	/**
 	 * <p>interactive.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	default Color interactive() {
 		Color color;

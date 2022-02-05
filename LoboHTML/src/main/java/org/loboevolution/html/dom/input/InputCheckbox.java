@@ -20,10 +20,10 @@
 
 package org.loboevolution.html.dom.input;
 
-import java.awt.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 
-import javax.swing.JCheckBox;
-import javax.swing.event.MouseInputAdapter;
+import com.mercuryred.render.interfaces.uiplus.JCheckBox;
+import com.mercuryred.render.interfaces.uiplus.event.MouseInputAdapter;
 
 import org.loboevolution.html.control.InputControl;
 import org.loboevolution.html.dom.domimpl.HTMLInputElementImpl;

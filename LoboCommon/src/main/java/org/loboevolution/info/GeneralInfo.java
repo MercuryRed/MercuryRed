@@ -53,4 +53,44 @@ public class GeneralInfo {
     /** The navigation. */
     @Builder.Default
     private boolean navigation = true;
+
+    public boolean isCache() {
+        return cache;
+    }
+
+    public void setCache(boolean cache) {
+        this.cache = cache;
+    }
+
+    public boolean isCookie() {
+        return cookie;
+    }
+
+    public void setCookie(boolean cookie) {
+        this.cookie = cookie;
+    }
+
+    public boolean isCss() {
+        return css;
+    }
+
+    public void setCss(boolean css) {
+        this.css = css;
+    }
+
+    public boolean isJs() {
+        return js;
+    }
+
+    public void setJs(boolean js) {
+        this.js = js;
+    }
+
+    public boolean isNavigation() {
+        return navigation;
+    }
+
+    public void setNavigation(boolean navigation) {
+        this.navigation = navigation;
+    }
 }

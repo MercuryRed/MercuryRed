@@ -20,9 +20,9 @@
 
 package org.loboevolution.tab;
 
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.Transferable;
-import java.awt.datatransfer.UnsupportedFlavorException;
+import com.mercuryred.render.interfaces.ui.datatransfer.DataFlavor;
+import com.mercuryred.render.interfaces.ui.datatransfer.Transferable;
+import com.mercuryred.render.interfaces.ui.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 
 /**

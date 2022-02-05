@@ -20,7 +20,7 @@
 
 package org.loboevolution.html.renderer;
 
-import java.awt.Rectangle;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 import java.util.Iterator;
 
 /**
@@ -72,14 +72,14 @@ public interface RCollection extends BoundableRenderable {
 	/**
 	 * <p>getClipBounds.</p>
 	 *
-	 * @return a {@link java.awt.Rectangle} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 */
 	Rectangle getClipBounds();
 	
 	/**
 	 * <p>getClipBoundsWithoutInsets.</p>
 	 *
-	 * @return a {@link java.awt.Rectangle} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 */
 	Rectangle getClipBoundsWithoutInsets();
 }

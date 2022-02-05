@@ -23,9 +23,9 @@ package org.loboevolution.menu.tools.pref.search;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.swing.BoxLayout;
-import javax.swing.JComboBox;
-import javax.swing.JComponent;
+import com.mercuryred.render.interfaces.uiplus.BoxLayout;
+import com.mercuryred.render.interfaces.uiplus.JComboBox;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
 
 import org.loboevolution.gui.ItemEditorFactory;
 

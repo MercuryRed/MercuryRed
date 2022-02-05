@@ -23,7 +23,7 @@
 
 package com.jtattoo.plaf;
 
-import javax.swing.border.Border;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
 
 /**
  * <p>AbstractBorderFactory interface.</p>
@@ -36,133 +36,133 @@ public interface AbstractBorderFactory {
     /**
      * <p>getButtonBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getButtonBorder();
 
     /**
      * <p>getComboBoxBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getComboBoxBorder();
 
     /**
      * <p>getDesktopIconBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getDesktopIconBorder();
 
     /**
      * <p>getFocusFrameBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getFocusFrameBorder();
 
     /**
      * <p>getInternalFrameBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getInternalFrameBorder();
 
     /**
      * <p>getMenuBarBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getMenuBarBorder();
 
     /**
      * <p>getMenuItemBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getMenuItemBorder();
 
     /**
      * <p>getPaletteBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getPaletteBorder();
 
     /**
      * <p>getPopupMenuBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getPopupMenuBorder();
 
     /**
      * <p>getProgressBarBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getProgressBarBorder();
 
     /**
      * <p>getScrollPaneBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getScrollPaneBorder();
 
     /**
      * <p>getSpinnerBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getSpinnerBorder();
 
     /**
      * <p>getTabbedPaneBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getTabbedPaneBorder();
 
     /**
      * <p>getTableHeaderBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getTableHeaderBorder();
 
     /**
      * <p>getTableScrollPaneBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getTableScrollPaneBorder();
 
     /**
      * <p>getTextBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getTextBorder();
 
     /**
      * <p>getTextFieldBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getTextFieldBorder();
 
     /**
      * <p>getToggleButtonBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getToggleButtonBorder();
 
     /**
      * <p>getToolBarBorder.</p>
      *
-     * @return a {@link javax.swing.border.Border} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
      */
     Border getToolBarBorder();
 

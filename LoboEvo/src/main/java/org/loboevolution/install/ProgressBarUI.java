@@ -20,18 +20,18 @@
 
 package org.loboevolution.install;
 
-import java.awt.BorderLayout;
-import java.awt.Cursor;
-import java.awt.Insets;
+import com.mercuryred.render.interfaces.ui.BorderLayout;
+import com.mercuryred.render.interfaces.ui.Cursor;
+import com.mercuryred.render.interfaces.ui.Insets;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import com.mercuryred.render.interfaces.uiplus.BorderFactory;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JProgressBar;
+import com.mercuryred.render.interfaces.uiplus.JScrollPane;
+import com.mercuryred.render.interfaces.uiplus.JTextArea;
 
 /**
  * <p>ProgressBarUI class.</p>
@@ -50,7 +50,7 @@ public class ProgressBarUI extends JPanel implements PropertyChangeListener {
 	/**
 	 * <p>Constructor for ProgressBarUI.</p>
 	 *
-	 * @param frame a {@link javax.swing.JFrame} object.
+	 * @param frame a {@link com.mercuryred.render.interfaces.uiplus.JFrame} object.
 	 */
 	public ProgressBarUI(JFrame frame) {
 		super(new BorderLayout());

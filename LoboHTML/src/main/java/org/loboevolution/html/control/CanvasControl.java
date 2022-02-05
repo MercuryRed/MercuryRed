@@ -20,10 +20,10 @@
 
 package org.loboevolution.html.control;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
 
 import org.loboevolution.html.dom.domimpl.HTMLCanvasElementImpl;
 

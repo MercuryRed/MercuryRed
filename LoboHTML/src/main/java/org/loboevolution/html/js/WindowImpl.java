@@ -24,7 +24,7 @@ package org.loboevolution.html.js;
 
 import com.gargoylesoftware.css.dom.CSSRuleListImpl;
 import com.gargoylesoftware.css.dom.DOMException;
-import javax.swing.Timer;
+import com.mercuryred.render.interfaces.uiplus.Timer;
 import org.loboevolution.html.dom.HTMLCollection;
 import org.loboevolution.html.dom.domimpl.CommentImpl;
 import org.loboevolution.html.dom.domimpl.HTMLCollectionImpl;
@@ -71,7 +71,7 @@ import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.ScriptableObject;
 import org.w3c.dom.events.EventException;
 
-import java.awt.event.ActionListener;
+import com.mercuryred.render.interfaces.ui.event.ActionListener;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 import java.net.MalformedURLException;

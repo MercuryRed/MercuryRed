@@ -20,23 +20,23 @@
 
 package org.loboevolution.tab;
 
-import javax.swing.Icon;
-import javax.swing.JTabbedPane;
-import javax.swing.event.ChangeListener;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JTabbedPane;
+import com.mercuryred.render.interfaces.uiplus.event.ChangeListener;
 import org.loboevolution.common.Strings;
 import org.loboevolution.component.IBrowserFrame;
 import org.loboevolution.component.IBrowserPanel;
 import org.loboevolution.component.ITabbedPane;
 import org.loboevolution.store.TabStore;
 
-import java.awt.Component;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.dnd.DnDConstants;
-import java.awt.dnd.DragGestureListener;
-import java.awt.dnd.DragSource;
-import java.awt.dnd.DropTarget;
-import java.awt.dnd.DropTargetListener;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.dnd.DnDConstants;
+import com.mercuryred.render.interfaces.ui.dnd.DragGestureListener;
+import com.mercuryred.render.interfaces.ui.dnd.DragSource;
+import com.mercuryred.render.interfaces.ui.dnd.DropTarget;
+import com.mercuryred.render.interfaces.ui.dnd.DropTargetListener;
 
 
 /**
@@ -68,7 +68,7 @@ public class DnDTabbedPane extends JTabbedPane implements ITabbedPane {
 	/**
 	 * <p>getDropIndex.</p>
 	 *
-	 * @param p a {@link java.awt.Point} object.
+	 * @param p a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 * @return a int.
 	 */
 	protected int getDropIndex(Point p) {

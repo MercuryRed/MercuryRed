@@ -19,8 +19,8 @@
  */
 package org.loboevolution.html.control;
 
-import java.awt.Dimension;
-import java.awt.Insets;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Insets;
 
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 import org.loboevolution.html.renderer.FrameContext;

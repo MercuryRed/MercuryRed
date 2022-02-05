@@ -1,12 +1,12 @@
 package com.jtattoo.plaf.lobo;
 
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 
-import javax.swing.JLabel;
-import javax.swing.JTree;
-import javax.swing.tree.DefaultTreeCellRenderer;
+import com.mercuryred.render.interfaces.uiplus.JLabel;
+import com.mercuryred.render.interfaces.uiplus.JTree;
+import com.mercuryred.render.interfaces.uiplus.tree.DefaultTreeCellRenderer;
 
 /**
  * <p>LoboTree class.</p>

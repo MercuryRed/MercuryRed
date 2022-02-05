@@ -18,7 +18,7 @@
  */
 package org.loboevolution.pdfview;
 
-import java.awt.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -1822,7 +1822,7 @@ public class PDFFile {
      * <p>parseNormalisedRectangle.</p>
      *
      * @param obj a {@link org.loboevolution.pdfview.PDFObject} object.
-     * @return a {@link java.awt.geom.Rectangle2D} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      * @throws java.io.IOException if any.
      */
     public static Rectangle2D parseNormalisedRectangle(PDFObject obj)

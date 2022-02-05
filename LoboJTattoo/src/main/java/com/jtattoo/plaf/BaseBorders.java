@@ -23,37 +23,37 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Composite;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
 
-import javax.swing.AbstractButton;
-import javax.swing.BorderFactory;
-import javax.swing.ButtonModel;
-import javax.swing.JComponent;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
-import javax.swing.JRootPane;
-import javax.swing.JToolBar;
-import javax.swing.SwingConstants;
-import javax.swing.border.AbstractBorder;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
-import javax.swing.border.MatteBorder;
-import javax.swing.plaf.BorderUIResource;
-import javax.swing.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.BorderFactory;
+import com.mercuryred.render.interfaces.uiplus.ButtonModel;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JDialog;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
+import com.mercuryred.render.interfaces.uiplus.JInternalFrame;
+import com.mercuryred.render.interfaces.uiplus.JMenu;
+import com.mercuryred.render.interfaces.uiplus.JMenuBar;
+import com.mercuryred.render.interfaces.uiplus.JMenuItem;
+import com.mercuryred.render.interfaces.uiplus.JPopupMenu;
+import com.mercuryred.render.interfaces.uiplus.JRootPane;
+import com.mercuryred.render.interfaces.uiplus.JToolBar;
+import com.mercuryred.render.interfaces.uiplus.SwingConstants;
+import com.mercuryred.render.interfaces.uiplus.border.AbstractBorder;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
+import com.mercuryred.render.interfaces.uiplus.border.LineBorder;
+import com.mercuryred.render.interfaces.uiplus.border.MatteBorder;
+import com.mercuryred.render.interfaces.uiplus.plaf.BorderUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
 
 /**
  * <p>BaseBorders class.</p>
@@ -910,7 +910,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field comboBoxBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getComboBoxBorder() {
 		if (comboBoxBorder == null) {
@@ -922,7 +922,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field desktopIconBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getDesktopIconBorder() {
 		if (desktopIconBorder == null) {
@@ -939,7 +939,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field focusFrameBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getFocusFrameBorder() {
 		if (focusFrameBorder == null) {
@@ -951,7 +951,7 @@ public class BaseBorders {
 	/**
 	 * <p>getMenuBarBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getMenuBarBorder() {
 		return BorderFactory.createEmptyBorder(1, 1, 1, 1);
@@ -960,7 +960,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field menuItemBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getMenuItemBorder() {
 		if (menuItemBorder == null) {
@@ -972,7 +972,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field paletteBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getPaletteBorder() {
 		if (paletteBorder == null) {
@@ -984,7 +984,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field popupMenuBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getPopupMenuBorder() {
 		if (popupMenuBorder == null) {
@@ -1000,7 +1000,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field progressBarBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getProgressBarBorder() {
 		if (progressBarBorder == null) {
@@ -1013,7 +1013,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field scrollPaneBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getScrollPaneBorder() {
 		if (scrollPaneBorder == null) {
@@ -1025,7 +1025,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field spinnerBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getSpinnerBorder() {
 		if (spinnerBorder == null) {
@@ -1037,7 +1037,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field tabbedPaneBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getTabbedPaneBorder() {
 		if (tabbedPaneBorder == null) {
@@ -1049,7 +1049,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field tableHeaderBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getTableHeaderBorder() {
 		if (tableHeaderBorder == null) {
@@ -1061,7 +1061,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field tableScrollPaneBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getTableScrollPaneBorder() {
 		if (tableScrollPaneBorder == null) {
@@ -1076,7 +1076,7 @@ public class BaseBorders {
 	/**
 	 * <p>getTextBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getTextBorder() {
 		if (textFieldBorder == null) {
@@ -1088,7 +1088,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field textFieldBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getTextFieldBorder() {
 		return getTextBorder();
@@ -1097,7 +1097,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field toolBarBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getToolBarBorder() {
 		if (toolBarBorder == null) {
@@ -1109,7 +1109,7 @@ public class BaseBorders {
 	/**
 	 * <p>Getter for the field toolButtonBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getToolButtonBorder() {
 		if (toolButtonBorder == null) {

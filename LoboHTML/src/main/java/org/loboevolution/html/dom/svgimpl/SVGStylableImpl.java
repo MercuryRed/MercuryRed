@@ -20,11 +20,11 @@
 
 package org.loboevolution.html.dom.svgimpl;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Paint;
-import java.awt.Shape;
+import com.mercuryred.render.interfaces.ui.BasicStroke;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.Paint;
+import com.mercuryred.render.interfaces.ui.Shape;
 import java.util.Iterator;
 
 import org.loboevolution.common.Nodes;
@@ -70,8 +70,8 @@ public class SVGStylableImpl extends SVGElementImpl implements SVGStylable {
 	/**
 	 * <p>getFillPaint.</p>
 	 *
-	 * @param shape a {@link java.awt.Shape} object.
-	 * @return a {@link java.awt.Paint} object.
+	 * @param shape a {@link com.mercuryred.render.interfaces.ui.Shape} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Paint} object.
 	 */
 	public Paint getFillPaint(Shape shape) {
 		AbstractCSSProperties style = getStyle();
@@ -101,8 +101,8 @@ public class SVGStylableImpl extends SVGElementImpl implements SVGStylable {
 	/**
 	 * <p>getStrokelPaint.</p>
 	 *
-	 * @param shape a {@link java.awt.Shape} object.
-	 * @return a {@link java.awt.Paint} object.
+	 * @param shape a {@link com.mercuryred.render.interfaces.ui.Shape} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Paint} object.
 	 */
 	public Paint getStrokelPaint(Shape shape) {
 		AbstractCSSProperties style = getStyle();
@@ -320,7 +320,7 @@ public class SVGStylableImpl extends SVGElementImpl implements SVGStylable {
 	/**
 	 * <p>getStopColor.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	public Color getStopColor() {
 		AbstractCSSProperties style = getStyle();
@@ -360,7 +360,7 @@ public class SVGStylableImpl extends SVGElementImpl implements SVGStylable {
 	/**
 	 * <p>getFont.</p>
 	 *
-	 * @return a {@link java.awt.Font} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Font} object.
 	 */
 	public Font getFont() {
 		AbstractCSSProperties style = getStyle();
@@ -379,7 +379,7 @@ public class SVGStylableImpl extends SVGElementImpl implements SVGStylable {
 	/**
 	 * <p>getStroke.</p>
 	 *
-	 * @return a {@link java.awt.BasicStroke} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.BasicStroke} object.
 	 */
 	public BasicStroke getStroke() {
 		final int strokeWidth = getStrokeWidth();

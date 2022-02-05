@@ -26,7 +26,7 @@ import org.loboevolution.html.style.AbstractCSSProperties;
 import org.loboevolution.html.style.HtmlValues;
 import org.loboevolution.html.style.ListStyle;
 
-import java.awt.Image;
+import com.mercuryred.render.interfaces.ui.Image;
 
 
 class BaseRListElement extends RBlock {

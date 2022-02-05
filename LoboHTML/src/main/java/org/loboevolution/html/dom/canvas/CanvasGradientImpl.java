@@ -19,10 +19,10 @@
  */
 package org.loboevolution.html.dom.canvas;
 
-import java.awt.Color;
-import java.awt.LinearGradientPaint;
-import java.awt.Paint;
-import java.awt.RadialGradientPaint;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.LinearGradientPaint;
+import com.mercuryred.render.interfaces.ui.Paint;
+import com.mercuryred.render.interfaces.ui.RadialGradientPaint;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

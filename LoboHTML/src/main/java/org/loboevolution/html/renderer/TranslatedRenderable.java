@@ -23,11 +23,11 @@ package org.loboevolution.html.renderer;
 import org.loboevolution.common.ArrayUtilities;
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 import java.util.Iterator;
 
 /**
@@ -76,7 +76,7 @@ public class TranslatedRenderable extends BaseBoundableRenderable implements RCo
     /**
      * <p>getBounds.</p>
      *
-     * @return a {@link java.awt.Rectangle} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
      */
     public Rectangle getBounds() {
         return translatedChild.getBounds();
@@ -85,7 +85,7 @@ public class TranslatedRenderable extends BaseBoundableRenderable implements RCo
     /**
      * <p>getVisualBounds.</p>
      *
-     * @return a {@link java.awt.Rectangle} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
      */
     public Rectangle getVisualBounds() {
         return translatedChild.getVisualBounds();
@@ -99,7 +99,7 @@ public class TranslatedRenderable extends BaseBoundableRenderable implements RCo
     /**
      * <p>getSize.</p>
      *
-     * @return a {@link java.awt.Dimension} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.Dimension} object.
      */
     public Dimension getSize() {
         return translatedChild.getSize();
@@ -108,7 +108,7 @@ public class TranslatedRenderable extends BaseBoundableRenderable implements RCo
     /**
      * <p>getOrigin.</p>
      *
-     * @return a {@link java.awt.Point} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.Point} object.
      */
     public Point getOrigin() {
         return translatedChild.getOrigin();
@@ -266,7 +266,7 @@ public class TranslatedRenderable extends BaseBoundableRenderable implements RCo
     /**
      * <p>onMiddleClick.</p>
      *
-     * @param event a {@link java.awt.event.MouseEvent} object.
+     * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
      * @param x a int.
      * @param y a int.
      * @return a boolean.

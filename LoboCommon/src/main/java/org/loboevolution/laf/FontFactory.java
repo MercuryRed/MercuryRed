@@ -22,13 +22,11 @@
  */
 package org.loboevolution.laf;
 
-import javax.swing.text.StyleContext;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.font.TextAttribute;
 import org.loboevolution.common.Strings;
 import org.loboevolution.html.CSSValues;
 
-import java.awt.Font;
-import java.awt.GraphicsEnvironment;
-import java.awt.font.TextAttribute;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Locale;
@@ -64,7 +62,7 @@ public final class FontFactory {
 	 * Instantiates a new font factory.
 	 */
 	private FontFactory() {
-		final String[] ffns = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+		final String[] ffns = com.mercuryred.ui.RenderEngines.Get().getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
 		final Set<String> fontFamilies = this.fontFamilies;
 		synchronized (this) {
 			for (final String ffn : ffns) {
@@ -77,7 +75,7 @@ public final class FontFactory {
 	 * Gets the font.
 	 *
 	 * @param key the key
-	 * @return a {@link java.awt.Font} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Font} object.
 	 */
 	public Font getFont(FontKey key) {
 		synchronized (this) {
@@ -142,7 +140,7 @@ public final class FontFactory {
 	 * @return the font
 	 */
 	private Font createFont(String name, int style, int size) {
-		return StyleContext.getDefaultStyleContext().getFont(name, style, size);
+		return com.mercuryred.ui.RenderEngines.Get().createFont(name, style, size);
 	}
 
 	/**

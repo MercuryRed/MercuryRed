@@ -23,29 +23,29 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Insets;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.event.ContainerEvent;
-import java.awt.event.ContainerListener;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.ContainerEvent;
+import com.mercuryred.render.interfaces.ui.event.ContainerListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.AbstractButton;
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
-import javax.swing.JMenuBar;
-import javax.swing.JRootPane;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.border.Border;
-import javax.swing.plaf.UIResource;
-import javax.swing.plaf.basic.BasicToolBarUI;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.BorderFactory;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JMenuBar;
+import com.mercuryred.render.interfaces.uiplus.JRootPane;
+import com.mercuryred.render.interfaces.uiplus.SwingConstants;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicToolBarUI;
 
 /**
  * <p>Abstract AbstractToolBarUI class.</p>
@@ -136,7 +136,7 @@ public abstract class AbstractToolBarUI extends BasicToolBarUI {
 	/**
 	 * <p>changeButtonBorder.</p>
 	 *
-	 * @param b a {@link javax.swing.AbstractButton} object.
+	 * @param b a {@link com.mercuryred.render.interfaces.uiplus.AbstractButton} object.
 	 */
 	protected void changeButtonBorder(AbstractButton b) {
 		Object cp = b.getClientProperty("paintToolBarBorder");
@@ -177,14 +177,14 @@ public abstract class AbstractToolBarUI extends BasicToolBarUI {
 	/**
 	 * <p>getNonRolloverBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public abstract Border getNonRolloverBorder();
 
 	/**
 	 * <p>getRolloverBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public abstract Border getRolloverBorder();
 
@@ -275,7 +275,7 @@ public abstract class AbstractToolBarUI extends BasicToolBarUI {
 	/**
 	 * <p>restoreButtonBorder.</p>
 	 *
-	 * @param b a {@link javax.swing.AbstractButton} object.
+	 * @param b a {@link com.mercuryred.render.interfaces.uiplus.AbstractButton} object.
 	 */
 	protected void restoreButtonBorder(AbstractButton b) {
 		Object cp = b.getClientProperty("paintToolBarBorder");

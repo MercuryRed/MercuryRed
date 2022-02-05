@@ -19,7 +19,7 @@
  */
 package org.loboevolution.html.dom.domimpl;
 
-import javax.swing.JButton;
+import com.mercuryred.render.interfaces.uiplus.JButton;
 
 import org.loboevolution.html.control.ButtonControl;
 import org.loboevolution.html.dom.HTMLButtonElement;

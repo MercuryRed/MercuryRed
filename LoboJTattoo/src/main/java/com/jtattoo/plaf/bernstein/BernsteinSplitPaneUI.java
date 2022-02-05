@@ -23,9 +23,9 @@
 
 package com.jtattoo.plaf.bernstein;
 
-import javax.swing.JComponent;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicSplitPaneDivider;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicSplitPaneDivider;
 
 import com.jtattoo.plaf.BaseSplitPaneUI;
 

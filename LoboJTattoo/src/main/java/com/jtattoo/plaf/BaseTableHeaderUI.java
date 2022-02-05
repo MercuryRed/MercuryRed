@@ -23,33 +23,33 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.MouseAdapter;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.event.MouseMotionAdapter;
 import java.util.Enumeration;
 import java.util.List;
 
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JTable;
-import javax.swing.RowSorter;
-import javax.swing.SortOrder;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.plaf.ColorUIResource;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicTableHeaderUI;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableColumnModel;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JLabel;
+import com.mercuryred.render.interfaces.uiplus.JTable;
+import com.mercuryred.render.interfaces.uiplus.RowSorter;
+import com.mercuryred.render.interfaces.uiplus.SortOrder;
+import com.mercuryred.render.interfaces.uiplus.SwingConstants;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicTableHeaderUI;
+import com.mercuryred.render.interfaces.uiplus.table.DefaultTableCellRenderer;
+import com.mercuryred.render.interfaces.uiplus.table.TableCellRenderer;
+import com.mercuryred.render.interfaces.uiplus.table.TableColumn;
+import com.mercuryred.render.interfaces.uiplus.table.TableColumnModel;
 
 /**
  * <p>BaseTableHeaderUI class.</p>
@@ -466,8 +466,8 @@ public class BaseTableHeaderUI extends BasicTableHeaderUI {
 	/**
 	 * <p>paintBackground.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param cellRect a {@link java.awt.Rectangle} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param cellRect a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 * @param col a int.
 	 */
 	protected void paintBackground(Graphics g, Rectangle cellRect, int col) {

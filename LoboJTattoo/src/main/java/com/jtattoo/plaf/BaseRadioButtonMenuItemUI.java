@@ -23,9 +23,9 @@
 
 package com.jtattoo.plaf;
 
-import javax.swing.JComponent;
-import javax.swing.UIManager;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 /**
  * <p>BaseRadioButtonMenuItemUI class.</p>

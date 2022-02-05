@@ -22,9 +22,9 @@
  */
 package org.loboevolution.html.renderer;
 
-import java.awt.Color;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 import org.loboevolution.html.renderstate.RenderState;
@@ -41,7 +41,7 @@ final class RWord extends BaseBoundableRenderable {
 	 * @param me a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
 	 * @param word a {@link java.lang.String} object.
 	 * @param container a {@link org.loboevolution.html.renderer.RenderableContainer} object.
-	 * @param fontMetrics a {@link java.awt.FontMetrics} object.
+	 * @param fontMetrics a {@link com.mercuryred.render.interfaces.ui.FontMetrics} object.
 	 * @param descent a int.
 	 * @param ascentPlusLeading a int.
 	 * @param height a int.

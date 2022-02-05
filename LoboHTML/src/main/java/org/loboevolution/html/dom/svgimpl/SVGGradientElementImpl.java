@@ -20,14 +20,14 @@
 
 package org.loboevolution.html.dom.svgimpl;
 
-import java.awt.Color;
-import java.awt.LinearGradientPaint;
-import java.awt.MultipleGradientPaint;
-import java.awt.Paint;
-import java.awt.RadialGradientPaint;
-import java.awt.Shape;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Point2D;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.LinearGradientPaint;
+import com.mercuryred.render.interfaces.ui.MultipleGradientPaint;
+import com.mercuryred.render.interfaces.ui.Paint;
+import com.mercuryred.render.interfaces.ui.RadialGradientPaint;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -90,8 +90,8 @@ public class SVGGradientElementImpl extends SVGGraphic implements SVGGradientEle
 	 * <p>gradient.</p>
 	 *
 	 * @param gradient a {@link org.w3c.dom.Element} object.
-	 * @param shape2d a {@link java.awt.Shape} object.
-	 * @return a {@link java.awt.Paint} object.
+	 * @param shape2d a {@link com.mercuryred.render.interfaces.ui.Shape} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Paint} object.
 	 */
 	public Paint gradient(Element gradient, Shape shape2d) {
 		if (gradient instanceof SVGRadialGradientElementImpl) {

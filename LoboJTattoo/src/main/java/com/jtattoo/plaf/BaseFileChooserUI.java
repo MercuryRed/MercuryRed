@@ -23,19 +23,19 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Dimension;
-import java.awt.Window;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Window;
 import java.io.File;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.JFileChooser;
-import javax.swing.SwingUtilities;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
-import javax.swing.filechooser.FileView;
-import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.metal.MetalFileChooserUI;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JFileChooser;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.event.AncestorEvent;
+import com.mercuryred.render.interfaces.uiplus.event.AncestorListener;
+import com.mercuryred.render.interfaces.uiplus.filechooser.FileView;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.plaf.metal.MetalFileChooserUI;
 
 /**
  * <p>BaseFileChooserUI class.</p>
@@ -83,7 +83,7 @@ public class BaseFileChooserUI extends MetalFileChooserUI {
 	/**
 	 * <p>Constructor for BaseFileChooserUI.</p>
 	 *
-	 * @param fileChooser a {@link javax.swing.JFileChooser} object.
+	 * @param fileChooser a {@link com.mercuryred.render.interfaces.uiplus.JFileChooser} object.
 	 */
 	public BaseFileChooserUI(JFileChooser fileChooser) {
 		super(fileChooser);

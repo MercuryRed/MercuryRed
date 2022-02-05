@@ -22,7 +22,7 @@
  */
 package org.loboevolution.html.renderer;
 
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 import org.loboevolution.html.renderstate.RenderState;

@@ -23,9 +23,9 @@
 
 package org.loboevolution.img;
 
-import java.awt.Graphics2D;
-import java.awt.geom.AffineTransform;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 

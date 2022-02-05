@@ -27,47 +27,47 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.AlphaComposite;
-import java.awt.Component;
-import java.awt.Composite;
-import java.awt.Container;
-import java.awt.Dialog;
-import java.awt.Dimension;
-import java.awt.FontMetrics;
-import java.awt.Frame;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.GraphicsConfiguration;
-import java.awt.Image;
-import java.awt.Insets;
-import java.awt.LayoutManager;
-import java.awt.Rectangle;
-import java.awt.RenderingHints;
-import java.awt.Toolkit;
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dialog;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Frame;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.GraphicsConfiguration;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.LayoutManager;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Toolkit;
+import com.mercuryred.render.interfaces.ui.Window;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.WindowAdapter;
+import com.mercuryred.render.interfaces.ui.event.WindowEvent;
+import com.mercuryred.render.interfaces.ui.event.WindowListener;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.List;
 
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.Icon;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JDialog;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JRootPane;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.Action;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JDialog;
+import com.mercuryred.render.interfaces.uiplus.JMenu;
+import com.mercuryred.render.interfaces.uiplus.JMenuBar;
+import com.mercuryred.render.interfaces.uiplus.JMenuItem;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JRootPane;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.UIManager;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
 
 /**
  * This class is a modified copy of the javax.swing.plaf.metal.MetalTitlePaneUI
@@ -531,7 +531,7 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>Constructor for BaseTitlePane.</p>
 	 *
-	 * @param root a {@link javax.swing.JRootPane} object.
+	 * @param root a {@link com.mercuryred.render.interfaces.uiplus.JRootPane} object.
 	 * @param ui a {@link com.jtattoo.plaf.BaseRootPaneUI} object.
 	 */
 	public BaseTitlePane(JRootPane root, BaseRootPaneUI ui) {
@@ -569,8 +569,8 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>calculateMaxBounds.</p>
 	 *
-	 * @param frame a {@link java.awt.Frame} object.
-	 * @return a {@link java.awt.Rectangle} object.
+	 * @param frame a {@link com.mercuryred.render.interfaces.ui.Frame} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 */
 	protected Rectangle calculateMaxBounds(Frame frame) {
 		GraphicsConfiguration gc = frame.getGraphicsConfiguration();
@@ -631,7 +631,7 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>createLayout.</p>
 	 *
-	 * @return a {@link java.awt.LayoutManager} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.LayoutManager} object.
 	 */
 	public LayoutManager createLayout() {
 		return new TitlePaneLayout();
@@ -677,7 +677,7 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>createWindowListener.</p>
 	 *
-	 * @return a {@link java.awt.event.WindowListener} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.event.WindowListener} object.
 	 */
 	protected WindowListener createWindowListener() {
 		return new WindowHandler();
@@ -695,7 +695,7 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>getFrame.</p>
 	 *
-	 * @return a {@link java.awt.Frame} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Frame} object.
 	 */
 	protected Frame getFrame() {
 		if (window instanceof Frame) {
@@ -707,7 +707,7 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>getFrameIconImage.</p>
 	 *
-	 * @return a {@link java.awt.Image} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Image} object.
 	 */
 	protected Image getFrameIconImage() {
 		// try to find icon for dialog windows
@@ -804,7 +804,7 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>Getter for the field window.</p>
 	 *
-	 * @return a {@link java.awt.Window} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Window} object.
 	 */
 	protected Window getWindow() {
 		return window;
@@ -906,7 +906,7 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>paintBackground.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 */
 	public void paintBackground(Graphics g) {
 		if (isActive()) {
@@ -1016,7 +1016,7 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>paintIcon.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param x a int.
 	 * @return a int.
 	 */
@@ -1048,7 +1048,7 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>paintText.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param title a {@link java.lang.String} object.
@@ -1118,7 +1118,7 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>Setter for the field backgroundImage.</p>
 	 *
-	 * @param bgImage a {@link java.awt.image.BufferedImage} object.
+	 * @param bgImage a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
 	 */
 	public void setBackgroundImage(BufferedImage bgImage) {
 		backgroundImage = bgImage;
@@ -1127,7 +1127,7 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>setCustomizedTitlePanel.</p>
 	 *
-	 * @param panel a {@link javax.swing.JPanel} object.
+	 * @param panel a {@link com.mercuryred.render.interfaces.uiplus.JPanel} object.
 	 */
 	public void setCustomizedTitlePanel(JPanel panel) {
 		if (customTitlePanel != null) {
@@ -1252,8 +1252,8 @@ public class BaseTitlePane extends JComponent implements TitlePane {
 	/**
 	 * <p>updateMaxButton.</p>
 	 *
-	 * @param action a {@link javax.swing.Action} object.
-	 * @param icon a {@link javax.swing.Icon} object.
+	 * @param action a {@link com.mercuryred.render.interfaces.uiplus.Action} object.
+	 * @param icon a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	protected void updateMaxButton(Action action, Icon icon) {
 		maxButton.setAction(action);

@@ -19,10 +19,10 @@
 package org.loboevolution.pdfview;
 import static java.awt.geom.Path2D.WIND_EVEN_ODD;
 
-import java.awt.geom.AffineTransform;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.Point2D;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -968,7 +968,7 @@ public class PDFParser extends BaseWatchable {
         try {
             this.path.closePath();
             PDFDebugger.logPath(path, "closed");
-        }catch(java.awt.geom.IllegalPathStateException e) {
+        }catch(com.mercuryred.render.interfaces.ui.geom.IllegalPathStateException e) {
             PDFDebugger.debug("Failed to close path", 1000);
         }
     }

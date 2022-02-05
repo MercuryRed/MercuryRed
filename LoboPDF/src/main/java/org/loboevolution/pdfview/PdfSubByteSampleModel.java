@@ -20,15 +20,15 @@
  */
 package org.loboevolution.pdfview;
 
-import java.awt.image.DataBuffer;
-import java.awt.image.SampleModel;
+import com.mercuryred.render.interfaces.ui.image.DataBuffer;
+import com.mercuryred.render.interfaces.ui.image.SampleModel;
 
 /**
  * Provides a read-only sample-model where components are less than a byte in
  * width while allowing for pixels to cross byte-boundaries. For example, this
  * allows 2 pixels made of 3 4-bit-bands (p[pixel,band])
  * to be stored in 3 bytes as p[0,1] p[0,2] | p[0,3] p[1,0] | p[1,1] p[1,2].
- * {@link java.awt.image.MultiPixelPackedSampleModel}, which allows for sub-byte
+ * {@link com.mercuryred.render.interfaces.ui.image.MultiPixelPackedSampleModel}, which allows for sub-byte
  * components, does not allow for such byte spanning, while the PDF
  * specification does permit it -- hence the existence of this class.
  *

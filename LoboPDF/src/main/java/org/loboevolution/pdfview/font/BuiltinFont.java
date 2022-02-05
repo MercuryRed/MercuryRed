@@ -18,7 +18,7 @@
  */
 package org.loboevolution.pdfview.font;
 
-import java.awt.Font;
+import com.mercuryred.render.interfaces.ui.Font;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;

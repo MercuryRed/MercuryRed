@@ -20,11 +20,11 @@
 
 package org.loboevolution.component;
 
-import java.awt.BorderLayout;
+import com.mercuryred.render.interfaces.ui.BorderLayout;
 import java.util.List;
 
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JScrollPane;
 
 import org.loboevolution.store.GeneralStore;
 import org.loboevolution.tab.DnDTabbedPane;

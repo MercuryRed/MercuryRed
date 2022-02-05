@@ -20,9 +20,9 @@
 
 package org.loboevolution.menu.tools.pref;
 
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.EtchedBorder;
+import com.mercuryred.render.interfaces.uiplus.border.CompoundBorder;
+import com.mercuryred.render.interfaces.uiplus.border.EmptyBorder;
+import com.mercuryred.render.interfaces.uiplus.border.EtchedBorder;
 
 import org.loboevolution.common.WrapperLayout;
 

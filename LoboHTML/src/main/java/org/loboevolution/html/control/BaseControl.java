@@ -22,10 +22,10 @@
  */
 package org.loboevolution.html.control;
 
-import java.awt.Color;
-import java.awt.Component;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
 
-import javax.swing.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
 
 import org.loboevolution.html.AlignValues;
 import org.loboevolution.html.dom.domimpl.HTMLElementImpl;

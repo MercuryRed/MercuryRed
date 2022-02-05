@@ -19,7 +19,7 @@
  */
 package org.loboevolution.html.js.events;
 
-import java.awt.event.InputEvent;
+import com.mercuryred.render.interfaces.ui.event.InputEvent;
 import org.loboevolution.html.node.events.EventTarget;
 import org.loboevolution.html.node.events.MouseEvent;
 import org.loboevolution.html.node.js.Window;
@@ -177,7 +177,7 @@ public class MouseEventImpl extends UIEventImpl implements MouseEvent {
 	 * Getter for the field ie.
 	 * </p>
 	 *
-	 * @return a {@link java.awt.event.InputEvent} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.event.InputEvent} object.
 	 */
 	public InputEvent getIe() {
 		return ie;
@@ -188,7 +188,7 @@ public class MouseEventImpl extends UIEventImpl implements MouseEvent {
 	 * Setter for the field ie.
 	 * </p>
 	 *
-	 * @param ie a {@link java.awt.event.InputEvent} object.
+	 * @param ie a {@link com.mercuryred.render.interfaces.ui.event.InputEvent} object.
 	 */
 	public void setIe(InputEvent ie) {
 		this.ie = ie;

@@ -22,10 +22,10 @@
  */
 package com.jtattoo.plaf.mcwin;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Point;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Point;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.ColorHelper;
@@ -42,8 +42,8 @@ public final class McWinUtils {
 	/**
 	 * <p>fillComponent.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link java.awt.Component} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 */
 	public static void fillComponent(Graphics g, Component c) {
 		if (AbstractLookAndFeel.getTheme().isBackgroundPatternOn()) {
@@ -67,9 +67,9 @@ public final class McWinUtils {
 	/**
 	 * <p>fillComponent.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link java.awt.Component} object.
-	 * @param colors an array of {@link java.awt.Color} objects.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
+	 * @param colors an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 */
 	public static void fillComponent(Graphics g, Component c, Color[] colors) {
 		int w = c.getWidth();

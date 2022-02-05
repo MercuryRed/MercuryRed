@@ -22,10 +22,10 @@
  */
 package org.loboevolution.html.control;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
 import org.loboevolution.html.AlignValues;
 
@@ -39,21 +39,21 @@ public interface UIControl {
 	/**
 	 * <p>getBackgroundColor.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	Color getBackgroundColor();
 
 	/**
 	 * <p>getComponent.</p>
 	 *
-	 * @return a {@link java.awt.Component} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 */
 	Component getComponent();
 
 	/**
 	 * <p>getPreferredSize.</p>
 	 *
-	 * @return a {@link java.awt.Dimension} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Dimension} object.
 	 */
 	Dimension getPreferredSize();
 
@@ -74,7 +74,7 @@ public interface UIControl {
 	/**
 	 * <p>paint.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 */
 	void paint(Graphics g);
 

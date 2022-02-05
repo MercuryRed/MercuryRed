@@ -21,9 +21,9 @@
 package org.loboevolution.component;
 
 
-import javax.swing.Icon;
+import com.mercuryred.render.interfaces.uiplus.Icon;
 
-import java.awt.Component;
+import com.mercuryred.render.interfaces.ui.Component;
 
 public interface ITabbedPane {
     /**

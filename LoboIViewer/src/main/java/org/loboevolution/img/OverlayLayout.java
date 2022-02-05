@@ -22,10 +22,10 @@
  */
 package org.loboevolution.img;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.LayoutManager;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.LayoutManager;
 
 /* This layout manager ensures that the ImageComponent and all the overlays fill
 * the container exactly.

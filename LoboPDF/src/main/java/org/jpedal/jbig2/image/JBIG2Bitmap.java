@@ -50,11 +50,11 @@
  */
 package org.jpedal.jbig2.image;
 
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBuffer;
-import java.awt.image.DataBufferByte;
-import java.awt.image.Raster;
-import java.awt.image.WritableRaster;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.DataBuffer;
+import com.mercuryred.render.interfaces.ui.image.DataBufferByte;
+import com.mercuryred.render.interfaces.ui.image.Raster;
+import com.mercuryred.render.interfaces.ui.image.WritableRaster;
 import java.io.IOException;
 import java.util.logging.Logger;
 
@@ -1354,7 +1354,7 @@ public final class JBIG2Bitmap {
 	/**
 	 * <p>getBufferedImage.</p>
 	 *
-	 * @return a {@link java.awt.image.BufferedImage} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
 	 */
 	public BufferedImage getBufferedImage() {
 		byte[] bytes = getData(true);

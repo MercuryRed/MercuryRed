@@ -22,8 +22,8 @@
  */
 package org.loboevolution.img;
 
-import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.util.EventObject;
 
 /**
@@ -43,10 +43,10 @@ public class ImageMouseEvent extends EventObject {
 	 * <p>Constructor for ImageMouseEvent.</p>
 	 *
 	 * @param source a {@link java.lang.Object} object.
-	 * @param image a {@link java.awt.image.BufferedImage} object.
+	 * @param image a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
 	 * @param x a int.
 	 * @param y a int.
-	 * @param orig a {@link java.awt.event.MouseEvent} object.
+	 * @param orig a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 */
 	public ImageMouseEvent(Object source, BufferedImage image, int x, int y, MouseEvent orig) {
 		super(source);

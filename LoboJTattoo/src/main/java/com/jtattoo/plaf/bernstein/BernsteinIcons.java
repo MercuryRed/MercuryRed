@@ -22,13 +22,13 @@
  */
 package com.jtattoo.plaf.bernstein;
 
-import java.awt.Component;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
-import javax.swing.AbstractButton;
-import javax.swing.ButtonModel;
-import javax.swing.Icon;
-import javax.swing.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.ButtonModel;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
 
 import com.jtattoo.plaf.BaseIcons;
 import com.jtattoo.plaf.JTattooUtilities;
@@ -170,7 +170,7 @@ public class BernsteinIcons extends BaseIcons {
 	/**
 	 * <p>getCheckBoxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getCheckBoxIcon() {
 		if (checkBoxIcon == null) {
@@ -182,7 +182,7 @@ public class BernsteinIcons extends BaseIcons {
 	/**
 	 * <p>getRadioButtonIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getRadioButtonIcon() {
 		if (radioButtonIcon == null) {
@@ -194,7 +194,7 @@ public class BernsteinIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterDownArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterDownArrowIcon() {
 		if (splitterDownArrowIcon == null) {
@@ -206,7 +206,7 @@ public class BernsteinIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterLeftArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterLeftArrowIcon() {
 		if (splitterLeftArrowIcon == null) {
@@ -218,7 +218,7 @@ public class BernsteinIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterRightArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterRightArrowIcon() {
 		if (splitterRightArrowIcon == null) {
@@ -230,7 +230,7 @@ public class BernsteinIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterUpArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterUpArrowIcon() {
 		if (splitterUpArrowIcon == null) {
@@ -242,7 +242,7 @@ public class BernsteinIcons extends BaseIcons {
 	/**
 	 * <p>getThumbHorIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbHorIcon() {
 		if (thumbHorIcon == null) {
@@ -254,7 +254,7 @@ public class BernsteinIcons extends BaseIcons {
 	/**
 	 * <p>getThumbHorIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbHorIconRollover() {
 		if (thumbHorIconRollover == null) {
@@ -266,7 +266,7 @@ public class BernsteinIcons extends BaseIcons {
 	/**
 	 * <p>getThumbVerIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbVerIcon() {
 		if (thumbVerIcon == null) {
@@ -278,7 +278,7 @@ public class BernsteinIcons extends BaseIcons {
 	/**
 	 * <p>getThumbVerIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbVerIconRollover() {
 		if (thumbVerIconRollover == null) {

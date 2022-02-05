@@ -13,26 +13,26 @@
  */
 package org.monte.media.jpeg;
 
-import java.awt.color.ColorSpace;
-import java.awt.color.ICC_ColorSpace;
-import java.awt.color.ICC_Profile;
-import java.awt.image.BufferedImage;
-import java.awt.image.ColorConvertOp;
-import java.awt.image.ColorModel;
-import java.awt.image.DataBuffer;
-import java.awt.image.DataBufferInt;
-import java.awt.image.DirectColorModel;
-import java.awt.image.Raster;
-import java.awt.image.WritableRaster;
+import com.mercuryred.render.interfaces.ui.color.ColorSpace;
+import com.mercuryred.render.interfaces.ui.color.ICC_ColorSpace;
+import com.mercuryred.render.interfaces.ui.color.ICC_Profile;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.ColorConvertOp;
+import com.mercuryred.render.interfaces.ui.image.ColorModel;
+import com.mercuryred.render.interfaces.ui.image.DataBuffer;
+import com.mercuryred.render.interfaces.ui.image.DataBufferInt;
+import com.mercuryred.render.interfaces.ui.image.DirectColorModel;
+import com.mercuryred.render.interfaces.ui.image.Raster;
+import com.mercuryred.render.interfaces.ui.image.WritableRaster;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import javax.imageio.ImageIO;
-import javax.imageio.ImageReader;
-import javax.imageio.stream.ImageInputStream;
+import com.mercuryred.render.interfaces.imageio.ImageIO;
+import com.mercuryred.render.interfaces.imageio.ImageReader;
+import com.mercuryred.render.interfaces.imageio.stream.ImageInputStream;
 
 
 /**
@@ -67,7 +67,7 @@ public class JPEGImageIO {
      *
      * @param in a {@link java.io.InputStream} object.
      * @param inverseYCCKColors a boolean.
-     * @return a {@link java.awt.image.BufferedImage} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
      * @throws java.io.IOException if any.
      */
     public static BufferedImage read(InputStream in, boolean inverseYCCKColors) throws IOException {

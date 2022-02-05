@@ -39,8 +39,8 @@ import org.loboevolution.laf.ColorFactory;
 import org.loboevolution.laf.FontFactory;
 import org.loboevolution.laf.FontKey;
 
-import java.awt.Color;
-import java.awt.Font;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Font;
 import java.util.Base64;
 
 /**

@@ -22,18 +22,18 @@
  */
 package org.loboevolution.html.renderer;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Cursor;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
 
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 import org.loboevolution.html.dom.nodeimpl.NodeImpl;
@@ -92,7 +92,7 @@ abstract class BaseBoundableRenderable extends BaseRenderable implements Boundab
 	/**
 	 * <p>getBlockBackgroundColor.</p>
 	 *
-	 * @return a {@link java.awt.Color} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	public Color getBlockBackgroundColor() {
 		return this.container.getPaintedBackgroundColor();
@@ -125,7 +125,7 @@ abstract class BaseBoundableRenderable extends BaseRenderable implements Boundab
 	/**
 	 * <p>getVisualBounds.</p>
 	 *
-	 * @return a {@link java.awt.Rectangle} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Rectangle} object.
 	 */
 	public Rectangle getVisualBounds() {
 		return new Rectangle(getX(), getY(), getVisualWidth(), getVisualHeight());

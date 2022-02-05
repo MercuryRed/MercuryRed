@@ -20,8 +20,8 @@
 
 package org.loboevolution.html.renderer.table;
 
-import java.awt.Rectangle;
-import java.awt.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 import java.util.List;
 
 import org.loboevolution.html.renderer.BoundableRenderable;
@@ -44,7 +44,7 @@ class TableMatrixEvents {
 	/**
 	 * <p>onDoubleClick.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @return a boolean.
@@ -72,7 +72,7 @@ class TableMatrixEvents {
 	/**
 	 * <p>onMouseClick.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @return a boolean.
@@ -100,7 +100,7 @@ class TableMatrixEvents {
 	/**
 	 * <p>onMouseDisarmed.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @return a boolean.
 	 */
 	public boolean onMouseDisarmed(final MouseEvent event) {
@@ -123,7 +123,7 @@ class TableMatrixEvents {
 	/**
 	 * <p>onMousePressed.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @return a boolean.
@@ -152,7 +152,7 @@ class TableMatrixEvents {
 	/**
 	 * <p>onMouseReleased.</p>
 	 *
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @return a boolean.

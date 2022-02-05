@@ -24,7 +24,7 @@ import org.loboevolution.html.dom.domimpl.HTMLDocumentImpl;
 import org.loboevolution.html.dom.domimpl.HTMLElementImpl;
 import org.loboevolution.html.renderstate.RenderState;
 
-import java.awt.Insets;
+import com.mercuryred.render.interfaces.ui.Insets;
 
 
 /**
@@ -62,7 +62,7 @@ public class HtmlInsets {
 	 * @param availHeight a int.
 	 * @param autoX a int.
 	 * @param autoY a int.
-	 * @return a {@link java.awt.Insets} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Insets} object.
 	 */
 	public Insets getAWTInsets(int availWidth, int availHeight, int autoX, int autoY) {
 		final int top = getInsetPixels(this.top, this.topType, availHeight, autoY);

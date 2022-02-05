@@ -19,16 +19,25 @@
 
 package org.loboevolution.pdf;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.image.ImageObserver;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.MenuComponent;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.PopupMenu;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.event.MouseListener;
+import com.mercuryred.render.interfaces.ui.image.ImageObserver;
 
-import javax.swing.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
 
+import com.mercuryred.render.interfaces.uiplus.border.Border;
 import org.loboevolution.pdfview.PDFPage;
 
 /**
@@ -39,7 +48,7 @@ import org.loboevolution.pdfview.PDFPage;
   *
   *
  */
-public class PagePanel extends JPanel implements ImageObserver, MouseListener {
+public class PagePanel implements JPanel, ImageObserver, MouseListener {
 
 	
 	private static final long serialVersionUID = 1L;
@@ -70,6 +79,12 @@ public class PagePanel extends JPanel implements ImageObserver, MouseListener {
 		setFocusable(true);
 		addMouseListener(this);
    }
+
+	private void addMouseListener(PagePanel pagePanel) {
+	}
+
+	private void setFocusable(boolean b) {
+	}
 
 	/**
 	 * Stop the generation of any previous page, and draw the new one.
@@ -105,23 +120,152 @@ public class PagePanel extends JPanel implements ImageObserver, MouseListener {
 		}
 	}
 
+	private Dimension getSize() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
 	/** {@inheritDoc} */
 	public void setPreferredSize(Dimension size) {
-		if (super.getPreferredSize() != size) {
-			super.setPreferredSize(size);
+		// todo store prefered size
+//		if (super.getPreferredSize() != size) {
+//			super.setPreferredSize(size);
 			this.image = null;
 			this.size = null;
 			repaint();
-		}
+//		}
 	}
 
 	/**
 	 * <p>getPreferredSize.</p>
 	 *
-	 * @return a {@link java.awt.Dimension} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Dimension} object.
 	 */
 	public Dimension getPreferredSize() {
-		return size == null ? super.getPreferredSize() : this.size;
+		// todo
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+//		return size == null
+//				? super.getPreferredSize()
+//				: this.size;
+	}
+
+	@Override
+	public void setBorder(Border border) {
+
+	}
+
+	@Override
+	public Insets getInsets() {
+		return null;
+	}
+
+	@Override
+	public Insets getInsets(Insets insets) {
+		return null;
+	}
+
+	@Override
+	public void setFont(Font font) {
+
+	}
+
+	@Override
+	public Point getPopupLocation(MouseEvent event) {
+		return null;
+	}
+
+	@Override
+	public int getWidth() {
+		return 0;
+	}
+
+	@Override
+	public void repaint(long tm, int x, int y, int width, int height) {
+
+	}
+
+	@Override
+	public void repaint(Rectangle r) {
+
+	}
+
+	@Override
+	public void revalidate() {
+
+	}
+
+	@Override
+	public Component add(Component comp) {
+		return null;
+	}
+
+	@Override
+	public Component add(String name, Component comp) {
+		return null;
+	}
+
+	@Override
+	public Component add(Component comp, int index) {
+		return null;
+	}
+
+	@Override
+	public void add(Component comp, Object constraints) {
+
+	}
+
+	@Override
+	public void add(Component comp, Object constraints, int index) {
+
+	}
+
+	@Override
+	public void remove(int index) {
+
+	}
+
+	@Override
+	public void remove(Component comp) {
+
+	}
+
+	@Override
+	public Container getParent() {
+		return null;
+	}
+
+	@Override
+	public void setBounds(int x, int y, int width, int height) {
+
+	}
+
+	@Override
+	public void setBounds(Rectangle r) {
+
+	}
+
+	@Override
+	public void repaint() {
+
+	}
+
+	@Override
+	public void repaint(long tm) {
+
+	}
+
+	@Override
+	public void repaint(int x, int y, int width, int height) {
+
+	}
+
+	@Override
+	public void add(PopupMenu popup) {
+
+	}
+
+	@Override
+	public void remove(MenuComponent popup) {
+
 	}
 
 
@@ -136,7 +280,7 @@ public class PagePanel extends JPanel implements ImageObserver, MouseListener {
 		g.fillRect(0, 0, getWidth(), getHeight());
 		if (image == null) {
 			if (page == null) {
-				g.setColor(Color.black);
+				g.setColor(Color.BLACK);
 				g.drawString("No page selected", getWidth() / 2 - 30, getHeight() / 2);
 			}
 			else {
@@ -162,6 +306,14 @@ public class PagePanel extends JPanel implements ImageObserver, MouseListener {
 		}
 	}
 
+	private int getHeight() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	private Color getBackground() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
 	/**
 	 * Gets the page currently being displayed
 	 *
@@ -174,7 +326,7 @@ public class PagePanel extends JPanel implements ImageObserver, MouseListener {
 	/**
 	 * Gets the size of the image currently being displayed
 	 *
-	 * @return a {@link java.awt.Dimension} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Dimension} object.
 	 */
 	public Dimension getCurSize() {
 		return size;
@@ -194,20 +346,25 @@ public class PagePanel extends JPanel implements ImageObserver, MouseListener {
 	 * changed.  Repaints that portion.
 	 */
 	public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
-		if ((infoflags & (SOMEBITS | ALLBITS)) != 0) {
+		// TODO handle this
+//		if ((infoflags & (SOMEBITS | ALLBITS)) != 0) {
 			repaint(x + offx, y + offy, width, height);
-		}
-		if ((infoflags & (ALLBITS | ERROR | ABORT)) != 0) {
-			flag.set();
+//		}
+//		if ((infoflags & (ALLBITS | ERROR | ABORT)) != 0) {
+//			flag.set();
 			return false;
-		} else {
-			return true;
-		}
+//		} else {
+//			return true;
+//		}
 	}
 
 	/** {@inheritDoc} */
 	public void mouseClicked(final MouseEvent e) {
 		requestFocus();
+	}
+
+	private void requestFocus() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
 	}
 
 	/** {@inheritDoc} */

@@ -18,8 +18,8 @@
  */
 package org.loboevolution.pdfview.font;
 
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Point2D;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.Point2D;
 import java.io.IOException;
 
 import org.loboevolution.pdfview.PDFObject;

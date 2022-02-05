@@ -20,8 +20,8 @@
 
 package org.loboevolution.html.dom.svgimpl;
 
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Point2D;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.Point2D;
 
 import com.gargoylesoftware.css.dom.DOMException;
 import org.loboevolution.html.dom.svg.SVGLength;
@@ -312,7 +312,7 @@ public class SVGLengthImpl implements SVGLength {
 	/**
 	 * <p>getTransformedLength.</p>
 	 *
-	 * @param transform a {@link java.awt.geom.AffineTransform} object.
+	 * @param transform a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
 	 * @return a float.
 	 */
 	protected float getTransformedLength(AffineTransform transform) {

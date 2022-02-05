@@ -20,7 +20,7 @@
 
 package org.loboevolution.welcome;
 
-import javax.swing.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
 
 import org.loboevolution.component.IBrowserPanel;
 import org.loboevolution.component.IWelcomePanel;

@@ -22,13 +22,13 @@
  */
 package com.jtattoo.plaf.hifi;
 
-import java.awt.Component;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
-import javax.swing.JComponent;
-import javax.swing.JSlider;
-import javax.swing.plaf.ColorUIResource;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JSlider;
+import com.mercuryred.render.interfaces.uiplus.plaf.ColorUIResource;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.BaseSliderUI;
 
@@ -48,7 +48,7 @@ public class HiFiSliderUI extends BaseSliderUI {
 	/**
 	 * <p>Constructor for HiFiSliderUI.</p>
 	 *
-	 * @param slider a {@link javax.swing.JSlider} object.
+	 * @param slider a {@link com.mercuryred.render.interfaces.uiplus.JSlider} object.
 	 */
 	public HiFiSliderUI(JSlider slider) {
 		super(slider);

@@ -22,10 +22,11 @@
  */
 package org.loboevolution.common;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.LayoutManager;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.LayoutManager;
 
 /**
  * <p>WrapperLayout class.</p>
@@ -48,8 +49,8 @@ public class WrapperLayout implements LayoutManager {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see java.awt.LayoutManager#addLayoutComponent(java.lang.String,
-	 * java.awt.Component)
+	 * @see com.mercuryred.render.interfaces.ui.LayoutManager#addLayoutComponent(java.lang.String,
+	 * com.mercuryred.render.interfaces.ui.Component)
 	 */
 	/** {@inheritDoc} */
 	@Override
@@ -59,7 +60,7 @@ public class WrapperLayout implements LayoutManager {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see java.awt.LayoutManager#layoutContainer(java.awt.Container)
+	 * @see com.mercuryred.render.interfaces.ui.LayoutManager#layoutContainer(com.mercuryred.render.interfaces.ui.Container)
 	 */
 	/** {@inheritDoc} */
 	@Override
@@ -67,7 +68,7 @@ public class WrapperLayout implements LayoutManager {
 		final int count = arg0.getComponentCount();
 		if (count > 0) {
 			final Component child = arg0.getComponent(0);
-			final java.awt.Insets insets = arg0.getInsets();
+			final Insets insets = arg0.getInsets();
 			child.setBounds(insets.left, insets.top, arg0.getWidth() - insets.left - insets.right,
 					arg0.getHeight() - insets.top - insets.bottom);
 		}
@@ -76,12 +77,12 @@ public class WrapperLayout implements LayoutManager {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see java.awt.LayoutManager#minimumLayoutSize(java.awt.Container)
+	 * @see com.mercuryred.render.interfaces.ui.LayoutManager#minimumLayoutSize(com.mercuryred.render.interfaces.ui.Container)
 	 */
 	/** {@inheritDoc} */
 	@Override
 	public Dimension minimumLayoutSize(Container arg0) {
-		final java.awt.Insets insets = arg0.getInsets();
+		final com.mercuryred.render.interfaces.ui.Insets insets = arg0.getInsets();
 		final int count = arg0.getComponentCount();
 		if (count > 0) {
 			final Dimension d = arg0.getComponent(0).getMinimumSize();
@@ -94,12 +95,12 @@ public class WrapperLayout implements LayoutManager {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see java.awt.LayoutManager#preferredLayoutSize(java.awt.Container)
+	 * @see com.mercuryred.render.interfaces.ui.LayoutManager#preferredLayoutSize(com.mercuryred.render.interfaces.ui.Container)
 	 */
 	/** {@inheritDoc} */
 	@Override
 	public Dimension preferredLayoutSize(Container arg0) {
-		final java.awt.Insets insets = arg0.getInsets();
+		final com.mercuryred.render.interfaces.ui.Insets insets = arg0.getInsets();
 		final int count = arg0.getComponentCount();
 		if (count > 0) {
 			final Dimension d = arg0.getComponent(0).getPreferredSize();
@@ -112,7 +113,7 @@ public class WrapperLayout implements LayoutManager {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see java.awt.LayoutManager#removeLayoutComponent(java.awt.Component)
+	 * @see com.mercuryred.render.interfaces.ui.LayoutManager#removeLayoutComponent(com.mercuryred.render.interfaces.ui.Component)
 	 */
 	/** {@inheritDoc} */
 	@Override

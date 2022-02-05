@@ -19,9 +19,9 @@
 
 package org.loboevolution.pdfview.colorspace;
 
-import java.awt.color.ColorSpace;
-import java.awt.color.ICC_ColorSpace;
-import java.awt.color.ICC_Profile;
+import com.mercuryred.render.interfaces.ui.color.ColorSpace;
+import com.mercuryred.render.interfaces.ui.color.ICC_ColorSpace;
+import com.mercuryred.render.interfaces.ui.color.ICC_Profile;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -36,7 +36,7 @@ import org.loboevolution.pdfview.BaseWatchable;
  * Author XOND
  * @version $Id: CMYKColorSpace.java,v 1.2 2011-01-06 12:12:21 xond Exp $
  */
-public class CMYKColorSpace extends ColorSpace {
+public class CMYKColorSpace implements ColorSpace {
 
 	private ICC_Profile icc;
 	private ICC_ColorSpace icc_cs;
@@ -63,7 +63,7 @@ public class CMYKColorSpace extends ColorSpace {
 	 * Converts to CMYK from CIEXYZ. We cheat here, using the RGB colorspace
 	 * to do the math for us. The toCIEXYZ function has a description of how
 	 * this is supposed to work, which may be implemented in the future.
-	 * @see java.awt.color.ColorSpace#fromCIEXYZ(float[])
+	 * @see com.mercuryred.render.interfaces.ui.color.ColorSpace#fromCIEXYZ(float[])
 	 */
 	@Override
 	public float[] fromCIEXYZ(float[] p_colorvalue) {
@@ -86,7 +86,7 @@ public class CMYKColorSpace extends ColorSpace {
 	 * 		C = 1-R
 	 * 		M = 1-G
 	 * 		Y = 1-B
-	 * @see java.awt.color.ColorSpace#fromRGB(float[])
+	 * @see com.mercuryred.render.interfaces.ui.color.ColorSpace#fromRGB(float[])
 	 */
 	@Override
 	public float[] fromRGB(float[] p_rgbvalue) {
@@ -129,7 +129,7 @@ public class CMYKColorSpace extends ColorSpace {
 	 * X   41.2453 35.7580 18.0423 | 1-C'
 	 * Y = 21.2671 71.5160 07.2169 | 1-M'
 	 * Z   01.9334 11.9193 95.0227 | 1-Y'
-	 * @see java.awt.color.ColorSpace#toCIEXYZ(float[])
+	 * @see com.mercuryred.render.interfaces.ui.color.ColorSpace#toCIEXYZ(float[])
 	 */
 	@Override
 	public float[] toCIEXYZ(float[] p_colorvalue) {
@@ -152,7 +152,7 @@ public class CMYKColorSpace extends ColorSpace {
 	 * R = K * (1 - C)
 	 * G = K * (1 - M)
 	 * B = K * (1 - Y)
-	 * @see java.awt.color.ColorSpace#toRGB(float[])
+	 * @see com.mercuryred.render.interfaces.ui.color.ColorSpace#toRGB(float[])
 	 */
 	@Override
 	public float[] toRGB(float[] p_colorvalue) {

@@ -20,11 +20,11 @@
 
 package org.loboevolution.html.dom.svgimpl;
 
-import java.awt.Shape;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Area;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Path2D;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.Area;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.Path2D;
 import java.util.Iterator;
 
 import org.loboevolution.html.dom.nodeimpl.NodeListImpl;
@@ -64,7 +64,7 @@ public class SVGClipPathElementImpl extends SVGGraphic implements SVGClipPathEle
 	 * <p>getClippingShape.</p>
 	 *
 	 * @param clippedElement a {@link org.loboevolution.html.dom.svg.SVGElement} object.
-	 * @return a {@link java.awt.Shape} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Shape} object.
 	 */
 	protected Shape getClippingShape(SVGElement clippedElement) {
 		Area clipArea = null;

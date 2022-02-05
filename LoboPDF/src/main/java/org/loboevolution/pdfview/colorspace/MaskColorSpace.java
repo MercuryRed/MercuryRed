@@ -19,8 +19,8 @@
 
 package org.loboevolution.pdfview.colorspace;
 
-import java.awt.Color;
-import java.awt.color.ColorSpace;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.color.ColorSpace;
 
 import org.loboevolution.pdfview.PDFPaint;
 
@@ -32,7 +32,7 @@ import org.loboevolution.pdfview.PDFPaint;
   *
   *
  */
-public class MaskColorSpace extends ColorSpace {
+public class MaskColorSpace implements ColorSpace {
     /** The paint to paint in.  Note this cannot be a pattern or gradient. */
     private final PDFPaint paint;
     

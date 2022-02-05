@@ -18,15 +18,15 @@
  */
 package org.loboevolution.pdf;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.print.Book;
-import java.awt.print.PageFormat;
-import java.awt.print.PrinterJob;
+import com.mercuryred.render.interfaces.ui.BorderLayout;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Toolkit;
+import com.mercuryred.render.interfaces.ui.event.KeyEvent;
+import com.mercuryred.render.interfaces.ui.event.KeyListener;
+import com.mercuryred.render.interfaces.ui.print.Book;
+import com.mercuryred.render.interfaces.ui.print.PageFormat;
+import com.mercuryred.render.interfaces.ui.print.PrinterJob;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,21 +40,21 @@ import java.nio.channels.FileChannel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.JTree;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.SwingUtilities;
-import javax.swing.WindowConstants;
-import javax.swing.event.TreeSelectionEvent;
-import javax.swing.event.TreeSelectionListener;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.ImageIcon;
+import com.mercuryred.render.interfaces.uiplus.JDialog;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
+import com.mercuryred.render.interfaces.uiplus.JMenu;
+import com.mercuryred.render.interfaces.uiplus.JMenuBar;
+import com.mercuryred.render.interfaces.uiplus.JOptionPane;
+import com.mercuryred.render.interfaces.uiplus.JScrollPane;
+import com.mercuryred.render.interfaces.uiplus.JSplitPane;
+import com.mercuryred.render.interfaces.uiplus.JTree;
+import com.mercuryred.render.interfaces.uiplus.ScrollPaneConstants;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.WindowConstants;
+import com.mercuryred.render.interfaces.uiplus.event.TreeSelectionEvent;
+import com.mercuryred.render.interfaces.uiplus.event.TreeSelectionListener;
 
 import org.loboevolution.net.HttpNetwork;
 import org.loboevolution.net.UserAgent;
@@ -81,7 +81,7 @@ import org.loboevolution.pdfview.action.ZoomOutAction;
   *
   *
  */
-public class PDFViewer extends JFrame implements KeyListener, PageChangeListener, TreeSelectionListener {
+public class PDFViewer implements JFrame, KeyListener, PageChangeListener, TreeSelectionListener {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -539,7 +539,7 @@ public class PDFViewer extends JFrame implements KeyListener, PageChangeListener
 	 *            the factor
 	 */
 	public void doZoom(float factor) {
-		page.setPreferredSize(new Dimension(
+		page.setPreferredSize(com.mercuryred.ui.RenderEngines.Get().createDimension(
 			Math.max(MIN_ZOOM_SIZE, Math.min(MAX_ZOOM_SIZE, Math.round(page.getPreferredSize().width * factor))),
 			Math.max(MIN_ZOOM_SIZE, Math.min(MAX_ZOOM_SIZE, Math.round(page.getPreferredSize().height * factor)))
 		));
@@ -659,7 +659,7 @@ public class PDFViewer extends JFrame implements KeyListener, PageChangeListener
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 * @see com.mercuryred.render.interfaces.ui.event.KeyListener#keyReleased(com.mercuryred.render.interfaces.ui.event.KeyEvent)
 	 */
 	/** {@inheritDoc} */
 	@Override
@@ -735,5 +735,13 @@ public class PDFViewer extends JFrame implements KeyListener, PageChangeListener
 			logger.log(Level.SEVERE, e.getMessage(), e);
 		}
 		return icon;
+	}
+
+	public void setVisible(boolean b) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	public void dispose() {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
 	}
 }

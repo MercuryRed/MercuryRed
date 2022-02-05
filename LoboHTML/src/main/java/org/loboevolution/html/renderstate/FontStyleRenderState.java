@@ -29,9 +29,9 @@ import org.loboevolution.laf.FontFactory;
 import org.loboevolution.laf.FontKey;
 import org.loboevolution.laf.LAFType;
 
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Toolkit;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Toolkit;
 import java.util.HashMap;
 import java.util.Map;
 

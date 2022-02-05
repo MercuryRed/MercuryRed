@@ -23,13 +23,13 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
 import java.util.logging.Logger;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.ImageIcon;
 
 /**
  * <p>LazyMenuArrowImageIcon class.</p>

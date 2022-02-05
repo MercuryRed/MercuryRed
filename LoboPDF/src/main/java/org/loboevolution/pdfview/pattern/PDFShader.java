@@ -19,7 +19,7 @@
 
 package org.loboevolution.pdfview.pattern;
 
-import java.awt.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 import java.io.IOException;
 import java.util.Map;
 
@@ -246,7 +246,7 @@ public abstract class PDFShader {
     /**
      * Get the bounding box
      *
-     * @return a {@link java.awt.geom.Rectangle2D} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      */
     public Rectangle2D getBBox() {
         return this.bbox;
@@ -255,7 +255,7 @@ public abstract class PDFShader {
     /**
      * Set the bounding box
      *
-     * @param bbox a {@link java.awt.geom.Rectangle2D} object.
+     * @param bbox a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      */
     protected void setBBox(Rectangle2D bbox) {
         this.bbox = bbox;

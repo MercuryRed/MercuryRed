@@ -20,8 +20,8 @@
 
 package org.loboevolution.install;
 
-import javax.swing.JComponent;
-import javax.swing.JFrame;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
 
 /**
  * <p>ProgressBar class.</p>

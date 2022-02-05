@@ -22,7 +22,7 @@
  */
 package com.jtattoo.plaf.graphite;
 
-import javax.swing.border.Border;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
 
 import com.jtattoo.plaf.AbstractBorderFactory;
 import com.jtattoo.plaf.BaseBorders;

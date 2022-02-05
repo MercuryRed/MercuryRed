@@ -22,21 +22,21 @@ package org.loboevolution.download;
 
 import com.jtattoo.plaf.lobo.LoboButton;
 import com.jtattoo.plaf.lobo.LoboLookAndFeel;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JProgressBar;
+import com.mercuryred.render.interfaces.uiplus.Box;
+import com.mercuryred.render.interfaces.uiplus.BoxLayout;
+import com.mercuryred.render.interfaces.uiplus.ImageIcon;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
+import com.mercuryred.render.interfaces.uiplus.JProgressBar;
 import org.loboevolution.component.IDownload;
 import org.loboevolution.gui.FieldType;
 import org.loboevolution.gui.FormField;
 import org.loboevolution.gui.FormPanel;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Image;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Image;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -261,7 +261,7 @@ public class DownloadWindow extends JFrame implements IDownload, LoboLookAndFeel
     /**
      * <p>Getter for the field <code>progressBar</code>.</p>
      *
-     * @return a {@link javax.swing.JProgressBar} object.
+     * @return a {@link com.mercuryred.render.interfaces.uiplus.JProgressBar} object.
      */
     public JProgressBar getProgressBar() {
         return progressBar;

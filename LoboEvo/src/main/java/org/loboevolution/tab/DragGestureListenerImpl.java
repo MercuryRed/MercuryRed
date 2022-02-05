@@ -20,19 +20,19 @@
 
 package org.loboevolution.tab;
 
-import java.awt.Image;
-import java.awt.Point;
-import java.awt.datatransfer.Transferable;
-import java.awt.dnd.DragGestureEvent;
-import java.awt.dnd.DragGestureListener;
-import java.awt.dnd.DragSource;
-import java.awt.dnd.InvalidDnDOperationException;
-import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.datatransfer.Transferable;
+import com.mercuryred.render.interfaces.ui.dnd.DragGestureEvent;
+import com.mercuryred.render.interfaces.ui.dnd.DragGestureListener;
+import com.mercuryred.render.interfaces.ui.dnd.DragSource;
+import com.mercuryred.render.interfaces.ui.dnd.InvalidDnDOperationException;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
 
 /**
  * <p>DragGestureListenerImpl class.</p>

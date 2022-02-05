@@ -20,10 +20,10 @@
 
 package org.loboevolution.menu.tools.clear;
 
-import java.awt.Component;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.uiplus.BoxLayout;
+import com.mercuryred.render.interfaces.uiplus.JButton;
+import com.mercuryred.render.interfaces.uiplus.JFrame;
 import org.loboevolution.component.BrowserFrame;
 import org.loboevolution.gui.SwingTasks;
 

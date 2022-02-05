@@ -22,9 +22,9 @@
  */
 package com.jtattoo.plaf.texture;
 
-import javax.swing.JComponent;
-import javax.swing.JRootPane;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JRootPane;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.BaseRootPaneUI;
 

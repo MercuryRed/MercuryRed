@@ -49,12 +49,12 @@
  */
 package org.jpedal.jbig2.jai;
 
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
-import java.awt.image.Raster;
-import java.awt.image.WritableRaster;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.DataBufferByte;
+import com.mercuryred.render.interfaces.ui.image.Raster;
+import com.mercuryred.render.interfaces.ui.image.WritableRaster;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -63,12 +63,12 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.imageio.ImageReadParam;
-import javax.imageio.ImageReader;
-import javax.imageio.ImageTypeSpecifier;
-import javax.imageio.metadata.IIOMetadata;
-import javax.imageio.spi.ImageReaderSpi;
-import javax.imageio.stream.ImageInputStream;
+import com.mercuryred.render.interfaces.imageio.ImageReadParam;
+import com.mercuryred.render.interfaces.imageio.ImageReader;
+import com.mercuryred.render.interfaces.imageio.ImageTypeSpecifier;
+import com.mercuryred.render.interfaces.imageio.metadata.IIOMetadata;
+import com.mercuryred.render.interfaces.imageio.spi.ImageReaderSpi;
+import com.mercuryred.render.interfaces.imageio.stream.ImageInputStream;
 
 import org.jpedal.jbig2.JBIG2Decoder;
 import org.jpedal.jbig2.JBIG2Exception;
@@ -80,7 +80,7 @@ import org.jpedal.jbig2.image.JBIG2Bitmap;
   *
   *
  */
-public class JBIG2ImageReader extends ImageReader {
+public class JBIG2ImageReader implements ImageReader {
 	
 	/** The Constant logger. */
 	private static final Logger logger = Logger.getLogger(JBIG2ImageReader.class.getName());
@@ -92,7 +92,7 @@ public class JBIG2ImageReader extends ImageReader {
 	/**
 	 * <p>Constructor for JBIG2ImageReader.</p>
 	 *
-	 * @param originatingProvider a {@link javax.imageio.spi.ImageReaderSpi} object.
+	 * @param originatingProvider a {@link com.mercuryred.render.interfaces.imageio.spi.ImageReaderSpi} object.
 	 */
 	protected JBIG2ImageReader(ImageReaderSpi originatingProvider) {
 		// Save the identity of the ImageReaderSpi subclass that invoked this
@@ -235,7 +235,7 @@ public class JBIG2ImageReader extends ImageReader {
 	/**
 	 * <p>getStreamMetadata.</p>
 	 *
-	 * @return a {@link javax.imageio.metadata.IIOMetadata} object.
+	 * @return a {@link com.mercuryred.render.interfaces.imageio.metadata.IIOMetadata} object.
 	 * @throws java.io.IOException if any.
 	 */
 	public IIOMetadata getStreamMetadata() throws IOException {

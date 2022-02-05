@@ -22,10 +22,10 @@
  */
 package com.jtattoo.plaf.fast;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
-import javax.swing.JRootPane;
+import com.mercuryred.render.interfaces.uiplus.JRootPane;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseRootPaneUI;
@@ -49,7 +49,7 @@ public class FastTitlePane extends BaseTitlePane {
 	/**
 	 * <p>Constructor for FastTitlePane.</p>
 	 *
-	 * @param root a {@link javax.swing.JRootPane} object.
+	 * @param root a {@link com.mercuryred.render.interfaces.uiplus.JRootPane} object.
 	 * @param ui a {@link com.jtattoo.plaf.BaseRootPaneUI} object.
 	 */
 	public FastTitlePane(JRootPane root, BaseRootPaneUI ui) {

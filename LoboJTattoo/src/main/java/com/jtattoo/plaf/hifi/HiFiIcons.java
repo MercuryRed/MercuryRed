@@ -22,23 +22,23 @@
  */
 package com.jtattoo.plaf.hifi;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Composite;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.RenderingHints;
-import java.awt.Shape;
-import java.awt.geom.Area;
-import java.awt.geom.Ellipse2D;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.Area;
+import com.mercuryred.render.interfaces.ui.geom.Ellipse2D;
 import java.io.Serializable;
 
-import javax.swing.AbstractButton;
-import javax.swing.ButtonModel;
-import javax.swing.Icon;
-import javax.swing.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.ButtonModel;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseIcons;
@@ -292,7 +292,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getCheckBoxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getCheckBoxIcon() {
 		if (checkBoxIcon == null) {
@@ -304,7 +304,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getCloseIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getCloseIcon() {
 		if (closeIcon == null) {
@@ -324,7 +324,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getComboBoxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getComboBoxIcon() {
 		return getDownArrowIcon();
@@ -333,7 +333,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getDownArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getDownArrowIcon() {
 		if (downArrowIcon == null) {
@@ -351,7 +351,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getIconIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getIconIcon() {
 		if (iconIcon == null) {
@@ -371,7 +371,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getLeftArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getLeftArrowIcon() {
 		if (leftArrowIcon == null) {
@@ -389,7 +389,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getMaxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMaxIcon() {
 		if (maxIcon == null) {
@@ -409,7 +409,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getMenuArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMenuArrowIcon() {
 		if (menuArrowIcon == null) {
@@ -422,7 +422,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getMinIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMinIcon() {
 		if (minIcon == null) {
@@ -442,7 +442,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getRadioButtonIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getRadioButtonIcon() {
 		if (radioButtonIcon == null) {
@@ -454,7 +454,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getRightArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getRightArrowIcon() {
 		if (rightArrowIcon == null) {
@@ -472,7 +472,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterDownArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterDownArrowIcon() {
 		if (splitterDownArrowIcon == null) {
@@ -484,7 +484,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterHorBumpIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterHorBumpIcon() {
 		if (splitterHorBumpIcon == null) {
@@ -496,7 +496,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterLeftArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterLeftArrowIcon() {
 		if (splitterLeftArrowIcon == null) {
@@ -508,7 +508,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterRightArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterRightArrowIcon() {
 		if (splitterRightArrowIcon == null) {
@@ -520,7 +520,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterUpArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterUpArrowIcon() {
 		if (splitterUpArrowIcon == null) {
@@ -532,7 +532,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getSplitterVerBumpIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterVerBumpIcon() {
 		if (splitterVerBumpIcon == null) {
@@ -544,7 +544,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getThumbHorIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbHorIcon() {
 		if (thumbHorIcon == null) {
@@ -556,7 +556,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getThumbHorIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbHorIconRollover() {
 		if (thumbHorIconRollover == null) {
@@ -568,7 +568,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getThumbVerIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbVerIcon() {
 		if (thumbVerIcon == null) {
@@ -580,7 +580,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getThumbVerIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbVerIconRollover() {
 		if (thumbVerIconRollover == null) {
@@ -592,7 +592,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getTreeCollapsedIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getTreeCollapsedIcon() {
 		if (treeCollapsedIcon == null) {
@@ -610,7 +610,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getTreeExpandedIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getTreeExpandedIcon() {
 		if (treeExpandedIcon == null) {
@@ -628,7 +628,7 @@ public class HiFiIcons extends BaseIcons {
 	/**
 	 * <p>getUpArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getUpArrowIcon() {
 		if (upArrowIcon == null) {

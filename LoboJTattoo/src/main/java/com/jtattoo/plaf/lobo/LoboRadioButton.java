@@ -1,6 +1,6 @@
 package com.jtattoo.plaf.lobo;
 
-import javax.swing.JRadioButton;
+import com.mercuryred.render.interfaces.uiplus.JRadioButton;
 
 /**
  * <p>LoboRadioButton class.</p>

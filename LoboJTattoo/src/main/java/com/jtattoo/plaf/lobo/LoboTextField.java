@@ -1,8 +1,8 @@
 package com.jtattoo.plaf.lobo;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
-import javax.swing.JTextField;
+import com.mercuryred.render.interfaces.uiplus.JTextField;
 
 /**
  * <p>LoboTextField class.</p>

@@ -19,11 +19,11 @@
  */
 package org.loboevolution.common;
 
-import java.awt.BasicStroke;
-import java.awt.Frame;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Stroke;
+import com.mercuryred.render.interfaces.ui.BasicStroke;
+import com.mercuryred.render.interfaces.ui.Frame;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Stroke;
 
 /**
  * <p>GUITasks class.</p>
@@ -35,7 +35,7 @@ public class GUITasks {
 	/**
 	 * <p>drawDashed.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param x1 a int.
 	 * @param y1 a int.
 	 * @param x2 a int.
@@ -94,7 +94,7 @@ public class GUITasks {
 	/**
 	 * <p>drawDotted.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param x1 a int.
 	 * @param y1 a int.
 	 * @param x2 a int.
@@ -107,7 +107,7 @@ public class GUITasks {
 			final Graphics2D g2d = (Graphics2D) ng.create();
 			final float dot = Math.max(2f, width);
 			final float[] dotPattern = { dot };
-			final Stroke stroke = new BasicStroke(width, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1.0f, dotPattern, 0.0f);
+			final Stroke stroke = com.mercuryred.ui.RenderEngines.Get().createBasicStroke(width, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1.0f, dotPattern, 0.0f);
 			g2d.setStroke(stroke);
 			g2d.drawLine(x1, y1, x2, y2);
 			g2d.dispose();
@@ -119,7 +119,7 @@ public class GUITasks {
 	/**
 	 * <p>getTopFrame.</p>
 	 *
-	 * @return a {@link java.awt.Frame} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Frame} object.
 	 */
 	public static Frame getTopFrame() {
 		final Frame[] frames = Frame.getFrames();

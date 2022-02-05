@@ -22,9 +22,9 @@
  */
 package org.loboevolution.html.gui;
 
-import java.awt.Dimension;
-import java.awt.Rectangle;
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -39,9 +39,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.JComponent;
-import javax.swing.SwingUtilities;
-import javax.swing.Timer;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.Timer;
 
 import org.loboevolution.common.EventDispatch2;
 import org.loboevolution.common.WrapperLayout;
@@ -121,7 +121,7 @@ public class HtmlPanel extends JComponent implements FrameContext {
 		}
 	}
 
-	private class NotificationTimerAction implements java.awt.event.ActionListener {
+	private class NotificationTimerAction implements com.mercuryred.render.interfaces.ui.event.ActionListener {
 		@Override
 		public void actionPerformed(final ActionEvent e) {
 			processNotifications();

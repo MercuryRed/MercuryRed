@@ -20,12 +20,12 @@
 
 package org.loboevolution.gui;
 
-import java.awt.Color;
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Dimension;
 
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import javax.swing.border.LineBorder;
+import com.mercuryred.render.interfaces.uiplus.JLabel;
+import com.mercuryred.render.interfaces.uiplus.SwingConstants;
+import com.mercuryred.render.interfaces.uiplus.border.LineBorder;
 
 /**
  * <p>FontLabel class.</p>

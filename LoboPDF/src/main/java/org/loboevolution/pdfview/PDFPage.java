@@ -17,17 +17,17 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
 package org.loboevolution.pdfview;
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.Shape;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.NoninvertibleTransformException;
-import java.awt.geom.Rectangle2D;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
+import com.mercuryred.render.interfaces.ui.BasicStroke;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.NoninvertibleTransformException;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.ImageObserver;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -80,7 +80,7 @@ public class PDFPage {
     /**
      * create a PDFPage with dimensions in bbox and rotation.
      *
-     * @param bbox a {@link java.awt.geom.Rectangle2D} object.
+     * @param bbox a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      * @param rotation a int.
      */
     public PDFPage(Rectangle2D bbox, int rotation) {
@@ -91,7 +91,7 @@ public class PDFPage {
      * create a PDFPage with dimensions in bbox and rotation.
      *
      * @param pageNumber a int.
-     * @param bbox a {@link java.awt.geom.Rectangle2D} object.
+     * @param bbox a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      * @param rotation a int.
      * @param cache a {@link org.loboevolution.pdfview.Cache} object.
      */
@@ -135,7 +135,7 @@ public class PDFPage {
      * the region in <b>page space</b> of the page to
      * display. It may be null, in which the page's defined crop box
      * will be used.
-     * @return a {@link java.awt.Dimension} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.Dimension} object.
      */
     public Dimension getUnstretchedSize(int width, int height, Rectangle2D clip) {
         if (clip == null) {
@@ -266,7 +266,7 @@ public class PDFPage {
     /**
      * get the bounding box of the page, before any rotation.
      *
-     * @return a {@link java.awt.geom.Rectangle2D} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      */
     public Rectangle2D getBBox() {
         return this.bbox;
@@ -311,7 +311,7 @@ public class PDFPage {
      * @param clip
      * the desired clip rectangle (in PDF space) or null to use
      * the page's bounding box
-     * @return a {@link java.awt.geom.AffineTransform} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      */
     public AffineTransform getInitialTransform(int width, int height, Rectangle2D clip) {
         AffineTransform at = new AffineTransform();
@@ -512,7 +512,7 @@ public class PDFPage {
      *
      * @param width a int.
      * @param height a int.
-     * @param clip a {@link java.awt.geom.Rectangle2D} object.
+     * @param clip a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      */
     public void stop(int width, int height, Rectangle2D clip) {
         ImageInfo info = new ImageInfo(width, height, clip);
@@ -558,7 +558,7 @@ public class PDFPage {
     /**
      * concatenate a transform to the graphics state
      *
-     * @param at a {@link java.awt.geom.AffineTransform} object.
+     * @param at a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      */
     public void addXform(AffineTransform at) {
         // PDFXformCmd xc= lastXformCmd();
@@ -680,7 +680,7 @@ public class PDFPage {
      * <p>addShadeCommand.</p>
      *
      * @param p a {@link org.loboevolution.pdfview.PDFPaint} object.
-     * @param box a {@link java.awt.geom.Rectangle2D} object.
+     * @param box a {@link com.mercuryred.render.interfaces.ui.geom.Rectangle2D} object.
      */
     public void addShadeCommand(PDFPaint p, Rectangle2D box) {
         addCommand(new PDFShadeCommand(p, box));
@@ -819,7 +819,7 @@ public class PDFPage {
     /**
      * <p>createXFormCmd.</p>
      *
-     * @param at a {@link java.awt.geom.AffineTransform} object.
+     * @param at a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      * @return a {@link org.loboevolution.pdfview.PDFXformCmd} object.
      */
     public static PDFXformCmd createXFormCmd(AffineTransform at) {
@@ -982,7 +982,7 @@ class PDFXformCmd extends PDFCmd {
     /**
      * <p>Constructor for PDFXformCmd.</p>
      *
-     * @param at a {@link java.awt.geom.AffineTransform} object.
+     * @param at a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      */
     public PDFXformCmd(AffineTransform at) {
         if (at == null) {

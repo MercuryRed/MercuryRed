@@ -20,15 +20,15 @@
 
 package org.loboevolution.html.style;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.LinearGradientPaint;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.LinearGradientPaint;
 import java.awt.MultipleGradientPaint.CycleMethod;
-import java.awt.RadialGradientPaint;
-import java.awt.Rectangle;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Point2D;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.RadialGradientPaint;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.Point2D;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -54,7 +54,7 @@ public class GradientStyle {
 	 * @param props a {@link org.loboevolution.html.style.AbstractCSSProperties} object.
 	 * @param renderState a {@link org.loboevolution.html.renderstate.RenderState} object.
 	 * @param backgroundImage a {@link java.lang.String} object.
-	 * @return a {@link java.awt.image.BufferedImage} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
 	 */
 	public BufferedImage gradientToImg(HTMLDocumentImpl document, AbstractCSSProperties props, RenderState renderState, String backgroundImage) {
 		BufferedImage image = null;

@@ -20,9 +20,9 @@
 
 package org.loboevolution.html.dom.input;
 
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Dimension;
 
-import javax.swing.JSlider;
+import com.mercuryred.render.interfaces.uiplus.JSlider;
 
 import org.loboevolution.html.control.InputControl;
 import org.loboevolution.html.dom.domimpl.HTMLDocumentImpl;

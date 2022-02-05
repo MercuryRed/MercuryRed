@@ -20,8 +20,8 @@
 
 package org.loboevolution.html.dom.rss;
 
-import java.awt.Font;
-import java.awt.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
 
 import org.loboevolution.html.CSSValues;
 import org.loboevolution.html.style.FontValues;

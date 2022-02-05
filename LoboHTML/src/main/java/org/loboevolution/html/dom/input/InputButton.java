@@ -20,9 +20,9 @@
 
 package org.loboevolution.html.dom.input;
 
-import java.awt.Color;
+import com.mercuryred.render.interfaces.ui.Color;
 
-import javax.swing.JButton;
+import com.mercuryred.render.interfaces.uiplus.JButton;
 
 import org.loboevolution.common.Strings;
 import org.loboevolution.html.control.InputControl;

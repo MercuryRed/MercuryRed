@@ -20,15 +20,15 @@
 
 package org.loboevolution.menu.tools.pref;
 
-import java.awt.Component;
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Dimension;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
-import javax.swing.border.EmptyBorder;
+import com.mercuryred.render.interfaces.uiplus.Box;
+import com.mercuryred.render.interfaces.uiplus.BoxLayout;
+import com.mercuryred.render.interfaces.uiplus.ButtonGroup;
+import com.mercuryred.render.interfaces.uiplus.border.EmptyBorder;
 
 import org.loboevolution.gui.FieldType;
 import org.loboevolution.gui.FormField;

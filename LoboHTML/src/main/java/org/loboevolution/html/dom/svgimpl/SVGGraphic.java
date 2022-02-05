@@ -20,12 +20,12 @@
 
 package org.loboevolution.html.dom.svgimpl;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Paint;
-import java.awt.Shape;
-import java.awt.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.BasicStroke;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Paint;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
 
 import org.loboevolution.common.Nodes;
 import org.loboevolution.html.dom.nodeimpl.NodeListImpl;
@@ -86,8 +86,8 @@ public class SVGGraphic extends SVGTransformableImpl implements SVGLangSpace, SV
 	/**
 	 * <p>drawable.</p>
 	 *
-	 * @param graphics a {@link java.awt.Graphics2D} object.
-	 * @param shape a {@link java.awt.Shape} object.
+	 * @param graphics a {@link com.mercuryred.render.interfaces.ui.Graphics2D} object.
+	 * @param shape a {@link com.mercuryred.render.interfaces.ui.Shape} object.
 	 */
 	protected void drawable(Graphics2D graphics, Shape shape) {
 		final Paint fillPaint = getFillPaint(shape);

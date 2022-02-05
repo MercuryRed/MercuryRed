@@ -23,27 +23,27 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Paint;
-import java.awt.Point;
-import java.awt.RenderingHints;
-import java.awt.Toolkit;
-import java.awt.Window;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
+import com.mercuryred.render.interfaces.ui.GradientPaint;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Paint;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Toolkit;
+import com.mercuryred.render.interfaces.ui.Window;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.JInternalFrame;
-import javax.swing.JPopupMenu;
-import javax.swing.SwingUtilities;
-import javax.swing.plaf.basic.BasicGraphicsUtils;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JInternalFrame;
+import com.mercuryred.render.interfaces.uiplus.JPopupMenu;
+import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
+import com.mercuryred.render.interfaces.uiplus.plaf.basic.BasicGraphicsUtils;
 
 /**
  * <p>JTattooUtilities class.</p>
@@ -69,9 +69,9 @@ public class JTattooUtilities {
 	/**
 	 * <p>draw3DBorder.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c1 a {@link java.awt.Color} object.
-	 * @param c2 a {@link java.awt.Color} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c1 a {@link com.mercuryred.render.interfaces.ui.color} object.
+	 * @param c2 a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.
@@ -91,8 +91,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>drawBorder.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link java.awt.Color} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.
@@ -106,9 +106,9 @@ public class JTattooUtilities {
 	/**
 	 * <p>drawRound3DBorder.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c1 a {@link java.awt.Color} object.
-	 * @param c2 a {@link java.awt.Color} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c1 a {@link com.mercuryred.render.interfaces.ui.color} object.
+	 * @param c2 a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.
@@ -161,8 +161,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>drawRoundBorder.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link java.awt.Color} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.
@@ -181,8 +181,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>drawString.</p>
 	 *
-	 * @param c a {@link javax.swing.JComponent} object.
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.uiplus.JComponent} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param text a {@link java.lang.String} object.
 	 * @param x a int.
 	 * @param y a int.
@@ -204,8 +204,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>drawStringUnderlineCharAt.</p>
 	 *
-	 * @param c a {@link javax.swing.JComponent} object.
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.uiplus.JComponent} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 * @param text a {@link java.lang.String} object.
 	 * @param underlinedIndex a int.
 	 * @param x a int.
@@ -229,9 +229,9 @@ public class JTattooUtilities {
 	/**
 	 * <p>fillComponent.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link java.awt.Component} object.
-	 * @param texture a {@link javax.swing.Icon} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
+	 * @param texture a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static void fillComponent(Graphics g, Component c, Icon texture) {
 		int x = 0;
@@ -260,8 +260,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>fillHorGradient.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param colors an array of {@link java.awt.Color} objects.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param colors an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.
@@ -292,8 +292,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>fillInverseHorGradient.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param colors an array of {@link java.awt.Color} objects.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param colors an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.
@@ -324,8 +324,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>fillInverseVerGradient.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param colors an array of {@link java.awt.Color} objects.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param colors an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.
@@ -352,8 +352,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>fillVerGradient.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param colors an array of {@link java.awt.Color} objects.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param colors an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.
@@ -381,7 +381,7 @@ public class JTattooUtilities {
 	 * <p>getClippedText.</p>
 	 *
 	 * @param text a {@link java.lang.String} object.
-	 * @param fm a {@link java.awt.FontMetrics} object.
+	 * @param fm a {@link com.mercuryred.render.interfaces.ui.FontMetrics} object.
 	 * @param maxWidth a int.
 	 * @return a {@link java.lang.String} object.
 	 */
@@ -405,10 +405,10 @@ public class JTattooUtilities {
 	/**
 	 * <p>getFontMetrics.</p>
 	 *
-	 * @param c a {@link javax.swing.JComponent} object.
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param f a {@link java.awt.Font} object.
-	 * @return a {@link java.awt.FontMetrics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.uiplus.JComponent} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param f a {@link com.mercuryred.render.interfaces.ui.Font} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.FontMetrics} object.
 	 */
 	public static FontMetrics getFontMetrics(JComponent c, Graphics g, Font f) {
 		FontMetrics fm = null;
@@ -438,8 +438,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>getFrameSize.</p>
 	 *
-	 * @param c a {@link java.awt.Component} object.
-	 * @return a {@link java.awt.Dimension} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Dimension} object.
 	 */
 	public static Dimension getFrameSize(Component c) {
 		Container parent = getRootContainer(c);
@@ -510,8 +510,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>getRelLocation.</p>
 	 *
-	 * @param c a {@link java.awt.Component} object.
-	 * @return a {@link java.awt.Point} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Point} object.
 	 */
 	public static Point getRelLocation(Component c) {
 		if (c == null || !c.isShowing()) {
@@ -531,8 +531,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>getRootContainer.</p>
 	 *
-	 * @param c a {@link java.awt.Component} object.
-	 * @return a {@link java.awt.Container} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.Container} object.
 	 */
 	public static Container getRootContainer(Component c) {
 		if (c == null) {
@@ -549,7 +549,7 @@ public class JTattooUtilities {
 	/**
 	 * <p>isActive.</p>
 	 *
-	 * @param c a {@link javax.swing.JComponent} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.uiplus.JComponent} object.
 	 * @return a boolean.
 	 */
 	public static boolean isActive(JComponent c) {
@@ -588,7 +588,7 @@ public class JTattooUtilities {
 	/**
 	 * <p>isFrameActive.</p>
 	 *
-	 * @param c a {@link java.awt.Component} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 * @return a boolean.
 	 */
 	public static boolean isFrameActive(Component c) {
@@ -637,7 +637,7 @@ public class JTattooUtilities {
 	/**
 	 * <p>isLeftToRight.</p>
 	 *
-	 * @param c a {@link java.awt.Component} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 * @return a boolean.
 	 */
 	public static boolean isLeftToRight(Component c) {
@@ -697,8 +697,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>smoothFillHorGradient.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param colors an array of {@link java.awt.Color} objects.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param colors an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.
@@ -730,8 +730,8 @@ public class JTattooUtilities {
 	/**
 	 * <p>smoothFillInverseHorGradient.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param colors an array of {@link java.awt.Color} objects.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param colors an array of {@link com.mercuryred.render.interfaces.ui.color} objects.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.

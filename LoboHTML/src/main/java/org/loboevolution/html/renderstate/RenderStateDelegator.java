@@ -19,10 +19,10 @@
  */
 package org.loboevolution.html.renderstate;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.FontMetrics;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Cursor;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
 import java.util.Optional;
 
 import org.loboevolution.html.style.HtmlInsets;

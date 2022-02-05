@@ -23,8 +23,8 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.Color;
-import java.awt.Window;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Window;
 
 /**
  * <p>DecorationHelper class.</p>
@@ -46,7 +46,7 @@ public class DecorationHelper {
 	/**
 	 * <p>setTranslucentWindow.</p>
 	 *
-	 * @param wnd a {@link java.awt.Window} object.
+	 * @param wnd a {@link com.mercuryred.render.interfaces.ui.Window} object.
 	 * @param translucent a boolean.
 	 */
 	public static void setTranslucentWindow(Window wnd, boolean translucent) {

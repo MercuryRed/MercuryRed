@@ -19,7 +19,7 @@
 
 package org.loboevolution.pdfview.colorspace;
 
-import java.awt.color.ColorSpace;
+import com.mercuryred.render.interfaces.ui.color.ColorSpace;
 import java.io.IOException;
 
 import org.loboevolution.pdfview.PDFObject;
@@ -30,7 +30,7 @@ import org.loboevolution.pdfview.PDFObject;
  * Author Mike Wessler
   *
  */
-public class LabColor extends ColorSpace {
+public class LabColor implements ColorSpace {
 	
 	final float[] white = {1f, 1f, 1f};
     final float[] black = {0, 0, 0};

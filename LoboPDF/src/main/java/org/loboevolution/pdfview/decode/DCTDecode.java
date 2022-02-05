@@ -19,15 +19,15 @@
 
 package org.loboevolution.pdfview.decode;
 
-import javax.swing.ImageIcon;
+import com.mercuryred.render.interfaces.uiplus.ImageIcon;
 import org.loboevolution.pdfview.PDFObject;
 import org.loboevolution.pdfview.PDFParseException;
 import org.monte.media.jpeg.JPEGImageIO;
 
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
+import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Toolkit;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.ImageObserver;
 import java.io.ByteArrayInputStream;
 import java.nio.ByteBuffer;
 
@@ -76,7 +76,7 @@ public class DCTDecode {
 
     /*************************************************************************
      * @param buf  a {@link java.nio.ByteBuffer} object.
-     * @return a {@link java.awt.image.BufferedImage} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
      * @throws PDFParseException in case of error
      ************************************************************************/
 
@@ -122,7 +122,7 @@ class MyTracker implements ImageObserver {
       * create a new MyTracker that watches this image.
       * The image will start loading immediately.
       *
-      * @param img a {@link java.awt.Image} object.
+      * @param img a {@link com.mercuryred.render.interfaces.ui.Image} object.
       */
     public MyTracker(Image img) {
         img.getWidth(this);

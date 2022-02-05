@@ -22,9 +22,9 @@
  */
 package com.jtattoo.plaf.mcwin;
 
-import javax.swing.JComponent;
-import javax.swing.JInternalFrame;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JInternalFrame;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.BaseInternalFrameUI;
 
@@ -44,7 +44,7 @@ public class McWinInternalFrameUI extends BaseInternalFrameUI {
 	/**
 	 * <p>Constructor for McWinInternalFrameUI.</p>
 	 *
-	 * @param b a {@link javax.swing.JInternalFrame} object.
+	 * @param b a {@link com.mercuryred.render.interfaces.uiplus.JInternalFrame} object.
 	 */
 	public McWinInternalFrameUI(JInternalFrame b) {
 		super(b);

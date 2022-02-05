@@ -22,11 +22,11 @@
  */
 package org.loboevolution.img;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.geom.AffineTransform;
-import java.awt.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 
 /**
  * Helper class that manages the actual painting.
@@ -95,7 +95,7 @@ public class PaintManager {
 	/**
 	 * <p>paintComponent.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
 	 */
 	public void paintComponent(Graphics g) {
 		if (ic.getImage() == null) {

@@ -25,7 +25,7 @@ package org.loboevolution.info;
 import lombok.Builder;
 import lombok.Data;
 
-import java.awt.FontMetrics;
+import com.mercuryred.render.interfaces.ui.FontMetrics;
 import java.io.Serializable;
 
 /**

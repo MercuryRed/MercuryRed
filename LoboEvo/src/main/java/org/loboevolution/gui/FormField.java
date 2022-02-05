@@ -20,8 +20,8 @@
 
 package org.loboevolution.gui;
 
-import javax.swing.JComponent;
-import javax.swing.text.JTextComponent;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.text.JTextComponent;
 
 import com.jtattoo.plaf.lobo.LoboLabel;
 import com.jtattoo.plaf.lobo.LoboPasswordField;

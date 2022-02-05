@@ -35,9 +35,9 @@ import org.loboevolution.html.renderstate.RenderState;
 import org.loboevolution.http.HtmlRendererContext;
 import org.mozilla.javascript.Function;
 
-import java.awt.Cursor;
-import java.awt.event.InputEvent;
-import java.awt.event.MouseEvent;
+import com.mercuryred.render.interfaces.ui.Cursor;
+import com.mercuryred.render.interfaces.ui.event.InputEvent;
+import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -86,7 +86,7 @@ public class HtmlController {
 	 * <p>onContextMenu.</p>
 	 *
 	 * @param node a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @return a boolean.
@@ -126,7 +126,7 @@ public class HtmlController {
 	 *
 	 * @return True to propagate further, false if consumed.
 	 * @param node a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 */
@@ -176,7 +176,7 @@ public class HtmlController {
 	 *
 	 * @return True to propagate further and false if the event was consumed.
 	 * @param node a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 */
@@ -236,7 +236,7 @@ public class HtmlController {
 	 *
 	 * @return True to propagate further, false if consumed.
 	 * @param node a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 */
 	public boolean onMouseDisarmed(ModelNode node, MouseEvent event) {
 		if (node instanceof HTMLLinkElementImpl) {
@@ -255,7 +255,7 @@ public class HtmlController {
 	 *
 	 * @return True to propagate further, false if consumed.
 	 * @param node a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 */
@@ -292,7 +292,7 @@ public class HtmlController {
 	 * <p>onMouseOut.</p>
 	 *
 	 * @param node a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param limit a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
@@ -325,7 +325,7 @@ public class HtmlController {
 	 * <p>onMouseOver.</p>
 	 *
 	 * @param node a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param limit a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
@@ -360,7 +360,7 @@ public class HtmlController {
 	 *
 	 * @param renderable a {@link org.loboevolution.html.renderer.BaseBoundableRenderable} object.
 	 * @param nodeStart a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param limit a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
@@ -442,7 +442,7 @@ public class HtmlController {
 	 *
 	 * @return True to propagate further, false if consumed.
 	 * @param node a {@link org.loboevolution.html.dom.nodeimpl.ModelNode} object.
-	 * @param event a {@link java.awt.event.MouseEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.MouseEvent} object.
 	 * @param x a int.
 	 * @param y a int.
 	 */
@@ -482,7 +482,7 @@ public class HtmlController {
 	 * @param x    For images only, x coordinate of mouse click.
 	 * @param y    For images only, y coordinate of mouse click.
 	 * @return True to propagate further, false if consumed.
-	 * @param event a {@link java.awt.event.InputEvent} object.
+	 * @param event a {@link com.mercuryred.render.interfaces.ui.event.InputEvent} object.
 	 */
 	public boolean onPressed(ModelNode node, InputEvent event, int x, int y) {
 		

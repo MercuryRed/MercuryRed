@@ -23,16 +23,16 @@
 
 package com.jtattoo.plaf.fast;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Polygon;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Polygon;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.JSlider;
-import javax.swing.SwingConstants;
-import javax.swing.plaf.ComponentUI;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JSlider;
+import com.mercuryred.render.interfaces.uiplus.SwingConstants;
+import com.mercuryred.render.interfaces.uiplus.plaf.ComponentUI;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseSliderUI;
@@ -141,7 +141,7 @@ public class FastSliderUI extends BaseSliderUI {
 	/**
 	 * <p>Constructor for FastSliderUI.</p>
 	 *
-	 * @param slider a {@link javax.swing.JSlider} object.
+	 * @param slider a {@link com.mercuryred.render.interfaces.uiplus.JSlider} object.
 	 */
 	public FastSliderUI(JSlider slider) {
 		super(slider);

@@ -23,30 +23,30 @@
 
 package com.jtattoo.plaf;
 
-import java.awt.AlphaComposite;
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Composite;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.Paint;
-import java.awt.RenderingHints;
-import java.awt.Shape;
-import java.awt.Stroke;
-import java.awt.geom.Area;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.BasicStroke;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.GradientPaint;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Paint;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.Stroke;
+import com.mercuryred.render.interfaces.ui.geom.Area;
+import com.mercuryred.render.interfaces.ui.geom.Ellipse2D;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 
-import javax.swing.AbstractButton;
-import javax.swing.ButtonModel;
-import javax.swing.Icon;
-import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JComponent;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.ButtonModel;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JCheckBoxMenuItem;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.JRadioButtonMenuItem;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
 
 /**
  * <p>BaseIcons class.</p>
@@ -1151,7 +1151,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field checkBoxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getCheckBoxIcon() {
 		if (checkBoxIcon == null) {
@@ -1163,7 +1163,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field closeIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getCloseIcon() {
 		if (closeIcon == null) {
@@ -1182,7 +1182,7 @@ public class BaseIcons {
 	/**
 	 * <p>getComboBoxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getComboBoxIcon() {
 		return getDownArrowIcon();
@@ -1191,7 +1191,7 @@ public class BaseIcons {
 	/**
 	 * <p>getComboBoxInverseIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getComboBoxInverseIcon() {
 		return getDownArrowInverseIcon();
@@ -1200,7 +1200,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field downArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getDownArrowIcon() {
 		if (downArrowIcon == null) {
@@ -1218,7 +1218,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field downArrowInverseIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getDownArrowInverseIcon() {
 		if (downArrowInverseIcon == null) {
@@ -1236,7 +1236,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field fileChooserDetailViewIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getFileChooserDetailViewIcon() {
 		if (fileChooserDetailViewIcon == null) {
@@ -1248,7 +1248,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field fileChooserHomeFolderIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getFileChooserHomeFolderIcon() {
 		if (fileChooserHomeFolderIcon == null) {
@@ -1260,7 +1260,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field fileChooserListViewIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getFileChooserListViewIcon() {
 		if (fileChooserListViewIcon == null) {
@@ -1272,7 +1272,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field fileChooserNewFolderIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getFileChooserNewFolderIcon() {
 		if (fileChooserNewFolderIcon == null) {
@@ -1285,7 +1285,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field fileChooserUpFolderIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getFileChooserUpFolderIcon() {
 		if (fileChooserUpFolderIcon == null) {
@@ -1297,7 +1297,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field fileViewComputerIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getFileViewComputerIcon() {
 		if (fileViewComputerIcon == null) {
@@ -1309,7 +1309,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field fileViewFloppyDriveIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getFileViewFloppyDriveIcon() {
 		if (fileViewFloppyDriveIcon == null) {
@@ -1321,7 +1321,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field fileViewHardDriveIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getFileViewHardDriveIcon() {
 		if (fileViewHardDriveIcon == null) {
@@ -1333,7 +1333,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field iconIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getIconIcon() {
 		if (iconIcon == null) {
@@ -1351,7 +1351,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field leftArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getLeftArrowIcon() {
 		if (leftArrowIcon == null) {
@@ -1369,7 +1369,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field leftArrowInverseIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getLeftArrowInverseIcon() {
 		if (leftArrowInverseIcon == null) {
@@ -1387,7 +1387,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field maxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMaxIcon() {
 		if (maxIcon == null) {
@@ -1406,7 +1406,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field menuArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMenuArrowIcon() {
 		if (menuArrowIcon == null) {
@@ -1418,7 +1418,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field menuCheckBoxIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMenuCheckBoxIcon() {
 		if (menuCheckBoxIcon == null) {
@@ -1431,7 +1431,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field menuIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMenuIcon() {
 		if (menuIcon == null) {
@@ -1449,7 +1449,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field menuRadioButtonIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMenuRadioButtonIcon() {
 		if (menuRadioButtonIcon == null) {
@@ -1461,7 +1461,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field minIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getMinIcon() {
 		if (minIcon == null) {
@@ -1480,7 +1480,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field optionPaneErrorIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getOptionPaneErrorIcon() {
 		if (optionPaneErrorIcon == null) {
@@ -1498,7 +1498,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field optionPaneInformationIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getOptionPaneInformationIcon() {
 		if (optionPaneInformationIcon == null) {
@@ -1516,7 +1516,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field optionPaneQuestionIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getOptionPaneQuestionIcon() {
 		if (optionPaneQuestionIcon == null) {
@@ -1534,7 +1534,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field optionPaneWarningIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getOptionPaneWarningIcon() {
 		if (optionPaneWarningIcon == null) {
@@ -1552,7 +1552,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field paletteCloseIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getPaletteCloseIcon() {
 		if (paletteCloseIcon == null) {
@@ -1564,7 +1564,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field radioButtonIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getRadioButtonIcon() {
 		if (radioButtonIcon == null) {
@@ -1576,7 +1576,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field rightArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getRightArrowIcon() {
 		if (rightArrowIcon == null) {
@@ -1594,7 +1594,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field rightArrowInverseIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getRightArrowInverseIcon() {
 		if (rightArrowInverseIcon == null) {
@@ -1612,7 +1612,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field splitterDownArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterDownArrowIcon() {
 		if (splitterDownArrowIcon == null) {
@@ -1624,7 +1624,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field splitterHorBumpIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterHorBumpIcon() {
 		if (splitterHorBumpIcon == null) {
@@ -1636,7 +1636,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field splitterLeftArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterLeftArrowIcon() {
 		if (splitterLeftArrowIcon == null) {
@@ -1648,7 +1648,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field splitterRightArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterRightArrowIcon() {
 		if (splitterRightArrowIcon == null) {
@@ -1661,7 +1661,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field splitterUpArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterUpArrowIcon() {
 		if (splitterUpArrowIcon == null) {
@@ -1673,7 +1673,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field splitterVerBumpIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getSplitterVerBumpIcon() {
 		if (splitterVerBumpIcon == null) {
@@ -1686,7 +1686,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field thumbHorIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbHorIcon() {
 		if (thumbHorIcon == null) {
@@ -1698,7 +1698,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field thumbHorIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbHorIconRollover() {
 		if (thumbHorIconRollover == null) {
@@ -1710,7 +1710,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field thumbVerIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbVerIcon() {
 		if (thumbVerIcon == null) {
@@ -1722,7 +1722,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field thumbVerIconRollover.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getThumbVerIconRollover() {
 		if (thumbVerIconRollover == null) {
@@ -1734,7 +1734,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field treeClosedIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getTreeClosedIcon() {
 		if (treeClosedIcon == null) {
@@ -1752,7 +1752,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field treeCollapsedIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getTreeCollapsedIcon() {
 		if (treeCollapsedIcon == null) {
@@ -1770,7 +1770,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field treeExpandedIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getTreeExpandedIcon() {
 		if (treeExpandedIcon == null) {
@@ -1788,7 +1788,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field treeLeafIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getTreeLeafIcon() {
 		if (treeLeafIcon == null) {
@@ -1807,7 +1807,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field treeOpenedIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getTreeOpenedIcon() {
 		if (treeOpenedIcon == null) {
@@ -1826,7 +1826,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field upArrowIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getUpArrowIcon() {
 		if (upArrowIcon == null) {
@@ -1844,7 +1844,7 @@ public class BaseIcons {
 	/**
 	 * <p>Getter for the field upArrowInverseIcon.</p>
 	 *
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getUpArrowInverseIcon() {
 		if (upArrowInverseIcon == null) {

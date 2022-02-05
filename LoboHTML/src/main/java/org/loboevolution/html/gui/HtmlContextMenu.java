@@ -19,8 +19,8 @@
  */
 package org.loboevolution.html.gui;
 
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
+import com.mercuryred.render.interfaces.uiplus.JMenuItem;
+import com.mercuryred.render.interfaces.uiplus.JPopupMenu;
 import org.loboevolution.common.Strings;
 import org.loboevolution.common.Urls;
 import org.loboevolution.component.IBrowserPanel;
@@ -31,9 +31,9 @@ import org.loboevolution.html.dom.domimpl.HTMLLinkElementImpl;
 import org.loboevolution.http.HtmlRendererContext;
 import org.loboevolution.laf.IconFactory;
 
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
+import com.mercuryred.render.interfaces.ui.Toolkit;
+import com.mercuryred.render.interfaces.ui.datatransfer.Clipboard;
+import com.mercuryred.render.interfaces.ui.datatransfer.StringSelection;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.net.URL;

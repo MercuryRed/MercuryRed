@@ -22,7 +22,7 @@
  */
 package org.loboevolution.html.renderer;
 
-import java.awt.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics;
 
 import org.loboevolution.html.dom.nodeimpl.ModelNode;
 
@@ -79,7 +79,7 @@ final class RSpacing extends BaseBoundableRenderable {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see net.sourceforge.xamj.domimpl.markup.Renderable#paint(java.awt.Graphics)
+	 * @see net.sourceforge.xamj.domimpl.markup.Renderable#paint(com.mercuryred.render.interfaces.ui.Graphics)
 	 */
 	/** {@inheritDoc} */
 	@Override
@@ -90,7 +90,7 @@ final class RSpacing extends BaseBoundableRenderable {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.loboevolution.html.rendered.BoundableRenderable#paintSelection(java.awt.
+	 * @see org.loboevolution.html.rendered.BoundableRenderable#paintSelection(com.mercuryred.render.interfaces.ui.
 	 * Graphics, boolean, org.loboevolution.html.rendered.RenderablePoint,
 	 * org.loboevolution.html.rendered.RenderablePoint)
 	 */

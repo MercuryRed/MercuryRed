@@ -20,9 +20,9 @@
 
 package org.loboevolution.menu.tools.clear;
 
-import java.awt.event.ActionEvent;
+import com.mercuryred.render.interfaces.ui.event.ActionEvent;
 
-import javax.swing.AbstractAction;
+import com.mercuryred.render.interfaces.uiplus.AbstractAction;
 
 import com.jtattoo.plaf.lobo.LoboCheckBox;
 

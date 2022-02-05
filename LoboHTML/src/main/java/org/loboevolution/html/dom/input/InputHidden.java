@@ -20,7 +20,7 @@
 
 package org.loboevolution.html.dom.input;
 
-import javax.swing.JTextField;
+import com.mercuryred.render.interfaces.uiplus.JTextField;
 
 import org.loboevolution.html.control.InputControl;
 import org.loboevolution.html.dom.domimpl.HTMLInputElementImpl;

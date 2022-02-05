@@ -20,15 +20,15 @@
 
 package org.loboevolution.html.dom.svgimpl;
 
-import java.awt.Font;
-import java.awt.Graphics2D;
-import java.awt.Shape;
-import java.awt.font.FontRenderContext;
-import java.awt.font.TextLayout;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.NoninvertibleTransformException;
-import java.awt.geom.Path2D;
+import com.mercuryred.render.interfaces.ui.Font;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.font.FontRenderContext;
+import com.mercuryred.render.interfaces.ui.font.TextLayout;
+import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.NoninvertibleTransformException;
+import com.mercuryred.render.interfaces.ui.geom.Path2D;
 import java.util.StringTokenizer;
 
 import org.loboevolution.common.Strings;

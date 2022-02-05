@@ -23,8 +23,8 @@ package org.loboevolution.html.control;
 import org.loboevolution.common.WrapperLayout;
 import org.loboevolution.html.dom.domimpl.HTMLInputElementImpl;
 
-import java.awt.ComponentOrientation;
-import java.awt.Image;
+import com.mercuryred.render.interfaces.ui.ComponentOrientation;
+import com.mercuryred.render.interfaces.ui.Image;
 import java.util.Map;
 
 /**
@@ -64,7 +64,7 @@ public class InputControl extends BaseControl {
 	 * <p>direction.</p>
 	 *
 	 * @param dir a {@link java.lang.String} object.
-	 * @return a {@link java.awt.ComponentOrientation} object.
+	 * @return a {@link com.mercuryred.render.interfaces.ui.ComponentOrientation} object.
 	 */
 	public ComponentOrientation direction(String dir) {
 		if ("ltr".equalsIgnoreCase(dir)) {

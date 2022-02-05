@@ -18,7 +18,7 @@
  */
 package org.loboevolution.pdfview.font;
 
-import java.awt.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;

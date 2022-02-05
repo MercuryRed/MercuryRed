@@ -18,10 +18,10 @@
  */
 package org.loboevolution.pdfview.colorspace;
 
-import java.awt.Color;
-import java.awt.color.ColorSpace;
-import java.awt.color.ICC_ColorSpace;
-import java.awt.color.ICC_Profile;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.color.ColorSpace;
+import com.mercuryred.render.interfaces.ui.color.ICC_ColorSpace;
+import com.mercuryred.render.interfaces.ui.color.ICC_Profile;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -267,7 +267,7 @@ public class PDFColorSpace {
     /**
      * get the original Java ColorSpace.
      *
-     * @return a {@link java.awt.color.ColorSpace} object.
+     * @return a {@link com.mercuryred.render.interfaces.ui.color.ColorSpace} object.
      */
     public ColorSpace getColorSpace() {
         return this.cs;

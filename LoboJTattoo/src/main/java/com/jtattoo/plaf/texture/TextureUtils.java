@@ -22,16 +22,16 @@
  */
 package com.jtattoo.plaf.texture;
 
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Point;
-import java.awt.Shape;
-import java.awt.geom.Area;
-import java.awt.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Shape;
+import com.mercuryred.render.interfaces.ui.geom.Area;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
+import com.mercuryred.render.interfaces.uiplus.Icon;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.JTattooUtilities;
@@ -93,8 +93,8 @@ public final class TextureUtils {
 	/**
 	 * <p>fillComponent.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link java.awt.Component} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 * @param textureType a int.
 	 */
 	public static void fillComponent(Graphics g, Component c, int textureType) {
@@ -104,8 +104,8 @@ public final class TextureUtils {
 	/**
 	 * <p>fillComponent.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link java.awt.Component} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.
@@ -144,8 +144,8 @@ public final class TextureUtils {
 	/**
 	 * <p>fillRect.</p>
 	 *
-	 * @param g a {@link java.awt.Graphics} object.
-	 * @param c a {@link java.awt.Component} object.
+	 * @param g a {@link com.mercuryred.render.interfaces.ui.Graphics} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.ui.Component} object.
 	 * @param x a int.
 	 * @param y a int.
 	 * @param w a int.
@@ -184,7 +184,7 @@ public final class TextureUtils {
 	 * <p>getTexture.</p>
 	 *
 	 * @param textureType a int.
-	 * @return a {@link javax.swing.Icon} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.Icon} object.
 	 */
 	public static Icon getTexture(int textureType) {
 		Icon texture = null;
@@ -222,7 +222,7 @@ public final class TextureUtils {
 	/**
 	 * <p>getTextureType.</p>
 	 *
-	 * @param c a {@link javax.swing.JComponent} object.
+	 * @param c a {@link com.mercuryred.render.interfaces.uiplus.JComponent} object.
 	 * @return a int.
 	 */
 	public static int getTextureType(JComponent c) {

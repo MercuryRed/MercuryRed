@@ -22,20 +22,20 @@
  */
 package com.jtattoo.plaf.luna;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Composite;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Insets;
-import java.awt.RenderingHints;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Composite;
+import com.mercuryred.render.interfaces.ui.Graphics;
+import com.mercuryred.render.interfaces.ui.Graphics2D;
+import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.RenderingHints;
 
-import javax.swing.AbstractButton;
-import javax.swing.ButtonModel;
-import javax.swing.border.AbstractBorder;
-import javax.swing.border.Border;
-import javax.swing.plaf.UIResource;
+import com.mercuryred.render.interfaces.uiplus.AbstractButton;
+import com.mercuryred.render.interfaces.uiplus.ButtonModel;
+import com.mercuryred.render.interfaces.uiplus.border.AbstractBorder;
+import com.mercuryred.render.interfaces.uiplus.border.Border;
+import com.mercuryred.render.interfaces.uiplus.plaf.UIResource;
 
 import com.jtattoo.plaf.AbstractLookAndFeel;
 import com.jtattoo.plaf.BaseBorders;
@@ -392,7 +392,7 @@ public class LunaBorders extends BaseBorders {
 	/**
 	 * <p>getButtonBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getButtonBorder() {
 		if (buttonBorder == null) {
@@ -404,7 +404,7 @@ public class LunaBorders extends BaseBorders {
 	/**
 	 * <p>getComboBoxBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getComboBoxBorder() {
 		if (comboBoxBorder == null) {
@@ -416,7 +416,7 @@ public class LunaBorders extends BaseBorders {
 	/**
 	 * <p>getInternalFrameBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getInternalFrameBorder() {
 		if (internalFrameBorder == null) {
@@ -428,7 +428,7 @@ public class LunaBorders extends BaseBorders {
 	/**
 	 * <p>getRolloverToolButtonBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getRolloverToolButtonBorder() {
 		if (rolloverToolButtonBorder == null) {
@@ -440,7 +440,7 @@ public class LunaBorders extends BaseBorders {
 	/**
 	 * <p>getScrollPaneBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getScrollPaneBorder() {
 		if (scrollPaneBorder == null) {
@@ -452,7 +452,7 @@ public class LunaBorders extends BaseBorders {
 	/**
 	 * <p>getTableHeaderBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getTableHeaderBorder() {
 		if (tableHeaderBorder == null) {
@@ -464,7 +464,7 @@ public class LunaBorders extends BaseBorders {
 	/**
 	 * <p>getTableScrollPaneBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getTableScrollPaneBorder() {
 		if (tableScrollPaneBorder == null) {
@@ -479,7 +479,7 @@ public class LunaBorders extends BaseBorders {
 	/**
 	 * <p>getTextBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getTextBorder() {
 		if (textFieldBorder == null) {
@@ -491,7 +491,7 @@ public class LunaBorders extends BaseBorders {
 	/**
 	 * <p>getTextFieldBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getTextFieldBorder() {
 		return getTextBorder();
@@ -500,7 +500,7 @@ public class LunaBorders extends BaseBorders {
 	/**
 	 * <p>getToggleButtonBorder.</p>
 	 *
-	 * @return a {@link javax.swing.border.Border} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.border.Border} object.
 	 */
 	public static Border getToggleButtonBorder() {
 		return getButtonBorder();

@@ -20,14 +20,14 @@
 
 package org.loboevolution.gui;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Component;
+import com.mercuryred.render.interfaces.ui.Container;
+import com.mercuryred.render.interfaces.ui.Dimension;
 
-import javax.swing.Box;
-import javax.swing.JComponent;
-import javax.swing.border.EtchedBorder;
-import javax.swing.border.TitledBorder;
+import com.mercuryred.render.interfaces.uiplus.Box;
+import com.mercuryred.render.interfaces.uiplus.JComponent;
+import com.mercuryred.render.interfaces.uiplus.border.EtchedBorder;
+import com.mercuryred.render.interfaces.uiplus.border.TitledBorder;
 
 /**
  * The Class SwingTasks.

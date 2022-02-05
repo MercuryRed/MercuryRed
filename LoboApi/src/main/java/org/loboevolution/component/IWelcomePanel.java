@@ -20,10 +20,10 @@
 
 package org.loboevolution.component;
 
-import java.awt.Color;
-import java.awt.Dimension;
+import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Dimension;
 
-import javax.swing.JPanel;
+import com.mercuryred.render.interfaces.uiplus.JPanel;
 
 /**
  * <p>IWelcomePanel interface.</p>
@@ -33,14 +33,14 @@ public interface IWelcomePanel {
 	/**
 	 * <p>setSize.</p>
 	 *
-	 * @param dim a {@link java.awt.Dimension} object.
+	 * @param dim a {@link com.mercuryred.render.interfaces.ui.Dimension} object.
 	 */
 	void setSize(Dimension dim);
 
 	/**
 	 * <p>setPreferredSize.</p>
 	 *
-	 * @param dim a {@link java.awt.Dimension} object.
+	 * @param dim a {@link com.mercuryred.render.interfaces.ui.Dimension} object.
 	 */
 	void setPreferredSize(Dimension dim);
 
@@ -52,14 +52,14 @@ public interface IWelcomePanel {
 	/**
 	 * <p>setBackground.</p>
 	 *
-	 * @param color a {@link java.awt.Color} object.
+	 * @param color a {@link com.mercuryred.render.interfaces.ui.color} object.
 	 */
 	void setBackground(Color color);
 	
 	/**
 	 * <p>getWelocome.</p>
 	 *
-	 * @return a {@link javax.swing.JPanel} object.
+	 * @return a {@link com.mercuryred.render.interfaces.uiplus.JPanel} object.
 	 */
 	JPanel getWelocome();
 }
