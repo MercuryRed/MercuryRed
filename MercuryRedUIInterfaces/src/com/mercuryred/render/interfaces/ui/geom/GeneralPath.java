@@ -11,4 +11,6 @@ public interface GeneralPath {
     GeneralPath createTransformedShape(AffineTransform at);
 
     Rectangle2D getBounds();
+
+    Point2D getCurrentPoint();
 }

@@ -1,16 +1,16 @@
 package org.loboevolution.pdfview;
 
-import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.imageio.ImageIO;
 import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
 import com.mercuryred.render.interfaces.ui.geom.Point2D;
+import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
 import java.util.logging.Logger;
-
-import com.mercuryred.render.interfaces.imageio.ImageIO;
 
 /**
  * <p>PDFDebugger class.</p>
@@ -79,7 +79,7 @@ public class PDFDebugger {
             }
             try {
                 // retrieve image
-                File outputfile = new File("D:/tmp/PDFimages/" + name + ".png");
+                File outputfile = File.createTempFile(name,".png");
                 ImageIO.write(image, "png", outputfile);
             } catch (IOException e) {
                 BaseWatchable.getErrorHandler().publishException(e);
@@ -160,9 +160,9 @@ public class PDFDebugger {
                 logger.info("Operation: " + operation + "; ");
             }
             logger.info("Current path: ");
-            Rectangle b = path.getBounds();
+            Rectangle2D b = path.getBounds();
             if (b != null)
-                logger.info("        Bounds [x=" + b.x + ",y=" + b.y + ",width=" + b.width + ",height=" + b.height + "]");
+                logger.info("        Bounds [x=" + b.getX() + ",y=" + b.getY() + ",width=" + b.getWidth() + ",height=" + b.getHeight() + "]");
             Point2D p = path.getCurrentPoint();
             if (p != null)
                 logger.info("        Point  [x=" + p.getX() + ",y=" + p.getY() + "]");
