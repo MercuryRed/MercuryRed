@@ -1,16 +1,22 @@
 package com.mercuryred.render.interfaces.ui.geom;
 
 
-public interface GeneralPath {
-    void moveTo(int x, int y);
+import com.mercuryred.render.interfaces.ui.Shape;
 
-    void lineTo(int x, int y);
+public interface GeneralPath extends Shape {
+    void moveTo(double x, double y);
 
-    void closePath();
+    void lineTo(double x, double y);
+
+    void closePath() throws IllegalPathStateException;
 
     GeneralPath createTransformedShape(AffineTransform at);
 
     Rectangle2D getBounds();
 
     Point2D getCurrentPoint();
+
+    void curveTo(double v, double v1, double v2, double v3, double v4, double v5);
+
+    void setWindingRule(int windEvenOdd);
 }

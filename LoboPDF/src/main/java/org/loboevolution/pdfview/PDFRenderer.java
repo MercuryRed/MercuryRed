@@ -142,7 +142,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
 
         this.page = page;
         this.g = g;
-        this.imageinfo = new ImageInfo(imgbounds.width, imgbounds.height,
+        this.imageinfo = new ImageInfo((int) imgbounds.width, (int) imgbounds.height,
                 clip, bgColor);
         g.translate(imgbounds.x, imgbounds.y);
 

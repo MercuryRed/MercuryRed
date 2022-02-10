@@ -17,12 +17,20 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
 package org.loboevolution.pdfview;
-import static java.awt.geom.Path2D.WIND_EVEN_ODD;
 
+import com.mercuryred.render.interfaces.ui.Rectangle;
 import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
 import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
+import com.mercuryred.render.interfaces.ui.geom.IllegalPathStateException;
 import com.mercuryred.render.interfaces.ui.geom.Point2D;
 import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
+import org.loboevolution.pdfview.PDFDebugger.DebugStopException;
+import org.loboevolution.pdfview.colorspace.PDFColorSpace;
+import org.loboevolution.pdfview.colorspace.PatternSpace;
+import org.loboevolution.pdfview.decode.PDFDecoder;
+import org.loboevolution.pdfview.font.PDFFont;
+import org.loboevolution.pdfview.pattern.PDFShader;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -35,12 +43,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-import org.loboevolution.pdfview.PDFDebugger.DebugStopException;
-import org.loboevolution.pdfview.colorspace.PDFColorSpace;
-import org.loboevolution.pdfview.colorspace.PatternSpace;
-import org.loboevolution.pdfview.decode.PDFDecoder;
-import org.loboevolution.pdfview.font.PDFFont;
-import org.loboevolution.pdfview.pattern.PDFShader;
+import static java.awt.geom.Path2D.WIND_EVEN_ODD;
 
 /**
  * PDFParser is the class that parses a PDF content stream and
@@ -426,7 +429,7 @@ public class PDFParser extends BaseWatchable {
         this.stack = new Stack<>();
         this.parserStates = new Stack<>();
         this.state = new ParserState();
-        this.path = new GeneralPath();
+        this.path = com.mercuryred.ui.RenderEngines.Get().createGeneralPath();
         this.loc = 0;
         this.clip = 0;
         // initialize the ParserState
@@ -482,7 +485,7 @@ public class PDFParser extends BaseWatchable {
                 case "cm":
                     // set transform to array of values
                     float[] elts = popFloat(6);
-                    AffineTransform xform = new AffineTransform(elts);
+                    AffineTransform xform = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(elts);
                     this.cmds.addXform(xform);
                     break;
                 case "w":
@@ -594,7 +597,7 @@ public class PDFParser extends BaseWatchable {
                         this.cmds.addPath(this.path, PDFShapeCmd.STROKE | this.clip, this.autoAdjustStroke);
                     }
                     this.clip = 0;
-                    this.path = new GeneralPath();
+                    this.path = com.mercuryred.ui.RenderEngines.Get().createGeneralPath();
                     PDFDebugger.logPath(path, "new path");
                     break;
                 case "s":
@@ -604,7 +607,7 @@ public class PDFParser extends BaseWatchable {
                         this.cmds.addPath(this.path, PDFShapeCmd.STROKE | this.clip, this.autoAdjustStroke);
                     }
                     this.clip = 0;
-                    this.path = new GeneralPath();
+                    this.path = com.mercuryred.ui.RenderEngines.Get().createGeneralPath();
                     PDFDebugger.logPath(path, "new path");
                     break;
                 case "f":
@@ -615,7 +618,7 @@ public class PDFParser extends BaseWatchable {
                         this.cmds.addPath(this.path, PDFShapeCmd.FILL | this.clip, this.autoAdjustStroke);
                     }
                     this.clip = 0;
-                    this.path = new GeneralPath();
+                    this.path = com.mercuryred.ui.RenderEngines.Get().createGeneralPath();
                     PDFDebugger.logPath(path, "new path");
                     break;
                 case "f*":
@@ -626,7 +629,7 @@ public class PDFParser extends BaseWatchable {
                         this.cmds.addPath(this.path, PDFShapeCmd.FILL | this.clip, this.autoAdjustStroke);
                     }
                     this.clip = 0;
-                    this.path = new GeneralPath();
+                    this.path = com.mercuryred.ui.RenderEngines.Get().createGeneralPath();
                     PDFDebugger.logPath(path, "new path");
                     break;
                 case "B":
@@ -635,7 +638,7 @@ public class PDFParser extends BaseWatchable {
                         this.cmds.addPath(this.path, PDFShapeCmd.BOTH | this.clip, this.autoAdjustStroke);
                     }
                     this.clip = 0;
-                    this.path = new GeneralPath();
+                    this.path = com.mercuryred.ui.RenderEngines.Get().createGeneralPath();
                     PDFDebugger.logPath(path, "new path");
                     break;
                 case "B*":
@@ -646,7 +649,7 @@ public class PDFParser extends BaseWatchable {
                         this.cmds.addPath(this.path, PDFShapeCmd.BOTH | this.clip, this.autoAdjustStroke);
                     }
                     this.clip = 0;
-                    this.path = new GeneralPath();
+                    this.path = com.mercuryred.ui.RenderEngines.Get().createGeneralPath();
                     PDFDebugger.logPath(path, "new path");
                     break;
                 case "b":
@@ -656,7 +659,7 @@ public class PDFParser extends BaseWatchable {
                         this.cmds.addPath(this.path, PDFShapeCmd.BOTH | this.clip, this.autoAdjustStroke);
                     }
                     this.clip = 0;
-                    this.path = new GeneralPath();
+                    this.path = com.mercuryred.ui.RenderEngines.Get().createGeneralPath();
                     PDFDebugger.logPath(path, "new path");
                     break;
                 case "b*":
@@ -668,7 +671,7 @@ public class PDFParser extends BaseWatchable {
                         this.cmds.addPath(this.path, PDFShapeCmd.BOTH | this.clip, this.autoAdjustStroke);
                     }
                     this.clip = 0;
-                    this.path = new GeneralPath();
+                    this.path = com.mercuryred.ui.RenderEngines.Get().createGeneralPath();
                     PDFDebugger.logPath(path, "new path");
                     break;
                 case "n":
@@ -683,7 +686,7 @@ public class PDFParser extends BaseWatchable {
                         }
                     }
                     this.clip = 0;
-                    this.path = new GeneralPath();
+                    this.path = com.mercuryred.ui.RenderEngines.Get().createGeneralPath();
                     PDFDebugger.logPath(path, "new path");
                     break;
                 case "W":
@@ -968,7 +971,7 @@ public class PDFParser extends BaseWatchable {
         try {
             this.path.closePath();
             PDFDebugger.logPath(path, "closed");
-        }catch(com.mercuryred.render.interfaces.ui.geom.IllegalPathStateException e) {
+        }catch(IllegalPathStateException e) {
             PDFDebugger.debug("Failed to close path", 1000);
         }
     }
@@ -1148,16 +1151,16 @@ public class PDFParser extends BaseWatchable {
             Rectangle2D bbox;
             PDFObject matrix = obj.getDictRef("Matrix");
             if (matrix == null) {
-                at = new AffineTransform();
+                at = com.mercuryred.ui.RenderEngines.Get().createAffineTransform();
             } else {
                 float[] elts = new float[6];
                 for (int i = 0; i < elts.length; i++) {
                     elts[i] = (matrix.getAt(i)).getFloatValue();
                 }
-                at = new AffineTransform(elts);
+                at = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(elts);
             }
             PDFObject bobj = obj.getDictRef("BBox");
-            bbox = new Rectangle2D.Float(bobj.getAt(0).getFloatValue(), bobj.getAt(1).getFloatValue(), bobj.getAt(2).getFloatValue(), bobj.getAt(3).getFloatValue());
+            bbox = new Rectangle(bobj.getAt(0).getFloatValue(), bobj.getAt(1).getFloatValue(), bobj.getAt(2).getFloatValue(), bobj.getAt(3).getFloatValue());
             formCmds = new PDFPage(bbox, 0);
             formCmds.addXform(at);
             HashMap<String, PDFObject> r = new HashMap<>(this.resources);
@@ -1342,7 +1345,7 @@ public class PDFParser extends BaseWatchable {
         Rectangle2D bbox = shader.getBBox();
         if (bbox != null) {
             this.cmds.addFillPaint(shader.getPaint());
-            this.cmds.addPath(new GeneralPath(bbox), PDFShapeCmd.FILL, this.autoAdjustStroke);
+            this.cmds.addPath(com.mercuryred.ui.RenderEngines.Get().createGeneralPath(bbox), PDFShapeCmd.FILL, this.autoAdjustStroke);
         } else {
             this.cmds.addFillPaint(shader.getPaint());
             this.cmds.addPath(null, PDFShapeCmd.FILL, this.autoAdjustStroke);

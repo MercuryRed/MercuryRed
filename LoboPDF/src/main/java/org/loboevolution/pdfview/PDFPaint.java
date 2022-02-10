@@ -55,6 +55,10 @@ public class PDFPaint {
         return getPaint(c);
     }
 
+    public static PDFPaint getPaint(Color c) {
+        throw com.mercuryred.utils.Nyi.ReportNyi();
+    }
+
     /**
      * get the PDFPaint representing a generic paint
      *
