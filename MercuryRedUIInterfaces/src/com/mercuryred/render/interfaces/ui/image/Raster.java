@@ -1,9 +1,6 @@
 package com.mercuryred.render.interfaces.ui.image;
 
-import com.mercuryred.render.interfaces.ui.image.SampleModel;
-import com.mercuryred.render.interfaces.ui.image.DataBuffer;
-
-
+import com.mercuryred.render.interfaces.ui.Shape;
 
 public interface Raster {
 
@@ -17,4 +14,8 @@ public interface Raster {
     int[] getSamples(int x, int y, int w, int h, int b, int[] iArray);
     float[] getSamples(int x, int y, int w, int h, int b, float[] fArray);
     double[] getSamples(int x, int y, int w, int h, int b, double[] dArray);
+
+    void setRect(int x, int y, Raster raster);
+
+    Shape getBounds();
 }

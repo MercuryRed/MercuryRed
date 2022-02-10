@@ -49,12 +49,12 @@
  */
 package org.jpedal.jbig2.jai;
 
-import java.io.IOException;
-import java.util.Arrays;
-
 import com.mercuryred.render.interfaces.imageio.ImageReader;
 import com.mercuryred.render.interfaces.imageio.spi.ImageReaderSpi;
 import com.mercuryred.render.interfaces.imageio.stream.ImageInputStream;
+
+import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * <p>JBIG2ImageReaderSpi class.</p>
@@ -62,13 +62,13 @@ import com.mercuryred.render.interfaces.imageio.stream.ImageInputStream;
   *
   *
  */
-public class JBIG2ImageReaderSpi extends ImageReaderSpi {
+public class JBIG2ImageReaderSpi implements ImageReaderSpi {
 
 	/**
 	 * <p>Constructor for JBIG2ImageReaderSpi.</p>
 	 */
 	public JBIG2ImageReaderSpi() {
-		super("JPedal", // vendorName
+		init("JPedal", // vendorName
 				"1.0", // version
 				new String[] { "jbig2", "JBIG2" }, // names
 				new String[] { "jb2", "jbig2", "JB2", "JBIG2" }, // suffixes
@@ -87,6 +87,10 @@ public class JBIG2ImageReaderSpi extends ImageReaderSpi {
 				null, // extraImageMetadataFormatNames
 				null); // extraImageMetadataFormatClassNames
 		
+	}
+
+	private void init(String jPedal, String s, String[] strings, String[] strings1, String[] strings2, String s1, Class[] classes, Object o, boolean b, Object o1, Object o2, Object o3, Object o4, boolean b1, Object o5, Object o6, Object o7, Object o8) {
+		throw com.mercuryred.utils.Nyi.ReportNyi();
 	}
 
 	/** {@inheritDoc} */

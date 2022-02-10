@@ -49,30 +49,31 @@
  */
 package org.jpedal.jbig2.jai;
 
-import com.mercuryred.render.interfaces.ui.Point;
-import com.mercuryred.render.interfaces.ui.Rectangle;
-import com.mercuryred.render.interfaces.ui.image.BufferedImage;
-import com.mercuryred.render.interfaces.ui.image.DataBufferByte;
-import com.mercuryred.render.interfaces.ui.image.Raster;
-import com.mercuryred.render.interfaces.ui.image.WritableRaster;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import com.mercuryred.render.interfaces.imageio.ImageReadParam;
 import com.mercuryred.render.interfaces.imageio.ImageReader;
 import com.mercuryred.render.interfaces.imageio.ImageTypeSpecifier;
 import com.mercuryred.render.interfaces.imageio.metadata.IIOMetadata;
 import com.mercuryred.render.interfaces.imageio.spi.ImageReaderSpi;
 import com.mercuryred.render.interfaces.imageio.stream.ImageInputStream;
-
+import com.mercuryred.render.interfaces.ui.Point;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.DataBufferByte;
+import com.mercuryred.render.interfaces.ui.image.Raster;
+import com.mercuryred.render.interfaces.ui.image.WritableRaster;
+import com.mercuryred.utils.Nyi;
 import org.jpedal.jbig2.JBIG2Decoder;
 import org.jpedal.jbig2.JBIG2Exception;
 import org.jpedal.jbig2.image.JBIG2Bitmap;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * <p>JBIG2ImageReader class.</p>
@@ -97,12 +98,17 @@ public class JBIG2ImageReader implements ImageReader {
 	protected JBIG2ImageReader(ImageReaderSpi originatingProvider) {
 		// Save the identity of the ImageReaderSpi subclass that invoked this
 		// constructor.
-		super(originatingProvider);
+		init(originatingProvider);
+	}
+
+	private void init(ImageReaderSpi originatingProvider) {
+		throw Nyi.ReportNyi();
 	}
 
 	/** {@inheritDoc} */
 	public void setInput(Object input, boolean seekForwardOnly, boolean ignoreMetadata) {
-		super.setInput(input, seekForwardOnly, ignoreMetadata);
+		// todo
+		// super.setInput(input, seekForwardOnly, ignoreMetadata);
 
 		if (input == null) {
 			this.stream = null;
@@ -201,7 +207,7 @@ public class JBIG2ImageReader implements ImageReader {
 
 			WritableRaster wrDst = dst.getRaster();
 
-			JBIG2Bitmap bitmap = decoder.getPageAsJBIG2Bitmap(imageIndex).getSlice(sourceRegion.x, sourceRegion.y, sourceRegion.width, sourceRegion.height);
+			JBIG2Bitmap bitmap = decoder.getPageAsJBIG2Bitmap(imageIndex).getSlice((int)sourceRegion.x, (int)sourceRegion.y, (int)sourceRegion.width, (int)sourceRegion.height);
 
 			BufferedImage image = bitmap.getBufferedImage();
 
@@ -227,9 +233,37 @@ public class JBIG2ImageReader implements ImageReader {
 
 	}
 
+	private BufferedImage getDestination(ImageReadParam param, Iterator<ImageTypeSpecifier> imageTypes, int width, int height) {
+		throw Nyi.ReportNyi();
+		// return null;
+	}
+
+	private Rectangle getSourceRegion(ImageReadParam param, int width, int height) {
+		throw Nyi.ReportNyi();
+		// return null;
+	}
+
+	@Override
+	public Raster readRaster(int imageIndex, ImageReadParam param) {
+		throw Nyi.ReportNyi();
+		// return null;
+	}
+
 	/** {@inheritDoc} */
 	public IIOMetadata getImageMetadata(int imageIndex) throws IOException {
 		return null;
+	}
+
+	@Override
+	public IIOMetadata getImageMetadata(int imageIndex, String formatName, Set<String> nodeNames) {
+		throw Nyi.ReportNyi();
+		// return null;
+	}
+
+	@Override
+	public BufferedImage read(int imageIndex) {
+		throw Nyi.ReportNyi();
+		// return null;
 	}
 
 	/**
@@ -260,7 +294,7 @@ public class JBIG2ImageReader implements ImageReader {
 		// a
 		// BufferedImage of TYPE_INT_RGB, which is a commonly used image type.
 
-		l.add(ImageTypeSpecifier.createFromBufferedImageType(BufferedImage.TYPE_BYTE_BINARY));
+		l.add(com.mercuryred.ui.RenderEngines.Get().createFromBufferedImageType(BufferedImage.TYPE_BYTE_BINARY));
 
 		// Return an iterator that retrieves elements from the list.
 
@@ -488,9 +522,11 @@ public class JBIG2ImageReader implements ImageReader {
 			// data.length);
 			// WritableRaster raster =Raster.createPackedRaster(new
 			// DataBufferByte(newData, newData.length), newW, newH, 1, null);
-			Raster raster = Raster.createInterleavedRaster(new DataBufferByte(data, data.length), w, h, w, 1, bands, null);
+			Raster raster = com.mercuryred.ui.RenderEngines.Get().createInterleavedRaster(
+					com.mercuryred.ui.RenderEngines.Get().createDataBufferByte(data, data.length), w, h, w, 1, bands, null
+			);
 
-			BufferedImage image = new BufferedImage(w, h, BufferedImage.TYPE_BYTE_GRAY);
+			BufferedImage image = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(w, h, BufferedImage.TYPE_BYTE_GRAY);
 			image.setData(raster);
 
 			return image;

@@ -187,8 +187,8 @@ public class GeneralStore implements Serializable {
 	public static void insertBounds(Rectangle rect) {
 		try (Connection conn = DriverManager.getConnection(DB_PATH);
 				PreparedStatement pstmt = conn.prepareStatement(INSERT_SIZE)) {
-			pstmt.setInt(1, rect.width);
-			pstmt.setInt(2, rect.height);
+			pstmt.setInt(1, (int) rect.width);
+			pstmt.setInt(2, (int) rect.height);
 			pstmt.executeUpdate();
 		} catch (final Exception e) {
 			logger.log(Level.SEVERE, e.getMessage(), e);

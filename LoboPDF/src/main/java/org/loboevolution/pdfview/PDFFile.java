@@ -18,17 +18,8 @@
  */
 package org.loboevolution.pdfview;
 
+import com.mercuryred.render.interfaces.ui.Rectangle;
 import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.StringTokenizer;
-
 import org.loboevolution.pdfview.action.GoToAction;
 import org.loboevolution.pdfview.action.PDFAction;
 import org.loboevolution.pdfview.annotation.PDFAnnotation;
@@ -39,6 +30,16 @@ import org.loboevolution.pdfview.decrypt.PDFDecrypter;
 import org.loboevolution.pdfview.decrypt.PDFDecrypterFactory;
 import org.loboevolution.pdfview.decrypt.PDFPassword;
 import org.loboevolution.pdfview.decrypt.UnsupportedEncryptionException;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 /**
  * An encapsulation of a .pdf file.  The methods of this class
@@ -1857,7 +1858,7 @@ public class PDFFile {
                         maxY = y0;
                     }
 
-                    return new Rectangle2D.Double(minX, minY, Math.abs(maxX - minX), Math.abs(maxY - minY));
+                    return new Rectangle(minX, minY, Math.abs(maxX - minX), Math.abs(maxY - minY));
 
                 } else {
                     throw new PDFParseException("Rectangle definition didn't have 4 elements");

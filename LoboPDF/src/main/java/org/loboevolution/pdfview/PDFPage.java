@@ -17,10 +17,12 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
 package org.loboevolution.pdfview;
+
 import com.mercuryred.render.interfaces.ui.BasicStroke;
 import com.mercuryred.render.interfaces.ui.Color;
 import com.mercuryred.render.interfaces.ui.Dimension;
 import com.mercuryred.render.interfaces.ui.Image;
+import com.mercuryred.render.interfaces.ui.Rectangle;
 import com.mercuryred.render.interfaces.ui.Shape;
 import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
 import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
@@ -28,15 +30,15 @@ import com.mercuryred.render.interfaces.ui.geom.NoninvertibleTransformException;
 import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import com.mercuryred.render.interfaces.ui.image.ImageObserver;
+import org.loboevolution.pdfview.annotation.PDFAnnotation;
+import org.loboevolution.pdfview.annotation.PDFAnnotation.ANNOTATION_TYPE;
+
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.loboevolution.pdfview.annotation.PDFAnnotation;
-import org.loboevolution.pdfview.annotation.PDFAnnotation.ANNOTATION_TYPE;
 
 /**
  * A PDFPage encapsulates the parsed commands required to render a
@@ -99,7 +101,7 @@ public class PDFPage {
         this.pageNumber = pageNumber;
         this.cache = cache;
         if (bbox == null) {
-            bbox = new Rectangle2D.Float(0, 0, 1, 1);
+            bbox = new Rectangle(0, 0, 1, 1);
         }
         rotation = rotation % 360; // less than a full turn
         if (rotation < 0) {
@@ -109,7 +111,7 @@ public class PDFPage {
         rotation = rotation * 90; // 0, 90, 180, 270
         this.rotation = rotation;
         if (rotation == 90 || rotation == 270) {
-            bbox = new Rectangle2D.Double(bbox.getX(), bbox.getY(), bbox.getHeight(), bbox.getWidth());
+            bbox = new Rectangle(bbox.getX(), bbox.getY(), bbox.getHeight(), bbox.getWidth());
         }
         this.bbox = bbox;
         // initialize the cache of images and parsers
@@ -142,7 +144,7 @@ public class PDFPage {
             clip = this.bbox;
         } else {
             if (getRotation() == 90 || getRotation() == 270) {
-                clip = new Rectangle2D.Double(clip.getX(), clip.getY(), clip.getHeight(), clip.getWidth());
+                clip = new Rectangle(clip.getX(), clip.getY(), clip.getHeight(), clip.getWidth());
             }
         }
         double ratio = clip.getHeight() / clip.getWidth();
@@ -314,19 +316,19 @@ public class PDFPage {
      * @return a {@link com.mercuryred.render.interfaces.ui.geom.AffineTransform} object.
      */
     public AffineTransform getInitialTransform(int width, int height, Rectangle2D clip) {
-        AffineTransform at = new AffineTransform();
+        AffineTransform at = com.mercuryred.ui.RenderEngines.Get().createAffineTransform();
 		switch (getRotation()) {
 		case 0:
-			at = new AffineTransform(1, 0, 0, -1, 0, height);
+			at = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(1, 0, 0, -1, 0, height);
 			break;
 		case 90:
-			at = new AffineTransform(0, 1, 1, 0, 0, 0);
+			at = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(0, 1, 1, 0, 0, 0);
 			break;
 		case 180:
-			at = new AffineTransform(-1, 0, 0, 1, width, 0);
+			at = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(-1, 0, 0, 1, width, 0);
 			break;
 		case 270:
-			at = new AffineTransform(0, -1, -1, 0, width, height);
+			at = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(0, -1, -1, 0, width, height);
 			break;
 		default:
 			break;
@@ -563,7 +565,7 @@ public class PDFPage {
     public void addXform(AffineTransform at) {
         // PDFXformCmd xc= lastXformCmd();
         // xc.at.concatenate(at);
-        addCommand(new PDFXformCmd(new AffineTransform(at)));
+        addCommand(new PDFXformCmd(com.mercuryred.ui.RenderEngines.Get().createAffineTransform(at)));
     }
 
     /**
@@ -823,7 +825,7 @@ public class PDFPage {
      * @return a {@link org.loboevolution.pdfview.PDFXformCmd} object.
      */
     public static PDFXformCmd createXFormCmd(AffineTransform at) {
-        return new PDFXformCmd(new AffineTransform(at));
+        return new PDFXformCmd(com.mercuryred.ui.RenderEngines.Get().createAffineTransform(at));
     }
 }
 
@@ -947,7 +949,7 @@ class PDFShadeCommand extends PDFCmd {
         }
         state.setFillAlpha(1);
         state.setFillPaint(p);
-        return (new PDFShapeCmd(new GeneralPath(s), PDFShapeCmd.FILL, false)).execute(state);
+        return (new PDFShapeCmd(com.mercuryred.ui.RenderEngines.Get().createGeneralPath(s), PDFShapeCmd.FILL, false)).execute(state);
     }
 }
 

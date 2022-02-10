@@ -5,6 +5,7 @@ package com.mercuryred.render.interfaces.ui.image;
 
 public interface DataBuffer {
 
+
     public interface State {
 
     }

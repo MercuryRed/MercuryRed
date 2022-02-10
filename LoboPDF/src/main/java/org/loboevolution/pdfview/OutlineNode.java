@@ -28,7 +28,7 @@ import org.loboevolution.pdfview.action.PDFAction;
   *
   *
  */
-public class OutlineNode extends DefaultMutableTreeNode {
+public class OutlineNode implements DefaultMutableTreeNode {
 
 	private static final long serialVersionUID = 1L;
 
@@ -52,6 +52,10 @@ public class OutlineNode extends DefaultMutableTreeNode {
         return (PDFAction) getUserObject();
     }
 
+    private Object getUserObject() {
+        throw com.mercuryred.utils.Nyi.ReportNyi();
+    }
+
     /**
      * Set the PDF action associated with this node
      *
@@ -59,6 +63,10 @@ public class OutlineNode extends DefaultMutableTreeNode {
      */
     public void setAction(PDFAction action) {
         setUserObject(action);
+    }
+
+    private void setUserObject(PDFAction action) {
+        throw com.mercuryred.utils.Nyi.ReportNyi();
     }
 
     /**
@@ -69,5 +77,13 @@ public class OutlineNode extends DefaultMutableTreeNode {
     @Override
     public String toString() {
         return this.title;
+    }
+
+    public void add(OutlineNode build) {
+        throw com.mercuryred.utils.Nyi.ReportNyi();
+    }
+
+    public Object getParent() {
+        throw com.mercuryred.utils.Nyi.ReportNyi();
     }
 }

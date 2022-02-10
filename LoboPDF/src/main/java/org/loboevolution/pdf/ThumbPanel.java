@@ -34,17 +34,16 @@ import com.mercuryred.render.interfaces.ui.event.MouseAdapter;
 import com.mercuryred.render.interfaces.ui.event.MouseEvent;
 import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import com.mercuryred.render.interfaces.ui.image.ImageObserver;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import com.mercuryred.render.interfaces.uiplus.JPanel;
 import com.mercuryred.render.interfaces.uiplus.JViewport;
 import com.mercuryred.render.interfaces.uiplus.Scrollable;
-import com.mercuryred.render.interfaces.uiplus.SwingUtilities;
-
 import com.mercuryred.render.interfaces.uiplus.border.Border;
+import com.mercuryred.utils.Nyi;
 import org.loboevolution.pdfview.PDFFile;
 import org.loboevolution.pdfview.PDFPage;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * A panel of thumbnails, one for each page of a PDFFile. You can add a
@@ -389,7 +388,7 @@ public class ThumbPanel implements JPanel, Runnable, Scrollable, ImageObserver {
 
 	/** {@inheritDoc} */
 	public int getScrollableBlockIncrement(Rectangle visrect, int orientation, int direction) {
-		return Math.max(lineheight, visrect.height / lineheight * lineheight);
+		return (int) Math.max(lineheight, visrect.height / lineheight * lineheight);
 	}
 
 	/** {@inheritDoc} */
@@ -548,5 +547,11 @@ public class ThumbPanel implements JPanel, Runnable, Scrollable, ImageObserver {
 	@Override
 	public void remove(MenuComponent popup) {
 		throw com.mercuryred.utils.Nyi.ReportNyi();
+	}
+
+	@Override
+	public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+		throw Nyi.ReportNyi();
+		// return false;
 	}
 }

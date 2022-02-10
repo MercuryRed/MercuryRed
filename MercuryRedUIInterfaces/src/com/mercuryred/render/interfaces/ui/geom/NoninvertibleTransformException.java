@@ -3,5 +3,5 @@ package com.mercuryred.render.interfaces.ui.geom;
 
 
 
-public class NoninvertibleTransformException {
+public class NoninvertibleTransformException extends Throwable {
 }

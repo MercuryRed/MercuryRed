@@ -10,6 +10,8 @@ import com.mercuryred.render.interfaces.ui.Rectangle;
 public interface BufferedImage extends Image {
 
     int TYPE_BYTE_BINARY = 1;
+    int TYPE_BYTE_GRAY = 2;
+    int TYPE_INT_ARGB = 3;
 
     int getType();
     ColorModel getColorModel();
@@ -32,5 +34,5 @@ public interface BufferedImage extends Image {
 
     ImageProducer getSource();
 
-    void setData(WritableRaster raster);
+    void setData(Raster raster);
 }

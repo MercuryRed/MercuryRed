@@ -2,6 +2,7 @@ package com.mercuryred.render.interfaces;
 
 import com.mercuryred.render.interfaces.imageio.ImageReadParam;
 import com.mercuryred.render.interfaces.imageio.ImageReader;
+import com.mercuryred.render.interfaces.imageio.ImageTypeSpecifier;
 import com.mercuryred.render.interfaces.imageio.spi.ImageReaderSpi;
 import com.mercuryred.render.interfaces.imageio.stream.ImageInputStream;
 import com.mercuryred.render.interfaces.ui.Adjustable;
@@ -741,5 +742,9 @@ public interface IRenderEngine {
   Rectangle2D createRectangle2D(float x, float y, float w, float h);
 
   WritableRaster createPackedRaster(DataBuffer db, int width, int height, int i, Object o);
+
+    ImageTypeSpecifier createFromBufferedImageType(int typeByteBinary);
+
+  Raster createInterleavedRaster(DataBufferByte dataBufferByte, int w, int h, int w1, int i, int[] bands, Object o);
 }
 

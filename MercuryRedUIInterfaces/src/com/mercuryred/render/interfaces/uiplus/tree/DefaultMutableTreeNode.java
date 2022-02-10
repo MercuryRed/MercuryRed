@@ -2,6 +2,6 @@ package com.mercuryred.render.interfaces.uiplus.tree;
 
 
 
-
-public class DefaultMutableTreeNode {
+// TODO create interface MutableTreeNode
+public interface DefaultMutableTreeNode {
 }

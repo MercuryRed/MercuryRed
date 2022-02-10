@@ -1,12 +1,12 @@
 package com.mercuryred.render.interfaces.imageio.stream;
 
 
-
+import java.io.IOException;
 
 public interface ImageInputStream {
 
     int read();
-    int read(byte[] b);
+    int read(byte[] b) throws IOException;
     int read(byte[] b, int off, int len);
     void readFully(byte[] b, int off, int len);
     void readFully(byte[] b);
@@ -17,4 +17,8 @@ public interface ImageInputStream {
     void readFully(float[] f, int off, int len);
     void readFully(double[] d, int off, int len);
     long length();
+
+    void mark();
+
+    void reset();
 }

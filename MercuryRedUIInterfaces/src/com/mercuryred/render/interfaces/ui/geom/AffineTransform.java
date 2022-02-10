@@ -17,7 +17,7 @@ public interface AffineTransform {
     void setTransform(AffineTransform Tx);
     void setTransform(double m00, double m10, double m01, double m11, double m02, double m12);
     void concatenate(AffineTransform Tx);
-    AffineTransform createInverse();
+    AffineTransform createInverse() throws NoninvertibleTransformException;
     Point2D transform(Point2D ptSrc, Point2D ptDst);
     void transform(Point2D[] ptSrc, int srcOff, Point2D[] ptDst, int dstOff, int numPts);
     void transform(float[] srcPts, int srcOff, float[] dstPts, int dstOff, int numPts);
