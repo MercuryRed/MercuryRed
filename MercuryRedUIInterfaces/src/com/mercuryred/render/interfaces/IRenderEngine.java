@@ -6,6 +6,7 @@ import com.mercuryred.render.interfaces.imageio.ImageTypeSpecifier;
 import com.mercuryred.render.interfaces.imageio.spi.ImageReaderSpi;
 import com.mercuryred.render.interfaces.imageio.stream.ImageInputStream;
 import com.mercuryred.render.interfaces.ui.Adjustable;
+import com.mercuryred.render.interfaces.ui.AlphaComposite;
 import com.mercuryred.render.interfaces.ui.BasicStroke;
 import com.mercuryred.render.interfaces.ui.Color;
 import com.mercuryred.render.interfaces.ui.Component;
@@ -743,8 +744,10 @@ public interface IRenderEngine {
 
   WritableRaster createPackedRaster(DataBuffer db, int width, int height, int i, Object o);
 
-    ImageTypeSpecifier createFromBufferedImageType(int typeByteBinary);
+  ImageTypeSpecifier createFromBufferedImageType(int typeByteBinary);
 
   Raster createInterleavedRaster(DataBufferByte dataBufferByte, int w, int h, int w1, int i, int[] bands, Object o);
+
+  AlphaComposite getAlphaCompositeInstance(String src);
 }
 
