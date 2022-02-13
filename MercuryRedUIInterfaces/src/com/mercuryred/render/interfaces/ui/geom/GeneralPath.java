@@ -12,8 +12,6 @@ public interface GeneralPath extends Shape {
 
     GeneralPath createTransformedShape(AffineTransform at);
 
-    Rectangle2D getBounds();
-
     Point2D getCurrentPoint();
 
     void curveTo(double v, double v1, double v2, double v3, double v4, double v5);

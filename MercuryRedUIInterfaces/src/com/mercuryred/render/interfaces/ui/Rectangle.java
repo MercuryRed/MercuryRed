@@ -111,4 +111,9 @@ public class Rectangle implements Rectangle2D {
     public Rectangle2D getBounds2D() {
         return new Rectangle(this);
     }
+
+    @Override
+    public Rectangle getBounds() {
+        return new Rectangle(this);
+    }
 }

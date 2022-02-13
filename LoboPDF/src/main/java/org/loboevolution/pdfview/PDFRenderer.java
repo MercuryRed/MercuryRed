@@ -228,7 +228,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         // TODO: consider autoAdjustStroke here instead of during parsing
         //      PDF specification p. 130 / > 10.6.5 
         this.g.setComposite(this.state.strokeAlpha);
-        s = new GeneralPath(autoAdjustStrokeWidth(this.g, this.state.stroke).createStrokedShape(s));
+        s = com.mercuryred.ui.RenderEngines.Get().createGeneralPath(autoAdjustStrokeWidth(this.g, this.state.stroke).createStrokedShape(s));
         return this.state.strokePaint.fill(this, this.g, s);
     }
 
@@ -245,7 +245,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
      * @return
      */
     private BasicStroke autoAdjustStrokeWidth(Graphics2D g, BasicStroke bs) {
-        AffineTransform bt = new AffineTransform(g.getTransform());
+        AffineTransform bt = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(g.getTransform());
         float width = bs.getLineWidth() * (float) bt.getScaleX();
         BasicStroke stroke = bs;
         if (width < 1f) {
@@ -255,7 +255,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
                 // prevent division by a really small number
                 width = stroke.getLineWidth()<1f?1.0f:stroke.getLineWidth();
             }
-            stroke = new BasicStroke(width, bs.getEndCap(), bs.getLineJoin(), bs.getMiterLimit(), bs.getDashArray(), bs.getDashPhase());
+            stroke = com.mercuryred.ui.RenderEngines.Get().createBasicStroke(width, bs.getEndCap(), bs.getLineJoin(), bs.getMiterLimit(), bs.getDashArray(), bs.getDashPhase());
         }
         return stroke;
     }
@@ -284,7 +284,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         if (s == null) {
         	GraphicsState gs =  stack.peek();
           if (gs.cliprgn != null) {
-          	s = new GeneralPath(gs.cliprgn);
+          	s = com.mercuryred.ui.RenderEngines.Get().createGeneralPath(gs.cliprgn);
           }
         }
         return this.state.fillPaint.fill(this, this.g, s);
@@ -304,11 +304,11 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         }catch (PDFImageParseException e) {
             // maybe it was an unsupported format, or something.
             // Nothing to draw, anyway!
-            return new Rectangle2D.Double();
+            return new Rectangle();
         }
     	
     	// transform must use bitmap size
-        AffineTransform at = new AffineTransform(1f / bi.getWidth(), 0,
+        AffineTransform at = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(1f / bi.getWidth(), 0,
                 0, -1f / bi.getHeight(),
                 0, 1);
 
@@ -329,7 +329,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
 			}
         }
         
-        this.g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER));
+        this.g.setComposite(com.mercuryred.ui.RenderEngines.Get().getAlphaCompositeInstance(AlphaComposite.SRC_OVER));
                 
         //Image quality is better when using texturepaint instead of drawimage
         //but it is also slower :(
@@ -358,7 +358,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         if (isBlured) bi.flush();
 
         // get the total transform that was executed
-        AffineTransform bt = new AffineTransform(this.g.getTransform());
+        AffineTransform bt = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(this.g.getTransform());
         bt.concatenate(at);
 
         double minx = bi.getMinX();
@@ -369,7 +369,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         };
         bt.transform(points, 0, points, 0, 2);
 
-        return new Rectangle2D.Double(points[0], points[1],
+        return new Rectangle(points[0], points[1],
                 points[2] - points[0],
                 points[3] - points[1]);
 
@@ -395,14 +395,14 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         			newHeight = bi.getHeight();
         			newWidth = bi.getWidth();
         		}
-        		BufferedImage resized = new BufferedImage(newWidth, 
+        		BufferedImage resized = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(newWidth,
         				newHeight, colorConversion?BufferedImage.TYPE_INT_ARGB:bi.getType());
         		Graphics2D bg = (Graphics2D) resized.getGraphics();
         		bg.setRenderingHint(RenderingHints.KEY_INTERPOLATION, 
         				RenderingHints.VALUE_INTERPOLATION_BILINEAR);
         		bg.drawImage(bi, 0, 0, newWidth, newHeight, null);
         		bi = resized;
-                at = new AffineTransform(1f / bi.getWidth(), 0,
+                at = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(1f / bi.getWidth(), 0,
                         0, -1f / bi.getHeight(),
                         0, 1);
                 
@@ -413,7 +413,8 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
             			weight, weight, weight, weight,
             			weight, weight, weight, weight,
             	};
-            	op = new ConvolveOp(new Kernel(4, 4, blurKernel), ConvolveOp.EDGE_NO_OP, null);            	
+            	op = com.mercuryred.ui.RenderEngines.Get().createConvolveOp(
+            	        com.mercuryred.ui.RenderEngines.Get().createKernel(4, 4, blurKernel), ConvolveOp.EDGE_NO_OP, null);
         	}
         	else {
         		final float weight = 1.0f/18.0f;
@@ -423,7 +424,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         				1*weight, 2*weight, 1*weight
         		};
         		if (colorConversion) {
-            		BufferedImage colored = new BufferedImage(bi.getWidth(), 
+            		BufferedImage colored = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(bi.getWidth(),
             				bi.getHeight(), colorConversion?BufferedImage.TYPE_INT_ARGB:bi.getType());
             		Graphics2D bg = (Graphics2D) colored.getGraphics();
             		bg.setRenderingHint(RenderingHints.KEY_INTERPOLATION, 
@@ -431,7 +432,8 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
             		bg.drawImage(bi, 0, 0, bi.getWidth(), bi.getHeight(), null);
             		bi = colored;
         		}
-        		op = new ConvolveOp(new Kernel(3, 3, blurKernel), ConvolveOp.EDGE_NO_OP, null);
+        		op = com.mercuryred.ui.RenderEngines.Get().createConvolveOp(
+        		        com.mercuryred.ui.RenderEngines.Get().createKernel(3, 3, blurKernel), ConvolveOp.EDGE_NO_OP, null);
         	}
         	
         	BufferedImage blured = op.createCompatibleDestImage(bi, 
@@ -442,7 +444,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         	isBlured = true;
         }
         
-        this.g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER));
+        this.g.setComposite(com.mercuryred.ui.RenderEngines.Get().getAlphaCompositeInstance(AlphaComposite.SRC_OVER));
                 
         //Image quality is better when using texturepaint instead of drawimage
         //but it is also slower :(
@@ -471,7 +473,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         if (isBlured) bi.flush();
 
         // get the total transform that was executed
-        AffineTransform bt = new AffineTransform(this.g.getTransform());
+        AffineTransform bt = com.mercuryred.ui.RenderEngines.Get().createAffineTransform(this.g.getTransform());
         bt.concatenate(at);
 
         double minx = bi.getMinX();
@@ -482,7 +484,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         };
         bt.transform(points, 0, points, 0, 2);
 
-        return new Rectangle2D.Double(points[0], points[1],
+        return new Rectangle(points[0], points[1],
                 points[2] - points[0],
                 points[3] - points[1]);
     }
@@ -580,9 +582,9 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
             ary = null;
         }
         if (phase == NOPHASE) {
-            this.state.stroke = new BasicStroke(w, cap, join, limit);
+            this.state.stroke = com.mercuryred.ui.RenderEngines.Get().createBasicStroke(w, cap, join, limit);
         } else {
-            this.state.stroke = new BasicStroke(w, cap, join, limit, ary, phase);
+            this.state.stroke = com.mercuryred.ui.RenderEngines.Get().createBasicStroke(w, cap, join, limit, ary, phase);
         }
     }
 
@@ -628,7 +630,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
      * @param alpha a float.
      */
     public void setStrokeAlpha(float alpha) {
-        this.state.strokeAlpha = AlphaComposite.getInstance(AlphaComposite.SRC_OVER,
+        this.state.strokeAlpha = com.mercuryred.ui.RenderEngines.Get().getAlphaCompositeInstance(AlphaComposite.SRC_OVER,
                 alpha);
     }
 
@@ -638,7 +640,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
      * @param alpha a float.
      */
     public void setFillAlpha(float alpha) {
-        this.state.fillAlpha = AlphaComposite.getInstance(AlphaComposite.SRC_OVER,
+        this.state.fillAlpha = com.mercuryred.ui.RenderEngines.Get().getAlphaCompositeInstance(AlphaComposite.SRC_OVER,
                 alpha);
     }
 
@@ -838,7 +840,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         } else if (glob == null) {
             return region;
         } else {
-            Rectangle2D.union(glob, region, glob);
+            Rectangle.union(glob, region, glob);
             return glob;
         }
     }
@@ -970,9 +972,9 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
     				// replace mapped colors
         			int startIndex = 0;
         			boolean hasAlpha = true;
-    				ColorModel replacementColorModel = new IndexColorModel(pixelSize, mapSize, colorComponents, startIndex, hasAlpha);				
+    				ColorModel replacementColorModel = com.mercuryred.ui.RenderEngines.Get().createIndexColorModel(pixelSize, mapSize, colorComponents, startIndex, hasAlpha);
     				WritableRaster raster = bi.getRaster();
-        			BufferedImage adaptedImage = new BufferedImage(replacementColorModel, raster, false, null);
+        			BufferedImage adaptedImage = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(replacementColorModel, raster, false, null);
        				return adaptedImage;    				
     			}
     			else {
@@ -998,7 +1000,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
 
         // create a destion image of the same size
         BufferedImage dstImage =
-                new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+                com.mercuryred.ui.RenderEngines.Get().createBufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 
         // copy the pixels row by row
         for (int i = 0; i < height; i++) {
@@ -1058,7 +1060,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
             cState.fillAlpha = this.fillAlpha;
 
             // clone mutable fields
-            cState.stroke = new BasicStroke(this.stroke.getLineWidth(),
+            cState.stroke = com.mercuryred.ui.RenderEngines.Get().createBasicStroke(this.stroke.getLineWidth(),
                     this.stroke.getEndCap(),
                     this.stroke.getLineJoin(),
                     this.stroke.getMiterLimit(),

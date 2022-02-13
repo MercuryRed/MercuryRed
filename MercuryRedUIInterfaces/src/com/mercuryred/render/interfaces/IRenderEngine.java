@@ -59,13 +59,16 @@ import com.mercuryred.render.interfaces.ui.geom.AffineTransform;
 import com.mercuryred.render.interfaces.ui.geom.GeneralPath;
 import com.mercuryred.render.interfaces.ui.geom.Point2D;
 import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
+import com.mercuryred.render.interfaces.ui.image.AffineTransformOp;
 import com.mercuryred.render.interfaces.ui.image.BufferedImage;
+import com.mercuryred.render.interfaces.ui.image.BufferedImageOp;
 import com.mercuryred.render.interfaces.ui.image.ColorModel;
 import com.mercuryred.render.interfaces.ui.image.DataBuffer;
 import com.mercuryred.render.interfaces.ui.image.DataBufferByte;
 import com.mercuryred.render.interfaces.ui.image.ImageObserver;
 import com.mercuryred.render.interfaces.ui.image.ImageProducer;
 import com.mercuryred.render.interfaces.ui.image.IndexColorModel;
+import com.mercuryred.render.interfaces.ui.image.Kernel;
 import com.mercuryred.render.interfaces.ui.image.Raster;
 import com.mercuryred.render.interfaces.ui.image.SampleModel;
 import com.mercuryred.render.interfaces.ui.image.WritableRaster;
@@ -749,5 +752,21 @@ public interface IRenderEngine {
   Raster createInterleavedRaster(DataBufferByte dataBufferByte, int w, int h, int w1, int i, int[] bands, Object o);
 
   AlphaComposite getAlphaCompositeInstance(String src);
+  AlphaComposite getAlphaCompositeInstance(String srcOver, float alpha);
+
+  Kernel createKernel(int i, int i1, float[] blurKernel);
+
+  BufferedImageOp createConvolveOp(Kernel kernel, int edgeNoOp, Object o);
+
+
+  ColorModel createIndexColorModel(int pixelSize, int mapSize, byte[] colorComponents, int startIndex, boolean hasAlpha);
+
+  AffineTransformOp createAffineTransformOp(AffineTransform at, int typeBilinear);
+
+  DataBuffer createDataBufferInt(int[] convertedPixels, int length);
+
+  WritableRaster createPackedRaster(DataBuffer dataBufferInt, int width, int height, int width1, Object masks, Object o);
+
+  ColorModel createDecodeComponentColorModel(ColorSpace altCS, int[] bits);
 }
 

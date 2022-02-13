@@ -362,7 +362,7 @@ public class PDFImage {
 			}
 		} else {
 			// create the data buffer
-			DataBuffer db = new DataBufferByte(data, data.length);
+			DataBuffer db = com.mercuryred.ui.RenderEngines.Get().createDataBufferByte(data, data.length);
 
 			// pick a color model, based on the number of components and
 			// bits per component
@@ -372,7 +372,7 @@ public class PDFImage {
 			SampleModel sm = cm.createCompatibleSampleModel(getWidth(), getHeight());
 			WritableRaster raster;
 			try {
-				raster = Raster.createWritableRaster(sm, db, new Point(0, 0));
+				raster = com.mercuryred.ui.RenderEngines.Get().createWritableRaster(sm, db, new Point(0, 0));
 			} catch (RasterFormatException e) {
 				int tempExpectedSize = getWidth() * getHeight() * getColorSpace().getNumComponents()
 						* Math.max(8, getBitsPerComponent()) / 8;
@@ -383,8 +383,8 @@ public class PDFImage {
 				if (tempExpectedSize > data.length) {
 					byte[] tempLargerData = new byte[tempExpectedSize];
 					System.arraycopy(data, 0, tempLargerData, 0, data.length);
-					db = new DataBufferByte(tempLargerData, tempExpectedSize);
-					raster = Raster.createWritableRaster(sm, db, new Point(0, 0));
+					db = com.mercuryred.ui.RenderEngines.Get().createDataBufferByte(tempLargerData, tempExpectedSize);
+					raster = com.mercuryred.ui.RenderEngines.Get().createWritableRaster(sm, db, new Point(0, 0));
 				} else {
 					throw e;
 				}
@@ -405,7 +405,7 @@ public class PDFImage {
 				}
 
 				// create the image with an explicit indexed color model.
-				bi = new BufferedImage(getWidth(), getHeight(), type, icm);
+				bi = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(getWidth(), getHeight(), type, icm);
 
 				// set the data explicitly as well
 				bi.setData(raster);
@@ -433,7 +433,7 @@ public class PDFImage {
 			} else {
 				// Raster is already in a format which is supported by Java2D,
 				// such as RGB or Gray.
-				bi = new BufferedImage(cm, raster, true, null);
+				bi = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(cm, raster, true, null);
 			}
 		}
 
@@ -445,15 +445,15 @@ public class PDFImage {
 			bi = convertGreyscaleToArgb(data, bi);
 		} else if (!isImageMask() && cs instanceof ICC_ColorSpace && !cs.equals(rgbCS)
 				&& !Configuration.getInstance().isAvoidColorConvertOp()) {
-			ColorConvertOp op = new ColorConvertOp(cs, rgbCS, null);
+			ColorConvertOp op = com.mercuryred.ui.RenderEngines.Get().createColorConvertOp(cs, rgbCS, null);
 
-			BufferedImage converted = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
+			BufferedImage converted = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
 
 			bi = op.filter(bi, converted);
 		}
 		else if (cs.getType() == ColorSpace.TYPE_CMYK) {
 			// convert to ARGB for faster drawing without ColorConvertOp
-			BufferedImage converted = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
+			BufferedImage converted = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
 			Graphics2D graphics = converted.createGraphics();
 			graphics.drawImage(bi,0,0,null);
 			graphics.dispose();
@@ -484,7 +484,7 @@ public class PDFImage {
 		            	h = si.getHeight();
 		            	int hints = Image.SCALE_FAST;
 						Image scaledInstance = bi.getScaledInstance(w, h, hints );
-						bi = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+						bi = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
 						Graphics graphics = bi.createGraphics();
 						graphics.drawImage(scaledInstance, 0, 0, null);
 						graphics.dispose();
@@ -499,7 +499,7 @@ public class PDFImage {
 	            }
 	            PDFDebugger.debugImage(si, "smask" + this.imageObj.getObjNum());
 
-    			BufferedImage outImage = new BufferedImage(w,h, BufferedImage.TYPE_INT_ARGB);
+    			BufferedImage outImage = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(w,h, BufferedImage.TYPE_INT_ARGB);
     			PDFDebugger.debugImage(si, "outImage" + this.imageObj.getObjNum());
     			int[] srcArray = new int[w];
     			int[] maskArray = new int[w];
@@ -550,12 +550,12 @@ public class PDFImage {
 		if (PDFDebugger.DEBUG_IMAGES) {
 			PDFDebugger.debug("Scaling image from " + w + "/" + h + " to " + this.width + "/" + this.height);
 		}
-		BufferedImage after = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-		AffineTransform at = new AffineTransform();
+		BufferedImage after = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+		AffineTransform at = com.mercuryred.ui.RenderEngines.Get().createAffineTransform();
 
 		at.scale(((double) this.width / w), ((double) this.height / h));
 
-		AffineTransformOp scaleOp = new AffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);
+		AffineTransformOp scaleOp = com.mercuryred.ui.RenderEngines.Get().createAffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);
 		return scaleOp.filter(before, after);
 	}
 
@@ -627,8 +627,8 @@ public class PDFImage {
 		}
 
 		final ColorModel ccm = ColorModel.getRGBdefault();
-		return new BufferedImage(ccm,
-				Raster.createPackedRaster(new DataBufferInt(convertedPixels, convertedPixels.length), getWidth(),
+		return com.mercuryred.ui.RenderEngines.Get().createBufferedImage(ccm,
+				com.mercuryred.ui.RenderEngines.Get().createPackedRaster(com.mercuryred.ui.RenderEngines.Get().createDataBufferInt(convertedPixels, convertedPixels.length), getWidth(),
 						getHeight(), getWidth(), ((PackedColorModel) ccm).getMasks(), null),
 				false, null);
 	}
@@ -661,16 +661,16 @@ public class PDFImage {
 
 		final int[] argbVals = new int[greyVals.length];
 		final int mask = (1 << numBits) - 1;
-		final WritableRaster inRaster = Raster.createPackedRaster(new DataBufferByte(greyVals, greyVals.length),
+		final WritableRaster inRaster = com.mercuryred.ui.RenderEngines.Get().createPackedRaster(com.mercuryred.ui.RenderEngines.Get().createDataBufferByte(greyVals, greyVals.length),
 				greyVals.length, 1, greyVals.length, new int[] { mask }, null);
 
-		final BufferedImage greyImage = new BufferedImage(new PdfComponentColorModel(greyCs, new int[] { numBits }),
+		final BufferedImage greyImage = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(new PdfComponentColorModel(greyCs, new int[] { numBits }),
 				inRaster, false, null);
 
 		final ColorModel ccm = ColorModel.getRGBdefault();
-		final WritableRaster outRaster = Raster.createPackedRaster(new DataBufferInt(argbVals, argbVals.length),
+		final WritableRaster outRaster = com.mercuryred.ui.RenderEngines.Get().createPackedRaster(com.mercuryred.ui.RenderEngines.Get().createDataBufferInt(argbVals, argbVals.length),
 				argbVals.length, 1, argbVals.length, ((PackedColorModel) ccm).getMasks(), null);
-		final BufferedImage srgbImage = new BufferedImage(ccm, outRaster, false, null);
+		final BufferedImage srgbImage = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(ccm, outRaster, false, null);
 
 		final ColorConvertOp op = new ColorConvertOp(greyCs, ColorSpace.getInstance(ColorSpace.CS_sRGB), null);
 
@@ -694,7 +694,7 @@ public class PDFImage {
 
 		final byte[] bufferO = ((DataBufferByte) raster.getDataBuffer()).getData();
 
-		BufferedImage converted = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_BYTE_GRAY);
+		BufferedImage converted = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_BYTE_GRAY);
 
 		byte[] buffer = ((DataBufferByte) converted.getRaster().getDataBuffer()).getData();
 		int i = 0;
@@ -919,7 +919,7 @@ public class PDFImage {
 				num = correctCount;
 			}
 			if (this.colorKeyMask == null || this.colorKeyMask.length == 0) {
-				return new IndexColorModel(getBitsPerComponent(), num, components, 0, false);
+				return com.mercuryred.ui.RenderEngines.Get().createIndexColorModel(getBitsPerComponent(), num, components, 0, false);
 			} else {
 				byte[] aComps = new byte[num * 4];
 				int idx = 0;
@@ -934,7 +934,7 @@ public class PDFImage {
 						aComps[(j * 4) + 3] = 0; // make transparent
 					}
 				}
-				return new IndexColorModel(getBitsPerComponent(), num, aComps, 0, true);
+				return com.mercuryred.ui.RenderEngines.Get().createIndexColorModel(getBitsPerComponent(), num, aComps, 0, true);
 			}
 		} else if (cs instanceof AlternateColorSpace) {
 			// ColorSpace altCS = new AltColorSpace(((AlternateColorSpace)
@@ -944,7 +944,7 @@ public class PDFImage {
 			for (int i = 0; i < bits.length; i++) {
 				bits[i] = getBitsPerComponent();
 			}
-			return new DecodeComponentColorModel(altCS, bits);
+			return com.mercuryred.ui.RenderEngines.Get().createDecodeComponentColorModel(altCS, bits);
 		} else {
 			// If the image is a JPEG, then CMYK color space has been converted to RGB in DCTDecode
 			if (this.jpegDecode && cs.getColorSpace().getType() == ColorSpace.TYPE_CMYK) {
@@ -953,7 +953,7 @@ public class PDFImage {
 				for (int i = 0; i < bits.length; i++) {
 					bits[i] = getBitsPerComponent();
 				}
-				return new DecodeComponentColorModel(rgbCS, bits);
+				return com.mercuryred.ui.RenderEngines.Get().createDecodeComponentColorModel(rgbCS, bits);
 			}
 			ColorSpace colorSpace = cs.getColorSpace();
 			int[] bits = new int[colorSpace.getNumComponents()];
@@ -961,7 +961,7 @@ public class PDFImage {
 				bits[i] = getBitsPerComponent();
 			}
 
-			return new DecodeComponentColorModel(cs.getColorSpace(), bits);
+			return com.mercuryred.ui.RenderEngines.Get().createDecodeComponentColorModel(cs.getColorSpace(), bits);
 		}
 	}
 

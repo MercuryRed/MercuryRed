@@ -18,4 +18,6 @@ public interface Raster {
     void setRect(int x, int y, Raster raster);
 
     Shape getBounds();
+
+    int getSample(int x, int y, int i);
 }

@@ -6,6 +6,10 @@ import com.mercuryred.render.interfaces.ui.Shape;
 
 public interface AffineTransform {
 
+    static AffineTransform getTranslateInstance(int x, double v) {
+        throw com.mercuryred.utils.Nyi.ReportNyi();
+    }
+
     double getScaleX();
     double getScaleY();
     double getShearX();
