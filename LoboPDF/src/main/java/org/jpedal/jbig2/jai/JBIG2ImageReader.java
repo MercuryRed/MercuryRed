@@ -81,7 +81,7 @@ import java.util.logging.Logger;
   *
   *
  */
-public class JBIG2ImageReader implements ImageReader {
+public abstract class JBIG2ImageReader implements ImageReader {
 	
 	/** The Constant logger. */
 	private static final Logger logger = Logger.getLogger(JBIG2ImageReader.class.getName());
