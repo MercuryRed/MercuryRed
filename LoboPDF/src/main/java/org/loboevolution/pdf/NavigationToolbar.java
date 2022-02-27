@@ -20,14 +20,11 @@
 package org.loboevolution.pdf;
 
 import com.mercuryred.render.interfaces.ui.Dimension;
-
 import com.mercuryred.render.interfaces.uiplus.Box;
-import com.mercuryred.render.interfaces.uiplus.ImageIcon;
 import com.mercuryred.render.interfaces.uiplus.JButton;
 import com.mercuryred.render.interfaces.uiplus.JLabel;
 import com.mercuryred.render.interfaces.uiplus.JTextField;
 import com.mercuryred.render.interfaces.uiplus.JToolBar;
-
 import org.loboevolution.pdfview.PDFFile;
 
 /**
@@ -36,7 +33,7 @@ import org.loboevolution.pdfview.PDFFile;
   *
   *
  */
-public class NavigationToolbar extends JToolBar {
+public abstract class NavigationToolbar implements JToolBar {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -55,9 +52,9 @@ public class NavigationToolbar extends JToolBar {
 	private static final int SETPAGE = 6;
 
 	/** the current page number text field. */
-	protected final JTextField currentPageBox = new JTextField(4);
+	protected final JTextField currentPageBox = com.mercuryred.ui.RenderEngines.Get().createJTextField(4);
 	
-	private final JLabel totalNoOfPages = new JLabel();
+	private final JLabel totalNoOfPages = com.mercuryred.ui.RenderEngines.Get().createJLabel();
 
 	private final PDFViewer PDFViewer;
 
@@ -75,7 +72,7 @@ public class NavigationToolbar extends JToolBar {
 		addButton("Back 5 Pages", "/org/loboevolution/images/fback.gif", FBACKPAGE);
 		addButton("Back", "/org/loboevolution/images/back.gif", BACKPAGE);
 
-		add(new JLabel("Page"));
+		add(com.mercuryred.ui.RenderEngines.Get().createJLabel("Page"));
 		currentPageBox.setText("1");
 		currentPageBox.setMaximumSize(new Dimension(5, 50));
 		currentPageBox.addActionListener(actionEvent -> executeCommand(SETPAGE));
@@ -89,6 +86,7 @@ public class NavigationToolbar extends JToolBar {
 		add(Box.createHorizontalGlue());
 
 	}
+
 
 	/**
 	 * <p>Setter for the field <code>totalNoOfPages</code>.</p>
@@ -109,8 +107,8 @@ public class NavigationToolbar extends JToolBar {
 	}
 
     private void addButton(String tooltip, String url, final int type) {
-		JButton button = new JButton();
-		button.setIcon(new ImageIcon(getClass().getResource(url)));
+		JButton button = com.mercuryred.ui.RenderEngines.Get().createJButton();
+		button.setIcon(com.mercuryred.ui.RenderEngines.Get().createImageIcon(getClass().getResource(url)));
 		button.setToolTipText(tooltip);
 		button.addActionListener(actionEvent -> executeCommand(type));
 

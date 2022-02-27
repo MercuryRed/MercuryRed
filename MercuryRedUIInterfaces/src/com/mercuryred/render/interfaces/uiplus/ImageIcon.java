@@ -6,7 +6,7 @@ import com.mercuryred.render.interfaces.ui.Graphics;
 
 
 
-public interface ImageIcon {
+public interface ImageIcon extends Icon, Image {
 
     Image getImage();
     void paintIcon(Component c, Graphics g, int x, int y);

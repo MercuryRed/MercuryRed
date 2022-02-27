@@ -32,4 +32,6 @@ public interface Component {
     ComponentOrientation getComponentOrientation();
 
     Dimension getMinimumSize();
+
+    void add(Component child);
 }

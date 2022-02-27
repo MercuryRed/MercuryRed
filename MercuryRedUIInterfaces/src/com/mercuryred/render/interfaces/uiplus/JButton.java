@@ -1,18 +1,17 @@
 package com.mercuryred.render.interfaces.uiplus;
 
-import com.mercuryred.render.interfaces.ui.event.MouseListener;
-import com.mercuryred.render.interfaces.ui.Container;
 import com.mercuryred.render.interfaces.ui.Color;
+import com.mercuryred.render.interfaces.ui.Component;
 import com.mercuryred.render.interfaces.ui.ComponentOrientation;
-import com.mercuryred.render.interfaces.ui.event.ActionListener;
-import com.mercuryred.render.interfaces.uiplus.Icon;
-import com.mercuryred.render.interfaces.uiplus.Action;
-import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.Container;
 import com.mercuryred.render.interfaces.ui.Insets;
+import com.mercuryred.render.interfaces.ui.Rectangle;
+import com.mercuryred.render.interfaces.ui.event.ActionListener;
+import com.mercuryred.render.interfaces.ui.event.MouseListener;
 
 
 
-public interface JButton {
+public interface JButton extends Component {
 
     void setText(String text);
     void setMargin(Insets m);

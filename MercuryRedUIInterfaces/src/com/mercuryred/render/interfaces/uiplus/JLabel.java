@@ -1,5 +1,6 @@
 package com.mercuryred.render.interfaces.uiplus;
 
+import com.mercuryred.render.interfaces.ui.Component;
 import com.mercuryred.render.interfaces.ui.Font;
 import com.mercuryred.render.interfaces.ui.event.MouseListener;
 import com.mercuryred.render.interfaces.ui.Color;
@@ -7,7 +8,7 @@ import com.mercuryred.render.interfaces.ui.Dimension;
 
 
 
-public interface JLabel {
+public interface JLabel extends Component {
 
     void setText(String text);
     int getDisplayedMnemonicIndex();

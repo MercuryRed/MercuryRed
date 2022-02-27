@@ -19,7 +19,7 @@ import com.mercuryred.render.interfaces.ui.Insets;
 
 
 
-public interface JTextField {
+public interface JTextField extends Component {
 
     void setDocument(Document doc);
     Dimension getPreferredSize();
