@@ -7,6 +7,8 @@ public interface ColorSpace {
 
     int TYPE_CMYK = 1;
     int CS_sRGB = 2;
+    int CS_GRAY = 5;
+    int TYPE_GRAY = 4;
 
     static ColorSpace getInstance(int cssrgb) {
         throw com.mercuryred.utils.Nyi.ReportNyi();

@@ -20,18 +20,17 @@ package org.loboevolution.pdfview.colorspace;
 
 import com.mercuryred.render.interfaces.ui.Color;
 import com.mercuryred.render.interfaces.ui.color.ColorSpace;
-import com.mercuryred.render.interfaces.ui.color.ICC_ColorSpace;
 import com.mercuryred.render.interfaces.ui.color.ICC_Profile;
+import org.loboevolution.pdfview.PDFObject;
+import org.loboevolution.pdfview.PDFPaint;
+import org.loboevolution.pdfview.PDFParseException;
+import org.loboevolution.pdfview.function.PDFFunction;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Map;
-
-import org.loboevolution.pdfview.PDFObject;
-import org.loboevolution.pdfview.PDFPaint;
-import org.loboevolution.pdfview.PDFParseException;
-import org.loboevolution.pdfview.function.PDFFunction;
 
 
 /**
@@ -73,8 +72,9 @@ public class PDFColorSpace {
 		try {
 			URL resource = PDFColorSpace.class.getResource("/org/loboevolution/pdfview/colorspace/sGray.icc");
 			try (InputStream stream = resource.openStream()) {
-				graySpace = new PDFColorSpace((!useSGray) ? ColorSpace.getInstance(ColorSpace.CS_GRAY)
-						: new ICC_ColorSpace(ICC_Profile.getInstance(stream)));
+				graySpace = new PDFColorSpace((!useSGray)
+                        ? ColorSpace.getInstance(ColorSpace.CS_GRAY)
+						: com.mercuryred.ui.RenderEngines.Get().createICC_ColorSpace(ICC_Profile.getInstance(stream)));
 			}
 		} catch (Exception e) {
 			throw new RuntimeException(e);
@@ -193,7 +193,7 @@ public class PDFColorSpace {
                     if (profile.getColorSpaceType() == ColorSpace.CS_GRAY || profile.getColorSpaceType() == ColorSpace.TYPE_GRAY) {
                         return graySpace;
                     }
-                    value = new PDFColorSpace(new ICC_ColorSpace(profile));
+                    value = new PDFColorSpace(com.mercuryred.ui.RenderEngines.Get().createICC_ColorSpace(profile));
                 } catch (IllegalArgumentException e) {
                     return getColorSpace(COLORSPACE_RGB);
                 }
@@ -261,7 +261,7 @@ public class PDFColorSpace {
     public PDFPaint getPaint(float[] components) {
         float[] rgb = this.cs.toRGB(components);
 
-        return PDFPaint.getColorPaint(new Color(rgb[0], rgb[1], rgb[2]));
+        return PDFPaint.getColorPaint(new Color((int) rgb[0], (int) rgb[1], (int) rgb[2]));
     }
 
     /**

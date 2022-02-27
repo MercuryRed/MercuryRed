@@ -3,7 +3,7 @@ package com.mercuryred.render.interfaces.ui.color;
 
 
 
-public interface ICC_ColorSpace {
+public interface ICC_ColorSpace extends ColorSpace {
 
     float[] toRGB(float[] colorvalue);
     float[] fromRGB(float[] rgbvalue);
