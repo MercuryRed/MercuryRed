@@ -33,5 +33,5 @@ public interface Component {
 
     Dimension getMinimumSize();
 
-    void add(Component child);
+    Component add(Component child);
 }

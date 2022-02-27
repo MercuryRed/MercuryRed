@@ -47,7 +47,6 @@ public interface JTextField extends Component {
     void setBackground(Color bg);
     void setFont(Font font);
     void setToolTipText(String text);
-    Component add(Component comp);
     Component add(String name, Component comp);
     Component add(Component comp, int index);
     void add(Component comp, Object constraints);
