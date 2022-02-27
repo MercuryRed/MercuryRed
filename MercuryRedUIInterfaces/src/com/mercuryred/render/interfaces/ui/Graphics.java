@@ -5,7 +5,7 @@ import com.mercuryred.render.interfaces.ui.image.ImageObserver;
 import java.text.AttributedCharacterIterator;
 
 
-public interface Graphics {
+public interface Graphics extends Graphics2D {
 
     Graphics create();
     Graphics create(int x, int y, int width, int height);

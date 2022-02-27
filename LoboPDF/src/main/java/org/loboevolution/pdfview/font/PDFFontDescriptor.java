@@ -18,10 +18,11 @@
  */
 package org.loboevolution.pdfview.font;
 
+import com.mercuryred.render.interfaces.ui.Rectangle;
 import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
-import java.io.IOException;
-
 import org.loboevolution.pdfview.PDFObject;
+
+import java.io.IOException;
 
 /**
  * <p>PDFFontDescriptor class.</p>
@@ -161,7 +162,7 @@ public class PDFFontDescriptor {
             for (int i = 0; i < 4; i++) {
                 bboxfdef[i] = bboxdef[i].getFloatValue();
             }
-            setFontBBox(new Rectangle2D.Float(bboxfdef[0], bboxfdef[1],
+            setFontBBox(new Rectangle(bboxfdef[0], bboxfdef[1],
                     bboxfdef[2] - bboxfdef[0],
                     bboxfdef[3] - bboxfdef[1]));
         }

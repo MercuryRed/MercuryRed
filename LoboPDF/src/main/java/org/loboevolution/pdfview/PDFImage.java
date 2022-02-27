@@ -265,7 +265,7 @@ public class PDFImage {
 				this.imageObj.setCache(bi);
 			}
 			return bi;
-		} catch (IOException ioe) {
+		} catch (IOException | RasterFormatException ioe) {
 			// let the caller know that there was a problem parsing the image
 			throw new PDFImageParseException("Error reading image: "+ioe.getMessage(), ioe);
 		}
@@ -291,7 +291,7 @@ public class PDFImage {
 	 * @return a {@link com.mercuryred.render.interfaces.ui.image.BufferedImage} object.
 	 * @throws java.io.IOException if any.
 	 */
-	protected BufferedImage parseData(byte[] data, ByteBuffer jpegData) throws IOException {
+	protected BufferedImage parseData(byte[] data, ByteBuffer jpegData) throws IOException, RasterFormatException {
 		// pick a color model, based on the number of components and
 		// bits per component
 		ColorModel cm = createColorModel();
@@ -672,7 +672,7 @@ public class PDFImage {
 				argbVals.length, 1, argbVals.length, ((PackedColorModel) ccm).getMasks(), null);
 		final BufferedImage srgbImage = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(ccm, outRaster, false, null);
 
-		final ColorConvertOp op = new ColorConvertOp(greyCs, ColorSpace.getInstance(ColorSpace.CS_sRGB), null);
+		final ColorConvertOp op = com.mercuryred.ui.RenderEngines.Get().createColorConvertOp(greyCs, ColorSpace.getInstance(ColorSpace.CS_sRGB), null);
 
 		op.filter(greyImage, srgbImage);
 
@@ -993,12 +993,18 @@ public class PDFImage {
 	 */
 	class DecodeComponentColorModel extends ComponentColorModel {
 
+		private int pixel_bits = 0;
+
 		public DecodeComponentColorModel(ColorSpace cs, int[] bpc) {
-			super(cs, bpc, false, false, Transparency.OPAQUE, DataBuffer.TYPE_BYTE);
+			init(cs, bpc, false, false, Transparency.OPAQUE, DataBuffer.TYPE_BYTE);
 
 			if (bpc != null) {
 				this.pixel_bits = bpc.length * bpc[0];
 			}
+		}
+
+		private void init(ColorSpace cs, int[] bpc, boolean b, boolean b1, int opaque, int typeByte) {
+			throw com.mercuryred.utils.Nyi.ReportNyi();
 		}
 
 		@Override

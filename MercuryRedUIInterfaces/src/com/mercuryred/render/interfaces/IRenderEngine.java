@@ -62,6 +62,7 @@ import com.mercuryred.render.interfaces.ui.geom.Rectangle2D;
 import com.mercuryred.render.interfaces.ui.image.AffineTransformOp;
 import com.mercuryred.render.interfaces.ui.image.BufferedImage;
 import com.mercuryred.render.interfaces.ui.image.BufferedImageOp;
+import com.mercuryred.render.interfaces.ui.image.ColorConvertOp;
 import com.mercuryred.render.interfaces.ui.image.ColorModel;
 import com.mercuryred.render.interfaces.ui.image.DataBuffer;
 import com.mercuryred.render.interfaces.ui.image.DataBufferByte;
@@ -70,6 +71,7 @@ import com.mercuryred.render.interfaces.ui.image.ImageProducer;
 import com.mercuryred.render.interfaces.ui.image.IndexColorModel;
 import com.mercuryred.render.interfaces.ui.image.Kernel;
 import com.mercuryred.render.interfaces.ui.image.Raster;
+import com.mercuryred.render.interfaces.ui.image.RasterFormatException;
 import com.mercuryred.render.interfaces.ui.image.SampleModel;
 import com.mercuryred.render.interfaces.ui.image.WritableRaster;
 import com.mercuryred.render.interfaces.ui.print.PageFormat;
@@ -719,7 +721,7 @@ public interface IRenderEngine {
 
   WritableRaster createWritableRaster(SampleModel sampleModel, Point origin);
 
-  WritableRaster createWritableRaster(SampleModel sampleModel, DataBuffer dataBuffer, Point origin);
+  WritableRaster createWritableRaster(SampleModel sampleModel, DataBuffer dataBuffer, Point origin) throws RasterFormatException;
 
   WritableRaster createWritableRaster(SampleModel sampleModel, DataBuffer dataBuffer, Rectangle aRegion, Point sampleModelTranslate, WritableRaster parent);
 
@@ -768,5 +770,7 @@ public interface IRenderEngine {
   WritableRaster createPackedRaster(DataBuffer dataBufferInt, int width, int height, int width1, Object masks, Object o);
 
   ColorModel createDecodeComponentColorModel(ColorSpace altCS, int[] bits);
+
+  ColorConvertOp createColorConvertOp(ColorSpace cs, ColorSpace rgbCS, Object o);
 }
 

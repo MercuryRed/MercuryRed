@@ -40,6 +40,10 @@ public class Rectangle implements Rectangle2D {
         this(0, 0, d.width, d.height);
     }
 
+    public static void union(Rectangle2D glob, Rectangle2D region, Rectangle2D glob1) {
+        throw com.mercuryred.utils.Nyi.ReportNyi();
+    }
+
     public double getX() {
         return x;
     }

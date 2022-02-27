@@ -36,8 +36,8 @@ import com.mercuryred.render.interfaces.ui.image.ColorModel;
 import com.mercuryred.render.interfaces.ui.image.ConvolveOp;
 import com.mercuryred.render.interfaces.ui.image.ImageObserver;
 import com.mercuryred.render.interfaces.ui.image.IndexColorModel;
-import com.mercuryred.render.interfaces.ui.image.Kernel;
 import com.mercuryred.render.interfaces.ui.image.WritableRaster;
+
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -316,7 +316,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         	bi = getMaskedImage(bi);
         }
 
-        Rectangle r = g.getTransform().createTransformedShape(new Rectangle(0,0,1,1)).getBounds();
+        Rectangle2D r = g.getTransform().createTransformedShape(new Rectangle(0,0,1,1)).getBounds();
         boolean isBlured = false;
         
         if (Configuration.getInstance().isUseBlurResizingForImages() && 
@@ -375,7 +375,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
 
     }
 
-    private Rectangle2D smartDrawImage(PDFImage image, BufferedImage bi, Rectangle r, AffineTransform at) {
+    private Rectangle2D smartDrawImage(PDFImage image, BufferedImage bi, Rectangle2D r, AffineTransform at) {
         boolean isBlured = false;
         
         if (Configuration.getInstance().isUseBlurResizingForImages() && 
@@ -437,7 +437,7 @@ public class PDFRenderer extends BaseWatchable implements Runnable {
         	}
         	
         	BufferedImage blured = op.createCompatibleDestImage(bi, 
-        			colorConversion?ColorModel.getRGBdefault():bi.getColorModel());
+        			colorConversion ? ColorModel.getRGBdefault() : bi.getColorModel());
         	
            	op.filter(bi, blured);
         	bi = blured;
