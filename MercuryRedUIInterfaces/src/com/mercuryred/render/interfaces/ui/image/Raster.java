@@ -1,8 +1,17 @@
 package com.mercuryred.render.interfaces.ui.image;
 
+import com.mercuryred.render.interfaces.ui.Point;
 import com.mercuryred.render.interfaces.ui.Shape;
 
 public interface Raster {
+
+    static WritableRaster createWritableRaster(SampleModel sm, Point point) {
+        throw com.mercuryred.utils.Nyi.ReportNyi();
+    }
+
+    static Object createWritableRaster(SampleModel sampleModel, DataBuffer dataBuffer, Object o) {
+        throw com.mercuryred.utils.Nyi.ReportNyi();
+    }
 
     int getWidth();
     int getHeight();

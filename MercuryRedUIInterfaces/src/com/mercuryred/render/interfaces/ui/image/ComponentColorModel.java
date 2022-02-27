@@ -28,4 +28,16 @@ public class ComponentColorModel implements ColorModel {
         throw Nyi.ReportNyi();
         // return null;
     }
+
+    @Override
+    public boolean isCompatibleRaster(Raster raster) {
+        throw Nyi.ReportNyi();
+        // return false;
+    }
+
+    @Override
+    public float[] getNormalizedComponents(Object pixel, float[] normComponents, int normOffset) {
+        throw Nyi.ReportNyi();
+        // return new float[0];
+    }
 }

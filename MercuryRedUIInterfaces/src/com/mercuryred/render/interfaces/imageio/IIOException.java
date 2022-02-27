@@ -1,9 +1,9 @@
 package com.mercuryred.render.interfaces.imageio;
 
 
+import java.io.IOException;
 
-
-public class IIOException extends Exception {
+public class IIOException extends IOException {
     public IIOException() {
     }
 
@@ -19,7 +19,4 @@ public class IIOException extends Exception {
         super(cause);
     }
 
-    public IIOException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
 }

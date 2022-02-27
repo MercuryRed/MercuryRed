@@ -15,4 +15,8 @@ public interface ColorModel {
     int getNumComponents();
 
     ColorSpace getColorSpace();
+
+    boolean isCompatibleRaster(Raster raster);
+
+    float[] getNormalizedComponents(Object pixel, float[] normComponents, int normOffset);
 }

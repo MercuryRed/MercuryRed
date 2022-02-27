@@ -11,4 +11,6 @@ public interface ImageReadParam {
     int getSourceXSubsampling();
     int getSourceYSubsampling();
     Point getDestinationOffset();
+
+    void setDestination(BufferedImage bufferedImage);
 }

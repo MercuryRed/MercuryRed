@@ -131,6 +131,7 @@ import com.mercuryred.render.interfaces.uiplus.tree.TreePath;
 
 import java.io.File;
 import java.net.URL;
+import java.nio.ByteBuffer;
 import java.text.AttributedCharacterIterator;
 import java.util.Hashtable;
 import java.util.List;
@@ -772,5 +773,13 @@ public interface IRenderEngine {
   ColorModel createDecodeComponentColorModel(ColorSpace altCS, int[] bits);
 
   ColorConvertOp createColorConvertOp(ColorSpace cs, ColorSpace rgbCS, Object o);
+
+  SampleModel createMultiPixelPackedSampleModel(Object transferType, int width, int height, int pixelSize);
+
+  ByteBuffer createByteBufferInputStream(ByteBuffer jpegData);
+
+  BufferedImage createBufferedImage(ColorModel cm, Object writableRaster, boolean b, Object o);
+
+  IndexColorModel createIndexColorModel(int i, int i1, byte[] bytes, byte[] bytes1, byte[] bytes2, int i2);
 }
 

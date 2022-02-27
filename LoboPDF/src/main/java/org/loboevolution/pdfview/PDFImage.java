@@ -18,6 +18,12 @@
  */
 package org.loboevolution.pdfview;
 
+import com.mercuryred.render.interfaces.imageio.IIOException;
+import com.mercuryred.render.interfaces.imageio.ImageIO;
+import com.mercuryred.render.interfaces.imageio.ImageReadParam;
+import com.mercuryred.render.interfaces.imageio.ImageReader;
+import com.mercuryred.render.interfaces.imageio.metadata.IIOMetadata;
+import com.mercuryred.render.interfaces.imageio.metadata.IIOMetadataFormatImpl;
 import com.mercuryred.render.interfaces.ui.Color;
 import com.mercuryred.render.interfaces.ui.Graphics;
 import com.mercuryred.render.interfaces.ui.Graphics2D;
@@ -34,7 +40,6 @@ import com.mercuryred.render.interfaces.ui.image.ColorModel;
 import com.mercuryred.render.interfaces.ui.image.ComponentColorModel;
 import com.mercuryred.render.interfaces.ui.image.DataBuffer;
 import com.mercuryred.render.interfaces.ui.image.DataBufferByte;
-import com.mercuryred.render.interfaces.ui.image.DataBufferInt;
 import com.mercuryred.render.interfaces.ui.image.IndexColorModel;
 import com.mercuryred.render.interfaces.ui.image.MultiPixelPackedSampleModel;
 import com.mercuryred.render.interfaces.ui.image.PackedColorModel;
@@ -43,27 +48,20 @@ import com.mercuryred.render.interfaces.ui.image.Raster;
 import com.mercuryred.render.interfaces.ui.image.RasterFormatException;
 import com.mercuryred.render.interfaces.ui.image.SampleModel;
 import com.mercuryred.render.interfaces.ui.image.WritableRaster;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Map;
-
-import com.mercuryred.render.interfaces.imageio.IIOException;
-import com.mercuryred.render.interfaces.imageio.ImageIO;
-import com.mercuryred.render.interfaces.imageio.ImageReadParam;
-import com.mercuryred.render.interfaces.imageio.ImageReader;
-import com.mercuryred.render.interfaces.imageio.metadata.IIOMetadata;
-import com.mercuryred.render.interfaces.imageio.metadata.IIOMetadataFormatImpl;
-
+import org.loboevolution.html.node.Attr;
 import org.loboevolution.pdfview.colorspace.AlternateColorSpace;
 import org.loboevolution.pdfview.colorspace.IndexedColor;
 import org.loboevolution.pdfview.colorspace.PDFColorSpace;
 import org.loboevolution.pdfview.colorspace.YCCKColorSpace;
 import org.loboevolution.pdfview.decode.PDFDecoder;
 import org.loboevolution.pdfview.function.FunctionType0;
-import org.loboevolution.html.node.Attr;
 import org.w3c.dom.Node;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Encapsulates a PDF Image
@@ -1012,10 +1010,14 @@ public class PDFImage {
 			// workaround -- create a MultiPixelPackedSample models for
 			// single-sample, less than 8bpp color models
 			if (getNumComponents() == 1 && getPixelSize() < 8) {
-				return new MultiPixelPackedSampleModel(getTransferType(), width, height, getPixelSize());
+				return com.mercuryred.ui.RenderEngines.Get().createMultiPixelPackedSampleModel(getTransferType(), width, height, getPixelSize());
 			}
 
 			return super.createCompatibleSampleModel(width, height);
+		}
+
+		private Object getTransferType() {
+			throw com.mercuryred.utils.Nyi.ReportNyi();
 		}
 
 		@Override
@@ -1089,7 +1091,7 @@ public class PDFImage {
 				num = correctCount;
 			}
 			if (colorKeyMask == null || colorKeyMask.length == 0) {
-				return new IndexColorModel(getBitsPerComponent(), num, components, 0, false);
+				return com.mercuryred.ui.RenderEngines.Get().createIndexColorModel(getBitsPerComponent(), num, components, 0, false);
 			} else {
 				byte[] aComps = new byte[num * 4];
 				int idx = 0;
@@ -1104,7 +1106,7 @@ public class PDFImage {
 						aComps[(j * 4) + 3] = 0; // make transparent
 					}
 				}
-				return new IndexColorModel(getBitsPerComponent(), num, aComps, 0, true);
+				return com.mercuryred.ui.RenderEngines.Get().createIndexColorModel(getBitsPerComponent(), num, aComps, 0, true);
 			}
 		} else {
 			int[] bits = new int[cs.getNumComponents()];
@@ -1173,16 +1175,16 @@ public class PDFImage {
 		 *             if the image couldn't be decoded due to a lack of support
 		 *             or some IO problem
 		 */
-		private BufferedImage decode() throws IOException {
+		private BufferedImage decode() throws IOException, IIOException {
 
 			ImageReadParam readParam = null;
 			if (getDecode() != null) {
 				// we have to allocate our own buffered image so that we can
 				// install our colour model which will do the desired decode
-				readParam = new ImageReadParam();
+				readParam = com.mercuryred.ui.RenderEngines.Get().createImageReadParam();
 				SampleModel sm = cm.createCompatibleSampleModel(getWidth(), getHeight());
 				final WritableRaster raster = Raster.createWritableRaster(sm, new Point(0, 0));
-				readParam.setDestination(new BufferedImage(cm, raster, true, null));
+				readParam.setDestination(com.mercuryred.ui.RenderEngines.Get().createBufferedImage(cm, raster, true, null));
 			}
 
 			Iterator<ImageReader> jpegReaderIt = ImageIO.getImageReadersByFormatName("jpeg");
@@ -1190,7 +1192,7 @@ public class PDFImage {
 			while (jpegReaderIt.hasNext()) {
 				try {
 					final ImageReader jpegReader = jpegReaderIt.next();
-					jpegReader.setInput(ImageIO.createImageInputStream(new ByteBufferInputStream(jpegData)), true,
+					jpegReader.setInput(ImageIO.createImageInputStream(com.mercuryred.ui.RenderEngines.Get().createByteBufferInputStream(jpegData)), true,
 							false);
 					try {
 						return readImage(jpegReader, readParam);
@@ -1226,7 +1228,7 @@ public class PDFImage {
 
 		}
 
-		private BufferedImage readImage(ImageReader jpegReader, ImageReadParam param) throws IOException {
+		private BufferedImage readImage(ImageReader jpegReader, ImageReadParam param) throws IOException, IIOException {
 			if (ycckcmykDecodeMode) {
 				// The standard Oracle Java JPEG readers can't deal with CMYK
 				// YCCK encoded images
@@ -1271,7 +1273,7 @@ public class PDFImage {
 											cm = PDFImage.this.createColorModel();
 										}
 
-										return new BufferedImage(cm, Raster.createWritableRaster(
+										return com.mercuryred.ui.RenderEngines.Get().createBufferedImage(cm, Raster.createWritableRaster(
 												raster.getSampleModel(), raster.getDataBuffer(), null), true, null);
 
 									}
@@ -1295,11 +1297,11 @@ public class PDFImage {
 					//return new BufferedImage(cm, jpegReader.read(0, param).getRaster(), true, null);
 					BufferedImage bi = jpegReader.read(0, param);
 					try {
-						return new BufferedImage(cm, bi.getRaster(), true, null);
+						return com.mercuryred.ui.RenderEngines.Get().createBufferedImage(cm, bi.getRaster(), true, null);
 					} catch (IllegalArgumentException raster_ByteInterleavedRaster) {
-						BufferedImage bi2 = new BufferedImage(bi.getWidth(), bi.getHeight(),
+						BufferedImage bi2 = com.mercuryred.ui.RenderEngines.Get().createBufferedImage(bi.getWidth(), bi.getHeight(),
 								BufferedImage.TYPE_BYTE_INDEXED,
-								new IndexColorModel(8, 1, new byte[] { 0 }, new byte[] { 0 }, new byte[] { 0 }, 0));
+								com.mercuryred.ui.RenderEngines.Get().createIndexColorModel(8, 1, new byte[] { 0 }, new byte[] { 0 }, new byte[] { 0 }, 0));
 						cm = bi2.getColorModel();
 						return bi2;
 					}
@@ -1338,10 +1340,13 @@ public class PDFImage {
 		final int bitsPerComponent;
 
 		public PdfComponentColorModel(ColorSpace cs, int[] bpc) {
-			super(cs, bpc, false, false, Transparency.OPAQUE, DataBuffer.TYPE_BYTE);
+			init(cs, bpc, false, false, Transparency.OPAQUE, DataBuffer.TYPE_BYTE);
 
-			pixel_bits = bpc.length * bpc[0];
+			int pixel_bits = bpc.length * bpc[0];
 			this.bitsPerComponent = bpc[0];
+		}
+
+		private void init(ColorSpace cs, int[] bpc, boolean b, boolean b1, int opaque, int typeByte) {
 		}
 
 		@Override
@@ -1376,6 +1381,10 @@ public class PDFImage {
 					return new PdfSubByteSampleModel(width, height, getNumComponents(), bitsPerComponent);
 				}
 			}
+		}
+
+		private int getTransferType() {
+			throw com.mercuryred.utils.Nyi.ReportNyi();
 		}
 
 		@Override
